@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Clock, CheckCircle2, Play } from 'lucide-react'
 
@@ -9,7 +10,6 @@ const TYPE_COLOR  = {
   quiz:     'bg-purple-900/70 text-purple-200 border-purple-700/50',
 }
 
-// バナー画像がない場合のフォールバックグラデーション（単元カラーを流用）
 const FALLBACK_GRADIENT = [
   'from-blue-700 to-blue-900',
   'from-emerald-700 to-emerald-900',
@@ -20,6 +20,9 @@ const FALLBACK_GRADIENT = [
 
 export default function LessonCard({ lesson, unitId, lessonIndex, unitIndex = 0, done = false }) {
   const fallback = FALLBACK_GRADIENT[unitIndex % FALLBACK_GRADIENT.length]
+  const [imgError, setImgError] = useState(false)
+
+  const showImage = lesson.bannerUrl && !imgError
 
   return (
     <Link
@@ -27,13 +30,14 @@ export default function LessonCard({ lesson, unitId, lessonIndex, unitIndex = 0,
       className="group flex flex-col rounded-2xl overflow-hidden glass card-hover"
     >
       {/* ── バナー画像 ── */}
-      <div className="relative overflow-hidden aspect-video">
-        {lesson.bannerUrl ? (
+      <div className="relative overflow-hidden aspect-video bg-slate-900">
+        {showImage ? (
           <img
             src={lesson.bannerUrl}
             alt={lesson.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
+            onError={() => setImgError(true)}
           />
         ) : (
           <div className={`w-full h-full bg-gradient-to-br ${fallback}`} />
