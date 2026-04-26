@@ -30,7 +30,7 @@ export const units = [
         description: '人工知能とは何かを定義し、1950年代から現在までの発展の歴史を学びます。',
         type: 'lecture',
         duration: 25,
-        bannerUrl: '/images/lec14_banner.jpg',
+        bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
       },
       {
@@ -40,7 +40,7 @@ export const units = [
         description: 'スマホ・家電・サービスに潜むAI技術を発見し、AIが日常にどれだけ浸透しているかを実感します。',
         type: 'activity',
         duration: 30,
-        bannerUrl: '/images/lec02_banner.jpg',
+        bannerUrl: '/images/claude-intro.jpg',
         slideUrl: null,
       },
       {
@@ -50,7 +50,7 @@ export const units = [
         description: '従来のプログラムとAI（機械学習）の根本的な違いを理解します。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: '/images/lec07_banner.jpg',
+        bannerUrl: '/images/ai-vs-program.jpg',
         slideUrl: null,
       },
       {
@@ -60,7 +60,7 @@ export const units = [
         description: 'AIの基礎知識を確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: '/images/lec06_banner.jpg',
+        bannerUrl: '/images/claude-intro.jpg',
         slideUrl: null,
         quiz: {
           questions: [
@@ -138,7 +138,7 @@ export const units = [
         description: '教師あり学習・教師なし学習・強化学習の違いを理解します。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: '/images/lec15_banner.jpg',
+        bannerUrl: '/images/model-evaluation.jpg',
         slideUrl: null,
       },
       {
@@ -148,7 +148,7 @@ export const units = [
         description: 'AIの性能はデータで決まる。良いデータとは何かを学びます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: '/images/lec14_banner.jpg',
+        bannerUrl: '/images/claude-projects.jpg',
         slideUrl: null,
       },
       {
@@ -158,7 +158,7 @@ export const units = [
         description: 'AIモデルの性能をどう測るか。精度・過学習の概念を学びます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: '/images/lec18_banner.jpg',
+        bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
       },
       {
@@ -168,7 +168,7 @@ export const units = [
         description: '機械学習の仕組みを確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: '/images/lec03_banner.jpg',
+        bannerUrl: '/images/future-work.jpg',
         slideUrl: null,
         quiz: {
           questions: [
@@ -229,7 +229,7 @@ export const units = [
         description: '人工ニューロンの仕組みとニューラルネットワークの構造を理解します。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: '/images/lec10_banner.jpg',
+        bannerUrl: '/images/data-importance.jpg',
         slideUrl: null,
       },
       {
@@ -239,7 +239,7 @@ export const units = [
         description: '代表的なニューラルネットワークのアーキテクチャを学びます。',
         type: 'lecture',
         duration: 40,
-        bannerUrl: '/images/lec02_banner.jpg',
+        bannerUrl: '/images/quiz.jpg',
         slideUrl: null,
       },
       {
@@ -249,7 +249,7 @@ export const units = [
         description: 'ニューラルネットワークの知識を確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: '/images/lec06_banner.jpg',
+        bannerUrl: '/images/cnn-rnn.jpg',
         slideUrl: null,
         quiz: {
           questions: [
@@ -305,7 +305,7 @@ export const units = [
         description: 'AIの偏見・差別問題を具体的な事例から学び、その原因と対策を考えます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: '/images/lec11_banner.jpg',
+        bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
       },
       {
@@ -315,7 +315,7 @@ export const units = [
         description: '顔認識技術・データ収集・監視社会について考えます。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: '/images/lec02_banner.jpg',
+        bannerUrl: '/images/everyday-ai.jpg',
         slideUrl: null,
       },
       {
@@ -325,7 +325,7 @@ export const units = [
         description: 'どんな仕事がAIに代替されるか、これからの時代に必要なスキルを考えます。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: '/images/lec05_banner.jpg',
+        bannerUrl: '/images/claude-intro.jpg',
         slideUrl: null,
       },
       {
@@ -335,7 +335,7 @@ export const units = [
         description: 'AI倫理・社会への影響の理解を確認します。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: '/images/lec14_banner.jpg',
+        bannerUrl: '/images/privacy.jpg',
         slideUrl: null,
         quiz: {
           questions: [
@@ -396,7 +396,7 @@ export const units = [
         description: 'AnthropicのAI「Claude」の特徴・できること・他のAIとの違いを理解し、なぜ今注目されているかを学びます。',
         type: 'lecture',
         duration: 25,
-        bannerUrl: '/images/lec12_banner.jpg',
+        bannerUrl: '/images/claude-setup.jpg',
         slideUrl: null,
       },
       {
@@ -406,7 +406,7 @@ export const units = [
         description: 'Claude.aiへの登録手順・プランの選び方・画面の見方と基本的な操作方法を丁寧に解説します。',
         type: 'activity',
         duration: 30,
-        bannerUrl: '/images/lec06_banner.jpg',
+        bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
       },
       {
@@ -416,7 +416,7 @@ export const units = [
         description: 'Claudeの「プロジェクト」機能でカスタム指示・知識ベースを設定し、用途に特化した専用AIを作る方法を学びます。',
         type: 'activity',
         duration: 35,
-        bannerUrl: '/images/lec13_banner.jpg',
+        bannerUrl: '/images/future-work.jpg',
         slideUrl: null,
       },
       {
@@ -426,7 +426,7 @@ export const units = [
         description: 'Claudeのスキルズ（カスタムツール）を作成・設定し、繰り返し使えるワークフローを自動化する方法を実践します。',
         type: 'activity',
         duration: 35,
-        bannerUrl: '/images/lec17_banner.jpg',
+        bannerUrl: '/images/ai-vs-program.jpg',
         slideUrl: null,
       },
       {
@@ -436,7 +436,7 @@ export const units = [
         description: 'Claude AIの基本操作・プロジェクト・スキルズの理解を確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: '/images/lec02_banner.jpg',
+        bannerUrl: '/images/future-work.jpg',
         slideUrl: null,
         quiz: {
           questions: [
