@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>データベース（SQLite）入門</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🗄️ データベースの基本</div>
+                <div class="item">
+                    <span class="item-icon">📊</span>
+                    <div>
+                        <div class="item-text">テーブル = Excelのシート</div>
+                        <div class="item-sub">行=レコード、列=カラム（フィールド）</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔍</span>
+                    <div>
+                        <div class="item-text">SQL = データベースの言語</div>
+                        <div class="item-sub">SELECT・INSERT・UPDATE・DELETE</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">💾</span>
+                    <div>
+                        <div class="item-text">SQLite = ファイル型DB（初心者向け）</div>
+                        <div class="item-sub">インストール不要、1ファイルで管理</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 SQLの基本文</div>
+                <div class="code-block">
+<span style="color:#6C757D;">-- テーブル作成</span><br>
+<span style="color:#FFD43B;">CREATE TABLE</span> users (<br>
+&nbsp;&nbsp;id <span style="color:#339AF0;">INTEGER PRIMARY KEY</span>,<br>
+&nbsp;&nbsp;name <span style="color:#339AF0;">TEXT NOT NULL</span>,<br>
+&nbsp;&nbsp;email <span style="color:#339AF0;">TEXT UNIQUE</span><br>
+);<br><br>
+<span style="color:#6C757D;">-- データ挿入</span><br>
+<span style="color:#FFD43B;">INSERT INTO</span> users (name, email)<br>
+<span style="color:#FFD43B;">VALUES</span> (<span style="color:#FCC419;">'太郎'</span>, <span style="color:#FCC419;">'taro@example.com'</span>);<br><br>
+<span style="color:#6C757D;">-- データ取得</span><br>
+<span style="color:#FFD43B;">SELECT</span> * <span style="color:#FFD43B;">FROM</span> users<br>
+<span style="color:#FFD43B;">WHERE</span> name = <span style="color:#FCC419;">'太郎'</span>;
+                </div>
+                <div class="green-box">✅ Claudeに「このSQLを最適化して」と頼めばすぐ改善できる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

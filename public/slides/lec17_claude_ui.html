@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .intro { font-size: 20px; color: #495057; margin-bottom: 22px; }
+        .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .prompt-card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; }
+        .card-header { background: #212529; padding: 12px 20px; display: flex; align-items: center; gap: 10px; }
+        .card-num { background: #339AF0; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+        .card-title { color: white; font-size: 18px; font-weight: 600; }
+        .card-body { padding: 16px 20px; }
+        .prompt-box { background: #0D0D0D; color: #a9dc76; font-family: monospace; font-size: 14px; line-height: 1.7; padding: 12px 16px; border-radius: 6px; margin-bottom: 10px; }
+        .output-box { background: #e3fafc; border-left: 4px solid #20C997; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #0c7a6d; line-height: 1.5; }
+        .footer-tip { margin-top: 18px; background: #212529; border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; gap: 12px; color: white; font-size: 18px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude CodeでUI実装を加速する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro">UIの実装はClaude Codeへの上手な依頼で大幅に時短できます。</p>
+            <div class="cards">
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">1</div><div class="card-title">コンポーネント生成</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「Reactで本の一覧カードコンポーネントを<br>作って。props: title, author, rating, date。<br>Tailwind CSSでスタイリング」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> BookCard コンポーネントをprops付きで即生成。TypeScriptにも対応</div>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">2</div><div class="card-title">レスポンシブ対応</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「このカードグリッドをレスポンシブに<br>して。スマホ1列・タブレット2列・<br>PC3列にしたい」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> Tailwindの sm: md: lg: ブレークポイントを使ったCSSを自動追加</div>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">3</div><div class="card-title">カラーテーマ統一</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「このアプリのカラーパレットを決めて。<br>読書記録アプリなので落ち着いた<br>ネイビー系でお願い」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> CSS変数または Tailwindのextend設定でカラーシステムを提案</div>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">4</div><div class="card-title">アニメーション追加</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「カードにhoverで浮き上がる<br>アニメーションを追加して。<br>transition も入れて」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> transform: translateY と box-shadow のアニメーションCSSを追加</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-tip">
+                <i class="fas fa-robot" style="font-size:22px"></i>
+                「完成イメージ」と「技術スタック（React/Tailwind等）」を明示するほど、精度が上がる！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

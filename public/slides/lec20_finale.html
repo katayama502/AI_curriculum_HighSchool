@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; }
+        .slide-container {
+            width: 1280px; min-height: 720px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1000 50%, #0D0D0D 100%);
+            position: relative; overflow: hidden; text-align: center;
+        }
+        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255,212,59,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,212,59,0.04) 1px, transparent 1px); background-size: 40px 40px; z-index: 1; }
+        .content { position: relative; z-index: 10; max-width: 900px; }
+        .emoji-row { font-size: 60px; margin-bottom: 16px; }
+        .main-title { font-size: 64px; font-weight: 700; color: #FFD43B; margin-bottom: 16px; line-height: 1.2; }
+        .sub-title { font-size: 28px; color: #E8E8E8; margin-bottom: 40px; font-weight: 300; }
+        .divider { height: 2px; background: linear-gradient(90deg, transparent, #FFD43B, transparent); margin: 0 auto 40px; width: 600px; }
+        .message { font-size: 22px; color: #ADB5BD; line-height: 1.8; margin-bottom: 40px; }
+        .message strong { color: #FFD43B; }
+        .badge-row { display: flex; gap: 16px; justify-content: center; }
+        .badge { background: #FFD43B; color: #0D0D0D; padding: 12px 28px; font-size: 18px; font-weight: 700; }
+        .badge-outline { border: 2px solid #FFD43B; color: #FFD43B; padding: 12px 28px; font-size: 18px; font-weight: 700; }
+        .corner-deco { position: absolute; font-size: 80px; opacity: 0.08; color: #FFD43B; z-index: 2; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="bg-grid"></div>
+        <span class="corner-deco" style="top: 20px; left: 30px;">★</span>
+        <span class="corner-deco" style="top: 20px; right: 30px;">★</span>
+        <span class="corner-deco" style="bottom: 20px; left: 30px;">★</span>
+        <span class="corner-deco" style="bottom: 20px; right: 30px;">★</span>
+        <div class="content">
+            <div class="emoji-row">🎓</div>
+            <div class="main-title">修了おめでとう！</div>
+            <div class="sub-title">Claude & Claude Code 全20回コース 完全修了</div>
+            <div class="divider"></div>
+            <div class="message">
+                あなたは今日から<strong>AIと共に開発できるエンジニア</strong>です。<br>
+                <strong>Claude</strong>はいつでもあなたの相棒として隣にいます。<br>
+                これからも<strong>作り続け、学び続け、発信し続けよう！</strong>
+            </div>
+            <div class="badge-row">
+                <div class="badge">🚀 次のアプリを作ろう</div>
+                <div class="badge-outline">📚 学び続けよう</div>
+                <div class="badge-outline">🌟 世界を変えよう</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

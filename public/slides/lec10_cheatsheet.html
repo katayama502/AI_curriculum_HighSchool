@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 20px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .sheet-card { background: #212529; border-radius: 10px; padding: 16px 20px; }
+        .sheet-card h3 { font-size: 19px; font-weight: 700; color: #adb5bd; margin-bottom: 10px; border-bottom: 1px solid #495057; padding-bottom: 7px; }
+        .sheet-card pre { font-family: monospace; font-size: 15px; line-height: 1.8; color: #f8f9fa; white-space: pre-wrap; }
+        .prompt { color: #20C997; }
+        .cmd { color: #339AF0; }
+        .arg { color: #da77f2; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .banner { grid-column: 1 / -1; background: linear-gradient(135deg, #212529, #495057); border-radius: 10px; padding: 14px 28px; display: flex; align-items: center; gap: 20px; }
+        .banner .icon { font-size: 32px; color: white; }
+        .banner p { font-size: 19px; color: white; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Git / GitHub チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sheet-card">
+                <h3>📦 基本操作</h3>
+                <pre><span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">init</span>              <span class="cmt"># 初期化</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">status</span>           <span class="cmt"># 状態確認</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">add</span> .            <span class="cmt"># 全ファイルをステージ</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">commit</span> -m <span class="str">"msg"</span>  <span class="cmt"># 変更を記録</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">log</span> --oneline    <span class="cmt"># 履歴を表示</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">diff</span>             <span class="cmt"># 差分を表示</span></pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🌿 ブランチ操作</h3>
+                <pre><span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">branch</span>           <span class="cmt"># ブランチ一覧</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">checkout</span> -b <span class="str">name</span> <span class="cmt"># 作成＋移動</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">checkout</span> main    <span class="cmt"># mainに切り替え</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">merge</span> feature    <span class="cmt"># ブランチをマージ</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">branch</span> -d <span class="str">name</span>  <span class="cmt"># ブランチを削除</span></pre>
+            </div>
+            <div class="sheet-card">
+                <h3>☁️ リモート（GitHub）</h3>
+                <pre><span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">remote</span> add origin <span class="str">[URL]</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">push</span> origin main  <span class="cmt"># アップロード</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">pull</span> origin main  <span class="cmt"># ダウンロード</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">clone</span> <span class="str">[URL]</span>       <span class="cmt"># コピーして取得</span></pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🔙 取り消し・修正</h3>
+                <pre><span class="cmt"># 最後のコミットメッセージを修正</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">commit</span> --amend
+
+<span class="cmt"># ステージを取り消す</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">restore</span> --staged <span class="str">file</span>
+
+<span class="cmt"># 過去のコミットに戻る</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">revert</span> <span class="str">コミットID</span></pre>
+            </div>
+            <div class="banner">
+                <div class="icon"><i class="fab fa-git-alt"></i></div>
+                <p>Git はエラーが怖くない！コマンドの意味がわからないときは「git [コマンド] の使い方を教えて」とClaudeに聞くと一発解決。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

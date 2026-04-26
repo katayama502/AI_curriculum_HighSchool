@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.9; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>状態管理とuseState</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🔄 useStateの使い方</div>
+                <div class="code-block">
+<span style="color:#FFD43B;">import</span> { useState } <span style="color:#FFD43B;">from</span> <span style="color:#FCC419;">'react'</span>;<br><br>
+<span style="color:#FFD43B;">function</span> <span style="color:#F783AC;">TodoApp</span>() {<br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">const</span> [todos, setTodos] = <span style="color:#F783AC;">useState</span>([]);<br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">const</span> [input, setInput] = <span style="color:#F783AC;">useState</span>(<span style="color:#FCC419;">""</span>);<br><br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">const</span> <span style="color:#F783AC;">addTodo</span> = () =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F783AC;">setTodos</span>([...todos, input]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F783AC;">setInput</span>(<span style="color:#FCC419;">""</span>);<br>
+&nbsp;&nbsp;};<br><br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">return</span> (<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">div</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">input</span> value={input}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={e =&gt; <span style="color:#F783AC;">setInput</span>(e.target.value)} /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">button</span> onClick={addTodo}&gt;追加&lt;/<span style="color:#339AF0;">button</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color:#339AF0;">div</span>&gt;<br>
+&nbsp;&nbsp;);<br>
+}
+                </div>
+            </div>
+            <div>
+                <div class="section-title">📚 主要Hooks一覧</div>
+                <div class="item">
+                    <span class="item-icon">🔢</span>
+                    <div>
+                        <div class="item-text">useState</div>
+                        <div class="item-sub">コンポーネントの状態を管理する</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">⚡</span>
+                    <div>
+                        <div class="item-text">useEffect</div>
+                        <div class="item-sub">副作用（APIコール等）を処理する</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🌍</span>
+                    <div>
+                        <div class="item-text">useContext</div>
+                        <div class="item-sub">グローバルな状態を共有する</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔗</span>
+                    <div>
+                        <div class="item-text">useRef</div>
+                        <div class="item-sub">DOM要素への参照を保持する</div>
+                    </div>
+                </div>
+                <div class="green-box">✅ Claudeに「このHookの使い方を教えて」と聞けばすぐ理解できる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

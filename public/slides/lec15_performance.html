@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .score-row { display: flex; gap: 14px; margin-bottom: 16px; }
+        .score-card { flex: 1; background-color: white; border-radius: 8px; padding: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+        .score-num { font-size: 36px; font-weight: 500; }
+        .score-label { font-size: 14px; color: #868e96; margin-top: 4px; }
+        .good { color: #20C997; }
+        .warn { color: #ffd43b; }
+        .bad { color: #fa5252; }
+        .tip-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .tip-card.teal { border-left-color: #20C997; }
+        .tip-title { font-size: 17px; font-weight: 500; margin-bottom: 6px; }
+        .tip-body { font-size: 15px; color: #495057; line-height: 1.5; }
+        .lighthouse-note { background-color: #e7f5ff; border-radius: 8px; padding: 14px 18px; font-size: 16px; color: #339AF0; font-weight: 500; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>パフォーマンス：Lighthouse でスコアを確認</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-tachometer-alt" style="color:#339AF0"></i> Lighthouse スコアの見方</h2>
+                <div class="score-row">
+                    <div class="score-card"><div class="score-num good">98</div><div class="score-label">Performance</div></div>
+                    <div class="score-card"><div class="score-num good">100</div><div class="score-label">Accessibility</div></div>
+                    <div class="score-card"><div class="score-num warn">72</div><div class="score-label">Best Practices</div></div>
+                    <div class="score-card"><div class="score-num good">91</div><div class="score-label">SEO</div></div>
+                </div>
+                <div style="background-color:white; border-radius:8px; padding:16px 18px; box-shadow:0 4px 15px rgba(0,0,0,0.05); margin-bottom:14px;">
+                    <div style="font-size:17px; font-weight:500; margin-bottom:8px;">Lighthouse の使い方</div>
+                    <div style="font-size:15px; color:#495057; line-height:1.7;">Chrome の DevTools（F12）を開き、「Lighthouse」タブを選択。「Analyze page load」ボタンをクリックするだけで全スコアが計測される。</div>
+                </div>
+                <div class="lighthouse-note">
+                    <i class="fas fa-lightbulb"></i> 目標：Performance 90以上、Accessibility 90以上、SEO 80以上を目指そう！
+                </div>
+            </div>
+            <div class="right">
+                <h2>改善ポイント</h2>
+                <div class="tip-card">
+                    <div class="tip-title"><i class="fas fa-image" style="color:#339AF0"></i> 画像を最適化</div>
+                    <div class="tip-body">JPG・PNG の代わりに <strong>WebP形式</strong>を使う。サイズを指定して不要な読み込みを減らす。</div>
+                </div>
+                <div class="tip-card teal">
+                    <div class="tip-title"><i class="fas fa-compress-arrows-alt" style="color:#20C997"></i> コードを圧縮</div>
+                    <div class="tip-body">Viteは <code>npm run build</code> で自動的に圧縮・最適化される。本番はビルド版を使うこと。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-title"><i class="fas fa-universal-access" style="color:#339AF0"></i> アクセシビリティ</div>
+                    <div class="tip-body">img タグに alt を追加、button に aria-label を追加するだけでスコアが上がる。</div>
+                </div>
+                <div class="tip-card teal">
+                    <div class="tip-title"><i class="fas fa-search" style="color:#20C997"></i> SEO 基本設定</div>
+                    <div class="tip-body">title・meta description タグを設定。OGP画像を追加するとSNSシェアも映える。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

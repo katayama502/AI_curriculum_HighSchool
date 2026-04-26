@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; }
+        .summary-item { background: white; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; }
+        .check-num { width: 40px; height: 40px; background: #20C997; color: white; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .summary-text { font-size: 20px; color: #212529; line-height: 1.5; }
+        .summary-sub { font-size: 15px; color: #6C757D; margin-top: 4px; }
+        .homework-box { background: #212529; color: white; padding: 20px 28px; display: flex; align-items: center; gap: 20px; }
+        .hw-label { background: #339AF0; color: white; padding: 8px 16px; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+        .hw-text { font-size: 20px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第13回 まとめ</h1>
+            <div class="divider"></div>
+        </div>
+        <div style="padding-top: 36px; padding-left: 60px; padding-right: 60px;">
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="check-num">1</div>
+                    <div>
+                        <div class="summary-text">Reactはコンポーネント指向のUI</div>
+                        <div class="summary-sub">UIをパーツに分けて再利用・管理しやすくする</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">2</div>
+                    <div>
+                        <div class="summary-text">useStateで動的なUIを実現</div>
+                        <div class="summary-sub">データが変わると自動でUIが更新される</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">3</div>
+                    <div>
+                        <div class="summary-text">Tailwind CSSでスタイリング</div>
+                        <div class="summary-sub">クラス名でスタイルを指定、Claude Codeと相性抜群</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">4</div>
+                    <div>
+                        <div class="summary-text">Claude Codeでプロジェクト全体を管理</div>
+                        <div class="summary-sub">「Reactアプリを作って」で一括セットアップ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="homework-box">
+                <div class="hw-label">📝 宿題</div>
+                <div class="hw-text">Claude CodeでTodoアプリを作ってみよう！<br>
+                    <span style="font-size:16px; color:#adb5bd;">「ReactとTailwindでTodoアプリを作って。追加・削除・完了チェック機能付き」</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

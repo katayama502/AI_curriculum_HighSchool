@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .case-card { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .cc-tag { display: inline-block; padding: 3px 12px; border-radius: 12px; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+        .cc-tag.study { background: #e7f5ff; color: #1c7ed6; }
+        .cc-tag.club { background: #ebfbee; color: #2f9e44; }
+        .cc-tag.career { background: #fff9db; color: #e67700; }
+        .cc-tag.daily { background: #f3f0ff; color: #6741d9; }
+        .cc-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .cc-prompt { background: #1A1A2E; border-radius: 6px; padding: 10px 14px; font-family: monospace; font-size: 14px; line-height: 1.7; color: #e9ecef; margin-bottom: 8px; }
+        .ccp-label { color: #74c0fc; }
+        .ccp-text { color: #e9ecef; }
+        .cc-tech { display: flex; gap: 6px; }
+        .cc-badge { padding: 2px 8px; border-radius: 10px; font-size: 13px; font-weight: 600; background: #e9ecef; color: #495057; }
+        .footer-box { background: #212529; border-radius: 8px; padding: 14px 22px; color: white; text-align: center; }
+        .footer-text { font-size: 20px; font-weight: 500; }
+        .footer-text span { color: #74c0fc; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>高校生の日常に使う上級プロンプト集</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>学習・部活・進路・日常 — 全シーンで活用できる</h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <span class="cc-tag study">📚 学習</span>
+                    <div class="cc-title">英語長文の読解トレーニング</div>
+                    <div class="cc-prompt">
+                        <span class="ccp-label">役割:</span> <span class="ccp-text">英語のネイティブ教師</span><br>
+                        <span class="ccp-label">CoT:</span> <span class="ccp-text">①単語→②構文→③全体意味の順で</span><br>
+                        <span class="ccp-label">制約:</span> <span class="ccp-text">翻訳は最後にだけ</span>
+                    </div>
+                    <div class="cc-tech"><span class="cc-badge">RCTF</span><span class="cc-badge">CoT</span><span class="cc-badge">System</span></div>
+                </div>
+                <div class="case-card">
+                    <span class="cc-tag club">🏆 部活</span>
+                    <div class="cc-title">スポーツ戦術の分析</div>
+                    <div class="cc-prompt">
+                        <span class="ccp-label">役割:</span> <span class="ccp-text">バスケのコーチ</span><br>
+                        <span class="ccp-label">Few-shot:</span> <span class="ccp-text">例:「2-3ゾーン→突破法はミドルシュート」</span><br>
+                        <span class="ccp-label">タスク:</span> <span class="ccp-text">相手の戦術に対する対策を考えて</span>
+                    </div>
+                    <div class="cc-tech"><span class="cc-badge">RCTF</span><span class="cc-badge">Few-shot</span></div>
+                </div>
+                <div class="case-card">
+                    <span class="cc-tag career">🎓 進路</span>
+                    <div class="cc-title">志望理由書の段階的添削</div>
+                    <div class="cc-prompt">
+                        <span class="ccp-label">CoT:</span> <span class="ccp-text">①論理構造→②説得力→③表現の順で</span><br>
+                        <span class="ccp-label">形式:</span> <span class="ccp-text">元の文→問題点→改善例を並べて</span><br>
+                        <span class="ccp-label">語調:</span> <span class="ccp-text">厳しめに、でも励ましも</span>
+                    </div>
+                    <div class="cc-tech"><span class="cc-badge">CoT</span><span class="cc-badge">System</span><span class="cc-badge">Few-shot</span></div>
+                </div>
+                <div class="case-card">
+                    <span class="cc-tag daily">💬 日常</span>
+                    <div class="cc-title">友人関係の悩み相談</div>
+                    <div class="cc-prompt">
+                        <span class="ccp-label">役割:</span> <span class="ccp-text">共感力の高いカウンセラー</span><br>
+                        <span class="ccp-label">ルール:</span> <span class="ccp-text">まず聴いてから、解決策は最後に</span><br>
+                        <span class="ccp-label">CoT:</span> <span class="ccp-text">感情→状況→アドバイスの順で</span>
+                    </div>
+                    <div class="cc-tech"><span class="cc-badge">RCTF</span><span class="cc-badge">CoT</span><span class="cc-badge">System</span></div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-text">プロンプトは<span>「目的に合わせて設計するもの」</span> — 使うほど上手くなる。毎日1つ試してみよう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

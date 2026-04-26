@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 30px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 14px; }
+        .content-area { padding: 18px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .panel { background: #0D0D0D; border-radius: 8px; overflow: hidden; }
+        .panel-header { padding: 10px 16px; font-size: 16px; font-weight: 700; }
+        .ph1 { background: #1864AB; color: white; }
+        .ph2 { background: #1A5E37; color: white; }
+        .ph3 { background: #4A3284; color: white; }
+        .ph4 { background: #5C3317; color: white; }
+        .panel-body { padding: 12px 16px; }
+        .item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 7px; }
+        .item-code { font-family: "Courier New", monospace; font-size: 13px; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 3px; color: #74C0FC; white-space: nowrap; flex-shrink: 0; }
+        .item-desc { font-size: 14px; color: #ced4da; line-height: 1.4; }
+        .section-label { font-size: 12px; font-weight: 700; color: #868e96; margin-bottom: 6px; margin-top: 4px; letter-spacing: 0.5px; }
+        .divider-line { height: 1px; background: rgba(255,255,255,0.1); margin: 8px 0; }
+        .banner { grid-column: 1 / -1; background: linear-gradient(135deg, #1A1A2E, #16213E); border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .banner-text { font-size: 20px; font-weight: 500; color: white; }
+        .banner-text span { color: #20C997; }
+        .banner-badge { background: #339AF0; color: white; padding: 6px 18px; border-radius: 20px; font-size: 15px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>チートシート — Claude Code 実践</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="panel">
+                <div class="panel-header ph1">💬 実践プロンプトパターン</div>
+                <div class="panel-body">
+                    <div class="section-label">デバッグ</div>
+                    <div class="item"><span class="item-code" style="color:#ff6b6b">エラー+文脈</span><span class="item-desc">エラー文 + やろうとしたこと → 素早く解決</span></div>
+                    <div class="divider-line"></div>
+                    <div class="section-label">機能追加</div>
+                    <div class="item"><span class="item-code" style="color:#74C0FC">影響範囲確認</span><span class="item-desc">変更ファイルを先に説明させてから実装</span></div>
+                    <div class="item"><span class="item-code" style="color:#74C0FC">1機能ずつ</span><span class="item-desc">一度に複数の変更を頼まない</span></div>
+                    <div class="divider-line"></div>
+                    <div class="section-label">コードレビュー</div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">観点指定</span><span class="item-desc">セキュリティ/エラー処理/品質/パフォーマンス</span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header ph2">🔧 Git × Claude Code ワークフロー</div>
+                <div class="panel-body">
+                    <div class="item"><span class="item-code">checkout -b</span><span class="item-desc">機能ごとにブランチを作ってから作業開始</span></div>
+                    <div class="item"><span class="item-code">git status</span><span class="item-desc">add前に変更ファイルを必ず確認</span></div>
+                    <div class="item"><span class="item-code">git add .</span><span class="item-desc">変更を全てステージング</span></div>
+                    <div class="item"><span class="item-code">git commit -m</span><span class="item-desc">feat/fix/style/docs: わかりやすい説明</span></div>
+                    <div class="item"><span class="item-code">git checkout .</span><span class="item-desc">失敗したら全変更を一括で元に戻す</span></div>
+                    <div class="divider-line"></div>
+                    <div class="item"><span class="item-code" style="color:#51CF66">/review</span><span class="item-desc">commit前にAIにコードをレビューしてもらう</span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header ph3">⚡ 最適化テクニック</div>
+                <div class="panel-body">
+                    <div class="item"><span class="item-code" style="color:#E599F7">キャッシュ</span><span class="item-desc">同じAPIデータは一定時間再利用する</span></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">デバウンス</span><span class="item-desc">連続イベントの処理を遅延させる</span></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">ローディング</span><span class="item-desc">API待ち中はスピナーを表示する</span></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">レスポンシブ</span><span class="item-desc">スマホ対応をCSSで追加する</span></div>
+                    <div class="divider-line"></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">try/catch</span><span class="item-desc">全てのAPI呼び出しに例外処理を付ける</span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header ph4">📋 ドキュメント生成</div>
+                <div class="panel-body">
+                    <div class="item"><span class="item-code" style="color:#ffa94d">JSDoc</span><span class="item-desc">@param @returns で関数の仕様を記述</span></div>
+                    <div class="item"><span class="item-code" style="color:#ffa94d">コメント</span><span class="item-desc">「全関数に日本語でコメントを追加して」</span></div>
+                    <div class="item"><span class="item-code" style="color:#ffa94d">README</span><span class="item-desc">概要・使い方・API設定方法を自動生成</span></div>
+                    <div class="divider-line"></div>
+                    <div class="section-label">commit メッセージプレフィクス</div>
+                    <div class="item"><span class="item-code">feat/fix/style/docs/refactor</span><span class="item-desc">変更の種類を先頭に書く</span></div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-text">第12回完了 — <span>実践的なClaude Code開発</span>をマスター！</div>
+                <div class="banner-badge">第12回 / 全20回</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

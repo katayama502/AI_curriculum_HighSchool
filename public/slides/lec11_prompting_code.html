@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .bad-box {
+            background: white;
+            border: 2px solid #fa5252;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .good-box {
+            background: white;
+            border: 2px solid #40C057;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .label { font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+        .label.bad { background: #fa5252; color: white; }
+        .label.good { background: #40C057; color: white; }
+        .prompt-text {
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            background: #f1f3f5;
+            padding: 10px 14px;
+            border-radius: 4px;
+            line-height: 1.7;
+            color: #212529;
+        }
+        .reason { font-size: 16px; color: #495057; margin-top: 10px; line-height: 1.5; }
+        .tips-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+        .tip-card {
+            background: white;
+            border-top: 4px solid #339AF0;
+            padding: 14px 16px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .tip-num { font-size: 28px; font-weight: 700; color: #339AF0; margin-bottom: 6px; }
+        .tip-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .tip-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>コーディングに最適なプロンプトの書き方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="compare-row">
+                <div>
+                    <div class="bad-box">
+                        <span class="label bad">✗ 曖昧なプロンプト</span>
+                        <div class="prompt-text">ボタンを作って</div>
+                        <div class="reason">→ どんなボタン？何をする？どこに置く？情報が少なすぎて質が下がる</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="good-box">
+                        <span class="label good">✓ 具体的なプロンプト</span>
+                        <div class="prompt-text">index.htmlの&lt;body&gt;内に、クリックすると「Hello!」というアラートが出る青いボタンをHTMLとCSSで追加してください。ボタンのテキストは「挨拶する」にしてください。</div>
+                        <div class="reason">→ 場所・動作・スタイル・テキストが明確！</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-num">01</div>
+                    <div class="tip-title">ファイル名を明示する</div>
+                    <div class="tip-desc">「index.htmlの〇〇行目に」「script.jsの関数Xを」のように場所を具体的に。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-num">02</div>
+                    <div class="tip-title">期待する動作を書く</div>
+                    <div class="tip-desc">「ボタンを押したら〇〇する」「〇〇を表示する」など入力と出力を両方書く。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-num">03</div>
+                    <div class="tip-title">技術スタックを指定する</div>
+                    <div class="tip-desc">「JavaScriptのみで（Reactは使わずに）」「CSSはTailwindで」など技術制約を伝える。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-num">04</div>
+                    <div class="tip-title">一度に1つの変更だけ</div>
+                    <div class="tip-desc">複数の機能を同時に頼むより、1つずつ確認しながら進める方が確実。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-num">05</div>
+                    <div class="tip-title">エラーをそのままコピー</div>
+                    <div class="tip-desc">エラーメッセージをそのまま貼り付ける。「なんか動かない」より正確に伝わる。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-num">06</div>
+                    <div class="tip-title">説明も一緒に頼む</div>
+                    <div class="tip-desc">「修正して、なぜその変更をしたか日本語でも教えて」でコードの理解が深まる。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 44px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 22px 60px 0; }
+        .panel { background: #0D0D0D; border-radius: 10px; padding: 18px 20px; }
+        .panel-title { font-size: 17px; font-weight: 700; color: #20C997; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .banner { margin: 16px 60px 0; background: #212529; color: white; border-radius: 8px; padding: 14px 24px; text-align: center; font-size: 20px; font-weight: 500; letter-spacing: 0.5px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第16回 チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="grid">
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-user-check"></i> ユーザーストーリー</div>
+                <div class="code">
+                    <span class="c-yellow">フォーマット：</span><br>
+                    <span class="c-green">「〜として、〜したい。なぜなら〜」</span><br><br>
+                    <span class="c-yellow">例：</span><br>
+                    <span class="c-blue">ユーザーとして</span><span class="c-green">、本を追加したい。</span><br>
+                    <span class="c-gray">なぜなら読書記録を残したいから</span><br><br>
+                    <span class="c-yellow">優先度：</span><span class="c-pink"> P1</span>（必須）<span class="c-blue"> P2</span>（重要）<span class="c-gray"> P3</span>（あれば）
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-database"></i> ER図の基本</div>
+                <div class="code">
+                    <span class="c-yellow">テーブル設計：</span><br>
+                    <span class="c-green">users</span><span class="c-gray">: id, email, password_hash</span><br>
+                    <span class="c-green">books</span><span class="c-gray">: id, title, author, user_id</span><br>
+                    <span class="c-green">reviews</span><span class="c-gray">: id, book_id, rating, memo</span><br><br>
+                    <span class="c-yellow">リレーション：</span><br>
+                    <span class="c-blue">users</span><span class="c-gray"> 1:N </span><span class="c-blue">books</span><span class="c-gray"> (外部キー: user_id)</span><br>
+                    <span class="c-blue">books</span><span class="c-gray"> 1:N </span><span class="c-blue">reviews</span><span class="c-gray"> (外部キー: book_id)</span>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-route"></i> APIエンドポイント設計</div>
+                <div class="code">
+                    <span class="c-green">GET   </span><span class="c-blue">/api/books</span><span class="c-gray">        本の一覧</span><br>
+                    <span class="c-green">POST  </span><span class="c-blue">/api/books</span><span class="c-gray">        本を追加</span><br>
+                    <span class="c-green">PUT   </span><span class="c-blue">/api/books/:id</span><span class="c-gray">   本を更新</span><br>
+                    <span class="c-green">DELETE</span><span class="c-blue">/api/books/:id</span><span class="c-gray">   本を削除</span><br><br>
+                    <span class="c-pink">POST  </span><span class="c-blue">/api/auth/register</span><span class="c-gray"> 新規登録</span><br>
+                    <span class="c-pink">POST  </span><span class="c-blue">/api/auth/login</span><span class="c-gray">    ログイン</span>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-flag"></i> MVPとスプリント</div>
+                <div class="code">
+                    <span class="c-yellow">MVP ＝ 最小で動くプロダクト</span><br>
+                    <span class="c-gray">→ 核心機能だけを最初に作る</span><br><br>
+                    <span class="c-yellow">スプリント例（4回）：</span><br>
+                    <span class="c-blue">16回</span><span class="c-gray">: 設計・DB・認証API</span><br>
+                    <span class="c-blue">17回</span><span class="c-gray">: UI/UX・フロントエンド</span><br>
+                    <span class="c-blue">18回</span><span class="c-gray">: コア機能実装・連携</span><br>
+                    <span class="c-blue">19回</span><span class="c-gray">: デプロイ・テスト・公開</span>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            🚀 設計が固まれば、実装は驚くほどスムーズになる！
+        </div>
+    </div>
+</body>
+</html>

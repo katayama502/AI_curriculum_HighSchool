@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .priority-item { padding: 12px 16px; margin-top: 8px; display: flex; align-items: center; gap: 12px; }
+        .priority-badge { padding: 4px 12px; font-size: 14px; font-weight: 700; flex-shrink: 0; min-width: 80px; text-align: center; }
+        .priority-text { font-size: 17px; color: #212529; }
+        .priority-sub { font-size: 13px; color: #6C757D; margin-top: 2px; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>コア機能の実装戦略</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🎯 機能の優先順位付け</div>
+                <div class="priority-item" style="background: #fff3bf;">
+                    <div class="priority-badge" style="background: #F59F00; color: #212529;">Must</div>
+                    <div>
+                        <div class="priority-text">絶対に必要な機能</div>
+                        <div class="priority-sub">これがないとアプリとして成立しない</div>
+                    </div>
+                </div>
+                <div class="priority-item" style="background: #d3f9d8;">
+                    <div class="priority-badge" style="background: #20C997; color: white;">Should</div>
+                    <div>
+                        <div class="priority-text">あると良い機能</div>
+                        <div class="priority-sub">Mustが完成したら実装する</div>
+                    </div>
+                </div>
+                <div class="priority-item" style="background: #e7f5ff;">
+                    <div class="priority-badge" style="background: #339AF0; color: white;">Could</div>
+                    <div>
+                        <div class="priority-text">余裕があれば実装</div>
+                        <div class="priority-sub">時間があれば追加する</div>
+                    </div>
+                </div>
+                <div class="priority-item" style="background: #fff0f6;">
+                    <div class="priority-badge" style="background: #F06595; color: white;">Won't</div>
+                    <div>
+                        <div class="priority-text">今回はやらない</div>
+                        <div class="priority-sub">将来のバージョンに先送り</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 機能実装の進め方</div>
+                <div class="code-block">
+<span class="t-prompt">Claude&gt; </span><span class="t-cmd">ユーザー認証機能を実装して：<br>・メール＋パスワードでログイン<br>・JWTトークンで認証<br>・ログアウト機能</span><br><br>
+<span class="t-success">● auth.js を作成中...</span><br>
+<span class="t-success">● middleware/auth.js を作成中...</span><br>
+<span class="t-success">● routes/auth.js を作成中...</span><br>
+<span class="t-output">POST /api/auth/login<br>POST /api/auth/logout<br>GET  /api/auth/me</span><br>
+<span class="t-success">✓ 認証機能が完成しました！</span>
+                </div>
+                <div class="highlight-box">💡 機能を1つずつ「これを実装して」と依頼して積み上げよう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .problem-card { background: #fff5f5; border-radius: 8px; padding: 14px 18px; border-left: 5px solid #fa5252; margin-bottom: 12px; }
+        .problem-card h3 { font-size: 19px; font-weight: 500; color: #c92a2a; margin-bottom: 6px; }
+        .problem-card p { font-size: 17px; color: #495057; }
+        .solve-card { background: #f0fdf4; border-radius: 8px; padding: 14px 18px; border-left: 5px solid #2b8a3e; margin-bottom: 12px; }
+        .solve-card h3 { font-size: 19px; font-weight: 500; color: #2b8a3e; margin-bottom: 6px; }
+        .solve-card p { font-size: 17px; color: #495057; }
+        .timeline-box { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .timeline-box h3 { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 12px; }
+        .commit-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .commit-dot { width: 14px; height: 14px; border-radius: 50%; background: #339AF0; flex-shrink: 0; }
+        .commit-line { width: 2px; height: 20px; background: #dee2e6; margin-left: 6px; }
+        .commit-text { font-family: monospace; font-size: 15px; color: #495057; }
+        .commit-msg { font-size: 16px; color: #212529; margin-left: 8px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>なぜバージョン管理が必要？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Git なしの開発で起きる問題</h2>
+                <div class="problem-card">
+                    <h3><i class="fas fa-copy"></i> ファイルが散乱する</h3>
+                    <p>index_最終版.html、index_最終版2.html、index_本当の最終版.html… どれが正しいかわからなくなる。</p>
+                </div>
+                <div class="problem-card">
+                    <h3><i class="fas fa-undo"></i> 元に戻せない</h3>
+                    <p>「昨日まで動いていたのに今日壊れた！」でも変更履歴がないと復元できない。</p>
+                </div>
+                <div class="problem-card">
+                    <h3><i class="fas fa-users"></i> チームで開発できない</h3>
+                    <p>複数人が同じファイルを編集すると上書きが発生し、誰かの作業が消える。</p>
+                </div>
+                <div class="solve-card">
+                    <h3><i class="fas fa-check-circle"></i> Gitで全て解決！</h3>
+                    <p>全ての変更を自動記録し、いつでも過去に戻れ、複数人の変更を安全に統合できます。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>コミット＝変更の記録</h2>
+                <div class="timeline-box">
+                    <h3>プロジェクトの歴史</h3>
+                    <div class="commit-row">
+                        <div class="commit-dot"></div>
+                        <span class="commit-text">a3f2c1b</span>
+                        <span class="commit-msg">🚀 初期コミット：HTMLの骨格を作成</span>
+                    </div>
+                    <div style="width:2px;height:16px;background:#dee2e6;margin-left:6px;"></div>
+                    <div class="commit-row">
+                        <div class="commit-dot"></div>
+                        <span class="commit-text">b7d4e9f</span>
+                        <span class="commit-msg">✨ CSSでデザインを追加</span>
+                    </div>
+                    <div style="width:2px;height:16px;background:#dee2e6;margin-left:6px;"></div>
+                    <div class="commit-row">
+                        <div class="commit-dot"></div>
+                        <span class="commit-text">c1a8b2d</span>
+                        <span class="commit-msg">🐛 バグ修正：メニューが崩れる問題を解消</span>
+                    </div>
+                    <div style="width:2px;height:16px;background:#dee2e6;margin-left:6px;"></div>
+                    <div class="commit-row">
+                        <div class="commit-dot" style="background:#2b8a3e;"></div>
+                        <span class="commit-text">d5e3f7a</span>
+                        <span class="commit-msg">📱 スマートフォン対応を追加</span>
+                    </div>
+                    <div style="margin-top:12px;font-size:16px;color:#868e96;">← どこにでも戻れる！差分も確認できる</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

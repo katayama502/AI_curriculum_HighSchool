@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 16px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #7950F2; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .param-card { background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 10px; display: flex; gap: 12px; }
+        .param-name { font-family: monospace; background: #7950F2; color: white; padding: 3px 10px; border-radius: 4px; font-size: 15px; min-width: 120px; text-align: center; flex-shrink: 0; }
+        .param-desc { font-size: 16px; color: #495057; }
+        .tip-box { background: #f3f0ff; border-radius: 8px; padding: 14px 18px; border: 2px solid #7950F2; }
+        .tip-box p { font-size: 16px; color: #5f3dc4; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude APIを使う</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Pythonで自分のアプリにAIを組み込む</h2>
+                <div class="code-block">
+<span class="kw">import</span> anthropic
+
+<span class="cmt"># クライアントを初期化（APIキーは環境変数から自動読み込み）</span>
+client = anthropic.Anthropic()
+
+<span class="cmt"># メッセージを送ってAIの返答を受け取る</span>
+message = client.messages.<span class="func">create</span>(
+    model=<span class="str">"claude-opus-4-6"</span>,
+    max_tokens=<span class="num">1024</span>,
+    messages=[
+        {
+            <span class="str">"role"</span>: <span class="str">"user"</span>,
+            <span class="str">"content"</span>: <span class="str">"量子コンピュータを高校生向けに説明して"</span>
+        }
+    ]
+)
+
+<span class="cmt"># 返答を取り出す</span>
+<span class="func">print</span>(message.content[<span class="num">0</span>].text)
+                </div>
+                <div class="tip-box">
+                    <p>💡 <code style="background:#212529;color:#da77f2;padding:2px 6px;border-radius:3px;">pip install anthropic</code> でインストール。APIキーは<code>ANTHROPIC_API_KEY</code>という名前で環境変数に設定する。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>主要パラメータ</h2>
+                <div class="param-card">
+                    <div class="param-name">model</div>
+                    <div class="param-desc">使うモデル名。claude-opus-4-6、claude-sonnet-4-6など</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-name">max_tokens</div>
+                    <div class="param-desc">返答の最大文字数（トークン数）。長すぎると課金増加</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-name">messages</div>
+                    <div class="param-desc">role（user/assistant）とcontentのリスト。会話履歴も含められる</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-name">system</div>
+                    <div class="param-desc">AIの役割・制約を設定するシステムプロンプト</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-name">temperature</div>
+                    <div class="param-desc">0〜1でランダム性を調整。0=確実・1=創造的</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

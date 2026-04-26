@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .prompt-card { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 5px solid #339AF0; margin-bottom: 14px; }
+        .prompt-card .label { font-size: 13px; font-weight: 700; color: #339AF0; letter-spacing: 1px; margin-bottom: 8px; }
+        .prompt-card p { font-size: 17px; color: #212529; line-height: 1.6; }
+        .workflow { display: flex; flex-direction: column; gap: 10px; }
+        .wf-step { display: flex; align-items: center; gap: 14px; background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .wf-num { background: #20C997; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+        .wf-text { font-size: 18px; color: #212529; }
+        .wf-arrow { text-align: center; color: #20C997; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ClaudeとPythonペアプログラミング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>効果的なプロンプト例</h2>
+                <div class="prompt-card">
+                    <div class="label">📝 コード生成</div>
+                    <p>「Pythonで、成績のリストを受け取り、平均・最高点・最低点を返す関数を作ってください。コメントも日本語でお願いします。」</p>
+                </div>
+                <div class="prompt-card">
+                    <div class="label">🐛 デバッグ</div>
+                    <p>「このPythonコードで IndentationError が出ます。原因と直し方を教えてください。」<br>（コードを貼り付ける）</p>
+                </div>
+                <div class="prompt-card">
+                    <div class="label">📚 概念説明</div>
+                    <p>「Pythonのリストと辞書の違いを、高校生向けに実例付きで説明してください。」</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>ペアプログラミングの流れ</h2>
+                <div class="workflow">
+                    <div class="wf-step">
+                        <div class="wf-num">1</div>
+                        <div class="wf-text">「何を作りたいか」を言語化してClaudeに伝える</div>
+                    </div>
+                    <div class="wf-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="wf-step">
+                        <div class="wf-num">2</div>
+                        <div class="wf-text">生成されたコードを読んで理解する</div>
+                    </div>
+                    <div class="wf-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="wf-step">
+                        <div class="wf-num">3</div>
+                        <div class="wf-text">実行してエラーが出たらコードと一緒に貼って質問</div>
+                    </div>
+                    <div class="wf-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="wf-step">
+                        <div class="wf-num">4</div>
+                        <div class="wf-text">「〇〇を変えたい」「機能を追加したい」と改善を依頼</div>
+                    </div>
+                    <div class="wf-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="wf-step">
+                        <div class="wf-num">5</div>
+                        <div class="wf-text">完成したコードを自分の言葉で説明できるか確認！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 20px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .sheet-card { background: #212529; border-radius: 10px; padding: 16px 20px; }
+        .sheet-card h3 { font-size: 19px; font-weight: 700; color: #7950F2; margin-bottom: 10px; border-bottom: 1px solid #495057; padding-bottom: 7px; }
+        .sheet-card pre { font-family: monospace; font-size: 15px; line-height: 1.8; color: #f8f9fa; white-space: pre-wrap; }
+        .kw { color: #7950F2; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .banner { grid-column: 1 / -1; background: linear-gradient(135deg, #7950F2, #5f3dc4); border-radius: 10px; padding: 14px 28px; display: flex; align-items: center; gap: 20px; }
+        .banner p { font-size: 19px; color: white; font-weight: 500; }
+        .banner .icon { font-size: 32px; color: white; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>API活用 チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sheet-card">
+                <h3>🌐 HTTP基礎</h3>
+                <pre><span class="cmt"># メソッド</span>
+GET    読み取り（変更なし）
+POST   作成・データ送信
+PUT    更新（全フィールド）
+DELETE 削除
+
+<span class="cmt"># ステータスコード</span>
+200 OK         成功
+401 Unauthorized  APIキー未設定
+404 Not Found  URLが存在しない
+429 Too Many   レート制限超え</pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🟨 JS fetch</h3>
+                <pre><span class="kw">async function</span> <span class="func">getData</span>() {
+  <span class="kw">const</span> res = <span class="kw">await</span> <span class="func">fetch</span>(url);
+  <span class="kw">if</span> (!res.ok) <span class="kw">throw</span> Error(res.status);
+  <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="func">json</span>();
+  <span class="cmt">// dataを使う</span>
+}
+
+<span class="cmt">// POST</span>
+<span class="func">fetch</span>(url, { method: <span class="str">"POST"</span>,
+  headers: {<span class="str">"Content-Type"</span>:<span class="str">"application/json"</span>},
+  body: JSON.stringify(payload) })</pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🐍 Python requests</h3>
+                <pre><span class="kw">import</span> requests
+
+<span class="cmt"># GET</span>
+res = requests.<span class="func">get</span>(url, params={...})
+data = res.<span class="func">json</span>()
+
+<span class="cmt"># POST with auth</span>
+res = requests.<span class="func">post</span>(url,
+  headers={<span class="str">"Authorization"</span>: <span class="str">f"Bearer {key}"</span>},
+  json={<span class="str">"key"</span>: <span class="str">"value"</span>})</pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🤖 Claude API</h3>
+                <pre><span class="kw">import</span> anthropic
+client = anthropic.Anthropic()
+
+msg = client.messages.<span class="func">create</span>(
+  model=<span class="str">"claude-opus-4-6"</span>,
+  max_tokens=<span class="num">1024</span>,
+  messages=[{
+    <span class="str">"role"</span>: <span class="str">"user"</span>,
+    <span class="str">"content"</span>: <span class="str">"質問テキスト"</span>
+  }]
+)
+<span class="func">print</span>(msg.content[<span class="num">0</span>].text)</pre>
+            </div>
+            <div class="banner">
+                <div class="icon"><i class="fas fa-plug"></i></div>
+                <p>APIはあらゆるサービスと連携できる魔法の扉。天気・翻訳・AI…これを使えばアイデアを無限に形にできる！</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

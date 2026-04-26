@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-top: 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-top: 0;
+        }
+        .summary-block {
+            background-color: white;
+            padding-top: 30px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-top: 6px solid #339AF0;
+            min-height: 200px;
+        }
+        .summary-text {
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #495057;
+        }
+        .next-preview {
+            margin-top: 40px;
+            font-size: 28px;
+            font-weight: 500;
+            color: #20C997;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>今日のまとめ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>第2回で学んだこと</h2>
+            
+            <div class="summary-block">
+                <p class="summary-text">
+                    良いプロンプトはRole・Context・Task・Formatの4要素で構成されます。<br>
+                    AIに役割を与え、背景情報を提供し、出力形式を指定することで、回答の質は劇的に向上します。
+                </p>
+            </div>
+            
+            <div class="next-preview">
+                <i class="fas fa-arrow-right"></i> 次回は、Claudeを使った効率的な学習・リサーチ術を学びます。
+            </div>
+        </div>
+    </div>
+</body>
+</html>

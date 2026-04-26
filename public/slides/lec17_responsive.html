@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .breakpoint-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 18px; }
+        .breakpoint-table th { background: #212529; color: white; font-size: 16px; padding: 10px 14px; text-align: left; }
+        .breakpoint-table td { font-size: 16px; padding: 9px 14px; border-bottom: 1px solid #f1f3f5; color: #495057; font-family: monospace; }
+        .breakpoint-table tr:last-child td { border-bottom: none; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 13px; font-weight: 600; }
+        .tag-blue { background: #d0ebff; color: #1971c2; }
+        .tag-green { background: #d3f9d8; color: #2b8a3e; }
+        .tag-yellow { background: #fff3cd; color: #856404; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 16px 18px; margin-bottom: 14px; }
+        .code-box code { font-family: monospace; font-size: 14px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .device-demo { display: flex; flex-direction: column; gap: 14px; }
+        .device { background: white; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .device-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .device-icon { font-size: 20px; color: #339AF0; }
+        .device-name { font-size: 16px; font-weight: 600; color: #212529; }
+        .device-layout { display: flex; gap: 4px; }
+        .d-block { height: 28px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>レスポンシブデザイン</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-mobile-alt" style="color:#339AF0"></i> ブレークポイントの設定</h2>
+                <table class="breakpoint-table">
+                    <thead>
+                        <tr><th>デバイス</th><th>幅の目安</th><th>CSSの書き方</th><th>用途</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><i class="fas fa-mobile-alt"></i> スマホ</td><td>〜767px</td><td><span class="tag tag-green">デフォルト</span></td><td>Mobile First</td></tr>
+                        <tr><td><i class="fas fa-tablet-alt"></i> タブレット</td><td>768px〜</td><td>@media (min-width: 768px)</td><td>2カラム</td></tr>
+                        <tr><td><i class="fas fa-desktop"></i> PC</td><td>1024px〜</td><td>@media (min-width: 1024px)</td><td>3カラム</td></tr>
+                        <tr><td><i class="fas fa-tv"></i> 大画面</td><td>1280px〜</td><td>@media (min-width: 1280px)</td><td>最大幅制限</td></tr>
+                    </tbody>
+                </table>
+                <div class="code-box">
+                    <code>
+<span class="c-gray">/* Mobile First で書く */</span><br>
+<span class="c-blue">.card-grid</span> {<br>
+  <span class="c-yellow">grid-template-columns</span>: 1fr; <span class="c-gray">/* スマホ */</span><br>
+}<br>
+<span class="c-blue">@media (min-width: 768px)</span> {<br>
+  <span class="c-blue">.card-grid</span> { <span class="c-yellow">grid-template-columns</span>: repeat(2, 1fr); }<br>
+}<br>
+<span class="c-blue">@media (min-width: 1024px)</span> {<br>
+  <span class="c-blue">.card-grid</span> { <span class="c-yellow">grid-template-columns</span>: repeat(3, 1fr); }<br>
+}
+                    </code>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-arrows-alt-h" style="color:#20C997"></i> レイアウト変化のイメージ</h2>
+                <div class="device-demo">
+                    <div class="device">
+                        <div class="device-header"><div class="device-icon"><i class="fas fa-mobile-alt"></i></div><div class="device-name">スマホ（1カラム）</div></div>
+                        <div class="device-layout" style="flex-direction:column;gap:4px;">
+                            <div class="d-block" style="background:#339AF0;flex:1;">カード1</div>
+                            <div class="d-block" style="background:#1971c2;flex:1;">カード2</div>
+                            <div class="d-block" style="background:#20C997;flex:1;">カード3</div>
+                        </div>
+                    </div>
+                    <div class="device">
+                        <div class="device-header"><div class="device-icon"><i class="fas fa-tablet-alt"></i></div><div class="device-name">タブレット（2カラム）</div></div>
+                        <div class="device-layout" style="gap:4px;">
+                            <div class="d-block" style="background:#339AF0;flex:1;">カード1</div>
+                            <div class="d-block" style="background:#1971c2;flex:1;">カード2</div>
+                        </div>
+                    </div>
+                    <div class="device">
+                        <div class="device-header"><div class="device-icon"><i class="fas fa-desktop"></i></div><div class="device-name">PC（3カラム）</div></div>
+                        <div class="device-layout" style="gap:4px;">
+                            <div class="d-block" style="background:#339AF0;flex:1;">1</div>
+                            <div class="d-block" style="background:#1971c2;flex:1;">2</div>
+                            <div class="d-block" style="background:#20C997;flex:1;">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

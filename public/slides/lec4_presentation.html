@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        .compare-table th {
+            padding: 14px 20px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .compare-table th.task-col { background: #495057; color: white; width: 25%; }
+        .compare-table th.without { background: #868E96; color: white; width: 37.5%; }
+        .compare-table th.with { background: #339AF0; color: white; width: 37.5%; }
+        .compare-table td {
+            padding: 14px 20px;
+            font-size: 18px;
+            border: 1px solid #DEE2E6;
+            vertical-align: middle;
+        }
+        .compare-table td.task-name { background: #F8F9FA; font-weight: 600; color: #495057; text-align: center; }
+        .compare-table td.without-cell { background: white; color: #868E96; }
+        .compare-table td.with-cell { background: #EBF5FF; color: #1971C2; font-weight: 500; }
+        .compare-table tr:nth-child(even) td.without-cell { background: #F8F9FA; }
+        .compare-table tr:nth-child(even) td.with-cell { background: #DBEAFE; }
+        .bottom-tip {
+            background: #20C997;
+            color: white;
+            padding: 14px 24px;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>プレゼン資料の作成補助</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th class="task-col">作業</th>
+                        <th class="without">😓 Claudeなし</th>
+                        <th class="with">🚀 Claudeあり</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="task-name">構成作成</td>
+                        <td class="without-cell">何から始めればいいか迷う…</td>
+                        <td class="with-cell">「〇〇についての5分プレゼン構成を提案して」で即完成</td>
+                    </tr>
+                    <tr>
+                        <td class="task-name">内容調査</td>
+                        <td class="without-cell">ネット検索で1時間かかる</td>
+                        <td class="with-cell">「各スライドの要点を3つずつ教えて」で素早く収集</td>
+                    </tr>
+                    <tr>
+                        <td class="task-name">表現改善</td>
+                        <td class="without-cell">同じ表現の繰り返しになる</td>
+                        <td class="with-cell">「この文章をより説得力ある表現に直して」で改善</td>
+                    </tr>
+                    <tr>
+                        <td class="task-name">練習</td>
+                        <td class="without-cell">一人で練習するだけ</td>
+                        <td class="with-cell">「聴衆役として質問して」で想定Q&Aを準備</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="bottom-tip">
+                ✨ Claudeは「プレゼンコーチ」にもなれる！「このスライドで伝わりにくい点は？」と聞いてみよう
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block {
+            background: #1A1A2E;
+            padding: 24px;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            line-height: 2;
+            color: #E8E8E8;
+        }
+        .tag { color: #339AF0; }
+        .attr { color: #20C997; }
+        .value { color: #FCC419; }
+        .comment { color: #6C757D; }
+        .indent1 { padding-left: 20px; }
+        .indent2 { padding-left: 40px; }
+        .indent3 { padding-left: 60px; }
+        .tags-grid { }
+        .tags-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .tag-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            background: white;
+            margin-top: 8px;
+        }
+        .tag-name {
+            background: #212529;
+            color: #20C997;
+            font-family: "Courier New", monospace;
+            font-size: 17px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+        }
+        .tag-desc {
+            padding: 12px 16px;
+            font-size: 17px;
+            color: #495057;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>HTMLの基本構造とタグ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment">&lt;!-- HTMLの基本骨格 --&gt;</span><br>
+                <span class="tag">&lt;!DOCTYPE html&gt;</span><br>
+                <span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"ja"</span><span class="tag">&gt;</span><br>
+                <span class="indent1"><span class="tag">&lt;head&gt;</span></span><br>
+                <span class="indent2"><span class="tag">&lt;title&gt;</span>ページタイトル<span class="tag">&lt;/title&gt;</span></span><br>
+                <span class="indent1"><span class="tag">&lt;/head&gt;</span></span><br>
+                <span class="indent1"><span class="tag">&lt;body&gt;</span></span><br>
+                <span class="indent2"><span class="tag">&lt;h1&gt;</span>見出し<span class="tag">&lt;/h1&gt;</span></span><br>
+                <span class="indent2"><span class="tag">&lt;p&gt;</span>段落テキスト<span class="tag">&lt;/p&gt;</span></span><br>
+                <span class="indent2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"URL"</span><span class="tag">&gt;</span>リンク<span class="tag">&lt;/a&gt;</span></span><br>
+                <span class="indent2"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"画像.jpg"</span><span class="tag">&gt;</span></span><br>
+                <span class="indent1"><span class="tag">&lt;/body&gt;</span></span><br>
+                <span class="tag">&lt;/html&gt;</span>
+            </div>
+            <div class="tags-grid">
+                <div class="tags-title">よく使うHTMLタグ</div>
+                <div class="tag-row">
+                    <div class="tag-name">&lt;h1&gt;〜&lt;h6&gt;</div>
+                    <div class="tag-desc">見出し（数字が大きいほど小さい）</div>
+                </div>
+                <div class="tag-row">
+                    <div class="tag-name">&lt;p&gt;</div>
+                    <div class="tag-desc">段落（Paragraph）</div>
+                </div>
+                <div class="tag-row">
+                    <div class="tag-name">&lt;a&gt;</div>
+                    <div class="tag-desc">リンク（href属性でURL指定）</div>
+                </div>
+                <div class="tag-row">
+                    <div class="tag-name">&lt;img&gt;</div>
+                    <div class="tag-desc">画像（src属性でファイル指定）</div>
+                </div>
+                <div class="tag-row">
+                    <div class="tag-name">&lt;div&gt;</div>
+                    <div class="tag-desc">グループ化（レイアウト用）</div>
+                </div>
+                <div class="tag-row">
+                    <div class="tag-name">&lt;ul&gt;&lt;li&gt;</div>
+                    <div class="tag-desc">箇条書きリスト</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

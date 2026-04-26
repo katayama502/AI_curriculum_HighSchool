@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 20px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.7; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .info-card { background-color: white; border-radius: 8px; padding: 18px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .info-card.warn { border-left-color: #fa5252; }
+        .info-card.good { border-left-color: #20C997; }
+        .card-title { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 8px; }
+        .card-body { font-size: 18px; color: #495057; line-height: 1.6; }
+        .tag { display: inline-block; background-color: #339AF0; color: white; font-size: 14px; font-weight: 500; padding: 2px 10px; border-radius: 4px; margin-right: 6px; }
+        .tag.red { background-color: #fa5252; }
+        .tag.green { background-color: #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>リスト描画：map() と key</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-list" style="color:#339AF0"></i> 配列から要素を生成する</h2>
+                <div class="code-block">
+                    <pre><span class="cm">// 都市リストを表示するコンポーネント</span>
+<span class="kw">const</span> cities = [
+  { id: 1, name: "東京", temp: 28 },
+  { id: 2, name: "大阪", temp: 31 },
+  { id: 3, name: "札幌", temp: 22 },
+];
+
+<span class="kw">function</span> <span class="fn">CityList</span>() {
+  <span class="kw">return</span> (
+    &lt;ul&gt;
+      {cities.<span class="fn">map</span>(city =&gt; (
+        &lt;li <span class="kw">key</span>={city.id}&gt;
+          {city.name}: {city.temp}℃
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}</pre>
+                </div>
+            </div>
+            <div class="right">
+                <div class="info-card warn">
+                    <div class="card-title"><span class="tag red">必須</span> key プロパティとは？</div>
+                    <div class="card-body">リスト要素には必ず<strong>一意の key</strong>を指定すること。Reactが変更を効率よく検知するために使用します。</div>
+                </div>
+                <div class="info-card">
+                    <div class="card-title"><span class="tag">NG</span> keyにindexを使うのは避けよう</div>
+                    <div class="card-body"><code>key={index}</code> は順番が変わると誤動作の原因に。データのID など<strong>変わらない値</strong>を使うこと。</div>
+                </div>
+                <div class="info-card good">
+                    <div class="card-title"><span class="tag green">TIP</span> 条件付きレンダリング</div>
+                    <div class="card-body"><code>{isLoading && &lt;Spinner /&gt;}</code> のように、論理演算子を使って表示を切り替えることができます。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

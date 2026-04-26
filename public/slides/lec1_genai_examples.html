@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 22px; }
+        .examples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .ex-card { background: white; border-radius: 10px; padding: 22px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .ex-icon { font-size: 36px; margin-bottom: 10px; }
+        .ex-name { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .ex-tool { font-size: 15px; color: #adb5bd; margin-bottom: 10px; }
+        .ex-desc { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .ex-usecase { margin-top: 10px; background: #F8F9FA; border-radius: 5px; padding: 8px 12px; font-size: 16px; color: #495057; }
+        .ex-usecase strong { color: #339AF0; }
+        .highlight-row { display: flex; gap: 16px; margin-top: 18px; }
+        .highlight-item { flex: 1; background: #212529; color: white; border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; }
+        .highlight-item i { font-size: 24px; color: #20C997; }
+        .highlight-item span { font-size: 18px; font-weight: 300; }
+        .highlight-item strong { color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>生成AIができること</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>テキスト・画像・コード・音声…あらゆるものを「生成」できる</h2>
+            <div class="examples-grid">
+                <div class="ex-card">
+                    <div class="ex-icon">💬</div>
+                    <div class="ex-name">テキスト生成</div>
+                    <div class="ex-tool">Claude / ChatGPT / Gemini</div>
+                    <div class="ex-desc">文章の作成・要約・翻訳・質問回答。レポートの下書きから、プログラムのデバッグまで。</div>
+                    <div class="ex-usecase"><strong>高校生の使い方：</strong>英語の作文添削、数学の解説依頼</div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-icon">🎨</div>
+                    <div class="ex-name">画像生成</div>
+                    <div class="ex-tool">Midjourney / DALL-E / Stable Diffusion</div>
+                    <div class="ex-desc">テキストで指示するだけで、写真・イラスト・デザインを自動生成。</div>
+                    <div class="ex-usecase"><strong>高校生の使い方：</strong>文化祭ポスター、プレゼン素材作成</div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-icon">💻</div>
+                    <div class="ex-name">コード生成</div>
+                    <div class="ex-tool">GitHub Copilot / Claude / Cursor</div>
+                    <div class="ex-desc">プログラムを自動生成・デバッグ・説明。コードを書いたことがない人でもアプリを作れる。</div>
+                    <div class="ex-usecase"><strong>高校生の使い方：</strong>Webアプリ開発、ゲーム制作</div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-icon">🎵</div>
+                    <div class="ex-name">音楽・音声生成</div>
+                    <div class="ex-tool">Suno / ElevenLabs / Udio</div>
+                    <div class="ex-desc">テキストから楽曲を生成。自分の声を学習させてナレーションを自動生成。</div>
+                    <div class="ex-usecase"><strong>高校生の使い方：</strong>動画のBGM作成、ポッドキャスト</div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-icon">🎬</div>
+                    <div class="ex-name">動画生成</div>
+                    <div class="ex-tool">Sora / Runway / Pika</div>
+                    <div class="ex-desc">テキストや画像から短い動画を自動生成。映像制作の敷居が一気に下がった。</div>
+                    <div class="ex-usecase"><strong>高校生の使い方：</strong>SNS動画、学校発表の映像</div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-icon">📊</div>
+                    <div class="ex-name">データ分析</div>
+                    <div class="ex-tool">Claude / ChatGPT Advanced Data Analysis</div>
+                    <div class="ex-desc">グラフ作成・集計・統計分析をAIが自動実行。Excelのデータを読み込んで即座に可視化。</div>
+                    <div class="ex-usecase"><strong>高校生の使い方：</strong>理科の実験データ分析</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

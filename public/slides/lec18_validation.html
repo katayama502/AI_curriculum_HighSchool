@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 36px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 12px; }
+        .validate-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+        .validate-item { background: white; border-radius: 6px; padding: 12px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: flex; gap: 10px; align-items: flex-start; }
+        .v-icon { font-size: 18px; min-width: 22px; }
+        .v-content { flex: 1; }
+        .v-title { font-size: 16px; font-weight: 600; color: #212529; margin-bottom: 3px; }
+        .v-text { font-size: 15px; color: #495057; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 14px 16px; }
+        .code-box code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .tip-banner { margin-top: 12px; background: #ffe3e3; border-left: 4px solid #ff6b6b; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #c92a2a; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>バリデーションとエラーハンドリング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-check-double" style="color:#339AF0"></i> バリデーションの2層構造</h2>
+                <div class="validate-list">
+                    <div class="validate-item">
+                        <div class="v-icon" style="color:#339AF0"><i class="fas fa-desktop"></i></div>
+                        <div class="v-content">
+                            <div class="v-title">フロントエンドバリデーション（UX向上）</div>
+                            <div class="v-text">入力中にリアルタイムでエラー表示。ユーザーに早く気づかせる</div>
+                        </div>
+                    </div>
+                    <div class="validate-item">
+                        <div class="v-icon" style="color:#ff6b6b"><i class="fas fa-server"></i></div>
+                        <div class="v-content">
+                            <div class="v-title">バックエンドバリデーション（必須・セキュリティ）</div>
+                            <div class="v-text">フロントを迂回した攻撃にも対応。DBに不正データが入るのを防ぐ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-box"><code>
+<span class="c-gray">// フロントエンドのバリデーション例</span><br>
+<span class="c-pink">const</span> [errors, setErrors] = useState({});<br><br>
+<span class="c-pink">const</span> <span class="c-green">validate</span> = (data) => {<br>
+  <span class="c-pink">const</span> errs = {};<br>
+  <span class="c-pink">if</span> (!data.title.trim())<br>
+    errs.title = <span class="c-yellow">'タイトルを入力してください'</span>;<br>
+  <span class="c-pink">if</span> (data.title.length > 100)<br>
+    errs.title = <span class="c-yellow">'100文字以内で入力してください'</span>;<br>
+  <span class="c-pink">return</span> errs;<br>
+};<br><br>
+<span class="c-gray">// JSX で表示</span><br>
+{errors.title &amp;&amp; &lt;p style={{color:'red'}}&gt;{errors.title}&lt;/p&gt;}
+                </code></div>
+                <div class="tip-banner"><i class="fas fa-exclamation-triangle"></i> フロントのバリデーションだけでは不十分！バックエンドでも必ず確認する</div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-exclamation-circle" style="color:#ff6b6b"></i> Express エラーハンドリング</h2>
+                <div class="code-box"><code>
+<span class="c-gray">// バックエンドのバリデーション</span><br>
+<span class="c-blue">router</span>.<span class="c-green">post</span>(<span class="c-yellow">'/'</span>, authMiddleware, (req, res) => {<br>
+  <span class="c-pink">const</span> { title, author } = req.body;<br><br>
+  <span class="c-gray">// バリデーション</span><br>
+  <span class="c-pink">if</span> (!title?.trim())<br>
+    <span class="c-pink">return</span> res.status(400)<br>
+      .json({ error: <span class="c-yellow">'タイトルは必須です'</span> });<br>
+  <span class="c-pink">if</span> (title.length > 100)<br>
+    <span class="c-pink">return</span> res.status(400)<br>
+      .json({ error: <span class="c-yellow">'タイトルは100文字以内'</span> });<br><br>
+  <span class="c-gray">// DB保存</span><br>
+  <span class="c-pink">try</span> {<br>
+    <span class="c-pink">const</span> result = db.prepare(<span class="c-yellow">'...'</span>).run(...);<br>
+    res.status(201).json({ id: result.lastInsertRowid });<br>
+  } <span class="c-pink">catch</span> (err) {<br>
+    console.error(err);<br>
+    res.status(500).json({ error: <span class="c-yellow">'保存に失敗しました'</span> });<br>
+  }<br>
+});
+                </code></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

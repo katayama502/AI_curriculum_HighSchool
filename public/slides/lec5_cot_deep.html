@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .cot-demo { display: flex; gap: 30px; margin-bottom: 16px; }
+        .demo-side { flex: 1; background: white; border-radius: 8px; padding: 20px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .demo-side.bad { border-top: 4px solid #fa5252; }
+        .demo-side.good { border-top: 4px solid #20C997; }
+        .demo-label { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+        .demo-label.bad { color: #fa5252; }
+        .demo-label.good { color: #20C997; }
+        .demo-q { background: #e9ecef; border-radius: 6px; padding: 10px 14px; font-size: 18px; color: #495057; margin-bottom: 10px; font-style: italic; }
+        .demo-a { font-size: 18px; color: #212529; line-height: 1.6; }
+        .chain-step { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px dashed #dee2e6; }
+        .chain-step:last-child { border-bottom: none; }
+        .cs-num { background: #339AF0; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+        .cs-text { font-size: 17px; color: #495057; line-height: 1.5; }
+        .trigger-box { background: #e7f5ff; border-radius: 8px; padding: 16px 22px; }
+        .trigger-title { font-size: 20px; font-weight: 600; color: #1c7ed6; margin-bottom: 10px; }
+        .trigger-list { display: flex; gap: 12px; flex-wrap: wrap; }
+        .trigger-tag { background: white; border: 2px solid #339AF0; padding: 6px 16px; border-radius: 20px; font-size: 17px; font-weight: 500; color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CoT（思考の連鎖）を深く理解する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>AIに「考えるプロセスを見せながら」回答させる</h2>
+            <div class="cot-demo">
+                <div class="demo-side bad">
+                    <div class="demo-label bad">❌ CoTなし</div>
+                    <div class="demo-q">「3人で1200円を割り勘すると1人いくら？」</div>
+                    <div class="demo-a">400円です。</div>
+                    <br>
+                    <div style="font-size:16px;color:#fa5252;">→ 答えは合っていても、なぜそうなるか分からない。間違っていても気づけない。</div>
+                </div>
+                <div class="demo-side good">
+                    <div class="demo-label good">✅ CoTあり（ステップ思考）</div>
+                    <div class="demo-q">「ステップごとに考えを示しながら割り勘を計算して」</div>
+                    <div class="demo-a">
+                        <div class="chain-step"><span class="cs-num">1</span><span class="cs-text">合計金額を確認：1200円</span></div>
+                        <div class="chain-step"><span class="cs-num">2</span><span class="cs-text">人数を確認：3人</span></div>
+                        <div class="chain-step"><span class="cs-num">3</span><span class="cs-text">計算：1200 ÷ 3 = 400</span></div>
+                        <div class="chain-step"><span class="cs-num">4</span><span class="cs-text">答え：1人あたり400円</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="trigger-box">
+                <div class="trigger-title"><i class="fas fa-key"></i> CoTを起動するキーワード（プロンプトに入れるだけ）</div>
+                <div class="trigger-list">
+                    <span class="trigger-tag">ステップごとに考えて</span>
+                    <span class="trigger-tag">順番に説明して</span>
+                    <span class="trigger-tag">思考プロセスを見せて</span>
+                    <span class="trigger-tag">理由も含めて</span>
+                    <span class="trigger-tag">段階的に考えて</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

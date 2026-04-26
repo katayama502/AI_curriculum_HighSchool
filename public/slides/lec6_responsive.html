@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .device-row { display: flex; gap: 20px; margin-bottom: 18px; }
+        .device-card { flex: 1; background: white; border-radius: 8px; padding: 16px 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+        .dc-icon { font-size: 36px; margin-bottom: 8px; }
+        .dc-name { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 4px; }
+        .dc-width { font-family: monospace; font-size: 15px; color: #868e96; }
+        .stat-box { background: #e7f5ff; border-radius: 8px; padding: 14px 18px; margin-bottom: 16px; text-align: center; }
+        .stat-num { font-size: 48px; font-weight: 700; color: #339AF0; }
+        .stat-text { font-size: 18px; font-weight: 400; color: #495057; }
+        .code-block { background: #1A1A2E; border-radius: 8px; padding: 16px 18px; font-family: monospace; font-size: 14px; line-height: 1.9; color: #e9ecef; margin-bottom: 14px; }
+        .cb-comment { color: #74c0fc; }
+        .cb-prop { color: #74c0fc; }
+        .cb-val { color: #8ce99a; }
+        .tip-box { background: #ebfbee; border-radius: 8px; padding: 14px 18px; }
+        .tip-text { font-size: 18px; font-weight: 400; color: #212529; line-height: 1.6; }
+        .tip-text span { color: #2f9e44; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>レスポンシブデザイン入門</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>スマホ・PC両対応の重要性</h2>
+                <div class="stat-box">
+                    <div class="stat-num">60%</div>
+                    <div class="stat-text">Webアクセスの約60%以上がスマートフォンから</div>
+                </div>
+                <div class="device-row">
+                    <div class="device-card">
+                        <div class="dc-icon">📱</div>
+                        <div class="dc-name">スマホ</div>
+                        <div class="dc-width">〜480px</div>
+                    </div>
+                    <div class="device-card">
+                        <div class="dc-icon">💻</div>
+                        <div class="dc-name">タブレット</div>
+                        <div class="dc-width">480〜768px</div>
+                    </div>
+                    <div class="device-card">
+                        <div class="dc-icon">🖥️</div>
+                        <div class="dc-name">PC</div>
+                        <div class="dc-width">768px〜</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>メディアクエリの書き方</h2>
+                <div class="code-block">
+<span class="cb-comment">/* PC向けスタイル（デフォルト） */</span><br>
+.container {<br>
+&nbsp;&nbsp;<span class="cb-prop">display</span>: <span class="cb-val">flex</span>;<br>
+&nbsp;&nbsp;<span class="cb-prop">gap</span>: <span class="cb-val">40px</span>;<br>
+}<br><br>
+<span class="cb-comment">/* スマホ向け（画面幅600px以下） */</span><br>
+@media (max-width: 600px) {<br>
+&nbsp;&nbsp;.container {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cb-prop">flex-direction</span>: <span class="cb-val">column</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cb-prop">gap</span>: <span class="cb-val">16px</span>;<br>
+&nbsp;&nbsp;}<br>
+}
+                </div>
+                <div class="tip-box">
+                    <div class="tip-text">💡 <span>Claudeに「このHTMLをスマホ対応にして」</span>と頼むと、メディアクエリを自動で追加してくれる。自分で書く必要はない！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

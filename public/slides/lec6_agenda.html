@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 30px 60px; display: flex; gap: 60px; }
+        .agenda-list { flex: 1.2; }
+        .side-info { flex: 1; }
+        .agenda-item { display: flex; align-items: flex-start; gap: 20px; padding: 16px 0; border-bottom: 1px solid #e9ecef; }
+        .agenda-item:last-child { border-bottom: none; }
+        .a-num { background: #339AF0; color: white; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; flex-shrink: 0; }
+        .a-text { flex: 1; }
+        .a-title { font-size: 21px; font-weight: 600; color: #212529; margin-bottom: 3px; }
+        .a-sub { font-size: 17px; font-weight: 300; color: #868e96; }
+        .goal-box { background: white; border-radius: 10px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #20C997; margin-bottom: 14px; }
+        .goal-title { font-size: 20px; font-weight: 700; color: #20C997; margin-bottom: 14px; }
+        .goal-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+        .gi-icon { color: #20C997; font-size: 16px; margin-top: 4px; }
+        .gi-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .phase-badge { background: #339AF0; color: white; border-radius: 8px; padding: 12px 18px; text-align: center; }
+        .pb-label { font-size: 14px; opacity: 0.8; margin-bottom: 4px; }
+        .pb-text { font-size: 20px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第6回 今日の内容</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-list">
+                <div class="agenda-item">
+                    <div class="a-num">1</div>
+                    <div class="a-text"><div class="a-title">Webの仕組みを知る</div><div class="a-sub">ブラウザ・サーバー・HTMLの関係</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">2</div>
+                    <div class="a-text"><div class="a-title">HTMLの基礎</div><div class="a-sub">タグ・構造・見出し・段落・リスト・リンク</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">3</div>
+                    <div class="a-text"><div class="a-title">CSSの基礎</div><div class="a-sub">セレクタ・プロパティ・ボックスモデル</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">4</div>
+                    <div class="a-text"><div class="a-title">レイアウトとデザイン</div><div class="a-sub">Flexbox・色・フォント・余白</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">5</div>
+                    <div class="a-text"><div class="a-title">Claude × コーディング</div><div class="a-sub">AIを使ってコードを書く・直す</div></div>
+                </div>
+            </div>
+            <div class="side-info">
+                <div class="goal-box">
+                    <div class="goal-title"><i class="fas fa-bullseye"></i> この回のゴール</div>
+                    <div class="goal-item"><span class="gi-icon"><i class="fas fa-check"></i></span><span class="gi-text">HTMLでWebページの骨格を作れる</span></div>
+                    <div class="goal-item"><span class="gi-icon"><i class="fas fa-check"></i></span><span class="gi-text">CSSで見た目をカスタマイズできる</span></div>
+                    <div class="goal-item"><span class="gi-icon"><i class="fas fa-check"></i></span><span class="gi-text">Claudeを使ってコードのエラーを直せる</span></div>
+                </div>
+                <div class="phase-badge">
+                    <div class="pb-label">フェーズ2</div>
+                    <div class="pb-text">💻 プログラミング基礎</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

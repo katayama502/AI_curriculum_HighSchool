@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .tools-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .tool-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .tool-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .tool-icon { width: 42px; height: 42px; background: #339AF0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0; }
+        .tool-icon.teal { background: #20C997; }
+        .tool-icon.dark { background: #212529; }
+        .tool-icon.gold { background: #f59f00; }
+        .tool-icon.pink { background: #e64980; }
+        .tool-icon.purple { background: #7950f2; }
+        .tool-name { font-size: 18px; font-weight: 700; color: #212529; }
+        .tool-use { font-size: 14px; color: #868e96; font-weight: 400; }
+        .tool-desc { font-size: 15px; color: #495057; line-height: 1.6; }
+        .mindset-box { background: #212529; border-radius: 8px; padding: 16px 24px; display: flex; align-items: center; gap: 20px; }
+        .mindset-box i { color: #ffd866; font-size: 28px; }
+        .mindset-text { font-size: 18px; color: #f8f9fa; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>AI ツール活用まとめ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-terminal"></i></div>
+                        <div><div class="tool-name">Claude Code</div><div class="tool-use">メイン開発パートナー</div></div>
+                    </div>
+                    <div class="tool-desc">コード生成・バグ解析・リファクタリング・設計相談。「エラーを貼って聞く」が基本パターン</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon teal"><i class="fas fa-comment-dots"></i></div>
+                        <div><div class="tool-name">Claude.ai</div><div class="tool-use">アイデア・文書作成</div></div>
+                    </div>
+                    <div class="tool-desc">要件定義・README 執筆・プレゼン原稿・学習質問など、コード以外の作業に</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon dark"><i class="fab fa-github"></i></div>
+                        <div><div class="tool-name">GitHub Copilot</div><div class="tool-use">インライン補完</div></div>
+                    </div>
+                    <div class="tool-desc">エディタ内でリアルタイム補完。よく使うパターンを自動提案してくれる</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon gold"><i class="fas fa-bolt"></i></div>
+                        <div><div class="tool-name">Cursor / Windsurf</div><div class="tool-use">AI統合エディタ</div></div>
+                    </div>
+                    <div class="tool-desc">VS Code ベースのAI搭載エディタ。チャットしながらコードを直接編集できる</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon pink"><i class="fas fa-paint-brush"></i></div>
+                        <div><div class="tool-name">v0 / Bolt</div><div class="tool-use">UI 自動生成</div></div>
+                    </div>
+                    <div class="tool-desc">「こんなUIが欲しい」と伝えるだけでReactコンポーネントを生成してくれる</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon purple"><i class="fas fa-search"></i></div>
+                        <div><div class="tool-name">Perplexity</div><div class="tool-use">技術リサーチ</div></div>
+                    </div>
+                    <div class="tool-desc">最新ライブラリの調査・エラー検索。情報源を示してくれるので信頼性が高い</div>
+                </div>
+            </div>
+            <div class="mindset-box">
+                <i class="fas fa-lightbulb"></i>
+                <div class="mindset-text">AIは「答えを出す機械」ではなく「一緒に考えるパートナー」。自分で考えた上で使うと10倍効果的になる</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

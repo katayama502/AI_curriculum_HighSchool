@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 14px 18px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .lib-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .lib-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-top: 4px solid #20C997; }
+        .lib-card .lname { font-family: monospace; font-size: 18px; font-weight: 700; color: #20C997; margin-bottom: 6px; }
+        .lib-card p { font-size: 16px; color: #495057; }
+        .install-box { background: #212529; border-radius: 8px; padding: 14px 18px; font-family: monospace; font-size: 17px; color: #f8f9fa; margin-top: 14px; }
+        .install-box .prompt { color: #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ライブラリの活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>importで機能を追加する</h2>
+                <div class="code-block">
+<span class="cmt"># 標準ライブラリ（インストール不要）</span>
+<span class="kw">import</span> math
+<span class="kw">import</span> random
+<span class="kw">import</span> datetime
+
+<span class="cmt"># 使い方</span>
+print(math.sqrt(<span class="num">16</span>))       <span class="cmt"># 4.0 平方根</span>
+print(math.pi)              <span class="cmt"># 3.1415...</span>
+
+n = random.randint(<span class="num">1</span>, <span class="num">6</span>)    <span class="cmt"># さいころ</span>
+items = [<span class="str">"A"</span>, <span class="str">"B"</span>, <span class="str">"C"</span>]
+random.shuffle(items)       <span class="cmt"># シャッフル</span>
+
+today = datetime.date.today()
+print(<span class="str">f"今日は{today}"</span>)
+
+<span class="cmt"># 別名でimport（よく使う）</span>
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+                </div>
+                <div class="install-box">
+                    <span class="prompt">$ </span>pip install numpy pandas requests
+                </div>
+            </div>
+            <div class="right">
+                <h2>有名な外部ライブラリ</h2>
+                <div class="lib-grid">
+                    <div class="lib-card">
+                        <div class="lname">numpy</div>
+                        <p>数値計算・行列演算。科学・AIの基盤。</p>
+                    </div>
+                    <div class="lib-card">
+                        <div class="lname">pandas</div>
+                        <p>表形式のデータ分析。Excelの上位互換。</p>
+                    </div>
+                    <div class="lib-card">
+                        <div class="lname">matplotlib</div>
+                        <p>グラフ・チャートを描画する可視化ライブラリ。</p>
+                    </div>
+                    <div class="lib-card">
+                        <div class="lname">requests</div>
+                        <p>WebからデータをHTTPで取得する。</p>
+                    </div>
+                    <div class="lib-card">
+                        <div class="lname">flask</div>
+                        <p>軽量WebフレームワークでAPIを作れる。</p>
+                    </div>
+                    <div class="lib-card">
+                        <div class="lname">anthropic</div>
+                        <p>Claude APIを呼び出す公式ライブラリ。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

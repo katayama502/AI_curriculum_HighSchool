@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.9; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .highlight-box { background: #339AF0; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Reactとは？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">⚛️ Reactの基本概念</div>
+                <div class="item">
+                    <span class="item-icon">🧩</span>
+                    <div>
+                        <div class="item-text">コンポーネント指向</div>
+                        <div class="item-sub">UIをパーツ（部品）に分けて管理する</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔄</span>
+                    <div>
+                        <div class="item-text">状態（State）管理</div>
+                        <div class="item-sub">データが変わると自動でUIが更新される</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">⚡</span>
+                    <div>
+                        <div class="item-text">仮想DOM（Virtual DOM）</div>
+                        <div class="item-sub">差分だけ更新するので高速</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🌐</span>
+                    <div>
+                        <div class="item-text">世界最大のエコシステム</div>
+                        <div class="item-sub">Meta製・Facebookでも使われている</div>
+                    </div>
+                </div>
+                <div class="highlight-box">💡 Claude Codeに「Reactプロジェクトを作って」と言えば全部セットアップしてくれる！</div>
+            </div>
+            <div>
+                <div class="section-title">💻 Reactの基本コード</div>
+                <div class="code-block">
+<span style="color:#FFD43B;">import</span> React, { useState } <span style="color:#FFD43B;">from</span> <span style="color:#FCC419;">'react'</span>;<br><br>
+<span style="color:#6C757D;">// コンポーネント（部品）を定義</span><br>
+<span style="color:#FFD43B;">function</span> <span style="color:#F783AC;">Counter</span>() {<br>
+&nbsp;&nbsp;<span style="color:#6C757D;">// 状態を定義（count = 初期値0）</span><br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">const</span> [count, setCount] = <span style="color:#F783AC;">useState</span>(<span style="color:#20C997;">0</span>);<br><br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">return</span> (<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">div</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">p</span>&gt;カウント: {count}&lt;/<span style="color:#339AF0;">p</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">button</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick={() =&gt; <span style="color:#F783AC;">setCount</span>(count + <span style="color:#20C997;">1</span>)}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;+1&lt;/<span style="color:#339AF0;">button</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color:#339AF0;">div</span>&gt;<br>
+&nbsp;&nbsp;);<br>
+}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

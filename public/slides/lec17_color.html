@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 16px; }
+        .palette { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .color-row { display: flex; gap: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .color-swatch { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 10px; flex: 1; }
+        .swatch-label { font-size: 13px; font-weight: 600; margin-top: 4px; }
+        .swatch-hex { font-size: 11px; opacity: 0.7; font-family: monospace; }
+        .rule-list { display: flex; flex-direction: column; gap: 12px; }
+        .rule { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 14px; align-items: flex-start; }
+        .rule-icon { font-size: 20px; min-width: 24px; }
+        .rule-content { }
+        .rule-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .rule-text { font-size: 15px; color: #495057; line-height: 1.5; }
+        .tip-box { background: #e3fafc; border-left: 4px solid #20C997; padding: 14px 18px; border-radius: 4px; font-size: 17px; color: #0c7a6d; margin-top: 14px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>カラーパレットとタイポグラフィ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-palette" style="color:#339AF0"></i> カラーパレットの作り方</h2>
+                <div class="palette">
+                    <div class="color-row">
+                        <div class="color-swatch" style="background:#339AF0;color:white;"><div class="swatch-label">Primary</div><div class="swatch-hex">#339AF0</div></div>
+                        <div class="color-swatch" style="background:#1971c2;color:white;"><div class="swatch-label">Dark</div><div class="swatch-hex">#1971C2</div></div>
+                        <div class="color-swatch" style="background:#d0ebff;color:#1971c2;"><div class="swatch-label">Light</div><div class="swatch-hex">#D0EBFF</div></div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-swatch" style="background:#20C997;color:white;"><div class="swatch-label">Accent</div><div class="swatch-hex">#20C997</div></div>
+                        <div class="color-swatch" style="background:#ff6b6b;color:white;"><div class="swatch-label">Danger</div><div class="swatch-hex">#FF6B6B</div></div>
+                        <div class="color-swatch" style="background:#fcc419;color:#212529;"><div class="swatch-label">Warning</div><div class="swatch-hex">#FCC419</div></div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-swatch" style="background:#212529;color:white;"><div class="swatch-label">Text</div><div class="swatch-hex">#212529</div></div>
+                        <div class="color-swatch" style="background:#495057;color:white;"><div class="swatch-label">Sub</div><div class="swatch-hex">#495057</div></div>
+                        <div class="color-swatch" style="background:#F8F9FA;color:#212529;border:1px solid #dee2e6;"><div class="swatch-label">BG</div><div class="swatch-hex">#F8F9FA</div></div>
+                    </div>
+                </div>
+                <div class="tip-box"><i class="fas fa-lightbulb"></i> 3色ルール：メイン1色 + アクセント1色 + グレー系でまとめる</div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-font" style="color:#20C997"></i> タイポグラフィのルール</h2>
+                <div class="rule-list">
+                    <div class="rule">
+                        <div class="rule-icon" style="color:#339AF0"><i class="fas fa-heading"></i></div>
+                        <div class="rule-content">
+                            <div class="rule-title">フォントサイズの階層</div>
+                            <div class="rule-text">見出し(32px以上) → 本文(16-18px) → 補足(14px以下) の3段階</div>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule-icon" style="color:#20C997"><i class="fas fa-text-height"></i></div>
+                        <div class="rule-content">
+                            <div class="rule-title">行間（line-height）</div>
+                            <div class="rule-text">本文は1.6〜1.8が読みやすい。見出しは1.2〜1.4</div>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule-icon" style="color:#212529"><i class="fas fa-bold"></i></div>
+                        <div class="rule-content">
+                            <div class="rule-title">太さ（font-weight）</div>
+                            <div class="rule-text">強調には700/Bold、通常は400/Regular、サブは300/Light</div>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule-icon" style="color:#f59f00"><i class="fas fa-font"></i></div>
+                        <div class="rule-content">
+                            <div class="rule-title">フォント選び</div>
+                            <div class="rule-text">日本語：Noto Sans JP / 英語：Inter や Roboto が読みやすい</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

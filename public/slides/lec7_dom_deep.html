@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block {
+            background-color: #212529; color: #f8f9fa; padding: 14px 18px;
+            border-radius: 6px; font-family: monospace; font-size: 17px;
+            line-height: 1.7; margin-bottom: 14px;
+        }
+        .kw { color: #F59F00; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .method { color: #da77f2; }
+        .dom-card { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border-top: 4px solid #F59F00; }
+        .dom-card h3 { font-size: 20px; font-weight: 500; color: #F59F00; margin-bottom: 8px; }
+        .dom-card p { font-size: 17px; color: #495057; line-height: 1.5; }
+        .dom-card code { background: #fff3bf; color: #e67700; padding: 2px 6px; border-radius: 3px; font-size: 16px; }
+        .tree-box { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); font-family: monospace; font-size: 17px; line-height: 1.9; color: #495057; }
+        .tree-box .tag { color: #339AF0; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>DOMを操作する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>DOM＝HTMLをJSで操作するための仕組み</h2>
+                <div class="tree-box">
+                    document<br>
+                    &nbsp;&nbsp;└ <span class="tag">&lt;html&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ <span class="tag">&lt;head&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ <span class="tag">&lt;body&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ <span class="tag">&lt;h1 id="title"&gt;</span>見出し<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ <span class="tag">&lt;p class="text"&gt;</span>本文
+                </div>
+                <div class="code-block" style="margin-top:14px;">
+<span class="cmt">// 要素を取得</span>
+<span class="kw">const</span> title = document.<span class="method">getElementById</span>(<span class="str">"title"</span>);
+<span class="kw">const</span> texts = document.<span class="method">querySelectorAll</span>(<span class="str">".text"</span>);
+
+<span class="cmt">// テキストを変更</span>
+title.<span class="method">textContent</span> = <span class="str">"新しい見出し"</span>;
+
+<span class="cmt">// スタイルを変更</span>
+title.<span class="method">style</span>.color = <span class="str">"#339AF0"</span>;
+
+<span class="cmt">// HTMLを追加</span>
+title.<span class="method">innerHTML</span> = <span class="str">"&lt;strong&gt;太字&lt;/strong&gt;"</span>;
+                </div>
+            </div>
+            <div class="right">
+                <div class="dom-card">
+                    <h3><i class="fas fa-search"></i> 取得メソッド</h3>
+                    <p><code>getElementById("id")</code> — IDで1つ取得<br>
+                    <code>querySelector(".class")</code> — CSSセレクタで1つ<br>
+                    <code>querySelectorAll("tag")</code> — 複数まとめて取得</p>
+                </div>
+                <div class="dom-card">
+                    <h3><i class="fas fa-edit"></i> 変更プロパティ</h3>
+                    <p><code>.textContent</code> — テキストを変更<br>
+                    <code>.innerHTML</code> — HTMLごと変更<br>
+                    <code>.style.プロパティ</code> — CSSを直接変更<br>
+                    <code>.classList.add("名前")</code> — クラスを追加</p>
+                </div>
+                <div class="dom-card">
+                    <h3><i class="fas fa-lightbulb"></i> 活用例</h3>
+                    <p>ボタンを押したらテキストが変わる<br>
+                    入力した名前を画面に表示する<br>
+                    正解/不正解で背景色を変える</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

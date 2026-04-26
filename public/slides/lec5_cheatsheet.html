@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .sheet-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+        .sheet-card { background: white; border-radius: 8px; padding: 18px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .sc-header { text-align: center; padding-bottom: 12px; border-bottom: 2px solid #e9ecef; margin-bottom: 12px; }
+        .sc-icon { font-size: 32px; margin-bottom: 6px; }
+        .sc-name { font-size: 20px; font-weight: 700; color: #212529; }
+        .sc-name.blue { color: #339AF0; }
+        .sc-name.teal { color: #20C997; }
+        .sc-name.purple { color: #845EF7; }
+        .sc-name.yellow { color: #e67700; }
+        .sc-when { font-size: 15px; font-weight: 700; color: #868e96; margin-bottom: 8px; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .sc-items { list-style: none; }
+        .sc-items li { font-size: 16px; font-weight: 300; color: #495057; padding: 4px 0; line-height: 1.4; border-bottom: 1px dotted #e9ecef; }
+        .sc-items li:last-child { border-bottom: none; }
+        .sc-items li::before { content: "→ "; color: #adb5bd; }
+        .sc-phrase { background: #F8F9FA; padding: 8px 10px; border-radius: 4px; font-size: 14px; font-style: italic; color: #495057; margin-top: 10px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>上級プロンプト チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>4技術の使い分けを一枚にまとめ — 印刷して手元に置こう</h2>
+            <div class="sheet-grid">
+                <div class="sheet-card">
+                    <div class="sc-header">
+                        <div class="sc-icon">🔗</div>
+                        <div class="sc-name blue">Chain-of-Thought</div>
+                    </div>
+                    <div class="sc-when">使う場面</div>
+                    <ul class="sc-items">
+                        <li>数学・論理問題</li>
+                        <li>意思決定・比較</li>
+                        <li>文章の読解・分析</li>
+                        <li>複雑な計画立案</li>
+                    </ul>
+                    <div class="sc-phrase">「ステップごとに考えを見せながら」「順番に理由も含めて」</div>
+                </div>
+                <div class="sheet-card">
+                    <div class="sc-header">
+                        <div class="sc-icon">📋</div>
+                        <div class="sc-name teal">Few-shot</div>
+                    </div>
+                    <div class="sc-when">使う場面</div>
+                    <ul class="sc-items">
+                        <li>文章変換・翻訳</li>
+                        <li>特定の形式に揃える</li>
+                        <li>口調・スタイル固定</li>
+                        <li>データ整形</li>
+                    </ul>
+                    <div class="sc-phrase">入力:「例文A」→出力:「結果A」 を2〜5個用意してから本番</div>
+                </div>
+                <div class="sheet-card">
+                    <div class="sc-header">
+                        <div class="sc-icon">⚙️</div>
+                        <div class="sc-name purple">System Prompt</div>
+                    </div>
+                    <div class="sc-when">使う場面</div>
+                    <ul class="sc-items">
+                        <li>繰り返し使うAI設定</li>
+                        <li>専門家キャラ設定</li>
+                        <li>ルール・制約を固定</li>
+                        <li>語調の統一</li>
+                    </ul>
+                    <div class="sc-phrase">役割・ルール・語調・制約の4要素を書く</div>
+                </div>
+                <div class="sheet-card">
+                    <div class="sc-header">
+                        <div class="sc-icon">🔄</div>
+                        <div class="sc-name yellow">改善サイクル</div>
+                    </div>
+                    <div class="sc-when">使う場面</div>
+                    <ul class="sc-items">
+                        <li>うまくいかない時</li>
+                        <li>精度を上げたい時</li>
+                        <li>プロンプトを磨く時</li>
+                        <li>常に</li>
+                    </ul>
+                    <div class="sc-phrase">書く→評価→1箇所修正→比較→繰り返す</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block {
+            background-color: #212529; color: #f8f9fa; padding: 16px 20px;
+            border-radius: 6px; font-family: monospace; font-size: 17px;
+            line-height: 1.7; margin-bottom: 14px;
+        }
+        .kw { color: #F59F00; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .method { color: #da77f2; }
+        .flow-step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 12px; }
+        .step-num { background: #F59F00; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+        .step-text h3 { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .step-text p { font-size: 17px; color: #495057; }
+        .info-card { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border-left: 5px solid #F59F00; }
+        .info-card h3 { font-size: 20px; font-weight: 500; color: #F59F00; margin-bottom: 8px; }
+        .info-card p { font-size: 17px; color: #495057; line-height: 1.6; }
+        .info-card code { background: #212529; color: #69db7c; padding: 2px 7px; border-radius: 3px; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>外部データを取得する（fetch API）</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>インターネットからデータを受け取る</h2>
+                <div class="flow-step">
+                    <div class="step-num">1</div>
+                    <div class="step-text"><h3>fetchでリクエスト</h3><p>URLを指定してデータを要求する</p></div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">2</div>
+                    <div class="step-text"><h3>Promiseが返ってくる</h3><p>非同期なので「後で結果が来る」という約束</p></div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">3</div>
+                    <div class="step-text"><h3>.json()でデータを取り出す</h3><p>受け取ったデータをJavaScriptで使える形に変換</p></div>
+                </div>
+                <div class="code-block">
+<span class="cmt">// async/awaitを使った書き方（現代的）</span>
+<span class="kw">async function</span> getWeather() {
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="method">fetch</span>(
+        <span class="str">"https://api.example.com/weather"</span>
+    );
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="method">json</span>();
+    
+    <span class="cmt">// データをHTMLに表示</span>
+    document.<span class="method">getElementById</span>(<span class="str">"city"</span>)
+        .textContent = data.city;
+    document.<span class="method">getElementById</span>(<span class="str">"temp"</span>)
+        .textContent = data.temperature + <span class="str">"℃"</span>;
+}
+                </div>
+            </div>
+            <div class="right">
+                <div class="info-card">
+                    <h3><i class="fas fa-network-wired"></i> APIとは？</h3>
+                    <p>外部サービスからデータをもらうための「窓口」。天気、地図、翻訳など様々なAPIが無料で使えます。</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-file-code"></i> JSONとは？</h3>
+                    <p>データのやり取りに使われる形式。<br>
+                    <code>{"name":"太郎","age":16}</code><br>
+                    JSのオブジェクトに似た見た目です。</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-clock"></i> async/awaitとは？</h3>
+                    <p>時間がかかる処理（通信など）を待つための書き方。<code>await</code>を付けると、結果が来るまで次の行を実行しません。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

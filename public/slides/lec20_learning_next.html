@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .path-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .path-card { background: white; border-radius: 10px; padding: 20px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .path-card.teal { border-top-color: #20C997; }
+        .path-card.gold { border-top-color: #f59f00; }
+        .path-icon { font-size: 28px; color: #339AF0; margin-bottom: 10px; }
+        .path-card.teal .path-icon { color: #20C997; }
+        .path-card.gold .path-icon { color: #f59f00; }
+        .path-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 8px; }
+        .path-items { list-style: none; }
+        .path-items li { font-size: 15px; color: #495057; padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+        .path-items li::before { content: "→"; color: #339AF0; }
+        .path-card.teal .path-items li::before { color: #20C997; }
+        .path-card.gold .path-items li::before { color: #f59f00; }
+        .action-box { background: #e7f5ff; border-left: 4px solid #339AF0; padding: 14px 24px; border-radius: 0 8px 8px 0; font-size: 18px; color: #1971c2; display: flex; align-items: center; gap: 14px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>次に学ぶこと — 3つのルート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="path-grid">
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="path-title">フルスタック深化ルート</div>
+                    <ul class="path-items">
+                        <li>TypeScript を習得</li>
+                        <li>Next.js (SSR/SSG) を学ぶ</li>
+                        <li>PostgreSQL / Prisma ORM</li>
+                        <li>Docker でコンテナ化</li>
+                        <li>AWS / GCP でインフラ構築</li>
+                    </ul>
+                </div>
+                <div class="path-card teal">
+                    <div class="path-icon"><i class="fas fa-robot"></i></div>
+                    <div class="path-title">AI エンジニアルート</div>
+                    <ul class="path-items">
+                        <li>Python 基礎を習得</li>
+                        <li>Claude / OpenAI API 活用</li>
+                        <li>RAG・ベクトルDB を学ぶ</li>
+                        <li>LangChain / LlamaIndex</li>
+                        <li>AI エージェント開発</li>
+                    </ul>
+                </div>
+                <div class="path-card gold">
+                    <div class="path-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="path-title">モバイル・UI ルート</div>
+                    <ul class="path-items">
+                        <li>React Native を学ぶ</li>
+                        <li>Figma でプロトタイプ設計</li>
+                        <li>Tailwind CSS マスター</li>
+                        <li>Three.js で 3D Web</li>
+                        <li>ゲーム (Unity/Godot) 挑戦</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="action-box">
+                <i class="fas fa-bolt" style="font-size:22px;"></i>
+                <strong>今すぐできるアクション:</strong>&nbsp; ①自分のアプリに機能を1つ追加 ②GitHubに毎日 commit する習慣をつける ③興味があるルートのドキュメントを読む
+            </div>
+        </div>
+    </div>
+</body>
+</html>

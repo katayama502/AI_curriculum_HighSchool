@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-top: 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            /* reduced top padding to save vertical space */
+            padding-top: 30px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-top: 0;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-top: 18px;
+        }
+        .list-container {
+            margin-top: 20px;
+            background-color: white;
+            border-top: 4px solid #20C997;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-left: 40px;
+            padding-right: 40px;
+            /* lowered min-height since layout reorganized */
+            min-height: 220px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px; /* row-gap column-gap */
+            align-items: flex-start;
+        }
+        .list-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #20C997;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            /* make two columns to reduce vertical length */
+            width: calc(50% - 12px);
+            margin-top: 12px;
+        }
+        .list-icon {
+            font-size: 24px;
+            color: #339AF0;
+            margin-top: 5px;
+            flex: 0 0 28px;
+        }
+        .list-text {
+            font-size: 26px;
+            font-weight: 500;
+            color: #212529;
+            line-height: 1.5;
+        }
+        .list-subtext {
+            font-size: 20px;
+            font-weight: 300;
+            color: #495057;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>コンテキストの重要性</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>「背景情報」が回答の精度を決める</h2>
+            <p>AIは会話の文脈を理解して回答します。あなたが誰で、何を目的としているかを伝えることで、的外れな回答を防げます。</p>
+            
+            <div class="list-container">
+                <div class="list-title">
+                    <i class="fas fa-list-ul"></i> コンテキストに含めると良い情報
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div>
+                        <div class="list-text">あなたの学年・専門知識レベル</div>
+                        <div class="list-subtext">例：「高校1年生です」「プログラミングは全くの初心者です」</div>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-icon"><i class="fas fa-bullseye"></i></div>
+                    <div>
+                        <div class="list-text">目的</div>
+                        <div class="list-subtext">例：「明日のテスト勉強のため」「文化祭の企画のため」</div>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <div>
+                        <div class="list-text">制約</div>
+                        <div class="list-subtext">例：「時間は30分しかありません」「スマホしか使えません」</div>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-icon"><i class="fas fa-history"></i></div>
+                    <div>
+                        <div class="list-text">過去の試み</div>
+                        <div class="list-subtext">例：「教科書は読みましたが、この部分が理解できませんでした」</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

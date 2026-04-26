@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 22px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 4px solid #339AF0; }
+        .quiz-num { font-size: 14px; font-weight: 700; color: #339AF0; margin-bottom: 8px; }
+        .quiz-q { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 14px; line-height: 1.4; }
+        .options { display: flex; flex-direction: column; gap: 8px; }
+        .option { padding: 8px 14px; border-radius: 6px; font-size: 15px; background: #f1f3f5; color: #495057; }
+        .option.correct { background: #d3f9d8; color: #2b8a3e; font-weight: 600; }
+        .option.correct::after { content: " ✓"; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>理解度チェック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-grid">
+                <div class="quiz-card">
+                    <div class="quiz-num">Q1</div>
+                    <div class="quiz-q">JWTトークンの役割として正しいのはどれ？</div>
+                    <div class="options">
+                        <div class="option">パスワードをそのまま保存するもの</div>
+                        <div class="option correct">ログイン済みのユーザーを識別するための認証情報</div>
+                        <div class="option">データベースの接続情報を暗号化したもの</div>
+                        <div class="option">CSSスタイルを管理するもの</div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q2</div>
+                    <div class="quiz-q">Express のミドルウェアで next() を呼ぶ意味は？</div>
+                    <div class="options">
+                        <div class="option">リクエストを終了させる</div>
+                        <div class="option">エラーを発生させる</div>
+                        <div class="option correct">次のミドルウェアまたはルートハンドラへ処理を渡す</div>
+                        <div class="option">レスポンスを送信する</div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q3</div>
+                    <div class="quiz-q">APIにバックエンドバリデーションが必要な理由は？</div>
+                    <div class="options">
+                        <div class="option">フロントエンドのバリデーションより高速だから</div>
+                        <div class="option correct">フロントを迂回した不正リクエストからDBを守るため</div>
+                        <div class="option">Reactが自動的にやってくれないから</div>
+                        <div class="option">SQLiteの仕様で必須だから</div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q4</div>
+                    <div class="quiz-q">React の状態管理で「Lifting State Up」とは？</div>
+                    <div class="options">
+                        <div class="option">状態をサーバーに保存すること</div>
+                        <div class="option">Reduxを使って状態を管理すること</div>
+                        <div class="option correct">子コンポーネントで使う状態を共通の親コンポーネントに移動させること</div>
+                        <div class="option">useEffect で状態を更新すること</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

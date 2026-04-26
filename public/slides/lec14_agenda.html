@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .agenda-list { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+        .agenda-item { background-color: white; border-radius: 8px; padding: 14px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 16px; }
+        .agenda-item.active { border-left: 6px solid #339AF0; }
+        .num { font-size: 20px; font-weight: 500; color: #adb5bd; width: 30px; }
+        .agenda-item.active .num { color: #339AF0; }
+        .text { font-size: 20px; font-weight: 500; color: #495057; }
+        .agenda-item.active .text { color: #212529; }
+        .goal-box { flex: 0.7; background-color: #0D0D0D; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 18px; }
+        .goal-title { font-size: 18px; font-weight: 500; color: #20C997; margin-bottom: 4px; }
+        .goal-text { font-size: 22px; font-weight: 500; color: white; line-height: 1.6; }
+        .badge { display: inline-block; background-color: #339AF0; color: white; font-size: 14px; padding: 2px 10px; border-radius: 30px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第14回：Express でバックエンド開発</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-list">
+                <div class="agenda-item active"><div class="num">1</div><div class="text">Node.js と Express の基本</div></div>
+                <div class="agenda-item active"><div class="num">2</div><div class="text">HTTPとルーティングの仕組み</div></div>
+                <div class="agenda-item active"><div class="num">3</div><div class="text">REST API の設計</div></div>
+                <div class="agenda-item active"><div class="num">4</div><div class="text">データベース（SQLite）連携</div></div>
+                <div class="agenda-item active"><div class="num">5</div><div class="text">CORS・環境変数・エラー処理</div></div>
+                <div class="agenda-item active"><div class="num">6</div><div class="text">フロントエンドと接続</div></div>
+                <div class="agenda-item active"><div class="num">7</div><div class="text">Claude Code でAPI開発</div></div>
+            </div>
+            <div class="goal-box">
+                <div class="goal-title"><i class="fas fa-bullseye"></i> 今日のゴール</div>
+                <div class="goal-text">Express で REST API を作り、Reactフロントエンドからデータをやりとりできるフルスタックアプリの土台を作ろう。</div>
+                <div><span class="badge">第14回 / 全20回</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

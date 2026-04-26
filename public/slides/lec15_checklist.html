@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 30px; }
+        h2 { font-size: 22px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .col { flex: 1; }
+        .check-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 10px; }
+        .check-title { font-size: 17px; font-weight: 500; margin-bottom: 6px; color: #212529; }
+        .check-item { font-size: 15px; color: #495057; line-height: 2; display: flex; align-items: center; gap: 8px; }
+        .ok { color: #20C997; }
+        .warn { color: #ffd43b; }
+        .ng { color: #fa5252; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>デプロイ前チェックリスト</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="col">
+                <h2><i class="fas fa-code" style="color:#339AF0"></i> コード品質</h2>
+                <div class="check-card">
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> テストが全て通っている</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> コンソールエラーが出ていない</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> 全APIにバリデーションがある</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> 未使用のconsole.logを削除済み</div>
+                </div>
+            </div>
+            <div class="col">
+                <h2><i class="fas fa-shield-alt" style="color:#339AF0"></i> セキュリティ</h2>
+                <div class="check-card">
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> .gitignore に .env が含まれる</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> APIキーは環境変数で管理</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> SQLはプリペアドステートメント</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> CORSは適切なURLのみ許可</div>
+                </div>
+            </div>
+            <div class="col">
+                <h2><i class="fas fa-cloud" style="color:#339AF0"></i> デプロイ設定</h2>
+                <div class="check-card">
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> 環境変数を本番に設定済み</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> <code>npm run build</code> が通る</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> package.json に start スクリプト</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> ポートが <code>process.env.PORT</code></div>
+                </div>
+            </div>
+            <div class="col">
+                <h2><i class="fas fa-tachometer-alt" style="color:#339AF0"></i> 公開後確認</h2>
+                <div class="check-card">
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> 本番URLで全機能が動作する</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> モバイルで表示が崩れない</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> Lighthouseスコアを確認</div>
+                    <div class="check-item"><i class="fas fa-check-circle ok"></i> アナリティクス / 監視を設定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

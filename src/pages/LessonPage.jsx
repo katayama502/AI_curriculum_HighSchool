@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Clock } from 'lucide-react'
 import { units, getLessonTypeLabel, getLessonTypeColor } from '../data/curriculum'
 import { useProgress } from '../hooks/useProgress'
 import QuizComponent from '../components/QuizComponent'
+import HtmlSlideViewer from '../components/HtmlSlideViewer'
 import GoogleSlidesEmbed from '../components/GoogleSlidesEmbed'
 
 export default function LessonPage() {
@@ -74,6 +75,10 @@ export default function LessonPage() {
       {isQuiz && lesson.quiz ? (
         <div className="glass rounded-2xl p-6 md:p-8 mb-6">
           <QuizComponent quiz={lesson.quiz} onComplete={handleComplete} />
+        </div>
+      ) : lesson.slides?.length > 0 ? (
+        <div className="mb-6">
+          <HtmlSlideViewer slides={lesson.slides} title={lesson.title} />
         </div>
       ) : (
         <div className="mb-6">

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 36px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .checklist { display: flex; flex-direction: column; gap: 10px; }
+        .check-item { background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 12px; align-items: flex-start; }
+        .check-icon { font-size: 18px; min-width: 22px; }
+        .check-content { flex: 1; }
+        .check-title { font-size: 16px; font-weight: 600; color: #212529; margin-bottom: 3px; }
+        .check-text { font-size: 14px; color: #495057; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 14px 16px; }
+        .code-box code { font-family: monospace; font-size: 14px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .danger-box { background: #ffe3e3; border-left: 4px solid #ff6b6b; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #c92a2a; margin-top: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>デプロイ前の最終チェック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-clipboard-check" style="color:#339AF0"></i> コードチェックリスト</h2>
+                <div class="checklist">
+                    <div class="check-item"><div class="check-icon" style="color:#20C997">✅</div><div class="check-content"><div class="check-title">.env は .gitignore に入っているか</div><div class="check-text">絶対にGitHubにpushしない。secrets漏洩の最大原因</div></div></div>
+                    <div class="check-item"><div class="check-icon" style="color:#20C997">✅</div><div class="check-content"><div class="check-title">console.log のデバッグ出力を削除したか</div><div class="check-text">本番環境ではパスワードなど機密情報がログに残らないよう注意</div></div></div>
+                    <div class="check-item"><div class="check-icon" style="color:#20C997">✅</div><div class="check-content"><div class="check-title">npm run build でビルドが通るか</div><div class="check-text">TypeScriptエラーやビルドエラーが出ないことを確認</div></div></div>
+                    <div class="check-item"><div class="check-icon" style="color:#20C997">✅</div><div class="check-content"><div class="check-title">node_modules は .gitignore に入っているか</div><div class="check-text">package.json があればnpm installで再生成できる</div></div></div>
+                    <div class="check-item"><div class="check-icon" style="color:#20C997">✅</div><div class="check-content"><div class="check-title">package.json に start スクリプトがあるか</div><div class="check-text">Railway等が "npm start" を実行するので必須</div></div></div>
+                </div>
+                <div class="danger-box"><i class="fas fa-exclamation-triangle"></i> <strong>絶対禁止：</strong> API_KEY や JWT_SECRET を直接コードに書かない！</div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-code" style="color:#20C997"></i> 必要な設定ファイル</h2>
+                <div class="code-box"><code>
+<span class="c-gray">// package.json の scripts</span><br>
+{<br>
+  <span class="c-yellow">"scripts"</span>: {<br>
+    <span class="c-yellow">"start"</span>: <span class="c-green">"node server.js"</span>,<br>
+    <span class="c-yellow">"dev"</span>: <span class="c-green">"nodemon server.js"</span>,<br>
+    <span class="c-yellow">"build"</span>: <span class="c-green">"vite build"</span><br>
+  }<br>
+}<br><br>
+<span class="c-gray">// .gitignore</span><br>
+<span class="c-pink">node_modules/</span><br>
+<span class="c-pink">.env</span><br>
+<span class="c-pink">dist/</span><br>
+<span class="c-pink">*.db</span><br><br>
+<span class="c-gray">// PORT を環境変数から取得（必須）</span><br>
+<span class="c-pink">const</span> PORT = process.env.<span class="c-blue">PORT</span> || 3000;<br>
+app.<span class="c-green">listen</span>(PORT, () => {<br>
+  console.log(<span class="c-yellow">`起動: port ${PORT}`</span>);<br>
+});
+                </code></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Yu Gothic","Roboto",sans-serif;background:#F8F9FA;color:#212529}
+.slide-container{width:1280px;min-height:720px;background:#F8F9FA}
+.header{padding:40px 60px 0}
+h1{font-size:48px;font-weight:500;color:#339AF0}
+.divider{height:1px;background:#20C997;margin-top:20px}
+.content-area{padding:28px 60px;display:flex;gap:40px}
+.left{flex:1}.right{flex:1}
+h2{font-size:26px;font-weight:500;color:#212529;margin-bottom:16px}
+p{font-size:19px;font-weight:300;line-height:1.7;color:#495057;margin-bottom:14px}
+.demo-box{background:white;border-radius:10px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.06);margin-bottom:14px}
+.demo-box.bad{border-top:4px solid #fa5252}
+.demo-box.good{border-top:4px solid #20C997}
+.demo-label{font-size:15px;font-weight:700;margin-bottom:10px}
+.bad .demo-label{color:#fa5252}
+.good .demo-label{color:#20C997}
+.prompt-txt{background:#F8F9FA;border-radius:6px;padding:10px 14px;font-size:17px;color:#212529;margin-bottom:8px;border-left:3px solid #dee2e6}
+.bad .prompt-txt{border-left-color:#fa5252}
+.good .prompt-txt{border-left-color:#20C997}
+.response-txt{font-size:16px;font-weight:300;color:#495057;line-height:1.6}
+.arrow-mid{text-align:center;font-size:24px;color:#adb5bd;margin:10px 0}
+.insight{background:white;border-left:5px solid #339AF0;padding:16px 20px;border-radius:0 8px 8px 0;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.insight p{margin:0;font-size:19px}
+.insight strong{color:#339AF0}
+</style></head><body>
+<div class="slide-container">
+<div class="header"><h1>なぜプロンプトが重要なのか？</h1><div class="divider"></div></div>
+<div class="content-area">
+<div class="left">
+<h2>同じAIでも「指示の質」で結果が劇的に変わる</h2>
+<p>Claudeは非常に高性能なAIですが、曖昧な指示を与えると曖昧な回答しか返ってきません。プロンプトはAIへの「設計図」です。</p>
+<div class="insight"><p>エンジニアの研究によると、プロンプトの質を改善するだけで同じAIモデルの性能が<strong>最大40〜60%</strong>向上することがある。これがプロンプトエンジニアリングが「AI時代の必須スキル」と呼ばれる理由。</p></div>
+</div>
+<div class="right">
+<h2>実例で比べてみよう</h2>
+<div class="demo-box bad">
+<div class="demo-label">❌ 曖昧なプロンプト</div>
+<div class="prompt-txt">「英語を教えて」</div>
+<div class="response-txt">→ AIは何を教えればいいか迷う。文法？単語？会話？レベルは？目的は？的外れな回答になる。</div>
+</div>
+<div class="demo-box good">
+<div class="demo-label">✅ 明確なプロンプト</div>
+<div class="prompt-txt">「高校2年生向けに、英語の仮定法過去の使い方を3つの例文とともに、中学英語の知識があれば理解できるレベルで日本語で説明してください」</div>
+<div class="response-txt">→ AIは正確に何を求められているかを把握し、ぴったりの回答を生成できる！</div>
+</div>
+</div>
+</div></div></body></html>

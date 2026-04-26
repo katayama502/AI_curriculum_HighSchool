@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .definition-bar {
+            background: #339AF0;
+            color: white;
+            padding: 14px 24px;
+            font-size: 19px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .col-label {
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 16px;
+            margin-bottom: 12px;
+        }
+        .col-label.bad { background: #868E96; color: white; }
+        .col-label.good { background: #20C997; color: white; }
+        .code-box {
+            background: #212529;
+            color: #F8F9FA;
+            padding: 16px 18px;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .code-box .hl { color: #20C997; }
+        .code-box .hl2 { color: #339AF0; }
+        .result-box {
+            background: white;
+            padding: 14px 18px;
+            font-size: 16px;
+            color: #495057;
+            line-height: 1.6;
+        }
+        .result-box.bad { border-left: 4px solid #868E96; }
+        .result-box.good { border-left: 4px solid #20C997; }
+        .magic-phrase {
+            background: #FFF3BF;
+            border: 2px solid #FCC419;
+            padding: 14px 24px;
+            font-size: 20px;
+            color: #664D03;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Chain-of-Thought プロンプティング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="definition-bar">
+                🧠 <strong>Chain-of-Thought（CoT）</strong>とは：AIに「考える過程」を示させることで、正確な回答を引き出す技術
+            </div>
+            <div class="compare-row">
+                <div>
+                    <div class="col-label bad">❌ 普通のプロンプト</div>
+                    <div class="code-box">「太郎は100円持っていて、<br>50円のお菓子を2個買いました。<br>残りはいくら？」</div>
+                    <div class="result-box bad">
+                        <strong>AIの回答：</strong>「0円です」（間違い！）<br>
+                        <span style="color:#868E96;">→ 計算を飛ばして答えを出してしまう</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-label good">✅ CoT プロンプト</div>
+                    <div class="code-box">「太郎は100円持っていて、<br>50円のお菓子を2個買いました。<br>残りはいくら？<br><span class="hl">ステップごとに考えてください。</span>」</div>
+                    <div class="result-box good">
+                        <strong>AIの回答：</strong><br>
+                        ① お菓子の合計：50円 × 2 = 100円<br>
+                        ② 残り：100円 - 100円 = <strong>0円</strong><br>
+                        <span style="color:#20C997;">→ 正しい過程で正解！</span>
+                    </div>
+                </div>
+            </div>
+            <div class="magic-phrase">
+                ✨ 魔法の言葉：「<strong>ステップごとに考えてください</strong>」「<strong>順を追って説明してください</strong>」
+            </div>
+        </div>
+    </div>
+</body>
+</html>

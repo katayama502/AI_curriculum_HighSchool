@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .prompt-col { }
+        .prompt-label { font-size: 18px; font-weight: 700; color: white; background: #339AF0; padding: 10px 16px; margin-bottom: 12px; }
+        .prompt-box {
+            background: #212529; color: #F8F9FA;
+            padding: 18px 20px; font-size: 17px; line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .prompt-box .hl { color: #20C997; }
+        .tips-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .tip-item { background: white; padding: 10px 14px; margin-top: 8px; font-size: 16px; color: #495057; display: flex; align-items: center; gap: 10px; }
+        .tip-icon { font-size: 18px; flex-shrink: 0; }
+        .code-col { }
+        .code-label { font-size: 18px; font-weight: 700; color: white; background: #20C997; padding: 10px 16px; margin-bottom: 12px; }
+        .code-block {
+            background: #1A1A2E; padding: 18px;
+            font-family: "Courier New", monospace; font-size: 14px; line-height: 1.8; color: #E8E8E8;
+        }
+        .tag { color: #339AF0; }
+        .attr { color: #20C997; }
+        .value { color: #FCC419; }
+        .prop { color: #20C997; }
+        .val { color: #FCC419; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeにコードを書いてもらう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="prompt-col">
+                <div class="prompt-label">💬 Claudeへのプロンプト</div>
+                <div class="prompt-box">
+                    「<span class="hl">自己紹介カード</span>のHTMLとCSSを書いてください。<br>
+                    ・名前、学校名、趣味を表示<br>
+                    ・<span class="hl">青と白のデザイン</span><br>
+                    ・<span class="hl">スマホでも見やすい</span>サイズ<br>
+                    ・コピーしてすぐ使えるように」
+                </div>
+                <div class="tips-title">💡 コードを頼む時のコツ</div>
+                <div class="tip-item"><span class="tip-icon">🎨</span>デザインの色・スタイルを具体的に伝える</div>
+                <div class="tip-item"><span class="tip-icon">📱</span>「スマホ対応」「PC向け」など用途を指定</div>
+                <div class="tip-item"><span class="tip-icon">📋</span>「コメント付きで」と頼むと理解しやすい</div>
+                <div class="tip-item"><span class="tip-icon">🔧</span>エラーが出たらエラー文をそのまま貼る</div>
+            </div>
+            <div class="code-col">
+                <div class="code-label">✅ Claudeが生成したコード</div>
+                <div class="code-block">
+                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"card"</span><span class="tag">&gt;</span><br>
+                    &nbsp;&nbsp;<span class="tag">&lt;h2&gt;</span>山田 太郎<span class="tag">&lt;/h2&gt;</span><br>
+                    &nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>○○高校 1年生<span class="tag">&lt;/p&gt;</span><br>
+                    &nbsp;&nbsp;<span class="tag">&lt;p&gt;</span>趣味：プログラミング<span class="tag">&lt;/p&gt;</span><br>
+                    <span class="tag">&lt;/div&gt;</span><br><br>
+                    <span class="tag">&lt;style&gt;</span><br>
+                    <span style="color:#339AF0;">.card</span> {<br>
+                    &nbsp;&nbsp;<span class="prop">background</span>: <span class="val">white</span>;<br>
+                    &nbsp;&nbsp;<span class="prop">border-top</span>: <span class="val">4px solid #339AF0</span>;<br>
+                    &nbsp;&nbsp;<span class="prop">padding</span>: <span class="val">24px</span>;<br>
+                    &nbsp;&nbsp;<span class="prop">max-width</span>: <span class="val">320px</span>;<br>
+                    }<br>
+                    <span class="tag">&lt;/style&gt;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 20px; padding-left: 60px; padding-right: 60px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .panel { background-color: #0D0D0D; border-radius: 8px; padding: 16px 18px; }
+        .panel-title { font-size: 16px; font-weight: 500; color: #20C997; margin-bottom: 10px; }
+        .code-line { font-family: "Courier New", monospace; font-size: 13.5px; line-height: 1.85; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .num { color: #f06595; }
+        .banner { margin-top: 16px; background-color: #212529; border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .banner-text { font-size: 20px; font-weight: 500; color: white; }
+        .banner-badge { background-color: #339AF0; color: white; padding: 6px 18px; border-radius: 30px; font-size: 16px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Express バックエンド チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="grid">
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-server"></i> Express 基本セットアップ</div>
+                    <div class="code-line"><span class="kw">const</span> express = <span class="fn">require</span>(<span class="str">'express'</span>);</div>
+                    <div class="code-line"><span class="kw">const</span> cors    = <span class="fn">require</span>(<span class="str">'cors'</span>);</div>
+                    <div class="code-line"><span class="kw">const</span> app = <span class="fn">express</span>();</div>
+                    <div class="code-line">app.<span class="fn">use</span>(<span class="fn">cors</span>({ origin: <span class="str">'http://localhost:5173'</span> }));</div>
+                    <div class="code-line">app.<span class="fn">use</span>(express.<span class="fn">json</span>());</div>
+                    <div class="code-line">app.<span class="fn">listen</span>(<span class="num">3000</span>);</div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-route"></i> CRUD ルーティング</div>
+                    <div class="code-line">app.<span class="fn">get</span>(<span class="str">'/api/todos'</span>,     getAllTodos);</div>
+                    <div class="code-line">app.<span class="fn">post</span>(<span class="str">'/api/todos'</span>,    createTodo);</div>
+                    <div class="code-line">app.<span class="fn">put</span>(<span class="str">'/api/todos/:id'</span>, updateTodo);</div>
+                    <div class="code-line">app.<span class="fn">delete</span>(<span class="str">'/api/todos/:id'</span>,deleteTodo);</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">// パラメータ・ボディ取得</span></div>
+                    <div class="code-line">req.params.id  <span class="cm">// URL の :id</span></div>
+                    <div class="code-line">req.body.text  <span class="cm">// POST ボディ</span></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-database"></i> SQLite (better-sqlite3)</div>
+                    <div class="code-line"><span class="kw">const</span> db = <span class="kw">new</span> <span class="fn">Database</span>(<span class="str">'data.db'</span>);</div>
+                    <div class="code-line"><span class="cm">// 作成</span></div>
+                    <div class="code-line">db.<span class="fn">prepare</span>(<span class="str">'INSERT...'</span>).<span class="fn">run</span>(text);</div>
+                    <div class="code-line"><span class="cm">// 全件取得</span></div>
+                    <div class="code-line">db.<span class="fn">prepare</span>(<span class="str">'SELECT * FROM t'</span>).<span class="fn">all</span>();</div>
+                    <div class="code-line"><span class="cm">// 1件取得</span></div>
+                    <div class="code-line">db.<span class="fn">prepare</span>(<span class="str">'SELECT * WHERE id=?'</span>).<span class="fn">get</span>(id);</div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-reply"></i> レスポンス & .env</div>
+                    <div class="code-line">res.<span class="fn">json</span>(data);          <span class="cm">// 200 OK</span></div>
+                    <div class="code-line">res.<span class="fn">status</span>(<span class="num">201</span>).<span class="fn">json</span>(d); <span class="cm">// Created</span></div>
+                    <div class="code-line">res.<span class="fn">status</span>(<span class="num">400</span>).<span class="fn">json</span>({error}); <span class="cm">// Bad Req</span></div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">// .env 読み込み</span></div>
+                    <div class="code-line"><span class="fn">require</span>(<span class="str">'dotenv'</span>).<span class="fn">config</span>();</div>
+                    <div class="code-line">process.env.API_KEY</div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-text"><i class="fas fa-rocket" style="color:#20C997; margin-right:10px;"></i> 第14回：Express バックエンド 完了！</div>
+                <div class="banner-badge">次回：テスト・デプロイ →</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

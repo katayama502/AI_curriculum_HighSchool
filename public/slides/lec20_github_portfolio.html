@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        .step-list { list-style: none; }
+        .step-item { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+        .step-circle { width: 36px; height: 36px; background: #339AF0; border-radius: 50%; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-body {}
+        .step-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .step-desc { font-size: 14px; color: #868e96; line-height: 1.5; }
+        .profile-box { background: #0D0D0D; border-radius: 10px; padding: 20px 22px; }
+        .profile-title { font-size: 13px; color: #ffd866; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; font-family: monospace; }
+        .code-line { font-size: 14px; font-family: monospace; line-height: 1.9; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .tip-row { margin-top: 16px; display: flex; gap: 12px; }
+        .tip-small { flex: 1; background: white; border-radius: 6px; padding: 10px 14px; font-size: 14px; color: #495057; box-shadow: 0 2px 6px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 8px; }
+        .tip-small i { color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>GitHub プロフィールを整えよう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <ul class="step-list">
+                    <li class="step-item">
+                        <div class="step-circle">1</div>
+                        <div class="step-body">
+                            <div class="step-title">プロフィール README を作る</div>
+                            <div class="step-desc">自分のユーザー名と同名リポジトリを作ると README がプロフィールに表示される（例: katayama/katayama）</div>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-circle">2</div>
+                        <div class="step-body">
+                            <div class="step-title">ピン留めリポジトリを設定</div>
+                            <div class="step-desc">プロフィールに表示するリポジトリを最大6つピン留めできる。今回のアプリを入れよう</div>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-circle">3</div>
+                        <div class="step-body">
+                            <div class="step-title">毎日 commit してグリーンを増やす</div>
+                            <div class="step-desc">Contribution Graph（緑のマス）が埋まっていると継続力が伝わる。小さい変更でもOK</div>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-circle">4</div>
+                        <div class="step-body">
+                            <div class="step-title">アイコン・bio・場所を設定</div>
+                            <div class="step-desc">Settings → Profile から名前・プロフィール文・ウェブサイト URL を設定しよう</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="profile-box">
+                    <div class="profile-title">▌ プロフィール README 例</div>
+                    <div class="code-line"><span class="c-yellow"># Hi, I'm 颯斗 👋</span></div>
+                    <div class="code-line"><span class="c-green">高校生フルスタックエンジニア</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="c-gray">## 🛠️ Tech Stack</span></div>
+                    <div class="code-line"><span class="c-blue">React · Node.js · Express · SQLite</span></div>
+                    <div class="code-line"><span class="c-blue">Vercel · Railway · Claude Code</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="c-gray">## 🚀 Projects</span></div>
+                    <div class="code-line"><span class="c-pink">- [本棚アプリ](https://...) — 読書管理</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="c-gray">## 📫 Contact</span></div>
+                    <div class="code-line"><span class="c-green">Twitter/X: @username</span></div>
+                </div>
+                <div class="tip-row">
+                    <div class="tip-small"><i class="fab fa-x-twitter"></i> X(Twitter) で #個人開発 投稿</div>
+                    <div class="tip-small"><i class="fab fa-instagram"></i> Qiita / Zenn で記事を書く</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .phase-row { display: flex; gap: 12px; margin-bottom: 16px; }
+        .phase-block { flex: 1; background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .phase-block:nth-child(2) { border-top-color: #20C997; }
+        .phase-block:nth-child(3) { border-top-color: #f59f00; }
+        .phase-block:nth-child(4) { border-top-color: #e64980; }
+        .phase-label { font-size: 13px; font-weight: 700; color: #339AF0; letter-spacing: 1px; margin-bottom: 8px; }
+        .phase-block:nth-child(2) .phase-label { color: #20C997; }
+        .phase-block:nth-child(3) .phase-label { color: #f59f00; }
+        .phase-block:nth-child(4) .phase-label { color: #e64980; }
+        .lecture-list { font-size: 14px; color: #495057; line-height: 1.8; }
+        .skills-bar { background: #212529; border-radius: 8px; padding: 18px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .skill-tag { background: #339AF0; color: white; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-weight: 500; }
+        .skill-tag.teal { background: #20C997; }
+        .skill-tag.dark { background: #495057; }
+        .skill-tag.gold { background: #f59f00; color: #212529; }
+        .skills-label { font-size: 14px; color: #adb5bd; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>20回で学んだこと — 全体振り返り</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="phase-row">
+                <div class="phase-block">
+                    <div class="phase-label">PHASE 1 — 基礎（第1-5回）</div>
+                    <div class="lecture-list">
+                        第1回 AIとClaudeの基礎<br>
+                        第2回 プロンプトエンジニアリング<br>
+                        第3回 Claude Code 入門<br>
+                        第4回 HTML/CSS 基礎<br>
+                        第5回 JavaScript 基礎
+                    </div>
+                </div>
+                <div class="phase-block">
+                    <div class="phase-label">PHASE 2 — Web開発（第6-10回）</div>
+                    <div class="lecture-list">
+                        第6回 JavaScript 応用<br>
+                        第7回 Node.js/Express 入門<br>
+                        第8回 データベース(SQLite)<br>
+                        第9回 REST API 設計<br>
+                        第10回 React 入門
+                    </div>
+                </div>
+                <div class="phase-block">
+                    <div class="phase-label">PHASE 3 — 実践（第11-15回）</div>
+                    <div class="lecture-list">
+                        第11回 React 応用<br>
+                        第12回 フルスタック統合<br>
+                        第13回 認証(JWT)<br>
+                        第14回 Claude Code 活用<br>
+                        第15回 ミニプロジェクト
+                    </div>
+                </div>
+                <div class="phase-block">
+                    <div class="phase-label">PHASE 4 — 発展（第16-20回）</div>
+                    <div class="lecture-list">
+                        第16回 要件定義・設計<br>
+                        第17回 UI/UX デザイン<br>
+                        第18回 コア実装<br>
+                        第19回 デプロイ・公開<br>
+                        第20回 発表・振り返り
+                    </div>
+                </div>
+            </div>
+            <div class="skills-bar">
+                <span class="skills-label">習得スキル:</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag teal">React</span>
+                <span class="skill-tag teal">Node.js</span>
+                <span class="skill-tag teal">Express</span>
+                <span class="skill-tag dark">SQLite/SQL</span>
+                <span class="skill-tag dark">REST API</span>
+                <span class="skill-tag dark">JWT認証</span>
+                <span class="skill-tag gold">UI/UX</span>
+                <span class="skill-tag gold">デプロイ</span>
+                <span class="skill-tag gold">GitHub</span>
+                <span class="skill-tag" style="background:#e64980;">Claude Code</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

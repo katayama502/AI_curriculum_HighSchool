@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .cycle-col { }
+        .cycle-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 16px; }
+        .cycle-step {
+            background: white;
+            padding: 16px 20px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .cycle-step + .cycle-step { margin-top: 4px; }
+        .arrow-row {
+            text-align: center;
+            font-size: 22px;
+            color: #339AF0;
+            padding: 4px 0;
+        }
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            background: #339AF0;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-text { font-size: 18px; color: #212529; }
+        .prompts-col { }
+        .prompts-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 16px; }
+        .prompt-item {
+            background: #212529;
+            color: #F8F9FA;
+            padding: 14px 18px;
+            margin-top: 10px;
+        }
+        .prompt-category { font-size: 13px; color: #20C997; font-weight: 600; letter-spacing: 1px; margin-bottom: 6px; }
+        .prompt-text { font-family: "Courier New", monospace; font-size: 16px; line-height: 1.5; }
+        .prompt-text .hl { color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>アイデアを磨くフィードバック術</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="cycle-col">
+                <div class="cycle-title">🔄 改善サイクル</div>
+                <div class="cycle-step">
+                    <div class="step-circle">1</div>
+                    <div class="step-text"><strong>アイデアを提示する</strong><br><span style="font-size:15px;color:#6C757D;">自分のアイデアをClaudeに伝える</span></div>
+                </div>
+                <div class="arrow-row">▼</div>
+                <div class="cycle-step">
+                    <div class="step-circle">2</div>
+                    <div class="step-text"><strong>フィードバックをもらう</strong><br><span style="font-size:15px;color:#6C757D;">良い点・改善点・リスクを聞く</span></div>
+                </div>
+                <div class="arrow-row">▼</div>
+                <div class="cycle-step">
+                    <div class="step-circle">3</div>
+                    <div class="step-text"><strong>アイデアを改善する</strong><br><span style="font-size:15px;color:#6C757D;">フィードバックを元に修正する</span></div>
+                </div>
+                <div class="arrow-row">▼</div>
+                <div class="cycle-step">
+                    <div class="step-circle">4</div>
+                    <div class="step-text"><strong>再度フィードバック</strong><br><span style="font-size:15px;color:#6C757D;">繰り返してアイデアを洗練させる</span></div>
+                </div>
+            </div>
+            <div class="prompts-col">
+                <div class="prompts-title">💬 フィードバック依頼プロンプト例</div>
+                <div class="prompt-item">
+                    <div class="prompt-category">批判的レビュー</div>
+                    <div class="prompt-text">「このアイデアの<span class="hl">問題点と改善案</span>を<br>3つずつ教えてください」</div>
+                </div>
+                <div class="prompt-item">
+                    <div class="prompt-category">強化ポイント</div>
+                    <div class="prompt-text">「このアイデアを<span class="hl">もっと面白くする</span><br>方法を5つ提案して」</div>
+                </div>
+                <div class="prompt-item">
+                    <div class="prompt-category">実現可能性チェック</div>
+                    <div class="prompt-text">「高校生が<span class="hl">実際にできるか</span>の<br>観点で評価してください」</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

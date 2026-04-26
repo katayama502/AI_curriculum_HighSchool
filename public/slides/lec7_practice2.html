@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 20px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .sheet-card { background: #212529; border-radius: 10px; padding: 18px 22px; }
+        .sheet-card h3 { font-size: 20px; font-weight: 700; color: #F59F00; margin-bottom: 12px; border-bottom: 1px solid #495057; padding-bottom: 8px; }
+        .sheet-card pre { font-family: monospace; font-size: 15px; line-height: 1.8; color: #f8f9fa; white-space: pre-wrap; }
+        .kw { color: #F59F00; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .method { color: #da77f2; }
+        .summary-banner { grid-column: 1 / -1; background: linear-gradient(135deg, #F59F00, #e67700); border-radius: 10px; padding: 16px 28px; display: flex; align-items: center; gap: 20px; }
+        .summary-banner .icon { font-size: 36px; color: white; }
+        .summary-banner p { font-size: 20px; color: white; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>JavaScript チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sheet-card">
+                <h3>📦 変数・配列</h3>
+                <pre><span class="cmt">// 変数</span>
+<span class="kw">let</span> name = <span class="str">"太郎"</span>;
+<span class="kw">const</span> PI = <span class="num">3.14</span>;
+
+<span class="cmt">// 配列</span>
+<span class="kw">const</span> arr = [<span class="str">"a"</span>, <span class="str">"b"</span>, <span class="str">"c"</span>];
+arr.<span class="method">push</span>(<span class="str">"d"</span>);     <span class="cmt">// 追加</span>
+arr.<span class="method">forEach</span>(x => console.log(x));
+arr.<span class="method">map</span>(x => x + <span class="str">"!"</span>); <span class="cmt">// 変換</span>
+arr.<span class="method">filter</span>(x => x !== <span class="str">"a"</span>); <span class="cmt">// 絞込</span></pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🔀 条件・ループ・関数</h3>
+                <pre><span class="cmt">// 条件分岐</span>
+<span class="kw">if</span> (score >= <span class="num">80</span>) {
+    console.log(<span class="str">"合格"</span>);
+} <span class="kw">else</span> { console.log(<span class="str">"不合格"</span>); }
+
+<span class="cmt">// ループ</span>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i < <span class="num">5</span>; i++) { ... }
+
+<span class="cmt">// 関数（アロー）</span>
+<span class="kw">const</span> greet = (name) => {
+    <span class="kw">return</span> <span class="str">"こんにちは"</span> + name;
+};</pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🖥️ DOM操作</h3>
+                <pre><span class="cmt">// 要素取得</span>
+<span class="kw">const</span> el = document
+    .<span class="method">getElementById</span>(<span class="str">"id"</span>);
+
+<span class="cmt">// 変更</span>
+el.<span class="method">textContent</span> = <span class="str">"新テキスト"</span>;
+el.<span class="method">style</span>.color = <span class="str">"red"</span>;
+el.<span class="method">classList</span>.<span class="method">add</span>(<span class="str">"active"</span>);
+
+<span class="cmt">// イベント</span>
+el.<span class="method">addEventListener</span>(<span class="str">"click"</span>, () => {
+    <span class="cmt">// クリック時の処理</span>
+});</pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🌐 fetch / async</h3>
+                <pre><span class="cmt">// データ取得</span>
+<span class="kw">async function</span> getData() {
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="method">fetch</span>(url);
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="method">json</span>();
+    <span class="cmt">// dataを使って画面更新</span>
+    document.<span class="method">getElementById</span>(<span class="str">"out"</span>)
+        .textContent = data.name;
+}</pre>
+            </div>
+            <div class="summary-banner">
+                <div class="icon"><i class="fas fa-rocket"></i></div>
+                <p>この4つをマスターすれば、インタラクティブなWebページが自分で作れる！わからないときはClaudeに聞きながら進もう。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

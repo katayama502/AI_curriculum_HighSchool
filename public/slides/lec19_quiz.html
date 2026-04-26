@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 22px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 4px solid #339AF0; }
+        .quiz-num { font-size: 14px; font-weight: 700; color: #339AF0; margin-bottom: 8px; }
+        .quiz-q { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 14px; line-height: 1.4; }
+        .options { display: flex; flex-direction: column; gap: 8px; }
+        .option { padding: 8px 14px; border-radius: 6px; font-size: 15px; background: #f1f3f5; color: #495057; }
+        .option.correct { background: #d3f9d8; color: #2b8a3e; font-weight: 600; }
+        .option.correct::after { content: " ✓"; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>理解度チェック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-grid">
+                <div class="quiz-card">
+                    <div class="quiz-num">Q1</div>
+                    <div class="quiz-q">デプロイ前に .gitignore に必ず含めるべきファイルはどれ？</div>
+                    <div class="options">
+                        <div class="option">package.json</div>
+                        <div class="option correct">.env と node_modules/</div>
+                        <div class="option">src/ フォルダ</div>
+                        <div class="option">README.md</div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q2</div>
+                    <div class="quiz-q">Vercelでフロントエンドをデプロイする正しい説明はどれ？</div>
+                    <div class="options">
+                        <div class="option">サーバーを自分で用意する必要がある</div>
+                        <div class="option">月額費用が必ず必要</div>
+                        <div class="option correct">GitHubリポジトリを連携するだけで自動デプロイが可能</div>
+                        <div class="option">Node.jsのインストールが必要</div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q3</div>
+                    <div class="quiz-q">本番環境のCORSを安全に設定する方法はどれ？</div>
+                    <div class="options">
+                        <div class="option correct">CORS_ORIGINに本番フロントのURLだけを設定する</div>
+                        <div class="option">app.use(cors()) で全オリジンを許可する</div>
+                        <div class="option">CORSは本番環境では不要</div>
+                        <div class="option">cors() は使わずfetchで解決する</div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q4</div>
+                    <div class="quiz-q">CI/CDパイプラインの主な目的はどれ？</div>
+                    <div class="options">
+                        <div class="option">コードを自動的に書いてくれること</div>
+                        <div class="option correct">コードのテストとデプロイを自動化し、品質を維持すること</div>
+                        <div class="option">GitHubのリポジトリを公開すること</div>
+                        <div class="option">データベースを自動でバックアップすること</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

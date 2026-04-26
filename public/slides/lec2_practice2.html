@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Yu Gothic","Roboto",sans-serif;background:#F8F9FA;color:#212529}
+.slide-container{width:1280px;min-height:720px;background:#F8F9FA}
+.header{padding:40px 60px 0}
+h1{font-size:48px;font-weight:500;color:#339AF0}
+.divider{height:1px;background:#20C997;margin-top:20px}
+.content-area{padding:28px 60px}
+.time-badge{display:inline-block;background:#E67700;color:white;padding:4px 14px;border-radius:20px;font-size:15px;font-weight:600;margin-bottom:18px}
+.exercise-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ex-card{background:white;border-radius:10px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.ex-num{font-size:13px;font-weight:700;color:#339AF0;margin-bottom:8px}
+.ex-title{font-size:20px;font-weight:700;color:#212529;margin-bottom:10px}
+.ex-task{font-size:17px;font-weight:300;color:#495057;line-height:1.6;margin-bottom:12px}
+.ex-hint{background:#e7f5ff;border-radius:6px;padding:10px 14px;font-size:15px;color:#212529;border-left:3px solid #339AF0}
+.ex-hint strong{color:#339AF0}
+.level-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-left:8px}
+.basic{background:#ebfbee;color:#20C997}
+.advanced{background:#fff3cd;color:#E67700}
+.share-box{background:#212529;color:white;border-radius:10px;padding:18px 24px;margin-top:18px;display:flex;gap:14px;align-items:center}
+.share-box i{font-size:28px;color:#20C997}
+.share-box p{font-size:17px;font-weight:300;color:#e9ecef;margin:0;line-height:1.6}
+.share-box strong{color:#20C997}
+</style></head><body>
+<div class="slide-container">
+<div class="header"><h1>演習：RCTFで書いてみよう！</h1><div class="divider"></div></div>
+<div class="content-area">
+<div class="time-badge"><i class="fas fa-clock"></i> 所要時間：約20分</div>
+<div class="exercise-grid">
+<div class="ex-card">
+<div class="ex-num">演習 01 <span class="level-badge basic">基礎</span></div>
+<div class="ex-title">自己紹介プロンプト</div>
+<div class="ex-task">RCTFフレームワークを使って、「自己紹介文を書いてもらう」プロンプトを作ってみよう。用途：高校の文化祭で使うクラスの紹介ページ。</div>
+<div class="ex-hint"><strong>ヒント：</strong>Role=誰向けのライター？Context=どんな文化祭？Task=何を書く？Format=文字数・スタイル？</div>
+</div>
+<div class="ex-card">
+<div class="ex-num">演習 02 <span class="level-badge basic">基礎</span></div>
+<div class="ex-title">勉強サポートプロンプト</div>
+<div class="ex-task">今自分が苦手な科目のために、RCTFを使ったプロンプトを書いてみよう。実際にClaudeに送って、回答の質を確認しよう！</div>
+<div class="ex-hint"><strong>ヒント：</strong>自分の学年・苦手な単元を具体的に入れると良い回答が来やすい</div>
+</div>
+<div class="ex-card">
+<div class="ex-num">演習 03 <span class="level-badge advanced">発展</span></div>
+<div class="ex-title">プロンプトの改善チャレンジ</div>
+<div class="ex-task">以下の悪いプロンプトをRCTFを使って改善してみよう：「歴史を教えて」→より良いプロンプトに書き直してClaudeに送ろう！</div>
+<div class="ex-hint"><strong>ヒント：</strong>どの時代？どの地域？何のため？どのくらいの深さで？を追加する</div>
+</div>
+<div class="ex-card">
+<div class="ex-num">演習 04 <span class="level-badge advanced">発展</span></div>
+<div class="ex-title">追加指示の練習</div>
+<div class="ex-task">演習02で得た回答に対して「追加指示」を3回連続で送り、どう回答が変わるかを観察しよう。追加指示例：「もっと詳しく」「別の例で」「まとめて」など。</div>
+<div class="ex-hint"><strong>ヒント：</strong>毎回どう変わったかをメモして、最後にクラスで共有しよう</div>
+</div>
+</div>
+<div class="share-box"><i class="fas fa-comments"></i><p>演習が終わったら：<strong>「一番良かったプロンプト」と「そこから得た学び」をクラスで共有しよう！</strong>他の人のプロンプトからも学べることがたくさんある。</p></div>
+</div></div></body></html>

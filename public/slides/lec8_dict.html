@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .method-table { width: 100%; border-collapse: collapse; }
+        .method-table th { background: #20C997; color: white; padding: 10px 14px; font-size: 18px; text-align: left; }
+        .method-table td { padding: 10px 14px; font-size: 16px; border-bottom: 1px solid #dee2e6; background: white; }
+        .method-table tr:nth-child(even) td { background: #f0fdf4; }
+        .note-box { background: white; border-left: 5px solid #339AF0; padding: 12px 16px; border-radius: 0 6px 6px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.05); margin-top: 12px; }
+        .note-box p { font-size: 17px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>辞書（dict）— キーと値のペア</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>名前をキーにデータを管理</h2>
+                <div class="code-block">
+<span class="cmt"># 辞書の作成</span>
+student = {
+    <span class="str">"name"</span>: <span class="str">"田中太郎"</span>,
+    <span class="str">"age"</span>: <span class="num">17</span>,
+    <span class="str">"grade"</span>: <span class="str">"2年"</span>,
+    <span class="str">"scores"</span>: [<span class="num">85</span>, <span class="num">92</span>, <span class="num">78</span>]
+}
+
+<span class="cmt"># 値を取り出す</span>
+<span class="func">print</span>(student[<span class="str">"name"</span>])    <span class="cmt"># 田中太郎</span>
+<span class="func">print</span>(student[<span class="str">"age"</span>])     <span class="cmt"># 17</span>
+
+<span class="cmt"># 値を更新・追加</span>
+student[<span class="str">"age"</span>] = <span class="num">18</span>
+student[<span class="str">"club"</span>] = <span class="str">"バスケ部"</span>
+
+<span class="cmt"># 辞書のループ</span>
+<span class="kw">for</span> key, val <span class="kw">in</span> student.<span class="func">items</span>():
+    <span class="func">print</span>(<span class="str">f"{key}: {val}"</span>)
+                </div>
+                <div class="note-box">
+                    <p>📋 APIのレスポンスデータ（JSON）は辞書と同じ構造。fetch APIで取得したデータも辞書として扱えます！</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>辞書のメソッド</h2>
+                <table class="method-table">
+                    <tr><th>メソッド</th><th>返す値</th></tr>
+                    <tr><td>.keys()</td><td>キーの一覧</td></tr>
+                    <tr><td>.values()</td><td>値の一覧</td></tr>
+                    <tr><td>.items()</td><td>(キー, 値)のペア</td></tr>
+                    <tr><td>.get(key)</td><td>値（キーなければNone）</td></tr>
+                    <tr><td>.get(key, default)</td><td>値（なければdefault）</td></tr>
+                    <tr><td>.pop(key)</td><td>値を取り出して削除</td></tr>
+                    <tr><td>.update(dict2)</td><td>別の辞書とマージ</td></tr>
+                    <tr><td>key in dict</td><td>キーが存在するか</td></tr>
+                </table>
+                <div class="note-box" style="margin-top:12px;">
+                    <p><strong>リスト vs 辞書</strong><br>
+                    リスト：番号（0, 1, 2）でアクセス<br>
+                    辞書：名前（"key"）でアクセス</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

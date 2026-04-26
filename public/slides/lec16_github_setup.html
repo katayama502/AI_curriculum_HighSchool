@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 600; color: #212529; margin-bottom: 16px; }
+        .step-list { display: flex; flex-direction: column; gap: 12px; }
+        .step { display: flex; gap: 14px; align-items: flex-start; background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .step-num { background: #339AF0; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+        .step-content { flex: 1; }
+        .step-title { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .step-code { background: #0D0D0D; color: #a9dc76; font-family: monospace; font-size: 14px; padding: 6px 12px; border-radius: 4px; margin-top: 4px; display: inline-block; }
+        .step-note { font-size: 15px; color: #495057; }
+        .branch-box { background: #0D0D0D; border-radius: 10px; padding: 20px; }
+        .branch-title { color: #20C997; font-size: 17px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .branch-code { font-family: monospace; font-size: 14px; line-height: 1.9; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-gray { color: #adb5bd; }
+        .c-yellow { color: #ffd866; }
+        .tip-banner { margin-top: 16px; background: #d3f9d8; border-left: 4px solid #20C997; padding: 12px 18px; border-radius: 4px; font-size: 17px; color: #2b8a3e; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>GitHubでプロジェクトを管理しよう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fab fa-github" style="color:#212529"></i> リポジトリ初期設定手順</h2>
+                <div class="step-list">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">GitHubでリポジトリを作成</div>
+                            <div class="step-note">github.com → New repository → 名前を付けてCreate</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">ローカルでプロジェクトを初期化</div>
+                            <div class="step-code">git init && git add . && git commit -m "init"</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">リモートに紐付けてプッシュ</div>
+                            <div class="step-code">git remote add origin [URL]<br>git push -u origin main</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <div class="step-title">.gitignore を設定（重要！）</div>
+                            <div class="step-note">node_modules/ と .env は必ずIgnore対象に</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tip-banner">
+                    <i class="fas fa-lightbulb"></i> コミットは「動く状態」ごとにこまめに行う習慣をつけよう
+                </div>
+            </div>
+            <div class="right">
+                <div class="branch-box">
+                    <div class="branch-title"><i class="fas fa-code-branch"></i> ブランチ戦略</div>
+                    <div class="branch-code">
+                        <span class="c-yellow"># メインブランチ</span><br>
+                        <span class="c-green">main</span><span class="c-gray">    ← 常に動く状態を保つ</span><br><br>
+                        <span class="c-yellow"># 開発ブランチ</span><br>
+                        <span class="c-blue">develop</span><span class="c-gray"> ← 開発の統合先</span><br><br>
+                        <span class="c-yellow"># 機能ブランチ</span><br>
+                        <span class="c-green">feature/auth</span><br>
+                        <span class="c-green">feature/book-list</span><br>
+                        <span class="c-green">feature/deploy</span><br><br>
+                        <span class="c-yellow"># 作業の流れ</span><br>
+                        <span class="c-gray">① feature/ で作業</span><br>
+                        <span class="c-gray">② develop にPull Request</span><br>
+                        <span class="c-gray">③ 確認後 main にマージ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

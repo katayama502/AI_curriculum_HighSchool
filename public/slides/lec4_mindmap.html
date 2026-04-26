@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .mindmap-demo { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .mm-center { text-align: center; margin-bottom: 16px; }
+        .mm-core { display: inline-block; background: #339AF0; color: white; padding: 12px 30px; border-radius: 30px; font-size: 24px; font-weight: 600; }
+        .mm-branches { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+        .mm-branch { border-radius: 8px; padding: 14px 12px; }
+        .mm-branch:nth-child(1) { background: #e7f5ff; border-top: 3px solid #339AF0; }
+        .mm-branch:nth-child(2) { background: #ebfbee; border-top: 3px solid #20C997; }
+        .mm-branch:nth-child(3) { background: #fff9db; border-top: 3px solid #F59F00; }
+        .mm-branch:nth-child(4) { background: #f3f0ff; border-top: 3px solid #845EF7; }
+        .mm-branch-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .mm-branch-title.blue { color: #1c7ed6; }
+        .mm-branch-title.teal { color: #099268; }
+        .mm-branch-title.yellow { color: #e67700; }
+        .mm-branch-title.purple { color: #6741d9; }
+        .mm-leaf { font-size: 16px; font-weight: 300; color: #495057; padding: 3px 0; line-height: 1.4; }
+        .mm-leaf::before { content: "• "; }
+        .prompt-box { background: #e7f5ff; border-left: 6px solid #339AF0; padding: 14px 20px; border-radius: 0 8px 8px 0; }
+        .prompt-text { font-size: 20px; font-weight: 400; color: #212529; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeでマインドマップを作る</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>Claudeが生成した「進路選択」のマインドマップ例</h2>
+            <div class="mindmap-demo">
+                <div class="mm-center">
+                    <div class="mm-core">🎯 進路選択</div>
+                </div>
+                <div class="mm-branches">
+                    <div class="mm-branch">
+                        <div class="mm-branch-title blue">📚 学力・科目</div>
+                        <div class="mm-leaf">得意科目は？</div>
+                        <div class="mm-leaf">苦手をどう補う？</div>
+                        <div class="mm-leaf">必要な受験科目</div>
+                    </div>
+                    <div class="mm-branch">
+                        <div class="mm-branch-title teal">💡 興味・関心</div>
+                        <div class="mm-leaf">好きなこと・夢中なこと</div>
+                        <div class="mm-leaf">将来やりたい仕事</div>
+                        <div class="mm-leaf">社会に関わり方</div>
+                    </div>
+                    <div class="mm-branch">
+                        <div class="mm-branch-title yellow">🏫 進学先の種類</div>
+                        <div class="mm-leaf">4年制大学</div>
+                        <div class="mm-leaf">専門学校・短大</div>
+                        <div class="mm-leaf">就職・留学</div>
+                    </div>
+                    <div class="mm-branch">
+                        <div class="mm-branch-title purple">👨‍👩‍👧 周囲の状況</div>
+                        <div class="mm-leaf">家族の意見・経済面</div>
+                        <div class="mm-leaf">友人・先輩の影響</div>
+                        <div class="mm-leaf">地元に残る？出る？</div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-text">「〇〇というテーマのマインドマップを、4〜5つの大枝と各2〜3の小枝で作ってください」</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

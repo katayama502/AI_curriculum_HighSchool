@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 36px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .debug-list { display: flex; flex-direction: column; gap: 12px; }
+        .debug-item { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 12px; }
+        .debug-icon { font-size: 22px; min-width: 26px; }
+        .debug-content { flex: 1; }
+        .debug-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .debug-text { font-size: 15px; color: #495057; line-height: 1.5; }
+        .error-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .error-table th { background: #212529; color: white; font-size: 15px; padding: 10px 14px; text-align: left; }
+        .error-table td { font-size: 14px; padding: 9px 14px; border-bottom: 1px solid #f1f3f5; color: #495057; }
+        .error-table tr:last-child td { border-bottom: none; }
+        .err-code { font-family: monospace; font-weight: 600; color: #ff6b6b; }
+        .err-fix { color: #20C997; }
+        .tip-banner { margin-top: 14px; background: #212529; color: white; padding: 12px 18px; border-radius: 6px; font-size: 16px; display: flex; gap: 10px; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>バグ調査とデバッグ技術</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-search" style="color:#339AF0"></i> デバッグの手順</h2>
+                <div class="debug-list">
+                    <div class="debug-item">
+                        <div class="debug-icon" style="color:#339AF0">1️⃣</div>
+                        <div class="debug-content">
+                            <div class="debug-title">エラーメッセージを読む</div>
+                            <div class="debug-text">コンソールのエラーは必ず全文を読む。行番号・ファイル名を確認</div>
+                        </div>
+                    </div>
+                    <div class="debug-item">
+                        <div class="debug-icon" style="color:#20C997">2️⃣</div>
+                        <div class="debug-content">
+                            <div class="debug-title">console.logで状態確認</div>
+                            <div class="debug-text">APIの戻り値・stateの値・関数の引数を随時出力して確認</div>
+                        </div>
+                    </div>
+                    <div class="debug-item">
+                        <div class="debug-icon" style="color:#f59f00">3️⃣</div>
+                        <div class="debug-content">
+                            <div class="debug-title">Network タブで確認</div>
+                            <div class="debug-text">Chrome DevTools → Networkタブでリクエスト/レスポンスを確認</div>
+                        </div>
+                    </div>
+                    <div class="debug-item">
+                        <div class="debug-icon" style="color:#ff6b6b">4️⃣</div>
+                        <div class="debug-content">
+                            <div class="debug-title">Claude Codeに貼り付け</div>
+                            <div class="debug-text">エラー文全体+関連コードをセットで貼る→「原因と修正方法を教えて」</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-exclamation-triangle" style="color:#ff6b6b"></i> よくあるエラーと対処法</h2>
+                <table class="error-table">
+                    <thead><tr><th>エラー</th><th>原因</th><th>対処法</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="err-code">CORS error</span></td><td>ポート違い</td><td><span class="err-fix">cors()ミドルウェア追加</span></td></tr>
+                        <tr><td><span class="err-code">401 Unauthorized</span></td><td>トークンなし/期限切れ</td><td><span class="err-fix">ログイン画面に戻す</span></td></tr>
+                        <tr><td><span class="err-code">Cannot read undefined</span></td><td>API結果がnull</td><td><span class="err-fix">オプショナルチェーン?.使用</span></td></tr>
+                        <tr><td><span class="err-code">500 Internal Error</span></td><td>サーバーのバグ</td><td><span class="err-fix">Expressのログを確認</span></td></tr>
+                        <tr><td><span class="err-code">ENOENT: no file</span></td><td>パス間違い</td><td><span class="err-fix">相対/絶対パスを確認</span></td></tr>
+                    </tbody>
+                </table>
+                <div class="tip-banner">
+                    <i class="fas fa-robot"></i>
+                    「このエラーが出ています：[全文貼付] コードはこれです：[コード貼付]」でClaudeに聞く！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .chat-col { }
+        .chat-title { font-size: 20px; font-weight: 700; color: white; background: #212529; padding: 10px 16px; margin-bottom: 12px; }
+        .chat-bubble {
+            padding: 12px 16px; margin-top: 8px; font-size: 16px; line-height: 1.5; max-width: 90%;
+        }
+        .user-bubble { background: #339AF0; color: white; margin-left: auto; }
+        .ai-bubble { background: white; color: #212529; border-left: 3px solid #20C997; }
+        .bubble-label { font-size: 12px; font-weight: 700; margin-bottom: 4px; opacity: 0.8; }
+        .tips-col { }
+        .tips-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .tip-item { background: white; padding: 14px 18px; margin-top: 10px; display: flex; align-items: flex-start; gap: 12px; }
+        .tip-icon { font-size: 22px; flex-shrink: 0; }
+        .tip-text { font-size: 17px; color: #212529; }
+        .tip-sub { font-size: 14px; color: #6C757D; margin-top: 4px; }
+        .project-badge {
+            background: #F7DF1E; color: #212529;
+            padding: 12px 20px; margin-top: 16px;
+            font-size: 18px; font-weight: 700; text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeとのペアプログラミング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="chat-col">
+                <div class="chat-title">💬 会話例：クイズアプリ開発</div>
+                <div class="chat-bubble user-bubble">
+                    <div class="bubble-label">👤 あなた</div>
+                    「JavaScriptで簡単なクイズアプリを作りたい。まず何から始めればいい？」
+                </div>
+                <div class="chat-bubble ai-bubble">
+                    <div class="bubble-label">🤖 Claude</div>
+                    「まず問題データを配列で作りましょう。<br>const questions = [{question: "...", answer: "..."}]<br>次にHTML構造を作り、JSで表示します。」
+                </div>
+                <div class="chat-bubble user-bubble">
+                    <div class="bubble-label">👤 あなた</div>
+                    「コードを書いたけどボタンが動かない。エラー：'Cannot read properties of null'」
+                </div>
+                <div class="chat-bubble ai-bubble">
+                    <div class="bubble-label">🤖 Claude</div>
+                    「querySelector()がnullを返しています。HTML側のid名を確認してください。JSより先にHTMLが読み込まれているか確認を。」
+                </div>
+            </div>
+            <div class="tips-col">
+                <div class="tips-title">🚀 効果的なペアプロのコツ</div>
+                <div class="tip-item">
+                    <span class="tip-icon">🎯</span>
+                    <div>
+                        <div class="tip-text">小さなステップで進める</div>
+                        <div class="tip-sub">一度に全部頼まず、機能を1つずつ実装</div>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">🔍</span>
+                    <div>
+                        <div class="tip-text">エラーはそのまま貼る</div>
+                        <div class="tip-sub">エラーメッセージ全文をコピーして渡す</div>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">💡</span>
+                    <div>
+                        <div class="tip-text">「なぜ？」を聞く</div>
+                        <div class="tip-sub">「このコードはなぜこう書くの？」で理解を深める</div>
+                    </div>
+                </div>
+                <div class="project-badge">
+                    🎮 今日の課題：クイズアプリを作ろう！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

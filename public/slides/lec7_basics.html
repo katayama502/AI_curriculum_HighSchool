@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        /* Reduced vertical paddings to avoid overflow while keeping font sizes */
+        .content-area { padding-top: 8px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .code-block {
+            background: #1A1A2E; padding: 8px; /* reduced from 20 */
+            font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8;
+        }
+        .kw { color: #339AF0; font-weight: 700; }
+        .str { color: #FCC419; }
+        .num { color: #20C997; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .concepts-col { }
+        .concept-item {
+            background: white; padding: 8px 12px; /* reduced from 14/18 */
+            margin-top: 8px; display: flex; align-items: flex-start; gap: 12px;
+        }
+        .concept-badge {
+            background: #212529; color: #F7DF1E;
+            font-family: "Courier New", monospace; font-size: 14px; font-weight: 700;
+            padding: 3px 8px; flex-shrink: 0; margin-top: 2px;
+        }
+        .concept-text { font-size: 18px; color: #212529; }
+        .concept-sub { font-size: 14px; color: #6C757D; margin-top: 2px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>JavaScriptの基本文法</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment">// 変数の宣言</span><br>
+                <span class="kw">let</span> name = <span class="str">"太郎"</span>;<br>
+                <span class="kw">const</span> age = <span class="num">16</span>;<br><br>
+                <span class="comment">// 条件分岐</span><br>
+                <span class="kw">if</span> (age >= <span class="num">18</span>) {<br>
+                &nbsp;&nbsp;console.<span class="fn">log</span>(<span class="str">"大人"</span>);<br>
+                } <span class="kw">else</span> {<br>
+                &nbsp;&nbsp;console.<span class="fn">log</span>(<span class="str">"未成年"</span>);<br>
+                }<br><br>
+                <span class="comment">// ループ</span><br>
+                <span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i < <span class="num">5</span>; i++) {<br>
+                &nbsp;&nbsp;console.<span class="fn">log</span>(i);<br>
+                }<br><br>
+                <span class="comment">// 関数</span><br>
+                <span class="kw">function</span> <span class="fn">greet</span>(name) {<br>
+                &nbsp;&nbsp;<span class="kw">return</span> <span class="str">`こんにちは、${name}！`</span>;<br>
+                }
+            </div>
+            <div class="concepts-col">
+                <div class="concept-item">
+                    <div class="concept-badge">let/const</div>
+                    <div>
+                        <div class="concept-text">変数宣言</div>
+                        <div class="concept-sub">let = 変更可能、const = 変更不可（定数）</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">if/else</div>
+                    <div>
+                        <div class="concept-text">条件分岐</div>
+                        <div class="concept-sub">条件が true/false で処理を分ける</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">for</div>
+                    <div>
+                        <div class="concept-text">繰り返し処理</div>
+                        <div class="concept-sub">同じ処理を指定回数繰り返す</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">function</div>
+                    <div>
+                        <div class="concept-text">関数定義</div>
+                        <div class="concept-sub">処理をまとめて再利用可能にする</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">console.log</div>
+                    <div>
+                        <div class="concept-text">デバッグ出力</div>
+                        <div class="concept-sub">ブラウザの開発者ツールに値を表示</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

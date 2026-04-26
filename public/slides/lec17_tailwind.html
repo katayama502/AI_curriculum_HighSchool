@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .intro { font-size: 19px; color: #495057; margin-bottom: 18px; line-height: 1.6; }
+        .compare { display: flex; flex-direction: column; gap: 12px; }
+        .cmp-box { border-radius: 8px; overflow: hidden; }
+        .cmp-label { padding: 8px 14px; font-size: 15px; font-weight: 600; }
+        .cmp-label.bad { background: #ffe3e3; color: #c92a2a; }
+        .cmp-label.good { background: #d3f9d8; color: #2b8a3e; }
+        .cmp-code { background: #0D0D0D; padding: 10px 14px; font-family: monospace; font-size: 14px; line-height: 1.7; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .utility-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .utility-table th { background: #212529; color: white; font-size: 15px; padding: 10px 14px; text-align: left; }
+        .utility-table td { font-size: 14px; padding: 8px 14px; border-bottom: 1px solid #f1f3f5; font-family: monospace; color: #495057; }
+        .utility-table tr:last-child td { border-bottom: none; }
+        .u-class { color: #339AF0; font-weight: 600; }
+        .u-css { color: #20C997; }
+        .tip-box { margin-top: 14px; background: #e3fafc; border-left: 4px solid #20C997; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #0c7a6d; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Tailwind CSSで素早くスタイリング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-wind" style="color:#339AF0"></i> Tailwind CSSとは？</h2>
+                <p class="intro">Tailwind CSSは「ユーティリティクラス」を組み合わせてスタイルを書くCSSフレームワーク。CSSファイルを別に書かずにHTMLに直接書ける。</p>
+                <div class="compare">
+                    <div class="cmp-box">
+                        <div class="cmp-label bad">❌ 通常のCSS（2ファイル必要）</div>
+                        <div class="cmp-code">
+<span class="c-gray">/* style.css */</span><br>
+<span class="c-blue">.btn</span> { <span class="c-yellow">background</span>: <span class="c-green">#339AF0</span>; <span class="c-yellow">color</span>: white;<br>
+  <span class="c-yellow">padding</span>: 8px 16px; <span class="c-yellow">border-radius</span>: 6px; }
+                        </div>
+                    </div>
+                    <div class="cmp-box">
+                        <div class="cmp-label good">✅ Tailwind CSS（HTMLに直接）</div>
+                        <div class="cmp-code">
+<span class="c-green">&lt;button</span> <span class="c-blue">className</span>=<span class="c-yellow">"bg-blue-500 text-white</span><br>
+<span class="c-yellow">  px-4 py-2 rounded-md hover:bg-blue-600"</span><br>
+<span class="c-green">&gt;</span>追加する<span class="c-green">&lt;/button&gt;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-table" style="color:#20C997"></i> よく使うユーティリティクラス</h2>
+                <table class="utility-table">
+                    <thead><tr><th>分類</th><th>クラス名</th><th>CSSの意味</th></tr></thead>
+                    <tbody>
+                        <tr><td>余白</td><td><span class="u-class">p-4</span></td><td><span class="u-css">padding: 1rem</span></td></tr>
+                        <tr><td>余白</td><td><span class="u-class">mx-auto</span></td><td><span class="u-css">margin: 0 auto</span></td></tr>
+                        <tr><td>レイアウト</td><td><span class="u-class">flex gap-4</span></td><td><span class="u-css">display:flex; gap:1rem</span></td></tr>
+                        <tr><td>レイアウト</td><td><span class="u-class">grid grid-cols-3</span></td><td><span class="u-css">grid 3カラム</span></td></tr>
+                        <tr><td>テキスト</td><td><span class="u-class">text-2xl font-bold</span></td><td><span class="u-css">1.5rem 太字</span></td></tr>
+                        <tr><td>色</td><td><span class="u-class">bg-blue-500 text-white</span></td><td><span class="u-css">青背景 白文字</span></td></tr>
+                        <tr><td>角丸</td><td><span class="u-class">rounded-lg</span></td><td><span class="u-css">border-radius:0.5rem</span></td></tr>
+                        <tr><td>影</td><td><span class="u-class">shadow-md</span></td><td><span class="u-css">中程度のbox-shadow</span></td></tr>
+                    </tbody>
+                </table>
+                <div class="tip-box"><i class="fas fa-lightbulb"></i> Claude Codeに「Tailwindで〇〇のカードを作って」と頼むだけで使い方を学べる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

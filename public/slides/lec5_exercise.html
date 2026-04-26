@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .task-box { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 14px; border-top: 4px solid #339AF0; }
+        .task-box:nth-child(2) { border-top-color: #20C997; }
+        .task-box:nth-child(3) { border-top-color: #F59F00; }
+        .tb-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .tb-title .blue { color: #339AF0; }
+        .tb-title .teal { color: #20C997; }
+        .tb-title .yellow { color: #F59F00; }
+        .tb-steps { list-style: none; }
+        .tb-steps li { font-size: 18px; font-weight: 300; color: #495057; padding: 6px 0; border-bottom: 1px dashed #e9ecef; line-height: 1.5; }
+        .tb-steps li:last-child { border-bottom: none; }
+        .tb-steps li::before { content: "▶ "; color: #339AF0; font-size: 14px; }
+        .challenge-box { background: linear-gradient(135deg, #1A1A2E, #343a40); border-radius: 10px; padding: 20px 22px; color: white; }
+        .ch-title { font-size: 22px; font-weight: 700; color: #74c0fc; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+        .ch-task { font-size: 18px; font-weight: 300; color: #dee2e6; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); line-height: 1.5; }
+        .ch-task:last-child { border-bottom: none; }
+        .ch-task::before { content: "🎯 "; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第5回 実習課題</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>基本課題（全員）</h2>
+                <div class="task-box">
+                    <div class="tb-title"><span class="blue">課題A：</span>CoTプロンプトを作る</div>
+                    <ul class="tb-steps">
+                        <li>今学校で習っている数学or理科の問題を1つ選ぶ</li>
+                        <li>「ステップごとに考えを見せながら解いて」で解いてもらう</li>
+                        <li>各ステップが正しいか自分で確認する</li>
+                    </ul>
+                </div>
+                <div class="task-box">
+                    <div class="tb-title"><span class="teal">課題B：</span>Few-shotで文章変換</div>
+                    <ul class="tb-steps">
+                        <li>変換例を2〜3個考えてプロンプトに入れる</li>
+                        <li>「先生向けの固い文→友達に送るLINE」に変換させる</li>
+                        <li>v1→v2で改善を体験する</li>
+                    </ul>
+                </div>
+                <div class="task-box">
+                    <div class="tb-title"><span class="yellow">課題C：</span>デバッグ体験</div>
+                    <ul class="tb-steps">
+                        <li>わざと不完全なプロンプトを書いて試す</li>
+                        <li>何が問題だったか診断する</li>
+                        <li>改善して比較する</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <h2>チャレンジ課題</h2>
+                <div class="challenge-box">
+                    <div class="ch-title"><i class="fas fa-rocket"></i> 発展：専用AIを作ろう</div>
+                    <div class="ch-task">自分の勉強用「専用家庭教師AI」のSystemプロンプトを設計する</div>
+                    <div class="ch-task">対象科目・答え方のルール・語調・制約を全部設定する</div>
+                    <div class="ch-task">そのAIに実際に質問して、動作を確認・調整する</div>
+                    <div class="ch-task">メタプロンプトでClaudeに「もっと良いSystemを提案して」と頼む</div>
+                    <div class="ch-task">完成したSystemプロンプトをクラスで発表する</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

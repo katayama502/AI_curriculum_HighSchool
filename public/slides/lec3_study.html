@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F8F9FA;
+            position: relative;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area {
+            padding-top: 36px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .subject-block {
+            background: white;
+            border-top: 4px solid #339AF0;
+            padding: 24px;
+        }
+        .subject-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+        .subject-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #339AF0;
+            margin-bottom: 14px;
+        }
+        .use-list {
+            list-style: none;
+        }
+        .use-list li {
+            font-size: 18px;
+            color: #495057;
+            padding-top: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .use-list li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #20C997;
+            font-size: 12px;
+            top: 12px;
+        }
+        .tip-bar {
+            background: #212529;
+            color: white;
+            padding: 16px 24px;
+            margin-top: 28px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .tip-label {
+            background: #339AF0;
+            color: white;
+            padding: 4px 12px;
+            font-size: 16px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>教科学習への活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="subject-grid">
+                <div class="subject-block">
+                    <div class="subject-icon">📐</div>
+                    <div class="subject-title">数学</div>
+                    <ul class="use-list">
+                        <li>解き方を段階的に説明してもらう</li>
+                        <li>間違えた問題の解説を求める</li>
+                        <li>類似問題を作ってもらう</li>
+                        <li>公式の意味を噛み砕いて説明</li>
+                    </ul>
+                </div>
+                <div class="subject-block">
+                    <div class="subject-icon">🌍</div>
+                    <div class="subject-title">英語</div>
+                    <ul class="use-list">
+                        <li>英作文の添削・改善提案</li>
+                        <li>単語の使い方を例文で確認</li>
+                        <li>長文読解の要約・解説</li>
+                        <li>英会話の練習相手になる</li>
+                    </ul>
+                </div>
+                <div class="subject-block">
+                    <div class="subject-icon">🔬</div>
+                    <div class="subject-title">理科・社会</div>
+                    <ul class="use-list">
+                        <li>難しい概念をたとえ話で説明</li>
+                        <li>歴史の流れを整理してもらう</li>
+                        <li>実験の仕組みを視覚的に説明</li>
+                        <li>テスト対策の要点まとめ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-bar">
+                <span class="tip-label">POINT</span>
+                「高校1年生向けに」「具体例を使って」など、自分のレベルを伝えると回答の質が上がる！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .creative-card {
+            background: white;
+        }
+        .card-header {
+            padding: 14px 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-header.poetry { background: #339AF0; }
+        .card-header.story { background: #20C997; }
+        .card-header.script { background: #7950F2; }
+        .card-body { padding: 16px 18px; }
+        .prompt-label { font-size: 13px; color: #6C757D; font-weight: 600; margin-bottom: 6px; letter-spacing: 1px; }
+        .prompt-text {
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+            color: #212529;
+            background: #F8F9FA;
+            padding: 10px 12px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .output-label { font-size: 13px; color: #20C997; font-weight: 600; margin-bottom: 6px; letter-spacing: 1px; }
+        .output-text {
+            font-size: 15px;
+            color: #495057;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .tip-row {
+            background: #339AF0;
+            color: white;
+            padding: 14px 24px;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>文章・詩・物語の創作</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="creative-grid">
+                <div class="creative-card">
+                    <div class="card-header poetry">📝 詩・俳句</div>
+                    <div class="card-body">
+                        <div class="prompt-label">PROMPT</div>
+                        <div class="prompt-text">「春の終わりをテーマに<br>現代語の俳句を3つ作って」</div>
+                        <div class="output-label">OUTPUT</div>
+                        <div class="output-text">スマホ画面<br>春の終わりを<br>スクロールす</div>
+                    </div>
+                </div>
+                <div class="creative-card">
+                    <div class="card-header story">📖 短編小説</div>
+                    <div class="card-body">
+                        <div class="prompt-label">PROMPT</div>
+                        <div class="prompt-text">「AIと友達になった高校生の<br>400字の短編を書いて」</div>
+                        <div class="output-label">OUTPUT</div>
+                        <div class="output-text">「最初は宿題の<br>ためだったのに、<br>いつの間にか...」</div>
+                    </div>
+                </div>
+                <div class="creative-card">
+                    <div class="card-header script">🎭 脚本・台本</div>
+                    <div class="card-body">
+                        <div class="prompt-label">PROMPT</div>
+                        <div class="prompt-text">「文化祭の劇の<br>オープニングシーンを<br>2分分書いて」</div>
+                        <div class="output-label">OUTPUT</div>
+                        <div class="output-text">【幕が上がる】<br>主人公A：「今日こそ<br>言わなきゃ...」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tip-row">
+                💡 <strong>コツ：</strong>「文体」「長さ」「対象読者」「雰囲気（明るい・暗い）」を指定するほど、理想の作品に近づく！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

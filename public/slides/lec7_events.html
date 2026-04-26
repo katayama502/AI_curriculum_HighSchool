@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .events-col { }
+        .events-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .event-table { width: 100%; border-collapse: collapse; }
+        .event-table th { padding: 10px 14px; font-size: 17px; font-weight: 700; text-align: left; }
+        .event-table th.name-col { background: #339AF0; color: white; width: 40%; }
+        .event-table th.desc-col { background: #212529; color: white; }
+        .event-table td { padding: 10px 14px; font-size: 16px; border: 1px solid #DEE2E6; vertical-align: middle; }
+        .event-table td.name-cell { font-family: "Courier New", monospace; color: #339AF0; background: white; font-weight: 700; }
+        .event-table td.desc-cell { background: white; color: #495057; }
+        .event-table tr:nth-child(even) td { background: #F8F9FA; }
+        .code-col { }
+        .code-title { font-size: 20px; font-weight: 700; color: white; background: #212529; padding: 10px 16px; margin-bottom: 0; }
+        .code-block {
+            background: #1A1A2E; padding: 18px;
+            font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8;
+        }
+        .kw { color: #339AF0; font-weight: 700; }
+        .str { color: #FCC419; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .prop { color: #20C997; }
+        .tip-bar { background: #20C997; color: white; padding: 12px 18px; margin-top: 12px; font-size: 17px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>イベントハンドリング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="events-col">
+                <div class="events-title">よく使うイベントの種類</div>
+                <table class="event-table">
+                    <thead>
+                        <tr>
+                            <th class="name-col">イベント名</th>
+                            <th class="desc-col">発火するタイミング</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name-cell">click</td>
+                            <td class="desc-cell">要素がクリックされた時</td>
+                        </tr>
+                        <tr>
+                            <td class="name-cell">input</td>
+                            <td class="desc-cell">入力フォームに文字が入力された時</td>
+                        </tr>
+                        <tr>
+                            <td class="name-cell">submit</td>
+                            <td class="desc-cell">フォームが送信された時</td>
+                        </tr>
+                        <tr>
+                            <td class="name-cell">keydown</td>
+                            <td class="desc-cell">キーボードのキーが押された時</td>
+                        </tr>
+                        <tr>
+                            <td class="name-cell">mouseover</td>
+                            <td class="desc-cell">マウスが要素の上に乗った時</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="code-col">
+                <div class="code-title">💻 実践例：文字数カウンター</div>
+                <div class="code-block">
+                    <span class="comment">// テキストエリアの文字数をリアルタイム表示</span><br>
+                    <span class="kw">const</span> textarea = document.<span class="fn">querySelector</span>(<span class="str">"#text"</span>);<br>
+                    <span class="kw">const</span> counter = document.<span class="fn">querySelector</span>(<span class="str">"#count"</span>);<br><br>
+                    textarea.<span class="fn">addEventListener</span>(<span class="str">"input"</span>, () => {<br>
+                    &nbsp;&nbsp;<span class="kw">const</span> len = textarea.<span class="prop">value</span>.<span class="prop">length</span>;<br>
+                    &nbsp;&nbsp;counter.<span class="prop">textContent</span> = <span class="str">`${len}文字`</span>;<br><br>
+                    &nbsp;&nbsp;<span class="comment">// 100文字超えたら赤くする</span><br>
+                    &nbsp;&nbsp;<span class="kw">if</span> (len > <span class="num" style="color:#20C997;">100</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;counter.<span class="prop">style</span>.<span class="prop">color</span> = <span class="str">"red"</span>;<br>
+                    &nbsp;&nbsp;}<br>
+                    });
+                </div>
+                <div class="tip-bar">
+                    💡 Claudeに「〇〇のイベント処理を書いて」と頼むと即座に生成！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

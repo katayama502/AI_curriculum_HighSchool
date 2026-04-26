@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .tag-table { width: 100%; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .tt-header { display: grid; grid-template-columns: 180px 1fr 2fr; background: #212529; color: white; }
+        .tt-row { display: grid; grid-template-columns: 180px 1fr 2fr; border-bottom: 1px solid #f1f3f5; }
+        .tt-row:last-child { border-bottom: none; }
+        .tt-row:nth-child(odd) { background: white; }
+        .tt-row:nth-child(even) { background: #f8f9fa; }
+        .tt-cell { padding: 10px 16px; font-size: 17px; line-height: 1.4; display: flex; align-items: center; }
+        .tt-cell.header { font-size: 16px; font-weight: 600; }
+        .tag-code { background: #1A1A2E; color: #74c0fc; padding: 3px 10px; border-radius: 4px; font-family: monospace; font-size: 15px; font-weight: 700; }
+        .tt-desc { font-weight: 300; color: #495057; }
+        .tt-example { font-family: monospace; font-size: 14px; color: #6741d9; background: #f3f0ff; padding: 3px 8px; border-radius: 4px; }
+        .tip-box { background: #e7f5ff; border-radius: 8px; padding: 14px 20px; display: flex; gap: 14px; align-items: center; }
+        .tip-icon { font-size: 24px; color: #339AF0; }
+        .tip-text { font-size: 19px; font-weight: 400; color: #212529; }
+        .tip-text span { color: #339AF0; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>よく使うHTMLタグ一覧</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>まずこれだけ覚えれば基本のページが作れる</h2>
+            <div class="tag-table">
+                <div class="tt-header">
+                    <div class="tt-cell header">タグ</div>
+                    <div class="tt-cell header">意味・役割</div>
+                    <div class="tt-cell header">記述例</div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;h1&gt;〜&lt;h6&gt;</span></div>
+                    <div class="tt-cell tt-desc">見出し（数字が大きいほど小さい）</div>
+                    <div class="tt-cell"><span class="tt-example">&lt;h1&gt;サイト名&lt;/h1&gt;</span></div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;p&gt;</span></div>
+                    <div class="tt-cell tt-desc">段落テキスト</div>
+                    <div class="tt-cell"><span class="tt-example">&lt;p&gt;本文テキスト&lt;/p&gt;</span></div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;a&gt;</span></div>
+                    <div class="tt-cell tt-desc">ハイパーリンク</div>
+                    <div class="tt-cell"><span class="tt-example">&lt;a href="URL"&gt;リンク&lt;/a&gt;</span></div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;img&gt;</span></div>
+                    <div class="tt-cell tt-desc">画像の挿入</div>
+                    <div class="tt-cell"><span class="tt-example">&lt;img src="画像.jpg" alt="説明"&gt;</span></div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;ul&gt;&lt;li&gt;</span></div>
+                    <div class="tt-cell tt-desc">箇条書きリスト</div>
+                    <div class="tt-cell"><span class="tt-example">&lt;ul&gt;&lt;li&gt;項目&lt;/li&gt;&lt;/ul&gt;</span></div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;div&gt;</span></div>
+                    <div class="tt-cell tt-desc">ブロックまとめ（汎用コンテナ）</div>
+                    <div class="tt-cell"><span class="tt-example">&lt;div class="card"&gt;内容&lt;/div&gt;</span></div>
+                </div>
+                <div class="tt-row">
+                    <div class="tt-cell"><span class="tag-code">&lt;span&gt;</span></div>
+                    <div class="tt-cell tt-desc">インライン要素のまとめ</div>
+                    <div class="tt-cell"><span class="tt-example">文章の&lt;span&gt;ここだけ&lt;/span&gt;を強調</span></div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="tip-text">タグが分からなくなったら<span>Claudeに「〇〇を表示したい、どのHTMLタグを使えばいい？」</span>と聞けばすぐ教えてくれる。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

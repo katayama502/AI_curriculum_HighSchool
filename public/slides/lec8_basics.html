@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block {
+            background: #1A1A2E; padding: 20px;
+            font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8;
+        }
+        .kw { color: #FFD43B; font-weight: 700; }
+        .str { color: #FCC419; }
+        .num { color: #20C997; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .right-col { }
+        .concept-item { background: white; padding: 12px 16px; margin-top: 10px; display: flex; align-items: flex-start; gap: 12px; }
+        .concept-badge { background: #3776AB; color: white; font-family: "Courier New", monospace; font-size: 14px; font-weight: 700; padding: 4px 10px; flex-shrink: 0; margin-top: 2px; }
+        .concept-text { font-size: 18px; color: #212529; }
+        .concept-sub { font-size: 14px; color: #6C757D; margin-top: 4px; }
+        .why-python { background: #3776AB; color: white; padding: 14px 18px; margin-top: 14px; }
+        .why-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .why-item { font-size: 16px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Pythonの基本文法</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment"># 変数（型宣言不要）</span><br>
+                name = <span class="str">"太郎"</span><br>
+                age = <span class="num">16</span><br>
+                scores = [<span class="num">85</span>, <span class="num">92</span>, <span class="num">78</span>]<br><br>
+                <span class="comment"># 辞書（キーと値のペア）</span><br>
+                student = {<span class="str">"name"</span>: <span class="str">"太郎"</span>, <span class="str">"age"</span>: <span class="num">16</span>}<br><br>
+                <span class="comment"># forループ</span><br>
+                <span class="kw">for</span> score <span class="kw">in</span> scores:<br>
+                &nbsp;&nbsp;<span class="fn">print</span>(score)<br><br>
+                <span class="comment"># 関数定義</span><br>
+                <span class="kw">def</span> <span class="fn">greet</span>(name):<br>
+                &nbsp;&nbsp;<span class="kw">return</span> <span class="str">f"こんにちは、{name}！"</span><br><br>
+                <span class="fn">print</span>(<span class="fn">greet</span>(<span class="str">"太郎"</span>))
+            </div>
+            <div class="right-col">
+                <div class="concept-item">
+                    <div class="concept-badge">リスト</div>
+                    <div>
+                        <div class="concept-text">複数の値をまとめて管理</div>
+                        <div class="concept-sub">[1, 2, 3] → インデックスで取得</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">辞書</div>
+                    <div>
+                        <div class="concept-text">キーと値のペアで管理</div>
+                        <div class="concept-sub">{"key": "value"} → 名前で取得</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">for in</div>
+                    <div>
+                        <div class="concept-text">リストを順番に処理</div>
+                        <div class="concept-sub">JSより直感的な書き方</div>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-badge">def</div>
+                    <div>
+                        <div class="concept-text">関数定義（function不要）</div>
+                        <div class="concept-sub">f文字列で変数を埋め込める</div>
+                    </div>
+                </div>
+                <div class="why-python">
+                    <div class="why-title">🐍 なぜPythonがAIに最適？</div>
+                    <div class="why-item">・コードが短く読みやすい<br>・AI/ML ライブラリが豊富<br>・Claude APIの公式SDKがある</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

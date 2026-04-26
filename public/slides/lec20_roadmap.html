@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #FFD43B; margin-top: 16px; }
+        .roadmap-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .level-card { background: white; padding: 18px; }
+        .level-header { font-size: 14px; font-weight: 700; color: white; padding: 6px 12px; margin-bottom: 12px; text-align: center; }
+        .level-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 10px; text-align: center; }
+        .level-item { font-size: 15px; color: #212529; padding: 6px 0; border-bottom: 1px solid #F1F3F5; }
+        .level-item:last-child { border-bottom: none; }
+        .level-item::before { content: "→ "; color: #6C757D; }
+        .arrow-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; }
+        .arrow-item { background: #212529; color: #FFD43B; padding: 8px 16px; font-size: 14px; font-weight: 700; }
+        .arrow-sep { color: #6C757D; font-size: 20px; }
+        .highlight-box { background: #FFD43B; color: #212529; padding: 14px 18px; margin-top: 16px; font-size: 17px; font-weight: 600; line-height: 1.6; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>これからの学習ロードマップ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="roadmap-area">
+            <div class="roadmap-grid">
+                <div class="level-card">
+                    <div class="level-header" style="background: #20C997;">✅ 修了済み</div>
+                    <div class="level-title">このコース</div>
+                    <div class="level-item">Claude活用</div>
+                    <div class="level-item">HTML/CSS/JS</div>
+                    <div class="level-item">React基礎</div>
+                    <div class="level-item">Claude Code</div>
+                    <div class="level-item">アプリ公開</div>
+                </div>
+                <div class="level-card">
+                    <div class="level-header" style="background: #339AF0;">📚 次のステップ</div>
+                    <div class="level-title">中級者</div>
+                    <div class="level-item">TypeScript</div>
+                    <div class="level-item">Next.js</div>
+                    <div class="level-item">データベース設計</div>
+                    <div class="level-item">認証・セキュリティ</div>
+                    <div class="level-item">テスト駆動開発</div>
+                </div>
+                <div class="level-card">
+                    <div class="level-header" style="background: #E67700;">🔥 上級者</div>
+                    <div class="level-title">上級者</div>
+                    <div class="level-item">システム設計</div>
+                    <div class="level-item">クラウド（AWS/GCP）</div>
+                    <div class="level-item">CI/CD</div>
+                    <div class="level-item">機械学習基礎</div>
+                    <div class="level-item">OSS貢献</div>
+                </div>
+                <div class="level-card">
+                    <div class="level-header" style="background: #9C36B5;">🚀 プロ</div>
+                    <div class="level-title">プロエンジニア</div>
+                    <div class="level-item">大規模システム</div>
+                    <div class="level-item">チームリード</div>
+                    <div class="level-item">プロダクト設計</div>
+                    <div class="level-item">起業・CTO</div>
+                    <div class="level-item">AI/LLM開発</div>
+                </div>
+            </div>
+            <div class="highlight-box">🌟 このコースはエンジニアへの第一歩！Claudeと一緒に学び続けよう！</div>
+        </div>
+    </div>
+</body>
+</html>

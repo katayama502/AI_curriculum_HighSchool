@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 20px; }
+        .prompt-showcase { display: flex; gap: 24px; }
+        .prompt-col { flex: 1; }
+        .col-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; padding: 6px 14px; border-radius: 6px; display: inline-block; }
+        .bad-title { background: #fff5f5; color: #fa5252; }
+        .good-title { background: #ebfbee; color: #20C997; }
+        .prompt-box { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .prompt-box.bad { border-top: 3px solid #fa5252; }
+        .prompt-box.good { border-top: 3px solid #20C997; }
+        .prompt-input { background: #F8F9FA; border-radius: 6px; padding: 12px 16px; font-size: 17px; color: #212529; margin-bottom: 10px; border-left: 3px solid #dee2e6; }
+        .bad .prompt-input { border-left-color: #fa5252; }
+        .good .prompt-input { border-left-color: #20C997; }
+        .prompt-output { font-size: 16px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .prompt-output strong { color: #212529; font-weight: 600; }
+        .why { font-size: 15px; margin-top: 8px; padding: 6px 10px; border-radius: 5px; }
+        .bad .why { background: #fff5f5; color: #fa5252; }
+        .good .why { background: #ebfbee; color: #20C997; }
+        .tips-row { display: flex; gap: 14px; margin-top: 18px; }
+        .tip { flex: 1; background: white; border-radius: 8px; padding: 16px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); border-top: 3px solid #339AF0; }
+        .tip-icon { font-size: 24px; margin-bottom: 8px; }
+        .tip-title { font-size: 17px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .tip-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>最初のプロンプトを書いてみよう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>「良いプロンプト」と「悪いプロンプト」の違い</h2>
+            <div class="prompt-showcase">
+                <div class="prompt-col">
+                    <div class="col-title bad-title">❌ 改善が必要なプロンプト</div>
+                    <div class="prompt-box bad">
+                        <div class="prompt-input">「勉強について教えて」</div>
+                        <div class="prompt-output">何の勉強？どのレベル？何のために？情報が少なすぎてAIは的外れな回答をしてしまいます。</div>
+                        <div class="why">❌ 問題：曖昧すぎて何を求めているかわからない</div>
+                    </div>
+                    <div class="prompt-box bad">
+                        <div class="prompt-input">「数学の問題を解いて」</div>
+                        <div class="prompt-output">問題の内容がわかりません。問題文を書かないと回答できません。</div>
+                        <div class="why">❌ 問題：具体的な内容がない</div>
+                    </div>
+                </div>
+                <div class="prompt-col">
+                    <div class="col-title good-title">✅ 良いプロンプト</div>
+                    <div class="prompt-box good">
+                        <div class="prompt-input">「高校1年生です。英語の現在完了形が苦手です。have/has + 過去分詞の使い方を、日本語で例文3つを使ってわかりやすく教えてください」</div>
+                        <div class="prompt-output">対象（高校1年生）・目標（現在完了形の理解）・形式（例文3つ・日本語）が明確！</div>
+                        <div class="why">✅ 良い理由：誰が・何を・どのように知りたいかが明確</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tips-row">
+                <div class="tip">
+                    <div class="tip-icon">👤</div>
+                    <div class="tip-title">自分のことを伝える</div>
+                    <div class="tip-desc">「高校2年生」「初心者」など自分の背景を書くと適切なレベルで答えてくれる</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">🎯</div>
+                    <div class="tip-title">目的を明確にする</div>
+                    <div class="tip-desc">「テスト勉強のため」「発表に使いたい」など目的を書くと的確な回答になる</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">📝</div>
+                    <div class="tip-title">出力形式を指定する</div>
+                    <div class="tip-desc">「箇条書きで」「例文3つ」「200字以内で」など形式を指定すると使いやすい</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">🔄</div>
+                    <div class="tip-title">何度も試してみる</div>
+                    <div class="tip-desc">最初の回答が満足でなければ「もっとシンプルに」「別の例で」と追加指示する</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

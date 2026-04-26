@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .quiz-header { background: #0D0D0D; padding: 12px 18px; display: flex; align-items: center; gap: 12px; }
+        .q-num { background: #339AF0; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+        .q-title { font-size: 16px; color: #E8E8E8; font-weight: 400; }
+        .quiz-body { padding: 14px 18px; }
+        .question { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 12px; line-height: 1.5; }
+        .options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+        .option { padding: 8px 14px; border: 2px solid #dee2e6; border-radius: 4px; font-size: 16px; color: #495057; font-weight: 300; }
+        .option.correct { border-color: #20C997; background: #F0FFF4; color: #212529; font-weight: 500; }
+        .option.correct::before { content: "✓ "; color: #20C997; font-weight: 700; }
+        .answer-box { background: #e9ecef; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #495057; line-height: 1.5; }
+        .answer-box strong { color: #212529; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">1</div><div class="q-title">機能追加の進め方</div></div>
+                <div class="quiz-body">
+                    <div class="question">機能追加をする時のベストプラクティスは？</div>
+                    <div class="options">
+                        <div class="option">A. 全機能を一度に実装する</div>
+                        <div class="option correct">B. 機能ごとにブランチを作り、1つずつ実装してcommitする</div>
+                        <div class="option">C. mainブランチで直接作業する</div>
+                        <div class="option">D. 完成するまでcommitしない</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>小さい単位での実装とcommitが安全。問題が起きてもいつでも元に戻せる。</div>
+                </div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">2</div><div class="q-title">コードレビュー</div></div>
+                <div class="quiz-body">
+                    <div class="question">AIにコードレビューを依頼するとき最も重要なことは？</div>
+                    <div class="options">
+                        <div class="option">A. できるだけ短いプロンプトを書く</div>
+                        <div class="option">B. コードを全部書き直してもらう</div>
+                        <div class="option correct">C. セキュリティ・エラー処理・品質など具体的な観点を指定する</div>
+                        <div class="option">D. コメントだけつけてもらう</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>観点を指定することでAIの回答が具体的・有用になる。漠然と「レビューして」だと表面的な指摘になりがち。</div>
+                </div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">3</div><div class="q-title">パフォーマンス最適化</div></div>
+                <div class="quiz-body">
+                    <div class="question">APIを何度も呼ぶ問題を解決する最適な方法は？</div>
+                    <div class="options">
+                        <div class="option">A. API呼び出しを全て削除する</div>
+                        <div class="option">B. 1回しかAPIを呼ばないようにする</div>
+                        <div class="option correct">C. キャッシュを使って、同じデータは一定時間再利用する</div>
+                        <div class="option">D. 複数のAPIを並行して呼ぶ</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>キャッシュにより不要なAPIリクエストを減らしつつ、データが古くなりすぎないよう有効期限も設定する。</div>
+                </div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">4</div><div class="q-title">commitメッセージ</div></div>
+                <div class="quiz-body">
+                    <div class="question">良いcommitメッセージはどれ？</div>
+                    <div class="options">
+                        <div class="option">A. 修正</div>
+                        <div class="option">B. update</div>
+                        <div class="option correct">C. fix: 大阪の緯度経度が間違っていたのを修正</div>
+                        <div class="option">D. 作業中の変更をcommit</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>「何を(feat/fix/style/docs)」「どこで」「なぜ」が一目でわかるメッセージが理想。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .sheet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .sheet-panel { background: #0D0D0D; border-radius: 8px; padding: 18px 20px; }
+        .panel-title { font-size: 13px; color: #ffd866; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; font-family: monospace; border-bottom: 1px solid #2d2d2d; padding-bottom: 8px; }
+        .code-line { font-size: 14px; font-family: monospace; line-height: 1.95; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .c-white { color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>20回コース 総まとめチートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sheet-grid">
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ フルスタック構成</div>
+                    <div class="code-line"><span class="c-gray"># フロント (Vite + React)</span></div>
+                    <div class="code-line"><span class="c-yellow">npm create vite@latest app -- --template react</span></div>
+                    <div class="code-line"><span class="c-gray"># バックエンド (Express)</span></div>
+                    <div class="code-line"><span class="c-yellow">npm init -y && npm i express cors better-sqlite3</span></div>
+                    <div class="code-line"><span class="c-gray"># 認証</span></div>
+                    <div class="code-line"><span class="c-yellow">npm i jsonwebtoken bcrypt</span></div>
+                    <div class="code-line"><span class="c-gray"># セキュリティ</span></div>
+                    <div class="code-line"><span class="c-yellow">npm i helmet express-rate-limit</span></div>
+                    <div class="code-line"><span class="c-gray"># デプロイ</span></div>
+                    <div class="code-line"><span class="c-green">フロント: Vercel  /  バック: Railway</span></div>
+                </div>
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ Claude Code 基本パターン</div>
+                    <div class="code-line"><span class="c-gray"># エラー解決</span></div>
+                    <div class="code-line"><span class="c-pink">「このエラーの原因と修正方法を教えて:」</span></div>
+                    <div class="code-line"><span class="c-pink">+ エラーメッセージを貼り付け</span></div>
+                    <div class="code-line"><span class="c-gray"># コードレビュー</span></div>
+                    <div class="code-line"><span class="c-pink">「このコードの問題点と改善案を教えて」</span></div>
+                    <div class="code-line"><span class="c-gray"># 機能追加</span></div>
+                    <div class="code-line"><span class="c-pink">「〇〇機能を追加するには?既存コードを</span></div>
+                    <div class="code-line"><span class="c-pink"> 壊さずに実装する方法を教えて」</span></div>
+                </div>
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ REST API パターン</div>
+                    <div class="code-line"><span class="c-blue">GET    </span><span class="c-green">/api/items</span><span class="c-gray">         全件取得</span></div>
+                    <div class="code-line"><span class="c-blue">GET    </span><span class="c-green">/api/items/:id</span><span class="c-gray">     1件取得</span></div>
+                    <div class="code-line"><span class="c-yellow">POST   </span><span class="c-green">/api/items</span><span class="c-gray">         新規作成</span></div>
+                    <div class="code-line"><span class="c-pink">PUT    </span><span class="c-green">/api/items/:id</span><span class="c-gray">     更新</span></div>
+                    <div class="code-line"><span class="c-gray">DELETE </span><span class="c-green">/api/items/:id</span><span class="c-gray">     削除</span></div>
+                    <div class="code-line"><span class="c-gray"># 認証ヘッダー</span></div>
+                    <div class="code-line"><span class="c-white">Authorization: </span><span class="c-blue">Bearer</span><span class="c-green"> &lt;JWT_TOKEN&gt;</span></div>
+                </div>
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ ポートフォリオ公開チェック</div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> 本番URLでアプリが動く</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> GitHubに綺麗なREADMEがある</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> スクリーンショットを撮っておく</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> .env を絶対にpushしていない</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> Lighthouse スコア 70以上</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> SNS で #個人開発 タグをつけて共有</span></div>
+                    <div class="code-line"><span class="c-yellow">→ これで完成！お疲れ様でした 🎉</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

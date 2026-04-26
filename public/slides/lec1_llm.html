@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        /* Reduced top padding to pull content up by 25px */
+        .content-area {
+            padding-top: 15px; /* was 40px */
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+        .highlight-box {
+            background-color: white;
+            border-left: 6px solid #20C997;
+            padding: 20px 24px; /* slightly reduced vertical padding */
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #212529;
+        }
+        /* Reduce the large gap before the prediction demo by 25px */
+        .prediction-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px; /* was 40px */
+            gap: 12px;
+        }
+        .word-box {
+            background-color: #e9ecef;
+            padding: 10px 20px; /* reduced vertical padding to save height */
+            font-size: 28px;
+            font-weight: 500;
+            color: #495057;
+        }
+        .arrow {
+            color: #adb5bd;
+            font-size: 24px;
+        }
+        .next-word-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        .next-word {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 20px;
+            width: 250px;
+            border: 2px solid #339AF0;
+            box-shadow: 0 4px 10px rgba(51,154,240,0.1);
+        }
+        .next-word.alt {
+            border-color: #dee2e6;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        .word-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #212529;
+        }
+        .word-prob {
+            font-size: 20px;
+            color: #339AF0;
+            font-weight: 500;
+        }
+        .next-word.alt .word-prob {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>生成AIの仕組み（LLM）</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>大規模言語モデル（LLM）が「次の単語」を予測する</h2>
+            <p>ChatGPTやClaudeのような生成AIは「大規模言語モデル（LLM: Large Language Model）」と呼ばれます。インターネット上の膨大なテキストデータを学習し、「この文脈の次にくる最も自然な言葉は何か？」を確率的に予測することで、まるで人間が書いたような文章を生成します。</p>
+            
+            <div class="prediction-demo">
+                <div class="word-box">むかし</div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="word-box">むかし</div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="word-box">ある</div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="word-box">ところ</div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="word-box">に</div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                
+                <div class="next-word-container">
+                    <div class="next-word">
+                        <span class="word-text">おじいさん</span>
+                        <span class="word-prob">82%</span>
+                    </div>
+                    <div class="next-word alt">
+                        <span class="word-text">おばあさん</span>
+                        <span class="word-prob">12%</span>
+                    </div>
+                    <div class="next-word alt">
+                        <span class="word-text">男</span>
+                        <span class="word-prob">4%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p>重要なのは、LLMは「暗記」しているのではなく、言語のパターンを「理解」していることです。これにより、学習していない新しい質問にも答えられます。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

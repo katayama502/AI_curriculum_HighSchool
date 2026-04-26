@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .method-card { display: flex; gap: 16px; align-items: flex-start; background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 12px; }
+        .method-badge { padding: 6px 16px; border-radius: 6px; font-family: monospace; font-size: 18px; font-weight: 700; min-width: 90px; text-align: center; flex-shrink: 0; }
+        .badge-get { background: #d3f9d8; color: #2b8a3e; }
+        .badge-post { background: #dbe4ff; color: #364fc7; }
+        .badge-put { background: #fff3bf; color: #e67700; }
+        .badge-delete { background: #ffe3e3; color: #c92a2a; }
+        .method-text h3 { font-size: 19px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .method-text p { font-size: 16px; color: #495057; }
+        .status-table { width: 100%; border-collapse: collapse; }
+        .status-table th { background: #7950F2; color: white; padding: 10px 14px; font-size: 18px; text-align: left; }
+        .status-table td { padding: 10px 14px; font-size: 16px; border-bottom: 1px solid #dee2e6; background: white; }
+        .status-table tr:nth-child(even) td { background: #f3f0ff; }
+        .code { font-family: monospace; background: #f3f0ff; color: #7950F2; padding: 2px 8px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>HTTPメソッドとステータスコード</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>4つの主要メソッド（CRUD）</h2>
+                <div class="method-card">
+                    <div class="method-badge badge-get">GET</div>
+                    <div class="method-text"><h3>データを取得する</h3><p>URLでデータを読み取る。何も変更しない。ブラウザでURLを開く動作はGET。</p></div>
+                </div>
+                <div class="method-card">
+                    <div class="method-badge badge-post">POST</div>
+                    <div class="method-text"><h3>データを送信・作成する</h3><p>フォーム送信、新規データ作成。リクエストの本文にデータを含めて送る。</p></div>
+                </div>
+                <div class="method-card">
+                    <div class="method-badge badge-put">PUT</div>
+                    <div class="method-text"><h3>データを更新する</h3><p>既存データの上書き・更新。全フィールドを送る必要がある。</p></div>
+                </div>
+                <div class="method-card">
+                    <div class="method-badge badge-delete">DELETE</div>
+                    <div class="method-text"><h3>データを削除する</h3><p>指定したリソースを削除する。</p></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>ステータスコード（サーバーの返答）</h2>
+                <table class="status-table">
+                    <tr><th>コード</th><th>意味</th></tr>
+                    <tr><td><span class="code">200 OK</span></td><td>成功！正常に処理された</td></tr>
+                    <tr><td><span class="code">201 Created</span></td><td>作成成功（POSTに多い）</td></tr>
+                    <tr><td><span class="code">400 Bad Request</span></td><td>リクエストが不正（パラメータ不足など）</td></tr>
+                    <tr><td><span class="code">401 Unauthorized</span></td><td>認証が必要（APIキー未設定）</td></tr>
+                    <tr><td><span class="code">403 Forbidden</span></td><td>アクセス権限がない</td></tr>
+                    <tr><td><span class="code">404 Not Found</span></td><td>URLが存在しない</td></tr>
+                    <tr><td><span class="code">429 Too Many</span></td><td>リクエスト数上限を超えた</td></tr>
+                    <tr><td><span class="code">500 Server Error</span></td><td>サーバー側の問題</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

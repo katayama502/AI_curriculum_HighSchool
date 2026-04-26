@@ -1,0 +1,1452 @@
+{
+  "project_info": {
+    "title": "第1回: AIとClaudeの基礎",
+    "created": 1777181332.039818,
+    "last_updated": 1777185139.9137847,
+    "total_slides": 120
+  },
+  "slides": [
+    {
+      "id": "lec1_title",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "lec1_overview",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "lec1_what_is_ai",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "lec1_llm",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "lec1_claude",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "lec1_account",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "lec1_first_chat",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "lec1_summary",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "lec2_title",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "lec2_prompt",
+      "state": "edited",
+      "pageNum": 10
+    },
+    {
+      "id": "lec2_rctf",
+      "state": "edited",
+      "pageNum": 11
+    },
+    {
+      "id": "lec2_role",
+      "state": "edited",
+      "pageNum": 12
+    },
+    {
+      "id": "lec2_context",
+      "state": "edited",
+      "pageNum": 13
+    },
+    {
+      "id": "lec2_format",
+      "state": "edited",
+      "pageNum": 14
+    },
+    {
+      "id": "lec2_practice",
+      "state": "edited",
+      "pageNum": 15
+    },
+    {
+      "id": "lec2_summary",
+      "state": "edited",
+      "pageNum": 16
+    },
+    {
+      "id": "lec3_title",
+      "state": "edited",
+      "pageNum": 17
+    },
+    {
+      "id": "lec3_study",
+      "state": "edited",
+      "pageNum": 18
+    },
+    {
+      "id": "lec3_research",
+      "state": "edited",
+      "pageNum": 19
+    },
+    {
+      "id": "lec3_report",
+      "state": "edited",
+      "pageNum": 20
+    },
+    {
+      "id": "lec3_limits",
+      "state": "edited",
+      "pageNum": 21
+    },
+    {
+      "id": "lec3_summary",
+      "state": "edited",
+      "pageNum": 22
+    },
+    {
+      "id": "lec4_title",
+      "state": "edited",
+      "pageNum": 23
+    },
+    {
+      "id": "lec4_brainstorm",
+      "state": "edited",
+      "pageNum": 24
+    },
+    {
+      "id": "lec4_creative",
+      "state": "edited",
+      "pageNum": 25
+    },
+    {
+      "id": "lec4_presentation",
+      "state": "edited",
+      "pageNum": 26
+    },
+    {
+      "id": "lec4_feedback",
+      "state": "edited",
+      "pageNum": 27
+    },
+    {
+      "id": "lec4_summary",
+      "state": "edited",
+      "pageNum": 28
+    },
+    {
+      "id": "lec5_title",
+      "state": "edited",
+      "pageNum": 29
+    },
+    {
+      "id": "lec5_cot",
+      "state": "edited",
+      "pageNum": 30
+    },
+    {
+      "id": "lec5_fewshot",
+      "state": "edited",
+      "pageNum": 31
+    },
+    {
+      "id": "lec5_system",
+      "state": "edited",
+      "pageNum": 32
+    },
+    {
+      "id": "lec5_debug",
+      "state": "edited",
+      "pageNum": 33
+    },
+    {
+      "id": "lec5_summary",
+      "state": "edited",
+      "pageNum": 34
+    },
+    {
+      "id": "lec6_title",
+      "state": "edited",
+      "pageNum": 35
+    },
+    {
+      "id": "lec6_html",
+      "state": "edited",
+      "pageNum": 36
+    },
+    {
+      "id": "lec6_css",
+      "state": "edited",
+      "pageNum": 37
+    },
+    {
+      "id": "lec6_claude_code",
+      "state": "edited",
+      "pageNum": 38
+    },
+    {
+      "id": "lec6_practice",
+      "state": "edited",
+      "pageNum": 39
+    },
+    {
+      "id": "lec6_summary",
+      "state": "edited",
+      "pageNum": 40
+    },
+    {
+      "id": "lec7_title",
+      "state": "edited",
+      "pageNum": 41
+    },
+    {
+      "id": "lec7_basics",
+      "state": "edited",
+      "pageNum": 42
+    },
+    {
+      "id": "lec7_dom",
+      "state": "edited",
+      "pageNum": 43
+    },
+    {
+      "id": "lec7_events",
+      "state": "edited",
+      "pageNum": 44
+    },
+    {
+      "id": "lec7_pair",
+      "state": "edited",
+      "pageNum": 45
+    },
+    {
+      "id": "lec7_summary",
+      "state": "edited",
+      "pageNum": 46
+    },
+    {
+      "id": "lec8_title",
+      "state": "edited",
+      "pageNum": 47
+    },
+    {
+      "id": "lec8_basics",
+      "state": "edited",
+      "pageNum": 48
+    },
+    {
+      "id": "lec8_collections",
+      "state": "edited",
+      "pageNum": 49
+    },
+    {
+      "id": "lec8_functions",
+      "state": "edited",
+      "pageNum": 50
+    },
+    {
+      "id": "lec8_practice",
+      "state": "edited",
+      "pageNum": 51
+    },
+    {
+      "id": "lec8_summary",
+      "state": "edited",
+      "pageNum": 52
+    },
+    {
+      "id": "lec9_title",
+      "state": "edited",
+      "pageNum": 53
+    },
+    {
+      "id": "lec9_api_intro",
+      "state": "edited",
+      "pageNum": 54
+    },
+    {
+      "id": "lec9_http",
+      "state": "edited",
+      "pageNum": 55
+    },
+    {
+      "id": "lec9_claude_api",
+      "state": "edited",
+      "pageNum": 56
+    },
+    {
+      "id": "lec9_practice",
+      "state": "edited",
+      "pageNum": 57
+    },
+    {
+      "id": "lec9_summary",
+      "state": "edited",
+      "pageNum": 58
+    },
+    {
+      "id": "lec10_title",
+      "state": "edited",
+      "pageNum": 59
+    },
+    {
+      "id": "lec10_git",
+      "state": "edited",
+      "pageNum": 60
+    },
+    {
+      "id": "lec10_github",
+      "state": "edited",
+      "pageNum": 61
+    },
+    {
+      "id": "lec10_review",
+      "state": "edited",
+      "pageNum": 62
+    },
+    {
+      "id": "lec10_summary",
+      "state": "edited",
+      "pageNum": 63
+    },
+    {
+      "id": "lec11_title",
+      "state": "edited",
+      "pageNum": 64
+    },
+    {
+      "id": "lec11_what",
+      "state": "edited",
+      "pageNum": 65
+    },
+    {
+      "id": "lec11_install",
+      "state": "edited",
+      "pageNum": 66
+    },
+    {
+      "id": "lec11_cli",
+      "state": "edited",
+      "pageNum": 67
+    },
+    {
+      "id": "lec11_first_project",
+      "state": "edited",
+      "pageNum": 68
+    },
+    {
+      "id": "lec11_summary",
+      "state": "edited",
+      "pageNum": 69
+    },
+    {
+      "id": "lec12_title",
+      "state": "edited",
+      "pageNum": 70
+    },
+    {
+      "id": "lec12_file_ops",
+      "state": "edited",
+      "pageNum": 71
+    },
+    {
+      "id": "lec12_explain",
+      "state": "edited",
+      "pageNum": 72
+    },
+    {
+      "id": "lec12_debug",
+      "state": "edited",
+      "pageNum": 73
+    },
+    {
+      "id": "lec12_refactor",
+      "state": "edited",
+      "pageNum": 74
+    },
+    {
+      "id": "lec12_summary",
+      "state": "edited",
+      "pageNum": 75
+    },
+    {
+      "id": "lec13_title",
+      "state": "edited",
+      "pageNum": 76
+    },
+    {
+      "id": "lec13_react",
+      "state": "edited",
+      "pageNum": 77
+    },
+    {
+      "id": "lec13_components",
+      "state": "edited",
+      "pageNum": 78
+    },
+    {
+      "id": "lec13_state",
+      "state": "edited",
+      "pageNum": 79
+    },
+    {
+      "id": "lec13_styling",
+      "state": "edited",
+      "pageNum": 80
+    },
+    {
+      "id": "lec13_summary",
+      "state": "edited",
+      "pageNum": 81
+    },
+    {
+      "id": "lec14_title",
+      "state": "edited",
+      "pageNum": 82
+    },
+    {
+      "id": "lec14_express",
+      "state": "edited",
+      "pageNum": 83
+    },
+    {
+      "id": "lec14_rest",
+      "state": "edited",
+      "pageNum": 84
+    },
+    {
+      "id": "lec14_db",
+      "state": "edited",
+      "pageNum": 85
+    },
+    {
+      "id": "lec14_connect",
+      "state": "edited",
+      "pageNum": 86
+    },
+    {
+      "id": "lec14_summary",
+      "state": "edited",
+      "pageNum": 87
+    },
+    {
+      "id": "lec15_title",
+      "state": "edited",
+      "pageNum": 88
+    },
+    {
+      "id": "lec15_test",
+      "state": "edited",
+      "pageNum": 89
+    },
+    {
+      "id": "lec15_debug",
+      "state": "edited",
+      "pageNum": 90
+    },
+    {
+      "id": "lec15_deploy",
+      "state": "edited",
+      "pageNum": 91
+    },
+    {
+      "id": "lec15_summary",
+      "state": "edited",
+      "pageNum": 92
+    },
+    {
+      "id": "lec16_title",
+      "state": "edited",
+      "pageNum": 93
+    },
+    {
+      "id": "lec16_ideation",
+      "state": "edited",
+      "pageNum": 94
+    },
+    {
+      "id": "lec16_requirements",
+      "state": "edited",
+      "pageNum": 95
+    },
+    {
+      "id": "lec16_techstack",
+      "state": "edited",
+      "pageNum": 96
+    },
+    {
+      "id": "lec16_plan",
+      "state": "edited",
+      "pageNum": 97
+    },
+    {
+      "id": "lec16_summary",
+      "state": "edited",
+      "pageNum": 98
+    },
+    {
+      "id": "lec17_title",
+      "state": "edited",
+      "pageNum": 99
+    },
+    {
+      "id": "lec17_wireframe",
+      "state": "edited",
+      "pageNum": 100
+    },
+    {
+      "id": "lec17_figma",
+      "state": "edited",
+      "pageNum": 101
+    },
+    {
+      "id": "lec17_implement",
+      "state": "edited",
+      "pageNum": 102
+    },
+    {
+      "id": "lec17_usability",
+      "state": "edited",
+      "pageNum": 103
+    },
+    {
+      "id": "lec17_summary",
+      "state": "edited",
+      "pageNum": 104
+    },
+    {
+      "id": "lec18_title",
+      "state": "edited",
+      "pageNum": 105
+    },
+    {
+      "id": "lec18_core",
+      "state": "edited",
+      "pageNum": 106
+    },
+    {
+      "id": "lec18_pair",
+      "state": "edited",
+      "pageNum": 107
+    },
+    {
+      "id": "lec18_error",
+      "state": "edited",
+      "pageNum": 108
+    },
+    {
+      "id": "lec18_summary",
+      "state": "edited",
+      "pageNum": 109
+    },
+    {
+      "id": "lec19_title",
+      "state": "edited",
+      "pageNum": 110
+    },
+    {
+      "id": "lec19_final_debug",
+      "state": "edited",
+      "pageNum": 111
+    },
+    {
+      "id": "lec19_seo",
+      "state": "edited",
+      "pageNum": 112
+    },
+    {
+      "id": "lec19_deploy",
+      "state": "edited",
+      "pageNum": 113
+    },
+    {
+      "id": "lec19_share",
+      "state": "edited",
+      "pageNum": 114
+    },
+    {
+      "id": "lec19_summary",
+      "state": "edited",
+      "pageNum": 115
+    },
+    {
+      "id": "lec20_title",
+      "state": "edited",
+      "pageNum": 116
+    },
+    {
+      "id": "lec20_presentation",
+      "state": "edited",
+      "pageNum": 117
+    },
+    {
+      "id": "lec20_career",
+      "state": "edited",
+      "pageNum": 118
+    },
+    {
+      "id": "lec20_roadmap",
+      "state": "edited",
+      "pageNum": 119
+    },
+    {
+      "id": "lec20_finale",
+      "state": "edited",
+      "pageNum": 120
+    }
+  ],
+  "outline": [
+    {
+      "id": "lec1_title",
+      "title": "第1回: AIとClaudeの基礎",
+      "summary": "AIとClaudeの基礎について学ぶ第1回のタイトルスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_overview",
+      "title": "このコースで学ぶこと",
+      "summary": "全20回のカリキュラム概要と習得スキルを説明するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_what_is_ai",
+      "title": "AIとは何か？",
+      "summary": "AIの基本概念と生成AIの登場について解説するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_llm",
+      "title": "生成AIの仕組み（LLM）",
+      "summary": "大規模言語モデル（LLM）の仕組みを解説するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_claude",
+      "title": "Claudeとは？",
+      "summary": "Anthropic社が開発したClaudeの特徴を説明するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_account",
+      "title": "Claudeのアカウント作成",
+      "summary": "Claudeのアカウント作成手順と注意点を説明するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_first_chat",
+      "title": "最初の会話をしてみよう",
+      "summary": "Claudeとの効果的な会話の始め方を説明するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec1_summary",
+      "title": "今日のまとめ",
+      "summary": "第1回のまとめと次回の予告を行うスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_title",
+      "title": "第2回: プロンプトエンジニアリング入門",
+      "summary": "プロンプトエンジニアリング入門のタイトルスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_prompt",
+      "title": "プロンプトとは？",
+      "summary": "プロンプトの概念と重要性を説明するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_rctf",
+      "title": "良いプロンプトの4要素",
+      "summary": "RCTFフレームワーク（Role, Context, Task, Format）を解説するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_role",
+      "title": "ロールプロンプティング",
+      "summary": "AIに役割を与えるロールプロンプティングの効果を説明するスライド",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_context",
+      "title": "コンテキストの重要性",
+      "summary": "背景情報（コンテキスト）が回答の精度を決めることを説明するスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_format",
+      "title": "出力形式の指定",
+      "summary": "出力形式（フォーマット）の指定方法と用途を説明するスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_practice",
+      "title": "実践演習",
+      "summary": "プロンプトの改善前と改善後を比較する実践演習スライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec2_summary",
+      "title": "今日のまとめ",
+      "summary": "第2回のまとめと次回の予告を行うスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec3_title",
+      "title": "第3回: Claudeで学習・リサーチ",
+      "summary": "Claudeを使った効率的な学習・リサーチ術のタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec3_study",
+      "title": "教科学習への活用",
+      "summary": "数学・英語・理科などの教科学習にClaudeを活用する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec3_research",
+      "title": "情報収集とファクトチェック",
+      "summary": "Claudeを使った情報収集の方法と注意点（ハルシネーション）",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec3_report",
+      "title": "レポート・作文の補助",
+      "summary": "Claudeを使ったレポートや作文の書き方支援",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec3_limits",
+      "title": "AIの限界と正しい使い方",
+      "summary": "AIの限界を理解し、正しく・倫理的に使うための心得",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec3_summary",
+      "title": "今日のまとめ",
+      "summary": "第3回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec4_title",
+      "title": "第4回: Claudeで創作・アイデア発想",
+      "summary": "AIと一緒にクリエイティブになろうのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec4_brainstorm",
+      "title": "ブレインストーミングへの活用",
+      "summary": "Claudeを使ったアイデア発想・ブレインストーミングの方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec4_creative",
+      "title": "文章・詩・物語の創作",
+      "summary": "Claudeと一緒に文章・詩・物語を創作する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec4_presentation",
+      "title": "プレゼン資料の作成補助",
+      "summary": "Claudeを使ったプレゼン資料の構成・内容作成",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec4_feedback",
+      "title": "アイデアを磨くフィードバック術",
+      "summary": "Claudeからフィードバックをもらいアイデアを改善する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec4_summary",
+      "title": "今日のまとめ",
+      "summary": "第4回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec5_title",
+      "title": "第5回: 高度なプロンプト技術",
+      "summary": "Chain-of-ThoughtとFew-Shot学習のタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec5_cot",
+      "title": "Chain-of-Thoughtプロンプティング",
+      "summary": "思考の連鎖（CoT）プロンプティングの仕組みと実践",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec5_fewshot",
+      "title": "Few-Shot学習",
+      "summary": "例示による学習（Few-Shot）の効果と使い方",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec5_system",
+      "title": "System Promptの活用",
+      "summary": "System Promptを使ってClaudeの振る舞いをカスタマイズする方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec5_debug",
+      "title": "プロンプトのデバッグと改善",
+      "summary": "プロンプトが上手くいかないときの改善サイクル",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec5_summary",
+      "title": "今日のまとめ",
+      "summary": "第5回のまとめと宿題・フェーズ1の振り返り",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec6_title",
+      "title": "第6回: HTML/CSSの基礎",
+      "summary": "Webページを作ってみようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec6_html",
+      "title": "HTMLの基本構造とタグ",
+      "summary": "HTMLの基本構造・よく使うタグ・ページの骨格を理解する",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec6_css",
+      "title": "CSSでスタイルを付ける",
+      "summary": "CSSセレクタ・プロパティ・ボックスモデルの基礎",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec6_claude_code",
+      "title": "Claudeにコードを書いてもらう",
+      "summary": "ClaudeへのコードリクエストとコピーペーストでWebページを作る実践",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec6_practice",
+      "title": "自己紹介ページを作成",
+      "summary": "HTML/CSSで自己紹介ページを実際に作成するハンズオン",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec6_summary",
+      "title": "今日のまとめ",
+      "summary": "第6回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec7_title",
+      "title": "第7回: JavaScriptの基礎",
+      "summary": "Webページを動かしてみようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec7_basics",
+      "title": "JavaScriptの基本文法",
+      "summary": "変数・条件分岐・ループ・関数のJS基本文法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec7_dom",
+      "title": "DOM操作でページを動かす",
+      "summary": "document.querySelectorなどでHTML要素を操作する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec7_events",
+      "title": "イベントハンドリング",
+      "summary": "クリック・入力などのイベントを受け取って処理する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec7_pair",
+      "title": "Claudeとのペアプログラミング",
+      "summary": "ClaudeにJSコードを書いてもらいながら学ぶペアプログラミング",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec7_summary",
+      "title": "今日のまとめ",
+      "summary": "第7回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec8_title",
+      "title": "第8回: Python入門",
+      "summary": "データ処理と自動化の第一歩のタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec8_basics",
+      "title": "Pythonの基本文法",
+      "summary": "変数・条件分岐・ループのPython基本文法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec8_collections",
+      "title": "リストと辞書の使い方",
+      "summary": "Pythonのリスト・辞書・タプルの使い方",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec8_functions",
+      "title": "関数の定義と呼び出し",
+      "summary": "def文で関数を定義し再利用可能なコードを書く方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec8_practice",
+      "title": "簡単な計算プログラムを作成",
+      "summary": "Claudeと一緒に成績計算プログラムを作るハンズオン",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec8_summary",
+      "title": "今日のまとめ",
+      "summary": "第8回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec9_title",
+      "title": "第9回: APIの使い方",
+      "summary": "外部サービスと連携しようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec9_api_intro",
+      "title": "APIとは何か？",
+      "summary": "APIの概念・RESTful API・JSONレスポンスの基礎",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec9_http",
+      "title": "HTTPリクエストの基礎",
+      "summary": "GET/POSTリクエスト・ヘッダー・ステータスコードの理解",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec9_claude_api",
+      "title": "Claude APIの使い方",
+      "summary": "Anthropic Claude APIのキー取得・リクエスト方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec9_practice",
+      "title": "天気APIを使ったミニアプリ作成",
+      "summary": "Open-Meteo APIを使った天気表示アプリのハンズオン",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec9_summary",
+      "title": "今日のまとめ",
+      "summary": "第9回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec10_title",
+      "title": "第10回: Gitとバージョン管理",
+      "summary": "コードを安全に管理しようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec10_git",
+      "title": "Gitの基本概念",
+      "summary": "リポジトリ・コミット・ブランチの基本概念",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec10_github",
+      "title": "GitHubへのプッシュ",
+      "summary": "GitHubアカウント作成・リモートリポジトリへのプッシュ方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec10_review",
+      "title": "Claudeを使ったコードレビュー",
+      "summary": "ClaudeにGitHubのコードをレビューしてもらう方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec10_summary",
+      "title": "今日のまとめ",
+      "summary": "第10回のまとめ・宿題・フェーズ2の振り返り",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec11_title",
+      "title": "第11回: Claude Code入門",
+      "summary": "AIネイティブな開発環境を構築のタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec11_what",
+      "title": "Claude Codeとは何か？",
+      "summary": "Claude Codeの概要・通常のコーディングとの違い・主な機能",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec11_install",
+      "title": "インストールと環境設定",
+      "summary": "Node.jsインストール・npm install -g @anthropic-ai/claude-codeの手順",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec11_cli",
+      "title": "基本的なCLIコマンド",
+      "summary": "claudeコマンドの基本操作・プロジェクト初期化・ファイル操作",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec11_first_project",
+      "title": "最初のプロジェクトを作成",
+      "summary": "Hello WorldアプリをClaude Codeで作成するハンズオン",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec11_summary",
+      "title": "今日のまとめ",
+      "summary": "第11回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec12_title",
+      "title": "第12回: Claude Codeでファイル操作",
+      "summary": "コードベースを理解させようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec12_file_ops",
+      "title": "ファイルの読み込みと編集",
+      "summary": "Claude Codeでファイルを読み込み・編集・作成する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec12_explain",
+      "title": "コードの説明と解析",
+      "summary": "既存コードをClaude Codeに説明させる方法と活用場面",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec12_debug",
+      "title": "バグの発見と修正",
+      "summary": "エラーメッセージをペーストしてClaude Codeにデバッグさせる方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec12_refactor",
+      "title": "リファクタリングの実践",
+      "summary": "コードを整理・最適化するリファクタリングの実践",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec12_summary",
+      "title": "今日のまとめ",
+      "summary": "第12回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec13_title",
+      "title": "第13回: Webアプリ開発（フロントエンド）",
+      "summary": "ReactアプリをClaude Codeで作るタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec13_react",
+      "title": "Reactの基本概念",
+      "summary": "コンポーネント・ Props・StateのReact基本概念",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec13_components",
+      "title": "Claude Codeでコンポーネント作成",
+      "summary": "Claude Codeに指示してReactコンポーネントを生成する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec13_state",
+      "title": "状態管理の実装",
+      "summary": "useState・useEffectを使った状態管理の実装",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec13_styling",
+      "title": "スタイリングとレスポンシブ対応",
+      "summary": "Tailwind CSSでスタイリングしモバイル対応する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec13_summary",
+      "title": "今日のまとめ",
+      "summary": "第13回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec14_title",
+      "title": "第14回: Webアプリ開発（バックエンド）",
+      "summary": "APIサーバーをClaude Codeで作るタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec14_express",
+      "title": "Node.js/Expressの基礎",
+      "summary": "ExpressでシンプルなAPIサーバーを作る基礎",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec14_rest",
+      "title": "REST APIの設計",
+      "summary": "CRUD操作のREST APIエンドポイント設計",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec14_db",
+      "title": "データベース連携（SQLite）",
+      "summary": "SQLiteでデータを保存・取得する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec14_connect",
+      "title": "フロントエンドとの接続",
+      "summary": "ReactからExpress APIを呼び出すフルスタック完成",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec14_summary",
+      "title": "今日のまとめ",
+      "summary": "第14回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec15_title",
+      "title": "第15回: テストとデプロイ",
+      "summary": "アプリを世界に公開しようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec15_test",
+      "title": "テストコードの書き方",
+      "summary": "Jestを使ったユニットテストの基礎とClaude Codeでの自動生成",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec15_debug",
+      "title": "Claude Codeでのデバッグ",
+      "summary": "エラーログをペーストしてClaude Codeにデバッグさせる実践",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec15_deploy",
+      "title": "Vercelへのデプロイ",
+      "summary": "Vercel CLIでフロントエンドをデプロイする手順",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec15_summary",
+      "title": "今日のまとめ",
+      "summary": "第15回のまとめ・宿題・フェーズ3の振り返り",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec16_title",
+      "title": "第16回: 卒業制作：企画と設計",
+      "summary": "オリジナルアプリを作ろうのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec16_ideation",
+      "title": "アイデア発想とユーザーリサーチ",
+      "summary": "アイデア発想フレームワークとユーザーリサーチの方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec16_requirements",
+      "title": "要件定義と機能設計",
+      "summary": "MoSCoW法で要件を整理し機能を優先順位付けする方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec16_techstack",
+      "title": "技術スタックの選定",
+      "summary": "プロジェクトに最適な技術スタックをClaudeと一緒に選ぶ方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec16_plan",
+      "title": "プロジェクト計画の作成",
+      "summary": "タイムライン・マイルストーン・タスク分解のプロジェクト計画",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec16_summary",
+      "title": "今日のまとめ",
+      "summary": "第16回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec17_title",
+      "title": "第17回: 卒業制作：UI/UXデザイン",
+      "summary": "使いやすいデザインを作ろうのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec17_wireframe",
+      "title": "ワイヤーフレームの作成",
+      "summary": "ペーパー・ Figmaでワイヤーフレームを作成する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec17_figma",
+      "title": "Figmaの基本操作",
+      "summary": "Figmaのフレーム・コンポーネント・プロトタイプの使い方",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec17_implement",
+      "title": "Claude Codeでデザインを実装",
+      "summary": "ワイヤーフレームを元にClaude CodeでUIをコード化する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec17_usability",
+      "title": "ユーザビリティテスト",
+      "summary": "友人・家族に使ってもらいフィードバックを集める方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec17_summary",
+      "title": "今日のまとめ",
+      "summary": "第17回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec18_title",
+      "title": "第18回: 卒業制作：機能実装",
+      "summary": "Claude Codeで本格開発のタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec18_core",
+      "title": "コア機能の実装",
+      "summary": "アプリのメイン機能をClaude Codeで実装するステップ",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec18_pair",
+      "title": "Claude Codeによるペアプログラミング",
+      "summary": "複雑な機能をClaude Codeと分担して実装するコツ",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec18_error",
+      "title": "エラーハンドリング",
+      "summary": "エラーメッセージの適切な表示とロードエラーの処理",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec18_summary",
+      "title": "今日のまとめ",
+      "summary": "第18回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec19_title",
+      "title": "第19回: 卒業制作：仕上げと公開",
+      "summary": "世界に向けて発信しようのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec19_final_debug",
+      "title": "最終デバッグとテスト",
+      "summary": "公開前の最終確認リストとClaude Codeでの最終デバッグ",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec19_seo",
+      "title": "SEO対策とOGP設定",
+      "summary": "metaタグ・OGP・サイトマップの設定方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec19_deploy",
+      "title": "本番環境へのデプロイ",
+      "summary": "Vercel/Netlifyで本番公開する最終手順",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec19_share",
+      "title": "SNSでの発信方法",
+      "summary": "X・Zenn・Qiitaで作ったアプリを発信する方法",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec19_summary",
+      "title": "今日のまとめ",
+      "summary": "第19回のまとめと宿題",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec20_title",
+      "title": "第20回: 卒業式：発表会と未来へ",
+      "summary": "あなたの旅はここから始まるのタイトルスライド",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec20_presentation",
+      "title": "成果発表（各自5分）",
+      "summary": "発表の構成・デモのポイント・質疑応答のヒント",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec20_career",
+      "title": "AI時代のキャリアパス",
+      "summary": "AIエンジニア・プロダクトマネージャー・起業家などAI時代のキャリア",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec20_roadmap",
+      "title": "継続学習のロードマップ",
+      "summary": "卒業後の学び方・おすすめリソース・コミュニティ",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "lec20_finale",
+      "title": "卒業証書授与・フィナーレ",
+      "summary": "卒業証書の授与とコース全体の振り返り・メッセージ",
+      "image_plan": "",
+      "slide_template_key": ""
+    }
+  ]
+}

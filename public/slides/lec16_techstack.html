@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .stack-item { background: white; padding: 14px 18px; margin-top: 10px; }
+        .stack-type { font-size: 16px; font-weight: 700; color: #E67700; margin-bottom: 6px; }
+        .stack-tech { font-size: 15px; color: #212529; }
+        .stack-example { font-size: 13px; color: #6C757D; margin-top: 4px; }
+        .decision-box { background: #212529; padding: 18px; }
+        .decision-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #333; }
+        .decision-row:last-child { border-bottom: none; }
+        .decision-q { color: #F59F00; font-size: 15px; font-weight: 600; flex: 1; }
+        .decision-a { color: #E8E8E8; font-size: 14px; flex: 1.5; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>技術スタックの選び方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🛠️ プロジェクト別おすすめスタック</div>
+                <div class="stack-item">
+                    <div class="stack-type">📄 シンプルなWebページ</div>
+                    <div class="stack-tech">HTML + CSS + JavaScript</div>
+                    <div class="stack-example">ポートフォリオ・紹介ページ</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-type">⚛️ インタラクティブなアプリ</div>
+                    <div class="stack-tech">React + Tailwind CSS</div>
+                    <div class="stack-example">TodoApp・計算ツール・ゲーム</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-type">🗄️ データ保存が必要なアプリ</div>
+                    <div class="stack-tech">React + Express + SQLite</div>
+                    <div class="stack-example">メモ帳・掲示板・スケジューラー</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-type">🤖 AI機能付きアプリ</div>
+                    <div class="stack-tech">React + Express + Claude API</div>
+                    <div class="stack-example">AIチャット・自動要約ツール</div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">🤔 技術選定の判断基準</div>
+                <div class="decision-box">
+                    <div class="decision-row">
+                        <div class="decision-q">データを保存する？</div>
+                        <div class="decision-a">Yes → バックエンド必要<br>No → フロントのみでOK</div>
+                    </div>
+                    <div class="decision-row">
+                        <div class="decision-q">ログイン機能が必要？</div>
+                        <div class="decision-a">Yes → 認証システム必要<br>No → シンプルに作れる</div>
+                    </div>
+                    <div class="decision-row">
+                        <div class="decision-q">AI機能を使う？</div>
+                        <div class="decision-a">Yes → Claude API連携<br>No → 通常のWebアプリ</div>
+                    </div>
+                    <div class="decision-row">
+                        <div class="decision-q">スマホ対応が必要？</div>
+                        <div class="decision-a">Yes → Tailwindでレスポンシブ<br>No → デスクトップのみでOK</div>
+                    </div>
+                </div>
+                <div class="highlight-box">💡 迷ったらClaudeに「このアプリに最適な技術スタックを教えて」と聞こう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

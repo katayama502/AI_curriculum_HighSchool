@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .error-box {
+            background: #0D0D0D;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .error-bar { background: #fa5252; padding: 6px 14px; font-size: 13px; font-weight: 700; color: white; }
+        .error-body { padding: 14px 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.8; }
+        .e-red { color: #ff6b6b; }
+        .e-orange { color: #ffa94d; }
+        .e-gray { color: #868e96; }
+        .e-white { color: #f8f9fa; }
+        .annotation-row { display: flex; gap: 10px; margin-bottom: 10px; }
+        .anno-num { background: #fa5252; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+        .anno-text { font-size: 16px; color: #495057; line-height: 1.5; padding-top: 3px; }
+        .step-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .step-num-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+        .step-n { background: #339AF0; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+        .step-title { font-size: 17px; font-weight: 500; color: #212529; }
+        .step-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .prompt-hint {
+            background: #0D0D0D;
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            color: #E8E8E8;
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+        .ph-label { color: #20C997; font-size: 12px; margin-bottom: 6px; font-family: "Yu Gothic", sans-serif; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>エラーメッセージを読む & AIに渡す</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>典型的なエラーの読み方</h2>
+                <div class="error-box">
+                    <div class="error-bar">🔴 ブラウザコンソールのエラー例</div>
+                    <div class="error-body">
+                        <div class="e-red">Uncaught ReferenceError: <span class="e-orange">getWeather</span> is not defined</div>
+                        <div class="e-gray">    at HTMLButtonElement.onclick (index.html:25:5)</div>
+                        <div class="e-gray">    ↑ この行でエラーが起きている</div>
+                    </div>
+                </div>
+                <div class="annotation-row">
+                    <div class="anno-num">1</div>
+                    <div class="anno-text"><strong>エラーの種類：</strong> ReferenceError = 「その名前が見つからない」</div>
+                </div>
+                <div class="annotation-row">
+                    <div class="anno-num">2</div>
+                    <div class="anno-text"><strong>問題の場所：</strong> index.htmlの25行目 onclick</div>
+                </div>
+                <div class="annotation-row">
+                    <div class="anno-num">3</div>
+                    <div class="anno-text"><strong>原因の推測：</strong> getWeather関数が定義されていない → スペルミスか関数定義忘れ</div>
+                </div>
+                <div class="prompt-hint">
+                    <div class="ph-label">▷ Claude Codeへの効果的な伝え方</div>
+                    以下のエラーが出ました。原因と修正方法を教えてください。<br><br>
+                    [エラー]<br>
+                    Uncaught ReferenceError: getWeather is not defined<br>
+                    at HTMLButtonElement.onclick (index.html:25:5)<br><br>
+                    [やりたかったこと]<br>
+                    ボタンを押したときに天気を取得したかった
+                </div>
+            </div>
+            <div class="right">
+                <h2>エラー対処の手順</h2>
+                <div class="step-box">
+                    <div class="step-num-row">
+                        <div class="step-n">1</div>
+                        <div class="step-title">慌てない、まず読む</div>
+                    </div>
+                    <div class="step-desc">エラー文の最初の1行が最重要。エラーの「種類」と「場所」がわかる。</div>
+                </div>
+                <div class="step-box">
+                    <div class="step-num-row">
+                        <div class="step-n">2</div>
+                        <div class="step-title">エラー全文をコピーする</div>
+                    </div>
+                    <div class="step-desc">赤い文字を全てコピー。「なんか動かない」ではなく正確な情報をAIに渡す。</div>
+                </div>
+                <div class="step-box">
+                    <div class="step-num-row">
+                        <div class="step-n">3</div>
+                        <div class="step-title">やりたかったことも書く</div>
+                    </div>
+                    <div class="step-desc">「〇〇しようとしたらエラーが出た」という文脈をセットで渡す。</div>
+                </div>
+                <div class="step-box" style="border-color:#20C997">
+                    <div class="step-num-row">
+                        <div class="step-n" style="background:#20C997;color:#0D0D0D">4</div>
+                        <div class="step-title">修正後は動作確認する</div>
+                    </div>
+                    <div class="step-desc">直ったらブラウザで再確認。新しいエラーが出たらまた同じ手順で。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

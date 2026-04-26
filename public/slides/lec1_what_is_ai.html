@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 40px;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .timeline-item {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #339AF0;
+        }
+        .timeline-item:nth-child(2) {
+            border-top-color: #20C997;
+        }
+        .timeline-item:nth-child(3) {
+            border-top-color: #212529;
+        }
+        .year {
+            font-size: 28px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 15px;
+        }
+        .timeline-item:nth-child(2) .year {
+            color: #20C997;
+        }
+        .timeline-item:nth-child(3) .year {
+            color: #212529;
+        }
+        .event {
+            font-size: 22px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+        .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #495057;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>AIとは何か？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>AIは「人間の知能を模倣するコンピュータ技術」</h2>
+            <p>人工知能（AI）とは、学習・推論・問題解決など、人間が知的と感じる作業をコンピュータに行わせる技術の総称です。</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">1950年代</div>
+                    <div class="event">概念の誕生</div>
+                    <div class="desc">「人工知能」という言葉が初めて使われ、研究がスタートしました。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2010年代</div>
+                    <div class="event">深層学習の発展</div>
+                    <div class="desc">ディープラーニングにより、画像認識・音声認識で人間を超える性能を発揮し始めました。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2022年以降</div>
+                    <div class="event">生成AIの登場</div>
+                    <div class="desc">テキスト・画像・コードを自動生成できる新しい時代を切り開きました。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

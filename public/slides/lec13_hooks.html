@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-box { background: #0D0D0D; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+        .cb-header { padding: 8px 14px; font-size: 13px; font-weight: 700; }
+        .ch-blue { background: #1864AB; color: white; }
+        .ch-green { background: #1A5E37; color: white; }
+        .cb-body { padding: 12px 16px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.9; }
+        .ct { color: #74C0FC; }
+        .ca { color: #ffd43b; }
+        .cs { color: #a3be8c; }
+        .cc { color: #20C997; }
+        .cn { color: #f8f9fa; }
+        .cp { color: #E599F7; }
+        .hook-card { background: white; border: 2px solid #dee2e6; padding: 14px 18px; border-radius: 6px; margin-bottom: 10px; }
+        .hc-name { font-family: "Courier New", monospace; font-size: 18px; font-weight: 700; color: #339AF0; margin-bottom: 4px; }
+        .hc-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .lifecycle-row { display: flex; gap: 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top: 4px; }
+        .lc-item { flex: 1; padding: 12px 14px; text-align: center; }
+        .lc-item.mount { background: #E7F5FF; }
+        .lc-item.update { background: #F0FFF4; }
+        .lc-item.unmount { background: #FFF4E6; }
+        .lc-label { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+        .mount .lc-label { color: #339AF0; }
+        .update .lc-label { color: #20C997; }
+        .unmount .lc-label { color: #ffa94d; }
+        .lc-code { font-family: "Courier New", monospace; font-size: 12px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>useEffect — 副作用とAPIデータ取得</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>useEffectの基本構造</h2>
+                <div class="code-box">
+                    <div class="cb-header ch-blue">基本形 — コンポーネント起動時に実行</div>
+                    <div class="cb-body">
+                        <div><span class="cp">import </span><span class="cn">{ useState, useEffect } from </span><span class="cs">'react'</span><span class="cn">;</span></div>
+                        <br>
+                        <div><span class="ca">function </span><span class="ca">WeatherApp</span><span class="cn">() {</span></div>
+                        <div><span class="cn">  const [temp, setTemp] = useState(</span><span class="cp">null</span><span class="cn">);</span></div>
+                        <br>
+                        <div><span class="cc">  // 第2引数の[]は「初回のみ実行」を意味</span></div>
+                        <div><span class="ca">  useEffect</span><span class="cn">(() => {</span></div>
+                        <div><span class="ca">    async function </span><span class="ca">fetchData</span><span class="cn">() {</span></div>
+                        <div><span class="cn">      const res = await </span><span class="ca">fetch</span><span class="cn">(API_URL);</span></div>
+                        <div><span class="cn">      const data = await res.</span><span class="ca">json</span><span class="cn">();</span></div>
+                        <div><span class="ca">      setTemp</span><span class="cn">(data.current.temperature_2m);</span></div>
+                        <div><span class="cn">    }</span></div>
+                        <div><span class="ca">    fetchData</span><span class="cn">();</span></div>
+                        <div><span class="cn">  }, []);</span><span class="cc"> // ← 空の依存配列</span></div>
+                        <br>
+                        <div><span class="ca">  return </span><span class="ct">&lt;p&gt;</span><span class="cn">{temp ? </span><span class="cs">`${temp}°C`</span><span class="cn"> : </span><span class="cs">"読み込み中..."</span><span class="cn">}</span><span class="ct">&lt;/p&gt;</span><span class="cn">;</span></div>
+                        <div><span class="cn">}</span></div>
+                    </div>
+                </div>
+                <div class="lifecycle-row">
+                    <div class="lc-item mount">
+                        <div class="lc-label">マウント時</div>
+                        <div class="lc-code">useEffect(fn, [])</div>
+                    </div>
+                    <div class="lc-item update">
+                        <div class="lc-label">値が変わる度</div>
+                        <div class="lc-code">useEffect(fn, [city])</div>
+                    </div>
+                    <div class="lc-item unmount">
+                        <div class="lc-label">毎レンダリング</div>
+                        <div class="lc-code">useEffect(fn)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>よく使うHooks一覧</h2>
+                <div class="hook-card">
+                    <div class="hc-name">useState</div>
+                    <div class="hc-desc">状態（数値・文字列・配列など）を管理する。変わるとUIが自動更新される。</div>
+                </div>
+                <div class="hook-card">
+                    <div class="hc-name">useEffect</div>
+                    <div class="hc-desc">API呼び出し・タイマー・イベントリスナーなど「副作用」を実行する。</div>
+                </div>
+                <div class="hook-card">
+                    <div class="hc-name">useRef</div>
+                    <div class="hc-desc">DOM要素への参照を保持する。input要素にフォーカスする時などに使う。</div>
+                </div>
+                <div class="hook-card">
+                    <div class="hc-name">useContext</div>
+                    <div class="hc-desc">深くネストしたコンポーネントへPropsなしでデータを渡す（グローバル状態）。</div>
+                </div>
+                <div style="background:#0D0D0D;border-radius:6px;padding:12px 16px;margin-top:6px;">
+                    <div style="color:#20C997;font-size:13px;margin-bottom:6px;font-family:'Courier New',monospace">// Claude Codeに聞く例</div>
+                    <div style="font-family:'Courier New',monospace;font-size:13px;color:#f8f9fa;line-height:1.6">都市が変わるたびにAPIを再取得するuseEffectを書いて。cityをstateとして持ち、変わる度に天気を更新して</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

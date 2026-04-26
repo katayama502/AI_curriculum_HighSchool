@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .err { color: #ff6b6b; }
+        .error-table { width: 100%; border-collapse: collapse; }
+        .error-table th { background: #fa5252; color: white; padding: 10px 14px; font-size: 18px; text-align: left; }
+        .error-table td { padding: 10px 14px; font-size: 16px; border-bottom: 1px solid #dee2e6; background: white; }
+        .error-table tr:nth-child(even) td { background: #fff5f5; }
+        .tip-box { background: #f0fdf4; border-radius: 8px; padding: 14px 18px; border: 2px solid #20C997; margin-top: 14px; }
+        .tip-box p { font-size: 17px; color: #2b8a3e; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>エラー処理 — try / except</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>エラーが起きても止まらないプログラム</h2>
+                <div class="code-block">
+<span class="cmt"># 0で割るとエラーが発生する</span>
+<span class="kw">try</span>:
+    num = <span class="func">int</span>(<span class="func">input</span>(<span class="str">"数を入力: "</span>))
+    result = <span class="num">100</span> / num
+    <span class="func">print</span>(<span class="str">f"結果: {result}"</span>)
+
+<span class="kw">except</span> ZeroDivisionError:
+    <span class="func">print</span>(<span class="str">"0では割れません！"</span>)
+
+<span class="kw">except</span> ValueError:
+    <span class="func">print</span>(<span class="str">"数字を入力してください"</span>)
+
+<span class="kw">except</span> Exception <span class="kw">as</span> e:
+    <span class="func">print</span>(<span class="str">f"予期しないエラー: {e}"</span>)
+
+<span class="kw">finally</span>:
+    <span class="func">print</span>(<span class="str">"処理が終わりました"</span>)  <span class="cmt"># 必ず実行</span>
+                </div>
+                <div class="tip-box">
+                    <p>💡 <strong>try/exceptの使いどころ：</strong><br>
+                    ユーザー入力の処理、ファイル読み込み、ネットワーク通信など「失敗する可能性がある」処理に使う。エラーメッセージを読んでClaudeに貼ると原因がすぐわかる！</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>よく出るエラー一覧</h2>
+                <table class="error-table">
+                    <tr><th>エラー名</th><th>原因</th></tr>
+                    <tr><td>SyntaxError</td><td>文法ミス（:忘れ、かっこ不足）</td></tr>
+                    <tr><td>IndentationError</td><td>インデントがズレている</td></tr>
+                    <tr><td>NameError</td><td>定義していない変数を使った</td></tr>
+                    <tr><td>TypeError</td><td>型が合わない操作をした</td></tr>
+                    <tr><td>IndexError</td><td>リストの範囲外を参照した</td></tr>
+                    <tr><td>KeyError</td><td>辞書に存在しないキー</td></tr>
+                    <tr><td>ZeroDivisionError</td><td>0で割り算した</td></tr>
+                    <tr><td>ValueError</td><td>値の形式が不正</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

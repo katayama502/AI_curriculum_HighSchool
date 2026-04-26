@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .code-block {
+            background-color: #212529; color: #f8f9fa; padding: 16px 20px;
+            border-radius: 6px; font-family: monospace; font-size: 18px;
+            line-height: 1.7; margin-bottom: 16px;
+        }
+        .kw { color: #F59F00; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .method { color: #da77f2; }
+        .method-table { width: 100%; border-collapse: collapse; }
+        .method-table th { background-color: #F59F00; color: white; padding: 10px 14px; font-size: 18px; text-align: left; }
+        .method-table td { padding: 10px 14px; font-size: 17px; border-bottom: 1px solid #dee2e6; }
+        .method-table tr:nth-child(even) td { background-color: #fff3bf; }
+        .method-table tr:nth-child(odd) td { background-color: white; }
+        .tip-box { background-color: white; border-left: 5px solid #F59F00; padding: 14px 18px; margin-top: 14px; border-radius: 0 6px 6px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .tip-box p { font-size: 18px; color: #495057; line-height: 1.6; }
+        .tip-box strong { color: #F59F00; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>配列（Array）</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>複数のデータをまとめて管理</h2>
+                <div class="code-block">
+<span class="cmt">// 配列の作り方</span>
+<span class="kw">const</span> fruits = [<span class="str">"りんご"</span>, <span class="str">"バナナ"</span>, <span class="str">"みかん"</span>];
+
+<span class="cmt">// インデックス（0始まり）でアクセス</span>
+console.log(fruits[<span class="num">0</span>]);  <span class="cmt">// "りんご"</span>
+console.log(fruits[<span class="num">2</span>]);  <span class="cmt">// "みかん"</span>
+
+<span class="cmt">// 要素数を確認</span>
+console.log(fruits.<span class="method">length</span>); <span class="cmt">// 3</span>
+
+<span class="cmt">// forループで全要素を処理</span>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i &lt; fruits.<span class="method">length</span>; i++) {
+    console.log(fruits[i]);
+}
+                </div>
+                <div class="tip-box">
+                    <p><strong>💡 ポイント：</strong>配列の番号は<strong>0から始まる</strong>！最初の要素は[0]、2番目は[1]。これはプログラミングの世界の共通ルールです。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>よく使うメソッド一覧</h2>
+                <table class="method-table">
+                    <tr><th>メソッド</th><th>役割</th><th>例</th></tr>
+                    <tr><td>.push()</td><td>末尾に追加</td><td>fruits.push("ぶどう")</td></tr>
+                    <tr><td>.pop()</td><td>末尾を削除</td><td>fruits.pop()</td></tr>
+                    <tr><td>.shift()</td><td>先頭を削除</td><td>fruits.shift()</td></tr>
+                    <tr><td>.unshift()</td><td>先頭に追加</td><td>fruits.unshift("メロン")</td></tr>
+                    <tr><td>.indexOf()</td><td>位置を検索</td><td>fruits.indexOf("バナナ")</td></tr>
+                    <tr><td>.includes()</td><td>含むか確認</td><td>fruits.includes("りんご")</td></tr>
+                    <tr><td>.forEach()</td><td>全要素に処理</td><td>fruits.forEach(f => ...)</td></tr>
+                    <tr><td>.map()</td><td>変換した新配列</td><td>fruits.map(f => f+"🍎")</td></tr>
+                    <tr><td>.filter()</td><td>条件で絞り込み</td><td>nums.filter(n => n > 3)</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

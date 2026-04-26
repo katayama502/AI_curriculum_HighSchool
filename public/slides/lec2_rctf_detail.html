@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Yu Gothic","Roboto",sans-serif;background:#F8F9FA;color:#212529}
+.slide-container{width:1280px;min-height:720px;background:#F8F9FA}
+.header{padding:40px 60px 0}
+h1{font-size:48px;font-weight:500;color:#339AF0}
+.divider{height:1px;background:#20C997;margin-top:20px}
+.content-area{padding:28px 60px}
+.rctf-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px}
+.rctf-card{background:white;border-radius:10px;padding:24px;box-shadow:0 4px 15px rgba(0,0,0,.06);border-left:5px solid #339AF0}
+.rctf-card.c{border-left-color:#20C997}
+.rctf-card.t{border-left-color:#E67700}
+.rctf-card.f{border-left-color:#212529}
+.letter{font-size:52px;font-weight:700;color:#339AF0;line-height:1}
+.c .letter{color:#20C997}
+.t .letter{color:#E67700}
+.f .letter{color:#212529}
+.word{font-size:20px;font-weight:700;color:#212529;margin:4px 0 10px}
+.desc{font-size:17px;font-weight:300;color:#495057;line-height:1.6;margin-bottom:10px}
+.example{background:#F8F9FA;border-radius:5px;padding:8px 12px;font-size:15px;color:#495057}
+.example strong{color:#339AF0}
+.c .example strong{color:#20C997}
+.t .example strong{color:#E67700}
+.f .example strong{color:#212529}
+.full-example{background:#212529;color:white;border-radius:10px;padding:18px 24px;font-size:17px;line-height:1.8;font-weight:300}
+.full-example .tag{color:#20C997;font-weight:600}
+</style></head><body>
+<div class="slide-container">
+<div class="header"><h1>RCTFフレームワーク 詳細解説</h1><div class="divider"></div></div>
+<div class="content-area">
+<div class="rctf-grid">
+<div class="rctf-card"><div class="letter">R</div><div class="word">Role（役割）</div><div class="desc">AIに演じてほしい役割・ペルソナを指定する。専門家・先生・キャラクターなど。</div><div class="example"><strong>例：</strong>「あなたは経験豊富な高校の数学教師です」</div></div>
+<div class="rctf-card c"><div class="letter">C</div><div class="word">Context（文脈・背景）</div><div class="desc">質問する背景・自分の状況・前提知識を伝える。AIが最適なレベルで答えられるように。</div><div class="example"><strong>例：</strong>「私は高校2年生で、来週微分のテストがあります」</div></div>
+<div class="rctf-card t"><div class="letter">T</div><div class="word">Task（タスク・目的）</div><div class="desc">何をしてほしいかを動詞から始めて具体的に指示する。「〇〇してください」と明確に。</div><div class="example"><strong>例：</strong>「微分の基本公式を5つ説明してください」</div></div>
+<div class="rctf-card f"><div class="letter">F</div><div class="word">Format（出力形式）</div><div class="desc">回答の長さ・形式・スタイルを指定する。表・箇条書き・例文数・言語など。</div><div class="example"><strong>例：</strong>「各公式を例題付きで箇条書き形式で、400字以内で」</div></div>
+</div>
+<div class="full-example">
+<span class="tag">[完成形の例]</span>　「<span class="tag">あなたは丁寧な高校数学の教師です</span>。<span style="color:#339AF0">私は高校2年生で来週微分のテストがあります</span>。<span style="color:#E67700">微分の基本公式（べき乗・定数倍・和の公式）を説明してください</span>。<span style="color:#adb5bd">各公式は例題とセットで、箇条書き形式・日本語・400字以内でお願いします</span>。」
+</div>
+</div></div></body></html>

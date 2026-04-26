@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .step-list { display: flex; flex-direction: column; gap: 12px; }
+        .step { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; align-items: flex-start; }
+        .step-num { background: #212529; color: #20C997; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+        .step-content { flex: 1; }
+        .step-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .step-text { font-size: 15px; color: #495057; line-height: 1.5; }
+        .step-code { font-family: monospace; font-size: 14px; background: #f1f3f5; padding: 3px 8px; border-radius: 3px; color: #339AF0; display: inline-block; margin-top: 3px; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .feature-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .feature-icon { font-size: 22px; margin-bottom: 6px; }
+        .feature-title { font-size: 16px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .feature-text { font-size: 14px; color: #495057; line-height: 1.5; }
+        .env-box { background: #0D0D0D; border-radius: 8px; padding: 12px 16px; margin-top: 12px; }
+        .env-box code { font-family: monospace; font-size: 14px; color: #a9dc76; line-height: 1.7; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Vercelでフロントエンドをデプロイ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-cloud-upload-alt" style="color:#339AF0"></i> デプロイ手順（5分で完了）</h2>
+                <div class="step-list">
+                    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">GitHubにコードをpush</div><div class="step-text">git push origin main でリモートへ反映</div></div></div>
+                    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">vercel.com でログイン</div><div class="step-text">GitHubアカウントでサインイン→「New Project」</div></div></div>
+                    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">リポジトリを選択してImport</div><div class="step-text">フロントエンドのリポジトリを選ぶ（client/）</div></div></div>
+                    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">環境変数を設定</div><div class="step-text">VITE_API_URL = https://your-api.railway.app</div><div class="step-code">Settings → Environment Variables</div></div></div>
+                    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">「Deploy」をクリック</div><div class="step-text">1〜2分で https://your-app.vercel.app が完成！</div></div></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-star" style="color:#20C997"></i> Vercelの便利な機能</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="color:#339AF0">🔄</div>
+                        <div class="feature-title">自動デプロイ</div>
+                        <div class="feature-text">mainブランチにpushするだけで自動でデプロイが走る</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="color:#20C997">👀</div>
+                        <div class="feature-title">プレビューURL</div>
+                        <div class="feature-text">PRごとにプレビュー環境が自動生成される</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="color:#f59f00">🌍</div>
+                        <div class="feature-title">グローバルCDN</div>
+                        <div class="feature-text">世界中のサーバーから配信。日本からも爆速</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="color:#212529">🔒</div>
+                        <div class="feature-title">HTTPS自動設定</div>
+                        <div class="feature-text">SSL証明書が無料で自動設定される</div>
+                    </div>
+                </div>
+                <div class="env-box">
+                    <code>// React側のAPI URLを環境変数で切り替え<br>
+// .env.local（開発用）<br>
+VITE_API_URL=http://localhost:3000<br>
+// Vercel（本番用）<br>
+VITE_API_URL=https://your-api.railway.app</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

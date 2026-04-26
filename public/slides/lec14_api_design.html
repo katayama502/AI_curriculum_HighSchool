@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .api-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .api-table th { background-color: #212529; color: white; padding: 12px 16px; font-size: 16px; text-align: left; }
+        .api-table td { padding: 12px 16px; font-size: 15px; border-bottom: 1px solid #f1f3f5; color: #495057; }
+        .api-table tr:last-child td { border-bottom: none; }
+        .method { font-family: "Courier New", monospace; font-size: 14px; font-weight: 500; padding: 3px 10px; border-radius: 4px; }
+        .get { background-color: #e7f5ff; color: #339AF0; }
+        .post { background-color: #ebfbee; color: #20C997; }
+        .put { background-color: #fff9db; color: #e67700; }
+        .del { background-color: #fff5f5; color: #fa5252; }
+        .path { font-family: "Courier New", monospace; color: #212529; }
+        .tip-row { display: flex; gap: 20px; }
+        .tip-card { flex: 1; background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .tip-card.teal { border-left-color: #20C997; }
+        .tip-title { font-size: 16px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .tip-body { font-size: 15px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>REST API 設計：ToDoアプリのエンドポイント</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2><i class="fas fa-sitemap" style="color:#339AF0"></i> /api/todos のCRUD設計</h2>
+            <table class="api-table">
+                <tr>
+                    <th>メソッド</th>
+                    <th>パス</th>
+                    <th>説明</th>
+                    <th>リクエスト例</th>
+                    <th>レスポンス例</th>
+                </tr>
+                <tr>
+                    <td><span class="method get">GET</span></td>
+                    <td class="path">/api/todos</td>
+                    <td>全件取得</td>
+                    <td>—</td>
+                    <td><code>[{id:1, text:"学習", done:0}]</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method post">POST</span></td>
+                    <td class="path">/api/todos</td>
+                    <td>新規作成</td>
+                    <td><code>{text: "Reactを学ぶ"}</code></td>
+                    <td><code>{id: 2, text:"Reactを学ぶ"}</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method put">PUT</span></td>
+                    <td class="path">/api/todos/:id</td>
+                    <td>完了切り替え</td>
+                    <td><code>{done: 1}</code></td>
+                    <td><code>{id:1, done:1}</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method del">DELETE</span></td>
+                    <td class="path">/api/todos/:id</td>
+                    <td>削除</td>
+                    <td>—</td>
+                    <td><code>{message:"削除しました"}</code></td>
+                </tr>
+            </table>
+            <div class="tip-row">
+                <div class="tip-card">
+                    <div class="tip-title"><i class="fas fa-check" style="color:#339AF0"></i> URL設計のルール</div>
+                    <div class="tip-body">名詞を使う（<code>/todos</code> ○ / <code>/getTodos</code> ×）。複数形にする。IDは <code>/:id</code> で指定。</div>
+                </div>
+                <div class="tip-card teal">
+                    <div class="tip-title"><i class="fas fa-wrench" style="color:#20C997"></i> テストツール</div>
+                    <div class="tip-body">APIの動作確認には <strong>Bruno</strong> や <strong>Thunder Client</strong>（VSCode拡張）を使うと便利。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

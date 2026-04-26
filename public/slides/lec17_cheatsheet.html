@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 44px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 20px 60px 0; }
+        .panel { background: #0D0D0D; border-radius: 10px; padding: 18px 20px; }
+        .panel-title { font-size: 17px; font-weight: 700; color: #20C997; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .banner { margin: 16px 60px 0; background: #212529; color: white; border-radius: 8px; padding: 14px 24px; text-align: center; font-size: 20px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第17回 チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="grid">
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-palette"></i> カラーシステム</div>
+                <div class="code">
+                    <span class="c-yellow">:root</span> {<br>
+                    &nbsp;&nbsp;<span class="c-green">--primary</span>: <span class="c-blue">#339AF0</span>; <span class="c-gray">/* メイン色 */</span><br>
+                    &nbsp;&nbsp;<span class="c-green">--accent</span>: <span class="c-blue">#20C997</span>; <span class="c-gray">/* 強調 */</span><br>
+                    &nbsp;&nbsp;<span class="c-green">--text</span>: <span class="c-blue">#212529</span>; <span class="c-gray">/* 本文 */</span><br>
+                    &nbsp;&nbsp;<span class="c-green">--bg</span>: <span class="c-blue">#F8F9FA</span>; <span class="c-gray">/* 背景 */</span><br>
+                    }<br>
+                    <span class="c-gray">/* 使い方 */</span><br>
+                    <span class="c-yellow">color</span>: <span class="c-green">var(--primary)</span>;
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-th"></i> Tailwind レイアウト</div>
+                <div class="code">
+                    <span class="c-gray">/* Flexbox */</span><br>
+                    <span class="c-green">flex</span> <span class="c-blue">items-center</span> <span class="c-yellow">gap-4</span><br><br>
+                    <span class="c-gray">/* Grid */</span><br>
+                    <span class="c-green">grid</span> <span class="c-blue">grid-cols-3</span> <span class="c-yellow">gap-4</span><br><br>
+                    <span class="c-gray">/* レスポンシブ */</span><br>
+                    <span class="c-pink">grid-cols-1</span> <span class="c-blue">md:grid-cols-2</span> <span class="c-yellow">lg:grid-cols-3</span>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-mobile-alt"></i> レスポンシブ</div>
+                <div class="code">
+                    <span class="c-gray">/* Mobile First */</span><br>
+                    <span class="c-yellow">.grid</span> { <span class="c-green">grid-template-columns</span>: 1fr; }<br><br>
+                    <span class="c-blue">@media (min-width: 768px)</span> {<br>
+                    &nbsp;&nbsp;<span class="c-yellow">.grid</span> { <span class="c-green">grid-template-columns</span>: repeat(2,1fr); }<br>
+                    }<br>
+                    <span class="c-blue">@media (min-width: 1024px)</span> {<br>
+                    &nbsp;&nbsp;<span class="c-yellow">.grid</span> { <span class="c-green">grid-template-columns</span>: repeat(3,1fr); }<br>
+                    }
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-universal-access"></i> アクセシビリティ</div>
+                <div class="code">
+                    <span class="c-gray">/* 画像にaltを必ずつける */</span><br>
+                    <span class="c-green">&lt;img</span> <span class="c-blue">alt</span>=<span class="c-yellow">"本の表紙"</span><span class="c-green">&gt;</span><br><br>
+                    <span class="c-gray">/* ボタンにaria-labelを */</span><br>
+                    <span class="c-green">&lt;button</span> <span class="c-blue">aria-label</span>=<span class="c-yellow">"削除"</span><span class="c-green">&gt;</span>🗑️<span class="c-green">&lt;/button&gt;</span><br><br>
+                    <span class="c-gray">/* コントラスト: 4.5:1以上 */</span><br>
+                    <span class="c-gray">/* outline: none は❌NG */</span>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            🎨 デザインはユーザーのためにある。見た目より「使いやすさ」を優先しよう！
+        </div>
+    </div>
+</body>
+</html>

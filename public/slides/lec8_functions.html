@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #1A1A2E; padding: 20px; font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8; }
+        .kw { color: #FFD43B; font-weight: 700; }
+        .str { color: #FCC419; }
+        .num { color: #20C997; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .right-col { }
+        .modules-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .module-item { background: white; padding: 12px 16px; margin-top: 8px; display: grid; grid-template-columns: 100px 1fr; gap: 12px; align-items: center; }
+        .module-name { background: #212529; color: #FFD43B; font-family: "Courier New", monospace; font-size: 15px; font-weight: 700; padding: 6px 10px; text-align: center; }
+        .module-desc { font-size: 17px; color: #495057; }
+        .claude-tip { background: #339AF0; color: white; padding: 14px 18px; margin-top: 16px; }
+        .claude-tip-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+        .claude-tip-text { font-size: 16px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>関数とモジュールの活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment"># デフォルト引数付き関数</span><br>
+                <span class="kw">def</span> <span class="fn">greet</span>(name, lang=<span class="str">"ja"</span>):<br>
+                &nbsp;&nbsp;<span class="kw">if</span> lang == <span class="str">"ja"</span>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">f"こんにちは、{name}！"</span><br>
+                &nbsp;&nbsp;<span class="kw">else</span>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">f"Hello, {name}!"</span><br><br>
+                <span class="comment"># モジュールのインポート</span><br>
+                <span class="kw">import</span> random<br>
+                <span class="kw">import</span> datetime<br><br>
+                <span class="comment"># ランダムな数を生成</span><br>
+                num = random.<span class="fn">randint</span>(<span class="num">1</span>, <span class="num">100</span>)<br><br>
+                <span class="comment"># 今日の日付を取得</span><br>
+                today = datetime.date.<span class="fn">today</span>()<br>
+                <span class="fn">print</span>(<span class="str">f"今日は{today}です"</span>)
+            </div>
+            <div class="right-col">
+                <div class="modules-title">よく使う標準モジュール</div>
+                <div class="module-item">
+                    <div class="module-name">random</div>
+                    <div class="module-desc">乱数生成・リストのシャッフル</div>
+                </div>
+                <div class="module-item">
+                    <div class="module-name">datetime</div>
+                    <div class="module-desc">日付・時刻の取得と計算</div>
+                </div>
+                <div class="module-item">
+                    <div class="module-name">math</div>
+                    <div class="module-desc">数学関数（sqrt, sin, cos等）</div>
+                </div>
+                <div class="module-item">
+                    <div class="module-name">json</div>
+                    <div class="module-desc">JSON形式のデータを読み書き</div>
+                </div>
+                <div class="claude-tip">
+                    <div class="claude-tip-title">🤖 Claudeへの依頼例</div>
+                    <div class="claude-tip-text">「Pythonで〇〇を処理するスクリプトを書いて。randomとdatetimeモジュールを使って」と伝えると、適切なモジュールを選んでくれる！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

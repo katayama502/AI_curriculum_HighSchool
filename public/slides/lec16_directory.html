@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .col { flex: 1; }
+        .tree { background-color: #0D0D0D; border-radius: 8px; padding: 20px; }
+        .tree pre { font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #f8f9fa; }
+        .dir { color: #339AF0; font-weight: 500; }
+        .file { color: #dee2e6; }
+        .ann { color: #868e96; }
+        .role-card { background-color: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 10px; display: flex; gap: 12px; align-items: flex-start; }
+        .role-file { font-family: "Courier New", monospace; font-size: 14px; font-weight: 500; color: #339AF0; width: 160px; flex-shrink: 0; }
+        .role-desc { font-size: 14px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ディレクトリ設計：ファイル構成を決める</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="col">
+                <h2><i class="fas fa-folder" style="color:#339AF0"></i> フロントエンド</h2>
+                <div class="tree">
+                    <pre><span class="dir">client/</span>
+├── <span class="dir">src/</span>
+│   ├── <span class="dir">components/</span>    <span class="ann">← 再利用コンポーネント</span>
+│   │   ├── <span class="file">BookCard.jsx</span>
+│   │   ├── <span class="file">BookForm.jsx</span>
+│   │   └── <span class="file">Header.jsx</span>
+│   ├── <span class="dir">pages/</span>         <span class="ann">← 画面ごとのコンポーネント</span>
+│   │   ├── <span class="file">Home.jsx</span>
+│   │   └── <span class="file">BookDetail.jsx</span>
+│   ├── <span class="dir">hooks/</span>          <span class="ann">← カスタムフック</span>
+│   │   └── <span class="file">useBooks.js</span>
+│   ├── <span class="dir">api/</span>            <span class="ann">← API呼び出し関数</span>
+│   │   └── <span class="file">books.js</span>
+│   └── <span class="file">App.jsx</span>
+└── <span class="file">.env</span></pre>
+                </div>
+            </div>
+            <div class="col">
+                <h2><i class="fas fa-server" style="color:#339AF0"></i> バックエンド</h2>
+                <div class="tree">
+                    <pre><span class="dir">server/</span>
+├── <span class="dir">routes/</span>         <span class="ann">← URLルーティング</span>
+│   ├── <span class="file">books.js</span>
+│   └── <span class="file">auth.js</span>
+├── <span class="dir">middleware/</span>     <span class="ann">← 認証など共通処理</span>
+│   └── <span class="file">auth.js</span>
+├── <span class="dir">db/</span>             <span class="ann">← DB初期化・クエリ</span>
+│   ├── <span class="file">init.js</span>
+│   └── <span class="file">queries.js</span>
+├── <span class="file">index.js</span>        <span class="ann">← エントリポイント</span>
+├── <span class="file">.env</span>
+└── <span class="file">data.db</span></pre>
+                </div>
+                <div class="role-card">
+                    <div class="role-file">api/books.js</div>
+                    <div class="role-desc">fetch呼び出しを関数化。React側はこのファイルを通してAPIを叩く。変更が一箇所で済む。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

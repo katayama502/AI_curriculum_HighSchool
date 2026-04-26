@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F8F9FA;
+        }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        .steps-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-bottom: 28px;
+        }
+        .step {
+            background: white;
+            text-align: center;
+            padding: 24px 16px;
+            position: relative;
+        }
+        .step:not(:last-child)::after {
+            content: "▶";
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            color: #339AF0;
+            z-index: 2;
+        }
+        .step-num {
+            width: 44px;
+            height: 44px;
+            background: #339AF0;
+            color: white;
+            border-radius: 50%;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+        }
+        .step-icon { font-size: 32px; margin-bottom: 10px; }
+        .step-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 8px; }
+        .step-desc { font-size: 16px; color: #6C757D; }
+        .prompt-box {
+            background: #212529;
+            color: #F8F9FA;
+            padding: 20px 24px;
+        }
+        .prompt-label {
+            font-size: 14px;
+            color: #20C997;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .prompt-text {
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            color: #F8F9FA;
+            line-height: 1.6;
+        }
+        .prompt-text .highlight { color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>レポート・作文の補助</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="steps-row">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-icon">💡</div>
+                    <div class="step-title">テーマ選定</div>
+                    <div class="step-desc">興味あるテーマを<br>Claudeと一緒に探す</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-icon">📋</div>
+                    <div class="step-title">構成案作成</div>
+                    <div class="step-desc">序論・本論・結論の<br>アウトラインを作成</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-icon">✍️</div>
+                    <div class="step-title">下書き執筆</div>
+                    <div class="step-desc">自分で書いて<br>Claudeに添削依頼</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-icon">✨</div>
+                    <div class="step-title">仕上げ</div>
+                    <div class="step-desc">表現の改善・<br>誤字脱字チェック</div>
+                </div>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-label">📝 プロンプト例</div>
+                <div class="prompt-text">
+                    「<span class="highlight">環境問題についての高校生向けレポート</span>を書きたいです。<br>
+                    テーマは<span class="highlight">プラスチック汚染</span>で、<span class="highlight">1200字程度</span>です。<br>
+                    まず<span class="highlight">構成案</span>を3つ提案してください。」
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

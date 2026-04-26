@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            display: flex;
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+            gap: 40px;
+        }
+        .left-col {
+            flex: 1;
+        }
+        .right-col {
+            flex: 1;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 22px;
+        }
+        th {
+            background-color: #339AF0;
+            color: white;
+            font-weight: 500;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .highlight {
+            color: #20C997;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>このコースで学ぶこと</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left-col">
+                <h2>20回の旅で、あなたはこう変わる</h2>
+                <p>このコースを修了すると、あなたは「AIを使う人」から<span class="highlight">「AIと共に創る人」</span>へと進化します。</p>
+                <p style="margin-top: 20px;">前半10回でClaudeを自在に操るプロンプト技術を身につけ、後半10回でClaude Codeを使った本格的なアプリ開発を体験します。</p>
+                <p style="margin-top: 20px;">最終回では、自分だけのオリジナルアプリを世界に公開します。</p>
+            </div>
+            <div class="right-col">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>回</th>
+                            <th>テーマ</th>
+                            <th>習得スキル</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-bottom: 20px;">第1〜5回</td>
+                            <td style="padding-bottom: 20px;">Claude基礎</td>
+                            <td style="padding-bottom: 20px;">プロンプトエンジニアリング</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 20px;">第6〜10回</td>
+                            <td style="padding-bottom: 20px;">プログラミング基礎</td>
+                            <td style="padding-bottom: 20px;">Web開発・Python</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 20px;">第11〜15回</td>
+                            <td style="padding-bottom: 20px;">Claude Code入門</td>
+                            <td style="padding-bottom: 20px;">CLI・開発環境</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 20px;">第16〜20回</td>
+                            <td style="padding-bottom: 20px;">実践プロジェクト</td>
+                            <td style="padding-bottom: 20px;">アプリ開発・公開</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

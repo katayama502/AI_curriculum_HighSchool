@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .prompt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .prompt-card { background-color: white; border-radius: 8px; padding: 18px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .prompt-card.teal { border-top-color: #20C997; }
+        .prompt-label { font-size: 16px; font-weight: 500; color: #868e96; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .prompt-text { background-color: #f1f3f5; border-radius: 6px; padding: 12px 14px; font-size: 15px; color: #212529; line-height: 1.65; font-family: "Courier New", monospace; }
+        .flow-banner { background-color: #0D0D0D; border-radius: 8px; padding: 16px 24px; margin-top: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .flow-step { text-align: center; color: white; }
+        .flow-step .icon { font-size: 24px; color: #20C997; }
+        .flow-step .label { font-size: 15px; margin-top: 6px; font-weight: 500; }
+        .flow-arrow { color: #495057; font-size: 22px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code で React アプリを作る</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2><i class="fas fa-robot" style="color:#339AF0"></i> 効果的なプロンプトパターン</h2>
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <div class="prompt-label"><i class="fas fa-plus-circle" style="color:#339AF0"></i> コンポーネント作成</div>
+                    <div class="prompt-text">src/components/WeatherCard.jsx を作成して。<br>props: city(string), temp(number), icon(string)<br>カード形式でtailwindでスタイリングして。</div>
+                </div>
+                <div class="prompt-card teal">
+                    <div class="prompt-label"><i class="fas fa-exchange-alt" style="color:#20C997"></i> state管理追加</div>
+                    <div class="prompt-text">App.jsx に useState で「都市名の検索機能」を追加して。入力フォームと検索ボタンを作って、入力値を state で管理して。</div>
+                </div>
+                <div class="prompt-card">
+                    <div class="prompt-label"><i class="fas fa-cloud" style="color:#339AF0"></i> API連携</div>
+                    <div class="prompt-text">useEffect を使って Open-Meteo API から東京の気温を取得して WeatherCard に渡して。ローディング中は「読み込み中...」と表示。</div>
+                </div>
+                <div class="prompt-card teal">
+                    <div class="prompt-label"><i class="fas fa-bug" style="color:#20C997"></i> エラー修正</div>
+                    <div class="prompt-text">このエラーが出ています:<br>[エラーメッセージをそのままコピー]<br>WeatherCard.jsx の何行目が原因か確認して直して。</div>
+                </div>
+            </div>
+            <div class="flow-banner">
+                <div class="flow-step"><div class="icon"><i class="fas fa-sitemap"></i></div><div class="label">コンポーネント設計</div></div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-step"><div class="icon"><i class="fas fa-code"></i></div><div class="label">Claude Codeで生成</div></div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-step"><div class="icon"><i class="fas fa-eye"></i></div><div class="label">ブラウザで確認</div></div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-step"><div class="icon"><i class="fas fa-wrench"></i></div><div class="label">修正指示</div></div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-step"><div class="icon"><i class="fas fa-check-circle"></i></div><div class="label">完成・commit</div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-compare { display: flex; flex-direction: column; gap: 10px; }
+        .code-box { background: #0D0D0D; border-radius: 8px; overflow: hidden; }
+        .cb-header { padding: 7px 14px; font-size: 13px; font-weight: 700; }
+        .cb-before { background: #4a1a1a; color: #ff6b6b; }
+        .cb-after { background: #1a4a2e; color: #51CF66; }
+        .cb-body { padding: 12px 16px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.8; }
+        .code-comment { color: #20C997; }
+        .code-key { color: #339AF0; }
+        .code-fn { color: #ffd43b; }
+        .code-gray { color: #868e96; }
+        .code-white { color: #f8f9fa; }
+        .doc-type-card { background: white; border: 2px solid #dee2e6; padding: 14px 18px; border-radius: 6px; margin-bottom: 10px; }
+        .dt-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .dt-icon { font-size: 22px; }
+        .dt-title { font-size: 17px; font-weight: 500; color: #212529; }
+        .dt-prompt { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 8px 10px; border-radius: 4px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ドキュメント・コメントを自動生成する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>コメントなし → コメントあり</h2>
+                <div class="code-compare">
+                    <div class="code-box">
+                        <div class="cb-header cb-before">✗ Before — コメントなし（読みにくい）</div>
+                        <div class="cb-body">
+                            <div><span class="code-key">async function </span><span class="code-fn">getWeather</span><span class="code-white">(city) {</span></div>
+                            <div><span class="code-white">  const coords = CITY_COORDS[city];</span></div>
+                            <div><span class="code-white">  const url = `${BASE_URL}?lat=${coords.lat}`;</span></div>
+                            <div><span class="code-white">  const res = await fetch(url);</span></div>
+                            <div><span class="code-white">  const data = await res.json();</span></div>
+                            <div><span class="code-white">  return data.current.temperature_2m;</span></div>
+                            <div><span class="code-white">}</span></div>
+                        </div>
+                    </div>
+                    <div class="code-box">
+                        <div class="cb-header cb-after">✓ After — コメントあり（わかりやすい）</div>
+                        <div class="cb-body">
+                            <div class="code-comment">/**</div>
+                            <div class="code-comment"> * 指定された都市の現在の気温を取得する</div>
+                            <div class="code-comment"> * @param {string} city - 都市名（例: "東京"）</div>
+                            <div class="code-comment"> * @returns {number} 気温（摂氏）</div>
+                            <div class="code-comment"> */</div>
+                            <div><span class="code-key">async function </span><span class="code-fn">getWeather</span><span class="code-white">(city) {</span></div>
+                            <div><span class="code-comment">  // 都市名から緯度経度を取得</span></div>
+                            <div><span class="code-white">  const coords = CITY_COORDS[city];</span></div>
+                            <div><span class="code-comment">  // Open-Meteo APIにリクエスト</span></div>
+                            <div><span class="code-white">  const url = `${BASE_URL}?lat=${coords.lat}`;</span></div>
+                            <div><span class="code-white">  const res = await fetch(url);</span></div>
+                            <div><span class="code-white">  const data = await res.json();</span></div>
+                            <div><span class="code-comment">  // 現在の気温（2m高さ）を返す</span></div>
+                            <div><span class="code-white">  return data.current.temperature_2m;</span></div>
+                            <div><span class="code-white">}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>ドキュメント生成プロンプト集</h2>
+                <div class="doc-type-card">
+                    <div class="dt-header">
+                        <span class="dt-icon">💬</span>
+                        <div class="dt-title">インラインコメントを追加</div>
+                    </div>
+                    <div class="dt-prompt">script.jsの全関数に日本語でコメントを追加してください。高校生が読んでわかるレベルで。</div>
+                </div>
+                <div class="doc-type-card">
+                    <div class="dt-header">
+                        <span class="dt-icon">📋</span>
+                        <div class="dt-title">README.mdを自動生成</div>
+                    </div>
+                    <div class="dt-prompt">このプロジェクトのREADME.mdを作って。概要・使い方・インストール手順・API設定方法を含めて。</div>
+                </div>
+                <div class="doc-type-card">
+                    <div class="dt-header">
+                        <span class="dt-icon">🔍</span>
+                        <div class="dt-title">コードを説明してもらう</div>
+                    </div>
+                    <div class="dt-prompt">script.jsのfetchWeatherData関数が何をしているか、中学生にわかるように日本語で説明して。</div>
+                </div>
+                <div class="doc-type-card">
+                    <div class="dt-header">
+                        <span class="dt-icon">📝</span>
+                        <div class="dt-title">変更履歴を書く</div>
+                    </div>
+                    <div class="dt-prompt">今回追加した複数都市機能についてCHANGELOG.mdのエントリを書いて。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        /* reduced top padding and gap to save vertical space */
+        .content-area { padding-top: 12px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .code-block { background: #0D0D0D; padding: 10px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.6; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .error-item { padding: 8px 12px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .error-badge { padding: 4px 10px; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+        .error-text { font-size: 16px; color: #212529; }
+        .error-sub { font-size: 13px; color: #6C757D; margin-top: 2px; }
+        .highlight-box { background: #E67700; color: white; padding: 10px 18px; margin-top: 10px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>エラー処理とエッジケース</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">⚠️ よくあるエラーの種類</div>
+                <div class="error-item" style="background: #fff3cd;">
+                    <div class="error-badge" style="background: #F59F00; color: #212529;">Network</div>
+                    <div>
+                        <div class="error-text">通信エラー</div>
+                        <div class="error-sub">APIが繋がらない・タイムアウト</div>
+                    </div>
+                </div>
+                <div class="error-item" style="background: #f8d7da;">
+                    <div class="error-badge" style="background: #EF4444; color: white;">Validation</div>
+                    <div>
+                        <div class="error-text">入力値エラー</div>
+                        <div class="error-sub">空欄・不正な形式・文字数超過</div>
+                    </div>
+                </div>
+                <div class="error-item" style="background: #fff0f6;">
+                    <div class="error-badge" style="background: #F06595; color: white;">Auth</div>
+                    <div>
+                        <div class="error-text">認証エラー</div>
+                        <div class="error-sub">ログイン切れ・権限なし</div>
+                    </div>
+                </div>
+                <div class="error-item" style="background: #e7f5ff;">
+                    <div class="error-badge" style="background: #339AF0; color: white;">Edge</div>
+                    <div>
+                        <div class="error-text">エッジケース</div>
+                        <div class="error-sub">データが空・極端に大きい値・特殊文字</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 エラー処理をClaudeに依頼</div>
+                <div class="code-block">
+<span class="t-prompt">Claude&gt; </span><span class="t-cmd">このAPIコールに適切なエラー処理を追加して：・ネットワークエラー・404エラー・バリデーションエラー</span>
+<br>
+<span class="t-success">● try-catch を追加中...</span>
+<br>
+<span class="t-output">try { const res = await fetch('/api/users'); if (!res.ok) throw new Error(res.status); const data = await res.json(); } catch (err) { if (err.message === '404') { setError('データが見つかりません'); } else { setError('通信エラーが発生しました'); } }</span>
+                </div>
+                <div class="highlight-box">💡 「このコードにエラー処理を追加して」とClaudeに頼もう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

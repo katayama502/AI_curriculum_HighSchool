@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 20px; }
+        .two-col { display: flex; gap: 30px; }
+        .col { flex: 1; }
+        .issue-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; }
+        .issue-icon { font-size: 28px; min-width: 36px; }
+        .issue-text h3 { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .issue-text p { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.6; margin: 0; }
+        .section-title { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 14px; padding-left: 12px; border-left: 4px solid #339AF0; }
+        .section-title.green { border-left-color: #20C997; }
+        .rule-card { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 12px; display: flex; align-items: center; gap: 14px; }
+        .rule-icon { font-size: 26px; color: #20C997; min-width: 32px; }
+        .rule-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .rule-text strong { color: #212529; font-weight: 600; }
+        .footer-note { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px 18px; margin-top: 16px; display: flex; gap: 12px; align-items: center; }
+        .footer-note i { color: #E67700; font-size: 22px; }
+        .footer-note p { font-size: 18px; color: #495057; margin: 0; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>AIの安全性と正しい使い方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="two-col">
+                <div class="col">
+                    <div class="section-title">⚠️ AIが引き起こす可能性のある問題</div>
+                    <div class="issue-card">
+                        <div class="issue-icon">🤥</div>
+                        <div class="issue-text">
+                            <h3>ハルシネーション（幻覚）</h3>
+                            <p>AIが「もっともらしいウソ」を自信満々に答えることがある。存在しない文献や誤った数字を出すことも。</p>
+                        </div>
+                    </div>
+                    <div class="issue-card">
+                        <div class="issue-icon">⚖️</div>
+                        <div class="issue-text">
+                            <h3>著作権・プライバシー問題</h3>
+                            <p>AIが学習データに含まれる著作物を無断で使用したり、個人情報を含む出力をする可能性がある。</p>
+                        </div>
+                    </div>
+                    <div class="issue-card">
+                        <div class="issue-icon">🎭</div>
+                        <div class="issue-text">
+                            <h3>偽情報・ディープフェイク</h3>
+                            <p>AIを使って偽の画像・音声・動画を作成し、人を騙す悪用が世界的に問題になっている。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="section-title green">✅ このコースでの正しい使い方ルール</div>
+                    <div class="rule-card">
+                        <div class="rule-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="rule-text"><strong>情報は必ず確認する</strong>：重要な情報はAIの出力だけを信じず、自分でも調べる習慣をつける</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="rule-text"><strong>個人情報を入力しない</strong>：氏名・住所・電話番号などをAIに入力しない</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-icon"><i class="fas fa-balance-scale"></i></div>
+                        <div class="rule-text"><strong>学習ツールとして活用</strong>：宿題の答えをコピーするのではなく、理解を深めるために使う</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-icon"><i class="fas fa-heart"></i></div>
+                        <div class="rule-text"><strong>倫理的に使う</strong>：他人を傷つける・騙すような目的には使わない</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>AIは強力なツールです。「どう使うか」は使う人間次第。<strong>良い使い手になる</strong>ことが、このコースの大切な目標のひとつです。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .shot-compare { margin-bottom: 16px; }
+        .sc-item { background: white; border-radius: 8px; padding: 16px 18px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-left: 4px solid #dee2e6; }
+        .sc-item.one { border-left-color: #339AF0; }
+        .sc-item.few { border-left-color: #20C997; }
+        .sc-label { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        .sc-label.one { color: #339AF0; }
+        .sc-label.few { color: #20C997; }
+        .sc-text { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .template-box { background: #1A1A2E; border-radius: 8px; padding: 18px 20px; color: #e9ecef; font-family: monospace; font-size: 16px; line-height: 1.8; }
+        .template-comment { color: #74c0fc; }
+        .template-example { color: #8ce99a; }
+        .template-task { color: #ffd43b; }
+        .hint-box { background: #ebfbee; border-radius: 8px; padding: 14px 18px; margin-top: 16px; }
+        .hint-title { font-size: 18px; font-weight: 700; color: #2f9e44; margin-bottom: 8px; }
+        .hint-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Few-shot プロンプトの設計技術</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>0-shot vs Few-shot の違い</h2>
+                <div class="shot-compare">
+                    <div class="sc-item one">
+                        <div class="sc-label one">0-shot（例なし）</div>
+                        <div class="sc-text">「この文章を友達に話すような口調に変えて」<br>→ Claudeの解釈次第でバラバラな結果</div>
+                    </div>
+                    <div class="sc-item few">
+                        <div class="sc-label few">Few-shot（例あり）</div>
+                        <div class="sc-text">入力:「本日、会議が開催されます」<br>出力:「今日、ミーティングあるよ！」<br>---<br>入力:「お気をつけてお越しください」<br>出力:「気をつけて来てね」<br>---<br>入力:「〇〇をやって」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Few-shot テンプレートの構造</h2>
+                <div class="template-box">
+                    <span class="template-comment"># Few-shot プロンプト構造</span><br><br>
+                    <span class="template-comment">## 説明（任意）</span><br>
+                    以下の形式で変換してください<br><br>
+                    <span class="template-comment">## 例1</span><br>
+                    <span class="template-example">入力: 〇〇</span><br>
+                    <span class="template-example">出力: △△</span><br><br>
+                    <span class="template-comment">## 例2</span><br>
+                    <span class="template-example">入力: 〇〇</span><br>
+                    <span class="template-example">出力: △△</span><br><br>
+                    <span class="template-comment">## 本番</span><br>
+                    <span class="template-task">入力: ここに本物のテキスト</span><br>
+                    <span class="template-task">出力:</span>
+                </div>
+                <div class="hint-box">
+                    <div class="hint-title">💡 例は2〜5個が最適</div>
+                    <div class="hint-text">少なすぎるとパターンが伝わらず、多すぎると逆に混乱する。例は「統一感」があることが重要。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

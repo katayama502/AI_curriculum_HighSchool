@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .def-box { background: white; border-left: 6px solid #339AF0; padding: 14px 20px; border-radius: 6px; margin-bottom: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .def-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .code-box { background: #0D0D0D; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+        .cb-header { padding: 8px 14px; font-size: 13px; font-weight: 700; }
+        .ch-blue { background: #1864AB; color: white; }
+        .ch-green { background: #1A5E37; color: white; }
+        .cb-body { padding: 12px 16px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; }
+        .ct { color: #74C0FC; }  /* tag */
+        .ca { color: #ffd43b; }  /* attr/func */
+        .cs { color: #a3be8c; }  /* string */
+        .cc { color: #20C997; }  /* comment */
+        .cn { color: #f8f9fa; }  /* normal */
+        .cj { color: #E599F7; }  /* jsx expression */
+        .rule-card { background: white; border: 2px solid #dee2e6; padding: 12px 16px; border-radius: 6px; margin-bottom: 10px; }
+        .rule-title { font-size: 16px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .rule-title i { margin-right: 8px; }
+        .rule-code { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 6px 10px; border-radius: 4px; color: #212529; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>JSX — JavaScriptの中にHTMLを書く</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>JSXとは？</h2>
+                <div class="def-box">
+                    <div class="def-text">JSXはJavaScriptの拡張構文。<strong>HTML風の見た目</strong>でUIを書けるが、裏側はJavaScriptに変換される。Reactの中心的な書き方。</div>
+                </div>
+                <div class="code-box">
+                    <div class="cb-header ch-blue">基本的なJSXの書き方</div>
+                    <div class="cb-body">
+                        <div><span class="cc">// Reactコンポーネント</span></div>
+                        <div><span class="ca">function </span><span class="ca">Greeting</span><span class="cn">() {</span></div>
+                        <div><span class="cn">  const name = </span><span class="cs">"颯斗"</span><span class="cn">;</span></div>
+                        <div><span class="ca">  return </span><span class="cn">(</span></div>
+                        <div><span class="ct">    &lt;div</span><span class="cn"> className=</span><span class="cs">"card"</span><span class="ct">&gt;</span></div>
+                        <div><span class="ct">      &lt;h1&gt;</span><span class="cn">こんにちは、</span><span class="cj">{name}</span><span class="cn">さん！</span><span class="ct">&lt;/h1&gt;</span></div>
+                        <div><span class="ct">      &lt;p&gt;</span><span class="cn">今日もプログラミングを頑張ろう</span><span class="ct">&lt;/p&gt;</span></div>
+                        <div><span class="ct">    &lt;/div&gt;</span></div>
+                        <div><span class="cn">  );</span></div>
+                        <div><span class="cn">}</span></div>
+                    </div>
+                </div>
+                <div class="code-box">
+                    <div class="cb-header ch-green">{ } で式を埋め込む</div>
+                    <div class="cb-body">
+                        <div><span class="cn">const score = 95;</span></div>
+                        <div><span class="ca">return </span><span class="ct">&lt;p&gt;</span><span class="cn">点数: </span><span class="cj">{score}</span><span class="cn">点</span><span class="ct">&lt;/p&gt;</span><span class="cn">;</span></div>
+                        <div><span class="cc">// → &lt;p&gt;点数: 95点&lt;/p&gt;</span></div>
+                        <br>
+                        <div><span class="cc">// 条件分岐も書ける</span></div>
+                        <div><span class="ct">&lt;p&gt;</span><span class="cj">{score &gt;= 60 ? </span><span class="cs">"合格"</span><span class="cj"> : </span><span class="cs">"不合格"</span><span class="cj">}</span><span class="ct">&lt;/p&gt;</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>JSXの重要なルール</h2>
+                <div class="rule-card">
+                    <div class="rule-title"><i class="fas fa-code" style="color:#339AF0"></i>classではなくclassNameを使う</div>
+                    <div class="rule-code">&lt;div className="container"&gt;</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-title"><i class="fas fa-code" style="color:#339AF0"></i>必ず1つのルート要素で囲む</div>
+                    <div class="rule-code">return (<br>  &lt;div&gt;<br>    &lt;h1&gt;...&lt;/h1&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>);</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-title"><i class="fas fa-code" style="color:#339AF0"></i>自己閉じタグが必要</div>
+                    <div class="rule-code">&lt;img src="photo.png" /&gt;<br>&lt;input type="text" /&gt;</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-title"><i class="fas fa-code" style="color:#339AF0"></i>コンポーネント名は大文字始まり</div>
+                    <div class="rule-code">function MyButton() { ... } // ✓<br>function mybutton() { ... } // ✗</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-title"><i class="fas fa-code" style="color:#339AF0"></i>スタイルはオブジェクトで指定</div>
+                    <div class="rule-code">&lt;div style={{ color: 'red', fontSize: '20px' }}&gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

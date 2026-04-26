@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 40px;
+        }
+        .comparison-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .example-box {
+            flex: 1;
+            padding: 30px;
+            background-color: #e9ecef;
+        }
+        .good-box {
+            background-color: rgba(32, 201, 151, 0.1);
+        }
+        .example-title {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .bad-title {
+            color: #495057;
+        }
+        .good-title {
+            color: #20C997;
+        }
+        .example-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #212529;
+            line-height: 1.5;
+            background-color: white;
+            padding: 20px;
+        }
+        .explanation {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #495057;
+            font-weight: 300;
+        }
+        .highlight {
+            color: #339AF0;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>最初の会話をしてみよう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>「こんにちは！」から始める</h2>
+            <p>Claudeとの会話は、友達に話しかけるように始められます。<br>ただし、より良い回答を得るには<span class="highlight">「誰に・何を・どのように」</span>を明確に伝えることが重要です。</p>
+            
+            <div class="comparison-container">
+                <div class="example-box">
+                    <div class="example-title bad-title">
+                        <i class="fas fa-times"></i> 悪い例
+                    </div>
+                    <div class="example-text">
+                        「勉強を教えて」
+                    </div>
+                    <div class="explanation">
+                        情報が少なすぎるため、Claudeは一般的な回答しかできません。
+                    </div>
+                </div>
+                
+                <div class="example-box good-box">
+                    <div class="example-title good-title">
+                        <i class="fas fa-check"></i> 良い例
+                    </div>
+                    <div class="example-text">
+                        「高校1年生です。二次方程式の解き方が分かりません。具体的な例を使って、ステップごとに教えてください。」
+                    </div>
+                    <div class="explanation">
+                        自分の状況（高校1年生）、目的（二次方程式）、形式（具体例・ステップ）が明確です。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

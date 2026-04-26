@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .sprint-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
+        .sprint-card { background-color: white; border-radius: 8px; padding: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .sprint-card:nth-child(2) { border-top-color: #20C997; }
+        .sprint-card:nth-child(3) { border-top-color: #ffd43b; }
+        .sprint-card:nth-child(4) { border-top-color: #495057; }
+        .sprint-num { font-size: 14px; color: #868e96; font-weight: 500; margin-bottom: 6px; }
+        .sprint-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 10px; }
+        .task-item { font-size: 14px; color: #495057; line-height: 1.9; display: flex; align-items: center; gap: 6px; }
+        .task-dot { width: 8px; height: 8px; border-radius: 50%; background-color: #339AF0; flex-shrink: 0; }
+        .sprint-card:nth-child(2) .task-dot { background-color: #20C997; }
+        .sprint-card:nth-child(3) .task-dot { background-color: #ffd43b; }
+        .sprint-card:nth-child(4) .task-dot { background-color: #495057; }
+        .tip-banner { background-color: #0D0D0D; border-radius: 8px; padding: 14px 22px; display: flex; align-items: center; gap: 16px; }
+        .tip-icon { font-size: 24px; color: #20C997; }
+        .tip-text { font-size: 17px; color: white; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>スプリント計画：4週間で完成させる</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2><i class="fas fa-tasks" style="color:#339AF0"></i> 読書記録アプリ 開発スケジュール（第16〜20回）</h2>
+            <div class="sprint-grid">
+                <div class="sprint-card">
+                    <div class="sprint-num">第16回 Sprint 1</div>
+                    <div class="sprint-title">⚙️ 設計・環境構築</div>
+                    <div class="task-item"><div class="task-dot"></div>要件定義・ER図作成</div>
+                    <div class="task-item"><div class="task-dot"></div>Vite + React セットアップ</div>
+                    <div class="task-item"><div class="task-dot"></div>Express + SQLite セットアップ</div>
+                    <div class="task-item"><div class="task-dot"></div>Git リポジトリ作成</div>
+                </div>
+                <div class="sprint-card">
+                    <div class="sprint-num">第17回 Sprint 2</div>
+                    <div class="sprint-title">🎨 UI/UX設計・実装</div>
+                    <div class="task-item"><div class="task-dot"></div>ワイヤーフレーム作成</div>
+                    <div class="task-item"><div class="task-dot"></div>コンポーネント設計</div>
+                    <div class="task-item"><div class="task-dot"></div>CSSスタイリング</div>
+                    <div class="task-item"><div class="task-dot"></div>レスポンシブ対応</div>
+                </div>
+                <div class="sprint-card">
+                    <div class="sprint-num">第18回 Sprint 3</div>
+                    <div class="sprint-title">🔧 コア機能実装</div>
+                    <div class="task-item"><div class="task-dot"></div>API実装（CRUD）</div>
+                    <div class="task-item"><div class="task-dot"></div>フロントエンド実装</div>
+                    <div class="task-item"><div class="task-dot"></div>フロント↔API接続</div>
+                    <div class="task-item"><div class="task-dot"></div>エラーハンドリング</div>
+                </div>
+                <div class="sprint-card">
+                    <div class="sprint-num">第19回 Sprint 4</div>
+                    <div class="sprint-title">🚀 デプロイ・公開</div>
+                    <div class="task-item"><div class="task-dot"></div>テスト実施</div>
+                    <div class="task-item"><div class="task-dot"></div>Vercel デプロイ</div>
+                    <div class="task-item"><div class="task-dot"></div>Railway デプロイ</div>
+                    <div class="task-item"><div class="task-dot"></div>本番動作確認</div>
+                </div>
+            </div>
+            <div class="tip-banner">
+                <div class="tip-icon"><i class="fas fa-robot"></i></div>
+                <div class="tip-text">Claude Code に「このタスクリストをGitHubのIssueに登録して」と依頼すると、プロジェクト管理もAIで自動化できる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

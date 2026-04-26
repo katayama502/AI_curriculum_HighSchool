@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; }
+        .summary-item { background: white; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; }
+        .check-num { width: 40px; height: 40px; background: #20C997; color: white; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .summary-text { font-size: 20px; color: #212529; line-height: 1.5; }
+        .summary-sub { font-size: 15px; color: #6C757D; margin-top: 4px; }
+        .homework-box { background: #212529; color: white; padding: 20px 28px; display: flex; align-items: center; gap: 20px; }
+        .hw-label { background: #339AF0; color: white; padding: 8px 16px; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+        .hw-text { font-size: 20px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第9回 まとめ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="check-num">1</div>
+                    <div>
+                        <div class="summary-text">APIは外部サービスとの窓口</div>
+                        <div class="summary-sub">リクエスト→レスポンスの仕組みを理解</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">2</div>
+                    <div>
+                        <div class="summary-text">HTTPメソッドとJSONを習得</div>
+                        <div class="summary-sub">GET/POSTでデータを取得・送信する</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">3</div>
+                    <div>
+                        <div class="summary-text">Claude APIをPythonから呼び出せる</div>
+                        <div class="summary-sub">anthropicライブラリで数行でAIと連携</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">4</div>
+                    <div>
+                        <div class="summary-text">APIキーは環境変数で安全に管理</div>
+                        <div class="summary-sub">絶対にコードに直接書かない・GitHubに上げない</div>
+                    </div>
+                </div>
+            </div>
+            <div class="homework-box">
+                <div class="hw-label">📝 宿題</div>
+                <div class="hw-text">チャットボットに会話履歴機能を追加しよう！<br>
+                    <span style="font-size:16px; color:#adb5bd;">messagesリストに過去の会話を追加して、文脈を保持できるようにしてみよう</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

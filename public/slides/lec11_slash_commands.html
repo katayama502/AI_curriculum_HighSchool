@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .cmd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .cmd-card {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .cmd-card.important { border-color: #339AF0; }
+        .cmd-name { font-family: "Courier New", monospace; font-size: 20px; font-weight: 700; color: #339AF0; margin-bottom: 6px; }
+        .cmd-desc { font-size: 16px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .terminal-box {
+            background: #0D0D0D;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .term-bar { background: #2d2d2d; padding: 8px 14px; display: flex; gap: 8px; align-items: center; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
+        .term-title { color: #888; font-size: 13px; margin-left: 8px; }
+        .term-body { padding: 16px 20px; font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; }
+        .t-prompt { color: #20C997; }
+        .t-slash { color: #7950F2; font-weight: 700; }
+        .t-out { color: #868e96; padding-left: 20px; }
+        .t-out.g { color: #40C057; }
+        .tip-box { background: #0D0D0D; border-radius: 6px; padding: 14px 18px; margin-top: 14px; }
+        .tip-text { font-size: 17px; color: #E8E8E8; line-height: 1.7; }
+        .tip-text span { color: #20C997; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>スラッシュコマンドを使いこなす</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>主なスラッシュコマンド</h2>
+                <div class="cmd-grid">
+                    <div class="cmd-card important">
+                        <div class="cmd-name">/help</div>
+                        <div class="cmd-desc">使えるコマンド一覧を表示する</div>
+                    </div>
+                    <div class="cmd-card important">
+                        <div class="cmd-name">/clear</div>
+                        <div class="cmd-desc">会話履歴をリセット。新しい話題を始めるときに使う</div>
+                    </div>
+                    <div class="cmd-card important">
+                        <div class="cmd-name">/review</div>
+                        <div class="cmd-desc">変更したコードをレビューしてもらう</div>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-name">/init</div>
+                        <div class="cmd-desc">プロジェクトのCLAUDE.mdを生成する</div>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-name">/compact</div>
+                        <div class="cmd-desc">長い会話を要約してトークンを節約する</div>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-name">/cost</div>
+                        <div class="cmd-desc">今のセッションのAPI使用コストを確認</div>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-name">/bug</div>
+                        <div class="cmd-desc">バグ報告のフォーマットで問題を整理する</div>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-name">/exit</div>
+                        <div class="cmd-desc">Claude Codeを終了する</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>実際の使用例</h2>
+                <div class="terminal-box">
+                    <div class="term-bar">
+                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                        <span class="term-title">Claude Code</span>
+                    </div>
+                    <div class="term-body">
+                        <div><span class="t-prompt">claude&gt; </span><span class="t-slash">/help</span></div>
+                        <div class="t-out">Available commands:</div>
+                        <div class="t-out">/clear /review /init ...</div>
+                        <br>
+                        <div><span class="t-prompt">claude&gt; </span><span class="t-slash">/init</span></div>
+                        <div class="t-out g">✓ Created CLAUDE.md</div>
+                        <div class="t-out">プロジェクトの説明が自動生成</div>
+                        <br>
+                        <div><span class="t-prompt">claude&gt; </span><span style="color:#f8f9fa">index.htmlを修正して</span></div>
+                        <div class="t-out g">✓ Edited index.html</div>
+                        <br>
+                        <div><span class="t-prompt">claude&gt; </span><span class="t-slash">/review</span></div>
+                        <div class="t-out">変更点のレビュー結果が表示...</div>
+                        <br>
+                        <div><span class="t-prompt">claude&gt; </span><span class="t-slash">/clear</span></div>
+                        <div class="t-out g">✓ 会話リセット完了</div>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <div class="tip-text"><span><i class="fas fa-lightbulb"></i> コツ：</span>長い作業の後は <span>/compact</span> でコンテキストを圧縮すると、レスポンスが速くなる！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 14px 18px; border-radius: 6px; font-family: monospace; font-size: 16px; line-height: 1.8; margin-bottom: 14px; }
+        .conflict-a { color: #339AF0; }
+        .conflict-b { color: #F59F00; }
+        .marker { color: #fa5252; font-weight: 700; }
+        .cmd { color: #20C997; }
+        .cmt { color: #868e96; }
+        .step-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); margin-bottom: 10px; display: flex; gap: 12px; align-items: flex-start; }
+        .step-num { background: #fa5252; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+        .step-text h3 { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .step-text p { font-size: 16px; color: #495057; }
+        .tip-box { background: #fff3bf; border-radius: 8px; padding: 14px 18px; border-left: 5px solid #F59F00; margin-top: 14px; }
+        .tip-box p { font-size: 17px; color: #664d03; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>コンフリクト（競合）の解消</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>コンフリクトとは？</h2>
+                <p style="font-size:18px;color:#495057;margin-bottom:14px;">同じファイルの同じ行を2人が別々に変更すると、Gitがどちらを採用すべきかわからなくなった状態。</p>
+                <div class="code-block">
+<span class="cmt"># コンフリクトが起きたファイルの中身</span>
+&lt;h1&gt;ようこそ&lt;/h1&gt;
+<span class="marker">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="conflict-a">&lt;p&gt;最新のAI技術を学ぼう&lt;/p&gt;</span>
+<span class="marker">=======</span>
+<span class="conflict-b">&lt;p&gt;プログラミングを一緒に学ぼう&lt;/p&gt;</span>
+<span class="marker">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/top-copy</span>
+
+<span class="cmt"># 解消後：手動でどちらか（または両方）を採用</span>
+&lt;p&gt;AIとプログラミングを一緒に学ぼう&lt;/p&gt;
+
+<span class="cmt"># 解消後のコマンド</span>
+<span class="cmd">$ git add .</span>
+<span class="cmd">$ git commit -m "コンフリクトを解消"</span>
+                </div>
+            </div>
+            <div class="right">
+                <h2>コンフリクト解消の手順</h2>
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div class="step-text"><h3>コンフリクトしたファイルを開く</h3><p>git statusで確認。`&lt;&lt;&lt;&lt;&lt;&lt;&lt;`のマーカーを探す</p></div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div class="step-text"><h3>どちらを採用するか決める</h3><p>自分の変更・相手の変更・両方を組み合わせるの3択</p></div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div class="step-text"><h3>マーカー行を全て削除する</h3><p>&lt;&lt;&lt;, ===, &gt;&gt;&gt;の行を消して最終的な内容だけ残す</p></div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <div class="step-text"><h3>git add → git commit</h3><p>解消したファイルをステージしてコミットする</p></div>
+                </div>
+                <div class="tip-box">
+                    <p>💡 コンフリクトが怖いときは、Claudeにコンフリクトしたコードを貼って「どちらを採用すべきか」聞くと解決策を提案してもらえます！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .anatomy { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 8px; }
+        .anatomy-row { display: flex; align-items: center; gap: 14px; }
+        .anatomy-label { background: #20C997; color: white; padding: 4px 12px; border-radius: 4px; font-size: 14px; font-weight: 700; min-width: 100px; text-align: center; }
+        .anatomy-text { font-size: 17px; color: #495057; }
+        .tip-box { background: #f0fdf4; border-radius: 8px; padding: 14px 18px; border: 2px solid #20C997; margin-top: 14px; }
+        .tip-box p { font-size: 17px; color: #2b8a3e; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>関数の定義と活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>def で自分だけの関数を作る</h2>
+                <div class="code-block">
+<span class="cmt"># 基本の関数定義</span>
+<span class="kw">def</span> <span class="func">greet</span>(name, greeting=<span class="str">"こんにちは"</span>):
+    <span class="str">"""あいさつを返す関数（docstring）"""</span>
+    <span class="kw">return</span> <span class="str">f"{greeting}、{name}さん！"</span>
+
+<span class="cmt"># 呼び出し（デフォルト引数使用）</span>
+<span class="func">print</span>(<span class="func">greet</span>(<span class="str">"太郎"</span>))
+<span class="cmt"># → こんにちは、太郎さん！</span>
+
+<span class="cmt"># 引数を指定して呼び出し</span>
+<span class="func">print</span>(<span class="func">greet</span>(<span class="str">"花子"</span>, <span class="str">"おはよう"</span>))
+<span class="cmt"># → おはよう、花子さん！</span>
+
+<span class="cmt"># 複数の値を返す</span>
+<span class="kw">def</span> <span class="func">calc_stats</span>(nums):
+    <span class="kw">return</span> <span class="func">min</span>(nums), <span class="func">max</span>(nums), <span class="func">sum</span>(nums)/<span class="func">len</span>(nums)
+
+lo, hi, avg = <span class="func">calc_stats</span>([<span class="num">60</span>, <span class="num">75</span>, <span class="num">90</span>, <span class="num">85</span>])
+                </div>
+            </div>
+            <div class="right">
+                <h2>関数の構造</h2>
+                <div class="anatomy">
+                    <div class="anatomy-row">
+                        <div class="anatomy-label">def</div>
+                        <div class="anatomy-text">関数の定義を開始するキーワード</div>
+                    </div>
+                    <div class="anatomy-row">
+                        <div class="anatomy-label">関数名</div>
+                        <div class="anatomy-text">英小文字+アンダースコアで命名</div>
+                    </div>
+                    <div class="anatomy-row">
+                        <div class="anatomy-label">引数</div>
+                        <div class="anatomy-text">()内に受け取る値を定義。デフォルト値も設定可</div>
+                    </div>
+                    <div class="anatomy-row">
+                        <div class="anatomy-label">docstring</div>
+                        <div class="anatomy-text">関数の説明文。"""…"""で囲む（省略可）</div>
+                    </div>
+                    <div class="anatomy-row">
+                        <div class="anatomy-label">return</div>
+                        <div class="anatomy-text">呼び出し元に値を返す。なければNone</div>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <p>💡 <strong>関数を使うメリット</strong><br>
+                    同じ処理を何度も書かなくていい（DRY原則）。バグが出たとき1箇所直すだけでOK。コードが読みやすくなる。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

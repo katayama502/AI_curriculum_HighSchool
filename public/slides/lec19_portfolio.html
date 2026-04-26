@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .intro { font-size: 19px; color: #495057; margin-bottom: 18px; line-height: 1.6; }
+        .portfolio-list { display: flex; flex-direction: column; gap: 12px; }
+        .p-item { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 12px; align-items: flex-start; }
+        .p-icon { font-size: 22px; min-width: 26px; }
+        .p-content { flex: 1; }
+        .p-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .p-text { font-size: 15px; color: #495057; line-height: 1.5; }
+        .readme-box { background: #0D0D0D; border-radius: 8px; padding: 14px 16px; }
+        .readme-box code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .tip-banner { margin-top: 12px; background: linear-gradient(90deg, #339AF0, #20C997); border-radius: 8px; padding: 12px 18px; color: white; font-size: 16px; font-weight: 500; display: flex; gap: 10px; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>アプリをポートフォリオにする</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-briefcase" style="color:#339AF0"></i> ポートフォリオとして整備する</h2>
+                <p class="intro">完成したアプリは就職・進学・SNSでのアピールに使える最強の「実績」になります。</p>
+                <div class="portfolio-list">
+                    <div class="p-item">
+                        <div class="p-icon" style="color:#339AF0"><i class="fab fa-github"></i></div>
+                        <div class="p-content">
+                            <div class="p-title">GitHubにReadmeを書く</div>
+                            <div class="p-text">アプリの説明・使い方・技術スタック・スクリーンショットを記載</div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-icon" style="color:#20C997"><i class="fas fa-link"></i></div>
+                        <div class="p-content">
+                            <div class="p-title">デモURLをREADMEに貼る</div>
+                            <div class="p-text">VercelのURLを貼ることで誰でも試せる状態にする</div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-icon" style="color:#f59f00"><i class="fas fa-camera"></i></div>
+                        <div class="p-content">
+                            <div class="p-title">スクリーンショットを撮る</div>
+                            <div class="p-text">一覧・詳細・ログイン画面のキャプチャをREADMEに掲載</div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-icon" style="color:#cc5de8"><i class="fas fa-hashtag"></i></div>
+                        <div class="p-content">
+                            <div class="p-title">SNSでシェアする</div>
+                            <div class="p-text">X（Twitter）に完成報告+URLを投稿。#個人開発 タグが効果的</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-file-alt" style="color:#20C997"></i> README.md のテンプレート</h2>
+                <div class="readme-box"><code>
+<span class="c-yellow"># 📚 読書記録アプリ</span><br><br>
+<span class="c-gray">読んだ本を記録・管理できるWebアプリです。</span><br>
+<span class="c-green">[デモを見る](https://your-app.vercel.app)</span><br><br>
+<span class="c-yellow">## 機能</span><br>
+<span class="c-gray">- ユーザー認証（JWT）</span><br>
+<span class="c-gray">- 本の CRUD 管理</span><br>
+<span class="c-gray">- レスポンシブデザイン</span><br><br>
+<span class="c-yellow">## 技術スタック</span><br>
+<span class="c-blue">Frontend</span>: React + Vite + Tailwind CSS<br>
+<span class="c-blue">Backend</span>: Express.js + SQLite<br>
+<span class="c-blue">Deploy</span>: Vercel + Railway<br><br>
+<span class="c-yellow">## スクリーンショット</span><br>
+<span class="c-green">![一覧画面](./screenshots/home.png)</span>
+                </code></div>
+                <div class="tip-banner">
+                    <i class="fas fa-robot"></i>「このアプリのREADMEを書いて」とClaude Codeに頼むとすぐ生成！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

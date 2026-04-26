@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; display: flex; gap: 30px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 12px; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 16px 18px; margin-bottom: 14px; }
+        .code-box code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .tip-box { background: #e3fafc; border-left: 4px solid #20C997; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #0c7a6d; margin-bottom: 12px; }
+        .state-list { display: flex; flex-direction: column; gap: 8px; }
+        .state-item { background: white; border-radius: 6px; padding: 10px 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: flex; gap: 10px; align-items: center; }
+        .state-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+        .state-text { font-size: 16px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>フロントエンドとAPIの接続</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-plug" style="color:#339AF0"></i> APIクライアントを作る（api.js）</h2>
+                <div class="code-box"><code>
+<span class="c-gray">// src/api.js</span><br>
+<span class="c-pink">const</span> BASE = <span class="c-yellow">'http://localhost:3000/api'</span>;<br><br>
+<span class="c-pink">const</span> <span class="c-green">authFetch</span> = (url, opts = {}) => {<br>
+  <span class="c-pink">const</span> token = localStorage.getItem(<span class="c-yellow">'token'</span>);<br>
+  <span class="c-pink">return</span> <span class="c-blue">fetch</span>(BASE + url, {<br>
+    ...opts,<br>
+    headers: {<br>
+      <span class="c-yellow">'Content-Type'</span>: <span class="c-yellow">'application/json'</span>,<br>
+      <span class="c-yellow">'Authorization'</span>: <span class="c-yellow">`Bearer ${token}`</span>,<br>
+      ...opts.headers<br>
+    }<br>
+  });<br>
+};<br><br>
+<span class="c-pink">export const</span> getBooks = () =><br>
+  <span class="c-green">authFetch</span>(<span class="c-yellow">'/books'</span>).then(r => r.json());<br><br>
+<span class="c-pink">export const</span> addBook = (data) =><br>
+  <span class="c-green">authFetch</span>(<span class="c-yellow">'/books'</span>, {<br>
+    method: <span class="c-yellow">'POST'</span>,<br>
+    body: JSON.stringify(data)<br>
+  }).then(r => r.json());
+                </code></div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-react" style="color:#20C997"></i> Reactコンポーネントで使う</h2>
+                <div class="code-box"><code>
+<span class="c-pink">import</span> { useState, useEffect } <span class="c-pink">from</span> <span class="c-yellow">'react'</span>;<br>
+<span class="c-pink">import</span> { getBooks, addBook } <span class="c-pink">from</span> <span class="c-yellow">'./api'</span>;<br><br>
+<span class="c-pink">function</span> <span class="c-green">BookList</span>() {<br>
+  <span class="c-pink">const</span> [books, setBooks] = useState([]);<br>
+  <span class="c-pink">const</span> [loading, setLoading] = useState(true);<br><br>
+  useEffect(() => {<br>
+    <span class="c-green">getBooks</span>()<br>
+      .then(data => setBooks(data))<br>
+      .finally(() => setLoading(false));<br>
+  }, []);<br><br>
+  <span class="c-pink">const</span> <span class="c-green">handleAdd</span> = <span class="c-pink">async</span> (formData) => {<br>
+    <span class="c-pink">const</span> newBook = <span class="c-pink">await</span> <span class="c-green">addBook</span>(formData);<br>
+    setBooks(prev => [...prev, newBook]);<br>
+  };<br>
+  <span class="c-pink">if</span> (loading) <span class="c-pink">return</span> <span class="c-green">&lt;p&gt;</span>読み込み中...<span class="c-green">&lt;/p&gt;</span>;<br>
+  <span class="c-gray">// ... render</span><br>
+}
+                </code></div>
+                <div class="state-list">
+                    <div class="state-item"><div class="state-dot" style="background:#339AF0"></div><div class="state-text"><strong>loading:</strong> スピナーを表示する</div></div>
+                    <div class="state-item"><div class="state-dot" style="background:#ff6b6b"></div><div class="state-text"><strong>error:</strong> エラーメッセージを表示</div></div>
+                    <div class="state-item"><div class="state-dot" style="background:#20C997"></div><div class="state-text"><strong>data:</strong> 取得したデータを描画</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

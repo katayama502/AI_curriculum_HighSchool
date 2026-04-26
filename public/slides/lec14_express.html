@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.9; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Node.js + Express でサーバー構築</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🖥️ バックエンドの役割</div>
+                <div class="item">
+                    <span class="item-icon">🗄️</span>
+                    <div>
+                        <div class="item-text">データの保存・取得</div>
+                        <div class="item-sub">データベースとやり取りする</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔐</span>
+                    <div>
+                        <div class="item-text">認証・セキュリティ</div>
+                        <div class="item-sub">ログイン・権限管理を行う</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔌</span>
+                    <div>
+                        <div class="item-text">APIの提供</div>
+                        <div class="item-sub">フロントエンドにデータを返す</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">⚙️</span>
+                    <div>
+                        <div class="item-text">ビジネスロジックの処理</div>
+                        <div class="item-sub">計算・変換・メール送信等</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 Expressの基本コード</div>
+                <div class="code-block">
+<span style="color:#FFD43B;">const</span> express = <span style="color:#F783AC;">require</span>(<span style="color:#FCC419;">'express'</span>);<br>
+<span style="color:#FFD43B;">const</span> app = <span style="color:#F783AC;">express</span>();<br>
+app.<span style="color:#F783AC;">use</span>(express.<span style="color:#F783AC;">json</span>());<br><br>
+<span style="color:#6C757D;">// GETエンドポイント</span><br>
+app.<span style="color:#F783AC;">get</span>(<span style="color:#FCC419;">'/api/users'</span>, (req, res) =&gt; {<br>
+&nbsp;&nbsp;res.<span style="color:#F783AC;">json</span>([{ id: <span style="color:#20C997;">1</span>, name: <span style="color:#FCC419;">'太郎'</span> }]);<br>
+});<br><br>
+<span style="color:#6C757D;">// POSTエンドポイント</span><br>
+app.<span style="color:#F783AC;">post</span>(<span style="color:#FCC419;">'/api/users'</span>, (req, res) =&gt; {<br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">const</span> { name } = req.body;<br>
+&nbsp;&nbsp;res.<span style="color:#F783AC;">json</span>({ message: <span style="color:#FCC419;">`${name}を追加`</span> });<br>
+});<br><br>
+app.<span style="color:#F783AC;">listen</span>(<span style="color:#20C997;">3000</span>);
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

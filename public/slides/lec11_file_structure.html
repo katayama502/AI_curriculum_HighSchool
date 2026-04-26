@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .tree-box {
+            background: #0D0D0D;
+            border-radius: 8px;
+            padding: 20px 24px;
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+            line-height: 2;
+        }
+        .t-folder { color: #339AF0; font-weight: 700; }
+        .t-html { color: #fa5252; }
+        .t-css { color: #339AF0; }
+        .t-js { color: #ffd43b; }
+        .t-md { color: #20C997; }
+        .t-json { color: #ffa94d; }
+        .t-gray { color: #868e96; }
+        .file-explain {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .file-name {
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            font-weight: 700;
+            width: 140px;
+            flex-shrink: 0;
+        }
+        .file-role { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.4; }
+        .create-box {
+            background: #0D0D0D;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 14px;
+        }
+        .create-label { color: #20C997; font-size: 14px; margin-bottom: 10px; font-family: "Courier New", monospace; }
+        .create-prompt { color: #f8f9fa; font-size: 15px; font-family: "Courier New", monospace; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Webプロジェクトのファイル構造</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>標準的なプロジェクト構成</h2>
+                <div class="tree-box">
+                    <div><span class="t-folder">my-weather-app/</span></div>
+                    <div>├── <span class="t-html">index.html</span>　　<span class="t-gray">← メインページ</span></div>
+                    <div>├── <span class="t-css">style.css</span>　　　<span class="t-gray">← デザイン</span></div>
+                    <div>├── <span class="t-js">script.js</span>　　　<span class="t-gray">← 動作・ロジック</span></div>
+                    <div>├── <span class="t-md">CLAUDE.md</span>　　<span class="t-gray">← AIへの説明書</span></div>
+                    <div>├── <span class="t-json">.env</span>　　　　　<span class="t-gray">← APIキー（非公開）</span></div>
+                    <div>├── <span class="t-gray">.gitignore</span>　　<span class="t-gray">← Git除外設定</span></div>
+                    <div>└── <span class="t-folder">images/</span></div>
+                    <div>　　├── <span class="t-gray">icon-sun.png</span></div>
+                    <div>　　└── <span class="t-gray">icon-rain.png</span></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>各ファイルの役割</h2>
+                <div class="file-explain">
+                    <span class="file-name" style="color:#fa5252">index.html</span>
+                    <div class="file-role">ページの骨格。「何を表示するか」の構造を定義する</div>
+                </div>
+                <div class="file-explain">
+                    <span class="file-name" style="color:#339AF0">style.css</span>
+                    <div class="file-role">見た目・デザイン。色・フォント・レイアウトを決める</div>
+                </div>
+                <div class="file-explain">
+                    <span class="file-name" style="color:#ffd43b">script.js</span>
+                    <div class="file-role">動作・ロジック。APIを呼び出したりDOMを操作する</div>
+                </div>
+                <div class="file-explain">
+                    <span class="file-name" style="color:#20C997">CLAUDE.md</span>
+                    <div class="file-role">Claude Codeへの説明書。プロジェクトのルールを書く</div>
+                </div>
+                <div class="file-explain">
+                    <span class="file-name" style="color:#ffa94d">.env</span>
+                    <div class="file-role">APIキーを保存。.gitignoreに追加して絶対に公開しない</div>
+                </div>
+                <div class="create-box">
+                    <div class="create-label"># Claude Codeに構造ごと作ってもらう</div>
+                    <div class="create-prompt">天気予報アプリのファイル構造を作って。<br>index.html, style.css, script.js,<br>CLAUDE.md, .gitignore を生成してください。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .ex-card { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .ex-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .ex-badge { color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; }
+        .ex-title { font-size: 18px; font-weight: 600; color: #212529; }
+        .ex-steps { display: flex; flex-direction: column; gap: 7px; }
+        .ex-step { display: flex; gap: 10px; font-size: 15px; color: #495057; }
+        .step-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+        .time-badge { background: #fff3cd; color: #856404; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ハンズオン演習</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="ex-grid">
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge" style="background:#339AF0">課題A</div><div class="ex-title">認証APIを完成させる</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot" style="background:#339AF0"></div>POST /api/auth/register を実装（bcryptでパスワードをハッシュ化）<span class="time-badge">20分</span></div>
+                        <div class="ex-step"><div class="step-dot" style="background:#339AF0"></div>POST /api/auth/login を実装（JWTを返す）</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#339AF0"></div>authMiddleware.js を作成してルートを保護</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#339AF0"></div>REST Clientやcurlでテスト</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge" style="background:#20C997">課題B</div><div class="ex-title">CRUD APIを実装する</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot" style="background:#20C997"></div>GET/POST/PUT/DELETE の4エンドポイント実装<span class="time-badge">20分</span></div>
+                        <div class="ex-step"><div class="step-dot" style="background:#20C997"></div>WHERE user_id=? で自分のデータのみ操作できるように</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#20C997"></div>バリデーションも追加（タイトル必須・文字数制限）</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#20C997"></div>エラーを適切なステータスコードで返す</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge" style="background:#212529">課題C</div><div class="ex-title">フロントとAPIを接続する</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>api.js ファイルを作成（authFetch関数）<span class="time-badge">20分</span></div>
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>React でログインフォームを作り、トークンを保存</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>一覧・追加・削除をフロントから動かす</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>loading/error状態を表示する</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge" style="background:linear-gradient(90deg,#ffd866,#f59f00);color:#212529">★ 発展</div><div class="ex-title">デバッグチャレンジ</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot" style="background:#fcc419"></div>わざとCORSエラーを起こしてNetwork タブで確認</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#fcc419"></div>401エラーをフロントで捕捉してログイン画面へリダイレクト</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#fcc419"></div>Lighthouseでパフォーマンスを計測してみる</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #FFD43B; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #FFD43B; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .step-item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .step-num { width: 32px; height: 32px; background: #E67700; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-text { font-size: 17px; color: #212529; }
+        .step-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .highlight-box { background: #FFD43B; color: #212529; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>発表の構成と準備</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🎤 発表の5ステップ構成</div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-text">課題・背景（30秒）</div>
+                        <div class="step-sub">「〇〇に困っている人がいる」という問題提起</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-text">解決策・アイデア（30秒）</div>
+                        <div class="step-sub">「だからこのアプリを作った」という解決策</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-text">デモ（2分）</div>
+                        <div class="step-sub">実際にアプリを動かして見せる（ハイライト機能）</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="step-text">技術スタック（30秒）</div>
+                        <div class="step-sub">使った技術・学んだことを簡単に説明</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div>
+                        <div class="step-text">今後の展望（30秒）</div>
+                        <div class="step-sub">「次はこんな機能を追加したい」</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💬 Claudeに発表準備を手伝ってもらう</div>
+                <div class="code-block">
+<span class="t-prompt">あなた：</span><span class="t-cmd">このアプリの発表原稿を<br>3分バージョンで書いて。<br>高校生向けの発表会</span><br><br>
+<span class="t-success">Claude：</span><br>
+<span class="t-output">「みなさん、定期テスト前に<br>
+勉強計画が立てられなくて<br>
+困ったことはありませんか？<br><br>
+私が作ったのは、AIが最適な<br>
+勉強スケジュールを提案してくれる<br>
+アプリです。<br><br>
+では実際に使ってみます...」</span>
+                </div>
+                <div class="highlight-box">🎤 Claudeに発表原稿を書いてもらって練習しよう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

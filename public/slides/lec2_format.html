@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-top: 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 30px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-top: 0;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border: 2px solid #212529;
+        }
+        th, td {
+            padding-top: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+            font-size: 22px;
+            vertical-align: middle;
+            height: 60px;
+        }
+        th {
+            background-color: #339AF0;
+            color: white;
+            font-weight: 500;
+            font-size: 24px;
+            border: 1px solid #339AF0;
+        }
+        .format-col {
+            font-weight: 500;
+            color: #20C997;
+            width: 200px;
+        }
+        .purpose-col {
+            width: 300px;
+            color: #495057;
+        }
+        .example-col {
+            color: #212529;
+            background-color: #f8f9fa;
+            font-family: "Courier New", monospace;
+        }
+        tr:nth-child(even) td:not(.example-col) {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>出力形式の指定</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>「どう答えてほしいか」を明確に</h2>
+            <p>Claudeは指定された形式で回答できます。目的に合わせて最適な形式を選びましょう。</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>形式</th>
+                        <th>用途</th>
+                        <th>指定例</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="format-col"><i class="fas fa-list-ul"></i> 箇条書き</td>
+                        <td class="purpose-col">要点整理</td>
+                        <td class="example-col">「3点の箇条書きで」</td>
+                    </tr>
+                    <tr>
+                        <td class="format-col"><i class="fas fa-table"></i> 表</td>
+                        <td class="purpose-col">比較・整理</td>
+                        <td class="example-col">「表形式でまとめて」</td>
+                    </tr>
+                    <tr>
+                        <td class="format-col"><i class="fas fa-list-ol"></i> ステップ</td>
+                        <td class="purpose-col">手順説明</td>
+                        <td class="example-col">「ステップごとに番号付きで」</td>
+                    </tr>
+                    <tr>
+                        <td class="format-col"><i class="fas fa-comment-dots"></i> 例文</td>
+                        <td class="purpose-col">具体的理解</td>
+                        <td class="example-col">「具体例を3つ挙げて」</td>
+                    </tr>
+                    <tr>
+                        <td class="format-col"><i class="fas fa-code"></i> コード</td>
+                        <td class="purpose-col">プログラミング</td>
+                        <td class="example-col">「Pythonコードで書いて」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

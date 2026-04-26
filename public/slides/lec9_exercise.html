@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 30px; }
+        .task-col { flex: 1; }
+        .task-card { background: white; border-radius: 10px; padding: 20px 22px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); margin-bottom: 16px; }
+        .task-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+        .badge-a { background: #d3f9d8; color: #2b8a3e; }
+        .badge-b { background: #dbe4ff; color: #364fc7; }
+        .badge-c { background: #ffe8cc; color: #e67700; }
+        .badge-challenge { background: #212529; color: #7950F2; }
+        .task-card h3 { font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+        .task-card p { font-size: 17px; color: #495057; line-height: 1.6; }
+        .task-card ol { padding-left: 20px; margin-top: 8px; }
+        .task-card li { font-size: 17px; color: #495057; line-height: 1.8; }
+        .hint-box { background: #f3f0ff; border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 16px; color: #5f3dc4; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題 — API活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-a">TASK A — 基礎</div>
+                    <h3>天気情報を表示するWebページ</h3>
+                    <p>Open-Meteo APIを使って、東京の現在の気温をWebページに表示するHTMLファイルをClaudeに作ってもらおう。</p>
+                    <div class="hint-box">💡 fetch APIを使う方法をClaudeに聞いてみよう！ボタンを押したら更新されると良い。</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-b">TASK B — 応用</div>
+                    <h3>Pythonで複数都市の天気取得</h3>
+                    <p>Pythonのrequestsで東京・大阪・札幌・福岡の気温を取得し、一覧として表示するプログラムを作ろう。</p>
+                    <ol>
+                        <li>都市名と緯度経度の辞書を作る</li>
+                        <li>forループでAPIを呼び出す</li>
+                        <li>結果をf文字列で整形して表示</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-c">TASK C — 発展</div>
+                    <h3>翻訳ボット</h3>
+                    <p>入力した日本語テキストをDeepL APIで英語に翻訳してWebページに表示するアプリを作ろう。入力→翻訳ボタン→結果表示の流れで設計する。</p>
+                    <div class="hint-box">💡 Claude APIを使って翻訳してもOK！「日本語を英語に翻訳してください：」というプロンプトを使おう</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-challenge">🏆 チャレンジ</div>
+                    <h3>AIチャットボットを作る</h3>
+                    <p>Claude APIを使って、ユーザーとAIが会話できるシンプルなチャットボットをPythonで作ろう。会話履歴を保持して文脈を維持する機能も追加してみよう。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

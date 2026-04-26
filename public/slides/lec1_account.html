@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            /* reduced top padding to save vertical space */
+            padding-top: 24px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 24px; /* reduced from 40 */
+        }
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px; /* slightly smaller gap */
+        }
+        .step {
+            flex: 1;
+            background-color: white;
+            padding-top: 18px; /* reduced from 30 */
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+        }
+        .step-icon {
+            font-size: 32px;
+            color: #adb5bd;
+            margin-bottom: 12px; /* reduced from 15 */
+        }
+        .step-number {
+            font-size: 28px;
+            font-weight: 500;
+            color: #339AF0;
+        }
+        .step-divider {
+            height: 1px;
+            background-color: #e9ecef;
+            margin-top: 12px; /* reduced */
+            margin-bottom: 14px; /* reduced */
+            width: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .step-text {
+            font-size: 20px;
+            font-weight: 300;
+            color: #495057;
+            line-height: 1.5;
+            margin-bottom: 18px; /* reduced from 30 */
+        }
+        code {
+            font-family: "Courier New", monospace;
+            background-color: #f8f9fa;
+            padding-top: 2px;
+            padding-left: 6px;
+            padding-right: 6px;
+            color: #339AF0;
+            font-weight: 500;
+        }
+        .note-container {
+            margin-top: 12px; /* reduced from 40 */
+            background-color: white;
+            padding-top: 16px; /* reduced from 30 */
+            padding-bottom: 16px; /* added small bottom padding */
+            padding-left: 32px; /* slightly reduced */
+            padding-right: 32px;
+        }
+        .note-divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-bottom: 12px; /* reduced */
+        }
+        .note-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #20C997;
+            margin-bottom: 10px; /* reduced */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .note-text {
+            font-size: 22px;
+            font-weight: 300;
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 18px; /* reduced */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeのアカウント作成</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>今すぐ始めよう！</h2>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-globe"></i></div>
+                    <div class="step-number">Step 1</div>
+                    <div class="step-divider"></div>
+                    <div class="step-text"><code>claude.ai</code> にアクセス</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <div class="step-number">Step 2</div>
+                    <div class="step-divider"></div>
+                    <div class="step-text">「Sign Up」をクリック</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="step-number">Step 3</div>
+                    <div class="step-divider"></div>
+                    <div class="step-text">メールアドレスまたはGoogleアカウントで登録</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="step-number">Step 4</div>
+                    <div class="step-divider"></div>
+                    <div class="step-text">無料プラン（Claude.ai Free）で今日から使える！</div>
+                </div>
+            </div>
+            
+            <div class="note-container">
+                <div class="note-divider"></div>
+                <div class="note-title"><i class="fas fa-exclamation-circle"></i> 注意点</div>
+                <div class="note-text">18歳未満の場合、保護者の同意が必要な場合があります。学校のメールアドレスが使える場合は、それを利用しましょう。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

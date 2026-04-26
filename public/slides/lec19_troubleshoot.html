@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .error-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .error-card { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; }
+        .err-badge { background-color: #ffe3e3; color: #c92a2a; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+        .err-body {}
+        .err-msg { font-size: 15px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .err-cause { font-size: 14px; color: #868e96; margin-bottom: 6px; }
+        .err-fix { font-size: 14px; color: #20C997; font-weight: 500; }
+        .code-mini { background: #0D0D0D; border-radius: 6px; padding: 10px 16px; margin-top: 14px; }
+        .code-mini code { font-size: 15px; color: #a9dc76; font-family: monospace; }
+        .tip-bar { margin-top: 14px; background: #e7f5ff; border-left: 4px solid #339AF0; padding: 10px 16px; border-radius: 0 6px 6px 0; font-size: 16px; color: #1971c2; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>デプロイのトラブルシューティング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="error-grid">
+                <div class="error-card">
+                    <div class="err-badge">503</div>
+                    <div class="err-body">
+                        <div class="err-msg">Application error / Service Unavailable</div>
+                        <div class="err-cause">原因: start スクリプト未設定、PORT 環境変数なし</div>
+                        <div class="err-fix">✅ package.json の "start" コマンドと PORT=process.env.PORT を確認</div>
+                    </div>
+                </div>
+                <div class="error-card">
+                    <div class="err-badge">CORS</div>
+                    <div class="err-body">
+                        <div class="err-msg">Access-Control-Allow-Origin エラー</div>
+                        <div class="err-cause">原因: CORS_ORIGIN が localhost のまま</div>
+                        <div class="err-fix">✅ Railway 環境変数 CORS_ORIGIN を Vercel URL に更新</div>
+                    </div>
+                </div>
+                <div class="error-card">
+                    <div class="err-badge">ENV</div>
+                    <div class="err-body">
+                        <div class="err-msg">API URL が undefined / リクエストが localhost に飛ぶ</div>
+                        <div class="err-cause">原因: VITE_API_URL 環境変数が Vercel に設定されていない</div>
+                        <div class="err-fix">✅ Vercel → Settings → Environment Variables で設定してRedeploy</div>
+                    </div>
+                </div>
+                <div class="error-card">
+                    <div class="err-badge">BUILD</div>
+                    <div class="err-body">
+                        <div class="err-msg">Build failed / npm install error</div>
+                        <div class="err-cause">原因: package-lock.json が無い、node_modules がコミットされている</div>
+                        <div class="err-fix">✅ .gitignore に node_modules を追加して再push</div>
+                    </div>
+                </div>
+                <div class="error-card">
+                    <div class="err-badge">DB</div>
+                    <div class="err-body">
+                        <div class="err-msg">SQLITE_CANTOPEN / データが消える</div>
+                        <div class="err-cause">原因: サーバーレス環境はファイルシステムが永続しない</div>
+                        <div class="err-fix">✅ 本番では PlanetScale / Supabase / Railway MySQL に移行</div>
+                    </div>
+                </div>
+                <div class="error-card">
+                    <div class="err-badge">404</div>
+                    <div class="err-body">
+                        <div class="err-msg">Page not found on refresh (SPA)</div>
+                        <div class="err-cause">原因: React Router のルートを Vercel が認識しない</div>
+                        <div class="err-fix">✅ vercel.json に rewrites 設定を追加</div>
+                    </div>
+                </div>
+            </div>
+            <div class="code-mini">
+                <code>// vercel.json (React Router の 404 対策)</code><br>
+                <code style="color:#78c8ff;">{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }</code>
+            </div>
+            <div class="tip-bar"><i class="fas fa-lightbulb"></i> エラーが出たら: ① ログを読む → ② エラーメッセージをコピー → ③ Claude に貼り付けて「何が原因か教えて」</div>
+        </div>
+    </div>
+</body>
+</html>

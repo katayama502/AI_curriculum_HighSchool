@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .intro { font-size: 20px; color: #495057; margin-bottom: 22px; }
+        .a11y-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+        .a11y-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .a11y-icon { font-size: 32px; margin-bottom: 10px; }
+        .a11y-title { font-size: 19px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .a11y-text { font-size: 16px; color: #495057; line-height: 1.6; }
+        .bad-good { display: flex; gap: 20px; }
+        .bg-box { flex: 1; border-radius: 8px; padding: 14px 18px; }
+        .bad { background: #ffe3e3; border-left: 4px solid #ff6b6b; }
+        .good { background: #d3f9d8; border-left: 4px solid #20C997; }
+        .bg-label { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .bad .bg-label { color: #c92a2a; }
+        .good .bg-label { color: #2b8a3e; }
+        .bg-text { font-size: 15px; color: #495057; font-family: monospace; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>アクセシビリティの基本</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro">アクセシビリティ（a11y）とは、障害のある人・高齢者・様々なデバイスのユーザーも含め、すべての人が使いやすいUIを作ることです。</p>
+            <div class="a11y-grid">
+                <div class="a11y-card">
+                    <div class="a11y-icon" style="color:#339AF0">🎨</div>
+                    <div class="a11y-title">コントラスト比</div>
+                    <div class="a11y-text">テキストと背景の明暗差を十分に確保する。WCAG基準：4.5:1以上（通常テキスト）</div>
+                </div>
+                <div class="a11y-card">
+                    <div class="a11y-icon" style="color:#20C997">📝</div>
+                    <div class="a11y-title">altテキスト</div>
+                    <div class="a11y-text">画像には必ずalt属性で説明文を追加。スクリーンリーダーが読み上げる</div>
+                </div>
+                <div class="a11y-card">
+                    <div class="a11y-icon" style="color:#f59f00">⌨️</div>
+                    <div class="a11y-title">キーボード操作</div>
+                    <div class="a11y-text">Tabキーで全操作ができるように設計。focusのスタイルを消さない</div>
+                </div>
+            </div>
+            <div class="bad-good">
+                <div class="bg-box bad">
+                    <div class="bg-label">❌ NG例</div>
+                    <div class="bg-text">
+                        &lt;img src="book.png"&gt;<br>
+                        &lt;button&gt;✓&lt;/button&gt;<br>
+                        &lt;div onclick="submit()"&gt;送信&lt;/div&gt;<br>
+                        color: #aaa; background: #fff;<br>
+                        outline: none; /* フォーカス消去 */
+                    </div>
+                </div>
+                <div class="bg-box good">
+                    <div class="bg-label">✅ OK例</div>
+                    <div class="bg-text">
+                        &lt;img src="book.png" alt="Reactの本の表紙"&gt;<br>
+                        &lt;button aria-label="完了にする"&gt;✓&lt;/button&gt;<br>
+                        &lt;button type="submit"&gt;送信&lt;/button&gt;<br>
+                        color: #212529; background: #fff;<br>
+                        /* outline は残す */
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

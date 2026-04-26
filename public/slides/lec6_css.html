@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block {
+            background: #1A1A2E; padding: 18px;
+            font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8;
+        }
+        .selector { color: #339AF0; font-weight: 700; }
+        .prop { color: #20C997; }
+        .val { color: #FCC419; }
+        .brace { color: #E8E8E8; }
+        .comment { color: #6C757D; }
+        .right-col { }
+        .box-model-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .box-model-wrap {
+            background: #FFF3BF;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            color: #664D03;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .box-margin {
+            background: #FFF3BF;
+            padding: 10px;
+        }
+        .box-border {
+            background: #FFA94D;
+            padding: 10px;
+            color: white;
+            font-size: 13px;
+            text-align: center;
+        }
+        .box-padding {
+            background: #A9E34B;
+            padding: 10px;
+            color: #2B8A3E;
+            font-size: 13px;
+            text-align: center;
+        }
+        .box-content {
+            background: #74C0FC;
+            padding: 14px;
+            color: #1971C2;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .box-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #495057;
+            margin-top: 8px;
+        }
+        .box-label { display: flex; align-items: center; gap: 6px; }
+        .color-dot { width: 12px; height: 12px; flex-shrink: 0; }
+        .props-title { font-size: 18px; font-weight: 700; color: #212529; margin-top: 14px; margin-bottom: 8px; }
+        .prop-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .prop-item { background: white; padding: 8px 12px; font-size: 15px; }
+        .prop-item .pname { font-family: "Courier New", monospace; color: #339AF0; font-weight: 700; }
+        .prop-item .pdesc { color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CSSでスタイルを付ける</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment">/* セレクタ { プロパティ: 値; } */</span><br><br>
+                <span class="comment">/* タグセレクタ */</span><br>
+                <span class="selector">h1</span> <span class="brace">{</span><br>
+                &nbsp;&nbsp;<span class="prop">color</span>: <span class="val">#339AF0</span>;<br>
+                &nbsp;&nbsp;<span class="prop">font-size</span>: <span class="val">32px</span>;<br>
+                <span class="brace">}</span><br><br>
+                <span class="comment">/* クラスセレクタ */</span><br>
+                <span class="selector">.card</span> <span class="brace">{</span><br>
+                &nbsp;&nbsp;<span class="prop">background</span>: <span class="val">white</span>;<br>
+                &nbsp;&nbsp;<span class="prop">padding</span>: <span class="val">20px</span>;<br>
+                &nbsp;&nbsp;<span class="prop">margin</span>: <span class="val">10px</span>;<br>
+                <span class="brace">}</span>
+            </div>
+            <div class="right-col">
+                <div class="box-model-title">📦 ボックスモデル</div>
+                <div class="box-margin">
+                    <div style="font-size:13px;color:#664D03;margin-bottom:6px;">margin（外側の余白）</div>
+                    <div class="box-border">
+                        <div style="margin-bottom:4px;">border（枠線）</div>
+                        <div class="box-padding">
+                            <div style="margin-bottom:4px;">padding（内側の余白）</div>
+                            <div class="box-content">content（コンテンツ）</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="props-title">よく使うプロパティ</div>
+                <div class="prop-row">
+                    <div class="prop-item"><span class="pname">color</span><br><span class="pdesc">文字色</span></div>
+                    <div class="prop-item"><span class="pname">background</span><br><span class="pdesc">背景色</span></div>
+                    <div class="prop-item"><span class="pname">font-size</span><br><span class="pdesc">文字サイズ</span></div>
+                    <div class="prop-item"><span class="pname">display:flex</span><br><span class="pdesc">横並びレイアウト</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

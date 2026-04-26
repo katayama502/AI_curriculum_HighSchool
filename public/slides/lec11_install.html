@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .steps-col { }
+        .steps-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .step-item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .step-num { width: 32px; height: 32px; background: #339AF0; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-content { font-size: 17px; color: #212529; }
+        .step-sub { font-size: 13px; color: #6C757D; margin-top: 3px; }
+        .step-cmd { font-family: "Courier New", monospace; background: #F8F9FA; padding: 4px 8px; font-size: 14px; color: #339AF0; display: inline-block; margin-top: 4px; }
+        .terminal-col { }
+        .terminal-title { font-size: 18px; font-weight: 700; color: white; background: #212529; padding: 10px 16px; }
+        .terminal-body { background: #0D0D0D; padding: 16px; font-family: "Courier New", monospace; font-size: 15px; line-height: 2; }
+        .t-prompt { color: #20C997; }
+        .t-cmd { color: #E8E8E8; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .t-claude { color: #339AF0; }
+        .tips-box { background: #20C997; color: #0D0D0D; padding: 12px 18px; margin-top: 12px; font-size: 16px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code 環境構築</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="steps-col">
+                <div class="steps-title">🔧 セットアップ手順</div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-content">Node.jsをインストール</div>
+                        <div class="step-sub">nodejs.org からLTS版をダウンロード</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-content">Claude Codeをインストール</div>
+                        <div class="step-cmd">npm install -g @anthropic-ai/claude-code</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-content">APIキーを設定</div>
+                        <div class="step-cmd">export ANTHROPIC_API_KEY=sk-ant-...</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="step-content">プロジェクトフォルダで起動</div>
+                        <div class="step-cmd">cd my-project && claude</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div>
+                        <div class="step-content">最初の指示を入力</div>
+                        <div class="step-sub">「Hello World を表示するHTMLを作って」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="terminal-col">
+                <div class="terminal-title">💻 ターミナルの様子</div>
+                <div class="terminal-body">
+                    <span class="t-prompt">$ </span><span class="t-cmd">claude</span><br>
+                    <span class="t-success">✓ Claude Code v1.x.x</span><br>
+                    <span class="t-output">API key: ****...****</span><br><br>
+                    <span class="t-claude">Claude&gt; </span><span class="t-cmd">Hello Worldを表示するHTMLを作って</span><br><br>
+                    <span class="t-success">● index.html を作成します...</span><br>
+                    <span class="t-output">  &lt;!DOCTYPE html&gt;</span><br>
+                    <span class="t-output">  &lt;html&gt;...&lt;/html&gt;</span><br><br>
+                    <span class="t-success">✓ ファイルを作成しました！</span><br>
+                    <span class="t-output">  → index.html (1.2 KB)</span>
+                </div>
+                <div class="tips-box">
+                    ✅ VSCodeのターミナルから起動するのがおすすめ！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .quiz-card { background-color: white; border-radius: 8px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .quiz-num { font-size: 14px; font-weight: 500; color: #868e96; margin-bottom: 6px; }
+        .quiz-q { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 14px; line-height: 1.5; }
+        .quiz-divider { height: 1px; background-color: #e9ecef; margin-bottom: 12px; }
+        .answer-label { font-size: 14px; color: #20C997; font-weight: 500; margin-bottom: 6px; }
+        .answer-text { font-size: 18px; font-weight: 500; color: #339AF0; line-height: 1.5; }
+        .code-inline { background-color: #f1f3f5; padding: 2px 8px; border-radius: 4px; font-family: "Courier New", monospace; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ — テスト・デプロイ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-grid">
+                <div class="quiz-card">
+                    <div class="quiz-num">Q1</div>
+                    <div class="quiz-q">関数1つの動作を確認するテストの種類は？</div>
+                    <div class="quiz-divider"></div>
+                    <div class="answer-label"><i class="fas fa-check"></i> 正解</div>
+                    <div class="answer-text">単体テスト（Unit Test）</div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q2</div>
+                    <div class="quiz-q">コードをpushするたびにテストを自動実行する仕組みを何という？</div>
+                    <div class="quiz-divider"></div>
+                    <div class="answer-label"><i class="fas fa-check"></i> 正解</div>
+                    <div class="answer-text">CI（継続的インテグレーション）</div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q3</div>
+                    <div class="quiz-q">React（Vite）アプリを無料でデプロイできるサービスは？</div>
+                    <div class="quiz-divider"></div>
+                    <div class="answer-label"><i class="fas fa-check"></i> 正解</div>
+                    <div class="answer-text">Vercel（またはNetlify）</div>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">Q4</div>
+                    <div class="quiz-q">本番でSQLiteが使えない理由は？</div>
+                    <div class="quiz-divider"></div>
+                    <div class="answer-label"><i class="fas fa-check"></i> 正解</div>
+                    <div class="answer-text">サーバーが再起動するとファイルが消えるため（Railway等の場合）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

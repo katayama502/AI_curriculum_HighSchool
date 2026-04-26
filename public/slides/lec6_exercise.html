@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .task-box { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .tb-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid #e9ecef; }
+        .tb-badge { padding: 4px 14px; border-radius: 12px; font-size: 14px; font-weight: 700; }
+        .tb-badge.step1 { background: #e7f5ff; color: #1c7ed6; }
+        .tb-badge.step2 { background: #ebfbee; color: #2f9e44; }
+        .tb-badge.step3 { background: #fff9db; color: #e67700; }
+        .tb-title { font-size: 20px; font-weight: 700; color: #212529; }
+        .tb-steps { list-style: none; }
+        .tb-steps li { font-size: 18px; font-weight: 300; color: #495057; padding: 6px 0; line-height: 1.5; }
+        .tb-steps li::before { content: "▶ "; color: #339AF0; font-size: 14px; }
+        .challenge-box { background: #212529; border-radius: 10px; padding: 20px 22px; color: white; }
+        .ch-title { font-size: 22px; font-weight: 700; color: #74c0fc; margin-bottom: 14px; }
+        .ch-item { font-size: 18px; font-weight: 300; color: #dee2e6; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); line-height: 1.5; }
+        .ch-item:last-child { border-bottom: none; }
+        .ch-item::before { content: "🎯 "; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第6回 実習課題</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>基本課題 — 自己紹介ページを作ろう</h2>
+                <div class="task-box">
+                    <div class="tb-header">
+                        <span class="tb-badge step1">STEP 1</span>
+                        <span class="tb-title">HTMLの骨格を作る</span>
+                    </div>
+                    <ul class="tb-steps">
+                        <li>DOCTYPE・html・head・bodyの基本構造を書く</li>
+                        <li>h1で名前、pで自己紹介文を追加する</li>
+                        <li>ulでList（好きなこと・趣味）を作る</li>
+                    </ul>
+                </div>
+                <div class="task-box">
+                    <div class="tb-header">
+                        <span class="tb-badge step2">STEP 2</span>
+                        <span class="tb-title">CSSでデザインする</span>
+                    </div>
+                    <ul class="tb-steps">
+                        <li>背景色・文字色・フォントを設定する</li>
+                        <li>paddingとmarginで余白を整える</li>
+                        <li>ヘッダー部分に背景色をつける</li>
+                    </ul>
+                </div>
+                <div class="task-box">
+                    <div class="tb-header">
+                        <span class="tb-badge step3">STEP 3</span>
+                        <span class="tb-title">Claudeに改善してもらう</span>
+                    </div>
+                    <ul class="tb-steps">
+                        <li>作ったコードをClaudeに貼り付ける</li>
+                        <li>「もっとおしゃれに改善して」と頼む</li>
+                        <li>改善結果を比較して気に入った方を選ぶ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <h2>チャレンジ課題</h2>
+                <div class="challenge-box">
+                    <div class="ch-title">🚀 発展：ポートフォリオサイト</div>
+                    <div class="ch-item">ナビゲーションバーをFlexboxで作る</div>
+                    <div class="ch-item">カードコンポーネント（作品展示）を3つ並べる</div>
+                    <div class="ch-item">ホバー時に色が変わるボタンを作る（CSS: hover）</div>
+                    <div class="ch-item">スマートフォンでも崩れないようにする</div>
+                    <div class="ch-item">Claudeに「プロっぽいデザインに全部リデザインして」と頼む</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

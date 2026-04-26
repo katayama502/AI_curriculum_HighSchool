@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .highlight-box { background: #339AF0; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>REST API設計の基本</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">📐 RESTful APIの設計原則</div>
+                <div class="code-block">
+<span style="color:#6C757D;"># ユーザーリソースのREST API例</span><br><br>
+<span style="color:#28C840;">GET</span>    /api/users      <span style="color:#6C757D;"># 全ユーザー取得</span><br>
+<span style="color:#28C840;">GET</span>    /api/users/:id  <span style="color:#6C757D;"># 特定ユーザー取得</span><br>
+<span style="color:#339AF0;">POST</span>   /api/users      <span style="color:#6C757D;"># 新規ユーザー作成</span><br>
+<span style="color:#E67700;">PUT</span>    /api/users/:id  <span style="color:#6C757D;"># ユーザー更新</span><br>
+<span style="color:#C92A2A;">DELETE</span> /api/users/:id  <span style="color:#6C757D;"># ユーザー削除</span><br><br>
+<span style="color:#6C757D;"># レスポンス例</span><br>
+{<br>
+&nbsp;&nbsp;<span style="color:#20C997;">"status"</span>: <span style="color:#FCC419;">"success"</span>,<br>
+&nbsp;&nbsp;<span style="color:#20C997;">"data"</span>: { <span style="color:#20C997;">"id"</span>: <span style="color:#20C997;">1</span>, <span style="color:#20C997;">"name"</span>: <span style="color:#FCC419;">"太郎"</span> }<br>
+}
+                </div>
+            </div>
+            <div>
+                <div class="section-title">✅ REST API設計のルール</div>
+                <div class="item">
+                    <span class="item-icon">📝</span>
+                    <div>
+                        <div class="item-text">URLはリソース名（名詞）を使う</div>
+                        <div class="item-sub">/getUsers ❌ → /users ✅</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔢</span>
+                    <div>
+                        <div class="item-text">HTTPメソッドで操作を表す</div>
+                        <div class="item-sub">GET=取得 POST=作成 PUT=更新 DELETE=削除</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📊</span>
+                    <div>
+                        <div class="item-text">ステータスコードを正しく使う</div>
+                        <div class="item-sub">200=成功 201=作成 404=未発見 500=エラー</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📦</span>
+                    <div>
+                        <div class="item-text">JSONでデータをやり取りする</div>
+                        <div class="item-sub">リクエスト・レスポンスともにJSON形式</div>
+                    </div>
+                </div>
+                <div class="highlight-box">💡 「RESTful APIを設計して」とClaudeに頼むと適切なエンドポイントを提案してくれる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

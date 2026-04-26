@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .intro-text { font-size: 20px; color: #495057; font-weight: 300; margin-bottom: 20px; }
+        .pattern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .pattern-card { background: #0D0D0D; border-radius: 8px; padding: 18px 22px; }
+        .pattern-label { font-size: 13px; color: #ffd866; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; font-family: monospace; }
+        .pattern-prompt { font-size: 15px; color: #f8f9fa; line-height: 1.7; font-family: monospace; }
+        .pattern-prompt .c-green { color: #a9dc76; }
+        .pattern-prompt .c-blue { color: #78c8ff; }
+        .pattern-prompt .c-yellow { color: #ffd866; }
+        .pattern-prompt .c-gray { color: #adb5bd; }
+        .pattern-prompt .c-pink { color: #ff9ac1; }
+        .tips-row { display: flex; gap: 14px; margin-top: 16px; }
+        .tip-pill { flex: 1; background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 10px; font-size: 16px; color: #212529; }
+        .tip-pill i { color: #339AF0; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code でデプロイを加速</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro-text">デプロイで詰まったとき・設定ファイルを作るとき、Claude Code に直接聞こう</p>
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <div class="pattern-label">PATTERN 1 — デプロイ前チェック</div>
+                    <div class="pattern-prompt">
+                        <span class="c-green">「本番デプロイ前に確認すべき</span><br>
+                        <span class="c-green">チェックリストを作って。</span><br>
+                        <span class="c-yellow">フロント: React + Vite</span><br>
+                        <span class="c-yellow">バックエンド: Express + SQLite」</span>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-label">PATTERN 2 — エラー解析</div>
+                    <div class="pattern-prompt">
+                        <span class="c-pink">「Vercelのデプロイログにこのエラーが</span><br>
+                        <span class="c-pink">出ています。原因と修正方法を教えて:</span><br>
+                        <span class="c-blue">[ここにエラーメッセージを貼り付け]</span>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-label">PATTERN 3 — 設定ファイル生成</div>
+                    <div class="pattern-prompt">
+                        <span class="c-green">「GitHub Actions で push のたびに</span><br>
+                        <span class="c-green">Vercel に自動デプロイする</span><br>
+                        <span class="c-yellow">workflow ファイルを作って」</span>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-label">PATTERN 4 — セキュリティ診断</div>
+                    <div class="pattern-prompt">
+                        <span class="c-pink">「このExpressのコードに</span><br>
+                        <span class="c-pink">セキュリティ上の問題はある?</span><br>
+                        <span class="c-blue">[server.js の内容を貼り付け]</span><br>
+                        <span class="c-gray">本番公開前に修正したい」</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tips-row">
+                <div class="tip-pill"><i class="fas fa-paste"></i> エラーログは必ず全文コピーして貼る</div>
+                <div class="tip-pill"><i class="fas fa-file-code"></i> 設定ファイルは生成後に内容を理解する</div>
+                <div class="tip-pill"><i class="fas fa-sync-alt"></i> 修正後は必ず動作確認してからpush</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

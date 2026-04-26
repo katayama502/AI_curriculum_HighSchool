@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 30px 60px; display: flex; gap: 60px; align-items: flex-start; }
+        .agenda-list { flex: 1.2; }
+        .side-info { flex: 1; }
+        .agenda-item { display: flex; align-items: flex-start; gap: 20px; padding: 18px 0; border-bottom: 1px solid #e9ecef; }
+        .agenda-item:last-child { border-bottom: none; }
+        .a-num { background: #339AF0; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+        .a-text { flex: 1; }
+        .a-title { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .a-sub { font-size: 18px; font-weight: 300; color: #868e96; }
+        .goal-box { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #20C997; }
+        .goal-title { font-size: 20px; font-weight: 700; color: #20C997; margin-bottom: 16px; }
+        .goal-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+        .goal-icon { color: #20C997; font-size: 16px; margin-top: 4px; }
+        .goal-text { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .level-box { background: linear-gradient(135deg, #339AF0, #20C997); border-radius: 10px; padding: 18px 22px; color: white; margin-top: 16px; text-align: center; }
+        .level-title { font-size: 16px; opacity: 0.85; margin-bottom: 6px; }
+        .level-text { font-size: 24px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第5回 今日の内容</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-list">
+                <div class="agenda-item">
+                    <div class="a-num">1</div>
+                    <div class="a-text"><div class="a-title">プロンプト技術の全体像</div><div class="a-sub">なぜ「上級テクニック」が必要なのか</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">2</div>
+                    <div class="a-text"><div class="a-title">Chain-of-Thought（思考の連鎖）</div><div class="a-sub">AIに「考えながら答えさせる」技術</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">3</div>
+                    <div class="a-text"><div class="a-title">Few-shot プロンプト</div><div class="a-sub">例を見せて精度を上げる</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">4</div>
+                    <div class="a-text"><div class="a-title">System プロンプト設計</div><div class="a-sub">AIのキャラクターと役割を設定する</div></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="a-num">5</div>
+                    <div class="a-text"><div class="a-title">デバッグと改善ループ</div><div class="a-sub">うまくいかない時の対処法</div></div>
+                </div>
+            </div>
+            <div class="side-info">
+                <div class="goal-box">
+                    <div class="goal-title"><i class="fas fa-bullseye"></i> この回のゴール</div>
+                    <div class="goal-item"><span class="goal-icon"><i class="fas fa-check"></i></span><span class="goal-text">CoT・Few-shot・Systemプロンプトを使い分けられる</span></div>
+                    <div class="goal-item"><span class="goal-icon"><i class="fas fa-check"></i></span><span class="goal-text">プロンプトの「失敗原因」を自力で診断できる</span></div>
+                    <div class="goal-item"><span class="goal-icon"><i class="fas fa-check"></i></span><span class="goal-text">改善サイクルを回せる</span></div>
+                </div>
+                <div class="level-box">
+                    <div class="level-title">この回のレベル</div>
+                    <div class="level-text">⭐⭐⭐ 上級編</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

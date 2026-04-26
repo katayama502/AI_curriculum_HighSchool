@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .concept { background: white; border-left: 6px solid #20C997; padding: 14px 20px; border-radius: 6px; margin-bottom: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .concept-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .code-box { background: #0D0D0D; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+        .cb-header { padding: 8px 14px; font-size: 13px; font-weight: 700; background: #1864AB; color: white; }
+        .cb-body { padding: 12px 16px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; }
+        .ct { color: #74C0FC; }
+        .ca { color: #ffd43b; }
+        .cs { color: #a3be8c; }
+        .cc { color: #20C997; }
+        .cn { color: #f8f9fa; }
+        .cp { color: #E599F7; }
+        .visual-box { background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 16px 20px; }
+        .vb-title { font-size: 16px; font-weight: 500; color: #212529; margin-bottom: 12px; }
+        .prop-flow { display: flex; flex-direction: column; gap: 8px; }
+        .pf-row { display: flex; align-items: center; gap: 10px; }
+        .pf-parent { background: #339AF0; color: white; padding: 8px 14px; border-radius: 6px; font-family: "Courier New", monospace; font-size: 14px; }
+        .pf-arrow { font-size: 16px; color: #adb5bd; }
+        .pf-child { background: #0D0D0D; color: #20C997; padding: 8px 14px; border-radius: 6px; font-family: "Courier New", monospace; font-size: 14px; }
+        .pf-val { background: #e9ecef; color: #212529; padding: 8px 14px; border-radius: 6px; font-family: "Courier New", monospace; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Props — コンポーネントへのデータ渡し</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Propsとは？</h2>
+                <div class="concept">
+                    <div class="concept-text">Propsは「親コンポーネントから子コンポーネントへデータを渡す仕組み」。関数の引数のようなもの。</div>
+                </div>
+                <div class="code-box">
+                    <div class="cb-header">コンポーネントとPropsの使い方</div>
+                    <div class="cb-body">
+                        <div class="cc">// 子コンポーネント: Propsを受け取る</div>
+                        <div><span class="ca">function </span><span class="ca">WeatherCard</span><span class="cn">(</span><span class="cp">{ city, temp, icon }</span><span class="cn">) {</span></div>
+                        <div><span class="ca">  return </span><span class="cn">(</span></div>
+                        <div><span class="ct">    &lt;div </span><span class="cn">className=</span><span class="cs">"card"</span><span class="ct">&gt;</span></div>
+                        <div><span class="ct">      &lt;span&gt;</span><span class="cn">{icon}</span><span class="ct">&lt;/span&gt;</span></div>
+                        <div><span class="ct">      &lt;h2&gt;</span><span class="cn">{city}</span><span class="ct">&lt;/h2&gt;</span></div>
+                        <div><span class="ct">      &lt;p&gt;</span><span class="cn">{temp}°C</span><span class="ct">&lt;/p&gt;</span></div>
+                        <div><span class="ct">    &lt;/div&gt;</span></div>
+                        <div><span class="cn">  );</span></div>
+                        <div><span class="cn">}</span></div>
+                        <br>
+                        <div class="cc">// 親コンポーネント: Propsを渡す</div>
+                        <div><span class="ca">function </span><span class="ca">App</span><span class="cn">() {</span></div>
+                        <div><span class="ca">  return </span><span class="cn">(</span></div>
+                        <div><span class="ct">    &lt;div&gt;</span></div>
+                        <div><span class="ct">      &lt;WeatherCard </span><span class="cp">city=</span><span class="cs">"東京"</span><span class="cp"> temp=</span><span class="cn">{25}</span><span class="cp"> icon=</span><span class="cs">"☀️"</span><span class="ct"> /&gt;</span></div>
+                        <div><span class="ct">      &lt;WeatherCard </span><span class="cp">city=</span><span class="cs">"大阪"</span><span class="cp"> temp=</span><span class="cn">{28}</span><span class="cp"> icon=</span><span class="cs">"🌤️"</span><span class="ct"> /&gt;</span></div>
+                        <div><span class="ct">    &lt;/div&gt;</span></div>
+                        <div><span class="cn">  );</span></div>
+                        <div><span class="cn">}</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Propsのデータの流れ</h2>
+                <div class="visual-box">
+                    <div class="vb-title"><i class="fas fa-arrow-down" style="color:#339AF0;margin-right:8px"></i>親 → 子へ一方向に流れる</div>
+                    <div class="prop-flow">
+                        <div class="pf-row">
+                            <div class="pf-parent">&lt;WeatherCard</div>
+                            <div class="pf-arrow">→</div>
+                            <div class="pf-val">city="東京"</div>
+                        </div>
+                        <div class="pf-row">
+                            <div class="pf-parent">&lt;WeatherCard</div>
+                            <div class="pf-arrow">→</div>
+                            <div class="pf-val">temp={25}</div>
+                        </div>
+                        <div class="pf-row">
+                            <div class="pf-parent">&lt;WeatherCard</div>
+                            <div class="pf-arrow">→</div>
+                            <div class="pf-val">icon="☀️"</div>
+                        </div>
+                        <div style="text-align:center;color:#adb5bd;margin:8px 0"><i class="fas fa-arrow-down"></i></div>
+                        <div class="pf-row">
+                            <div class="pf-child">function WeatherCard({ city, temp, icon })</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background:white;border:2px solid #dee2e6;padding:14px 18px;border-radius:6px;margin-top:14px;">
+                    <div style="font-size:17px;font-weight:500;color:#212529;margin-bottom:8px;"><i class="fas fa-lightbulb" style="color:#20C997;margin-right:8px"></i>Propsの型</div>
+                    <div style="font-size:15px;font-weight:300;color:#495057;line-height:1.8;">
+                        文字列: <code style="background:#f1f3f5;padding:2px 6px">city="東京"</code><br>
+                        数値: <code style="background:#f1f3f5;padding:2px 6px">temp={25}</code><br>
+                        真偽値: <code style="background:#f1f3f5;padding:2px 6px">isSunny={true}</code><br>
+                        配列: <code style="background:#f1f3f5;padding:2px 6px">cities={["東京","大阪"]}</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

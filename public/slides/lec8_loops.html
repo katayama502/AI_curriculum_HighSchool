@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .loop-card { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 12px; border-left: 5px solid #20C997; }
+        .loop-card h3 { font-size: 19px; font-weight: 500; color: #20C997; margin-bottom: 6px; }
+        .loop-card p { font-size: 16px; color: #495057; }
+        .loop-card code { background: #212529; color: #69db7c; padding: 2px 7px; border-radius: 3px; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ループ処理 — for / while</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>繰り返しを自動化する</h2>
+                <div class="code-block">
+<span class="cmt"># range()で回数指定ループ</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(<span class="num">5</span>):
+    <span class="func">print</span>(<span class="str">f"</span>{i}<span class="str">回目"</span>)  <span class="cmt"># 0〜4</span>
+
+<span class="cmt"># リストの要素を順番に処理</span>
+fruits = [<span class="str">"りんご"</span>, <span class="str">"バナナ"</span>, <span class="str">"みかん"</span>]
+<span class="kw">for</span> fruit <span class="kw">in</span> fruits:
+    <span class="func">print</span>(fruit + <span class="str">"が好き"</span>)
+
+<span class="cmt"># enumerate()で番号付き</span>
+<span class="kw">for</span> i, fruit <span class="kw">in</span> <span class="func">enumerate</span>(fruits):
+    <span class="func">print</span>(<span class="str">f"{i+1}位: {fruit}"</span>)
+
+<span class="cmt"># while：条件が真の間ループ</span>
+count = <span class="num">0</span>
+<span class="kw">while</span> count < <span class="num">3</span>:
+    <span class="func">print</span>(<span class="str">f"カウント: {count}"</span>)
+    count += <span class="num">1</span>
+                </div>
+            </div>
+            <div class="right">
+                <h2>ループの制御</h2>
+                <div class="loop-card">
+                    <h3><code>break</code></h3>
+                    <p>条件が満たされたらループを即終了。「見つかったら止まる」探索に使う。</p>
+                </div>
+                <div class="loop-card">
+                    <h3><code>continue</code></h3>
+                    <p>その回をスキップして次の繰り返しへ。「特定の要素を除外」したいときに使う。</p>
+                </div>
+                <div class="loop-card">
+                    <h3><code>range(start, stop, step)</code></h3>
+                    <p>range(0, 10, 2) → 0, 2, 4, 6, 8<br>range(10, 0, -1) → 10〜1（カウントダウン）</p>
+                </div>
+                <div class="loop-card">
+                    <h3>リスト内包表記</h3>
+                    <p><code>[x*2 for x in range(5)]</code><br>
+                    → [0, 2, 4, 6, 8]<br>
+                    1行でリストを生成できる省略記法。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

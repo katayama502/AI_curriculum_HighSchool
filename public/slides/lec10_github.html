@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .flow-col { }
+        .flow-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .flow-box { background: white; padding: 14px 18px; margin-top: 8px; display: flex; align-items: center; gap: 14px; }
+        .flow-icon { font-size: 28px; flex-shrink: 0; }
+        .flow-text { font-size: 18px; color: #212529; }
+        .flow-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .flow-arrow { text-align: center; font-size: 24px; color: #339AF0; margin-top: 4px; }
+        .github-pages-box { background: #212529; color: white; padding: 16px 20px; margin-top: 16px; }
+        .gp-title { font-size: 18px; font-weight: 700; color: #20C997; margin-bottom: 8px; }
+        .gp-text { font-size: 16px; line-height: 1.7; }
+        .commands-col { }
+        .commands-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .cmd-item { background: white; padding: 12px 16px; margin-top: 8px; display: grid; grid-template-columns: 160px 1fr; gap: 12px; align-items: center; }
+        .cmd-name { background: #212529; color: #F05033; font-family: "Courier New", monospace; font-size: 14px; font-weight: 700; padding: 6px 10px; }
+        .cmd-desc { font-size: 17px; color: #495057; }
+        .workflow-badge { background: #339AF0; color: white; padding: 12px 18px; margin-top: 12px; font-size: 17px; text-align: center; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>GitHubでコードを公開・共有</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="flow-col">
+                <div class="flow-title">🔄 GitとGitHubの関係</div>
+                <div class="flow-box">
+                    <span class="flow-icon">💻</span>
+                    <div>
+                        <div class="flow-text">ローカルリポジトリ（自分のPC）</div>
+                        <div class="flow-sub">git add → git commit で変更を記録</div>
+                    </div>
+                </div>
+                <div class="flow-arrow">↕ git push / git pull</div>
+                <div class="flow-box">
+                    <span class="flow-icon">☁️</span>
+                    <div>
+                        <div class="flow-text">リモートリポジトリ（GitHub）</div>
+                        <div class="flow-sub">クラウドにコードを保存・公開</div>
+                    </div>
+                </div>
+                <div class="github-pages-box">
+                    <div class="gp-title">🌐 GitHub Pages</div>
+                    <div class="gp-text">GitHubのリポジトリから<br>
+                        <strong>無料でWebサイトを公開</strong>できる！<br>
+                        username.github.io/repo-name でアクセス可能</div>
+                </div>
+            </div>
+            <div class="commands-col">
+                <div class="commands-title">GitHub連携コマンド</div>
+                <div class="cmd-item">
+                    <div class="cmd-name">git remote add</div>
+                    <div class="cmd-desc">GitHubリポジトリを登録</div>
+                </div>
+                <div class="cmd-item">
+                    <div class="cmd-name">git push origin</div>
+                    <div class="cmd-desc">ローカルの変更をGitHubに送信</div>
+                </div>
+                <div class="cmd-item">
+                    <div class="cmd-name">git pull origin</div>
+                    <div class="cmd-desc">GitHubの変更をローカルに取得</div>
+                </div>
+                <div class="cmd-item">
+                    <div class="cmd-name">git clone</div>
+                    <div class="cmd-desc">GitHubのリポジトリをコピー</div>
+                </div>
+                <div class="cmd-item">
+                    <div class="cmd-name">git branch</div>
+                    <div class="cmd-desc">ブランチの作成・切り替え</div>
+                </div>
+                <div class="workflow-badge">
+                    ✅ 今日の目標：自分のコードをGitHubに公開しよう！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

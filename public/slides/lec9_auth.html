@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #7950F2; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .danger-box { background: #ffe3e3; border-radius: 8px; padding: 16px 18px; border-left: 5px solid #fa5252; margin-bottom: 14px; }
+        .danger-box h3 { font-size: 20px; font-weight: 700; color: #c92a2a; margin-bottom: 8px; }
+        .danger-box p { font-size: 17px; color: #c92a2a; line-height: 1.5; }
+        .safe-box { background: #d3f9d8; border-radius: 8px; padding: 16px 18px; border-left: 5px solid #2b8a3e; }
+        .safe-box h3 { font-size: 20px; font-weight: 700; color: #2b8a3e; margin-bottom: 8px; }
+        .safe-box p { font-size: 17px; color: #2b8a3e; line-height: 1.5; }
+        .auth-card { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 12px; }
+        .auth-card h3 { font-size: 19px; font-weight: 500; color: #7950F2; margin-bottom: 6px; }
+        .auth-card p { font-size: 17px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>APIキーと認証</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>APIキーの使い方</h2>
+                <div class="code-block">
+<span class="cmt"># APIキーをヘッダーに含める（Python）</span>
+<span class="kw">import</span> requests
+<span class="kw">import</span> os
+
+API_KEY = os.environ.get(<span class="str">"MY_API_KEY"</span>)
+
+headers = {
+    <span class="str">"Authorization"</span>: <span class="str">f"Bearer {API_KEY}"</span>,
+    <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
+}
+
+res = requests.get(url, headers=headers)
+                </div>
+                <div class="danger-box">
+                    <h3><i class="fas fa-exclamation-triangle"></i> やってはいけないこと！</h3>
+                    <p>APIキーをソースコードに直接書いてGitHubに公開すると、<strong>他人に使われて高額請求</strong>になることがあります。絶対にNG！</p>
+                </div>
+                <div class="safe-box">
+                    <h3><i class="fas fa-shield-alt"></i> 安全な管理方法</h3>
+                    <p>環境変数（.envファイル）に保存して<code style="background:#212529;color:#69db7c;padding:2px 6px;border-radius:3px;">os.environ.get()</code>で読み込む。.envファイルは.gitignoreに追加！</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>主な認証方式</h2>
+                <div class="auth-card">
+                    <h3><i class="fas fa-key"></i> APIキー</h3>
+                    <p>最も一般的。ヘッダーまたはクエリパラメータで送る。Claude APIもこの方式。</p>
+                </div>
+                <div class="auth-card">
+                    <h3><i class="fas fa-lock"></i> Bearer Token（JWT）</h3>
+                    <p>ログイン後に発行されるトークン。有効期限があり、より安全性が高い。</p>
+                </div>
+                <div class="auth-card">
+                    <h3><i class="fas fa-user-lock"></i> OAuth 2.0</h3>
+                    <p>「Googleでログイン」など。ユーザーが許可した範囲のみAPIを使える高度な仕組み。</p>
+                </div>
+                <div class="auth-card">
+                    <h3><i class="fas fa-globe"></i> APIキー不要</h3>
+                    <p>Open-Meteo（天気）など公開APIは認証なしで使える。学習に最適！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

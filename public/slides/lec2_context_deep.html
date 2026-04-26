@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Yu Gothic","Roboto",sans-serif;background:#F8F9FA;color:#212529}
+.slide-container{width:1280px;min-height:720px;background:#F8F9FA}
+.header{padding:40px 60px 0}
+h1{font-size:48px;font-weight:500;color:#339AF0}
+.divider{height:1px;background:#20C997;margin-top:20px}
+.content-area{padding:28px 60px}
+h2{font-size:26px;font-weight:500;color:#212529;margin-bottom:16px}
+.two-col{display:flex;gap:30px}
+.col{flex:1}
+.ctx-element{background:white;border-radius:8px;padding:18px 20px;box-shadow:0 3px 10px rgba(0,0,0,.05);margin-bottom:12px;border-left:4px solid #20C997}
+.ctx-element h3{font-size:18px;font-weight:600;color:#212529;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.ctx-element h3 i{color:#20C997;font-size:16px}
+.ctx-element p{font-size:15px;font-weight:300;color:#495057;margin:0;line-height:1.6}
+.ctx-element .ex{margin-top:6px;font-size:14px;background:#F8F9FA;padding:6px 10px;border-radius:4px;color:#212529}
+.context-builder{background:#212529;border-radius:10px;padding:22px;margin-top:0}
+.context-builder h3{font-size:20px;color:#20C997;margin-bottom:14px}
+.fill-item{background:rgba(255,255,255,0.1);border-radius:6px;padding:12px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.fill-icon{font-size:20px;color:#20C997}
+.fill-label{font-size:17px;color:#e9ecef;font-weight:300;flex:1}
+.fill-example{font-size:14px;color:#adb5bd;font-style:italic}
+.result-box{background:white;border-radius:8px;padding:16px 18px;margin-top:14px;font-size:17px;color:#212529;line-height:1.8;border-left:4px solid #339AF0}
+.result-box .tag{font-weight:600;color:#339AF0}
+</style></head><body>
+<div class="slide-container">
+<div class="header"><h1>Context（文脈）を徹底的に伝える</h1><div class="divider"></div></div>
+<div class="content-area">
+<h2>「背景情報」がAIの回答精度を決める</h2>
+<div class="two-col">
+<div class="col">
+<div class="ctx-element"><h3><i class="fas fa-user"></i>自分のプロフィール</h3><p>学年・専攻・経験レベルなど。AIが適切なレベルで答えてくれる。</p><div class="ex">例：「高校2年生」「文系」「プログラミング未経験」</div></div>
+<div class="ctx-element"><h3><i class="fas fa-bullseye"></i>目的・ゴール</h3><p>何のためにこの情報が必要か。用途が明確だと的確な回答になる。</p><div class="ex">例：「来週の模試のため」「部活の発表会に使いたい」</div></div>
+<div class="ctx-element"><h3><i class="fas fa-book"></i>現在の知識・理解</h3><p>既に知っていることを伝えることで、重複説明を防げる。</p><div class="ex">例：「微分の定義は知っていますが、応用問題が苦手です」</div></div>
+<div class="ctx-element"><h3><i class="fas fa-exclamation-circle"></i>制約・条件</h3><p>締め切り・文字数・使用する場面など。制約を伝えると適切な回答に。</p><div class="ex">例：「発表は5分間で、聴衆は同級生です」</div></div>
+</div>
+<div class="col">
+<div class="context-builder">
+<h3>🛠 文脈テンプレート</h3>
+<div class="fill-item"><div class="fill-icon">👤</div><div class="fill-label">「私は<span class="fill-example">（学年・立場）</span>です」</div></div>
+<div class="fill-item"><div class="fill-icon">📚</div><div class="fill-label">「今<span class="fill-example">（何について・状況）</span>に取り組んでいます」</div></div>
+<div class="fill-item"><div class="fill-icon">🎯</div><div class="fill-label">「<span class="fill-example">（目的・ゴール）</span>のために必要です」</div></div>
+<div class="fill-item"><div class="fill-icon">📖</div><div class="fill-label">「<span class="fill-example">（既知の知識）</span>は知っています」</div></div>
+<div class="fill-item"><div class="fill-icon">⚠️</div><div class="fill-label">「<span class="fill-example">（悩み・詰まっている点）</span>がわかりません」</div></div>
+<div class="result-box">
+<span class="tag">完成例：</span><br>
+「私は高校2年生で、理系クラスです。来月の数学模試のために二次関数を復習中です。基本的な解き方は知っていますが、軸の計算が混乱します。」
+</div>
+</div>
+</div>
+</div>
+</div></div></body></html>

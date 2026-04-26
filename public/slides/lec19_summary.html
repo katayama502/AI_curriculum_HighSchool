@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; }
+        .summary-item { background: white; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; }
+        .check-num { width: 40px; height: 40px; background: #E67700; color: white; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .summary-text { font-size: 20px; color: #212529; line-height: 1.5; }
+        .summary-sub { font-size: 15px; color: #6C757D; margin-top: 4px; }
+        .homework-box { background: #212529; color: white; padding: 20px 28px; display: flex; align-items: center; gap: 20px; }
+        .hw-label { background: #E67700; color: white; padding: 8px 16px; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+        .hw-text { font-size: 20px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第19回 まとめ</h1>
+            <div class="divider"></div>
+        </div>
+        <div style="padding-top: 36px; padding-left: 60px; padding-right: 60px;">
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="check-num">1</div>
+                    <div>
+                        <div class="summary-text">公開前にQAチェックを徹底</div>
+                        <div class="summary-sub">機能・UI・セキュリティ・パフォーマンス</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">2</div>
+                    <div>
+                        <div class="summary-text">SEOとパフォーマンスを最適化</div>
+                        <div class="summary-sub">titleタグ・OGP・画像圧縮・遅延読み込み</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">3</div>
+                    <div>
+                        <div class="summary-text">Vercelで本番デプロイ完了</div>
+                        <div class="summary-sub">環境変数設定→ビルド確認→push→確認</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="check-num">4</div>
+                    <div>
+                        <div class="summary-text">GitHubとSNSで成果を発信</div>
+                        <div class="summary-sub">READMEはClaudeに書いてもらう</div>
+                    </div>
+                </div>
+            </div>
+            <div class="homework-box">
+                <div class="hw-label">📝 宿題</div>
+                <div class="hw-text">アプリを本番公開して、URLをGitHubのREADMEに載せよう！<br>
+                    <span style="font-size:16px; color:#adb5bd;">次回の発表会に向けてデモの準備もしておこう</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

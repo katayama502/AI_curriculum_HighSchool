@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .commands-col { }
+        .commands-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .cmd-table { width: 100%; border-collapse: collapse; }
+        .cmd-table th { padding: 10px 14px; font-size: 16px; font-weight: 700; text-align: left; }
+        .cmd-table th.cmd-col { background: #0D0D0D; color: #20C997; width: 40%; }
+        .cmd-table th.desc-col { background: #339AF0; color: white; }
+        .cmd-table td { padding: 10px 14px; font-size: 15px; border: 1px solid #DEE2E6; }
+        .cmd-table td.cmd-cell { font-family: "Courier New", monospace; color: #20C997; background: #0D0D0D; font-weight: 700; }
+        .cmd-table td.desc-cell { background: white; color: #495057; }
+        .tips-col { }
+        .tips-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .tip-item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .tip-icon { font-size: 22px; flex-shrink: 0; }
+        .tip-text { font-size: 17px; color: #212529; }
+        .tip-sub { font-size: 13px; color: #6C757D; margin-top: 3px; }
+        .good-bad { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+        .good-box { background: #D3F9D8; padding: 10px 14px; }
+        .bad-box { background: #FFE3E3; padding: 10px 14px; }
+        .gb-label { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .good-box .gb-label { color: #2B8A3E; }
+        .bad-box .gb-label { color: #C92A2A; }
+        .gb-text { font-size: 14px; color: #212529; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code の使い方・コマンド</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="commands-col">
+                <div class="commands-title">主要コマンド一覧</div>
+                <table class="cmd-table">
+                    <thead>
+                        <tr>
+                            <th class="cmd-col">コマンド</th>
+                            <th class="desc-col">説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cmd-cell">/help</td>
+                            <td class="desc-cell">使い方ガイドを表示</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">/clear</td>
+                            <td class="desc-cell">会話履歴をリセット</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">/exit</td>
+                            <td class="desc-cell">Claude Codeを終了</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">Ctrl+C</td>
+                            <td class="desc-cell">実行中の処理を中断</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">claude .</td>
+                            <td class="desc-cell">現在のフォルダで起動</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tips-col">
+                <div class="tips-title">✨ 効果的な指示の出し方</div>
+                <div class="tip-item">
+                    <span class="tip-icon">🎯</span>
+                    <div>
+                        <div class="tip-text">具体的に指示する</div>
+                        <div class="tip-sub">「何を」「どのように」「どんな形で」を明確に</div>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">📋</span>
+                    <div>
+                        <div class="tip-text">コンテキストを与える</div>
+                        <div class="tip-sub">「このプロジェクトはReactで作っている」など</div>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">🔄</span>
+                    <div>
+                        <div class="tip-text">段階的に依頼する</div>
+                        <div class="tip-sub">一度に全部頼まず、少しずつ確認しながら進める</div>
+                    </div>
+                </div>
+                <div class="good-bad">
+                    <div class="bad-box">
+                        <div class="gb-label">❌ 悪い例</div>
+                        <div class="gb-text">「Webサイトを作って」</div>
+                    </div>
+                    <div class="good-box">
+                        <div class="gb-label">✅ 良い例</div>
+                        <div class="gb-text">「ポートフォリオサイトのHTMLを作って。ヘッダー・自己紹介・作品一覧の3セクション」</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

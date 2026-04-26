@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .prompt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .prompt-card { background-color: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .prompt-card.teal { border-top-color: #20C997; }
+        .prompt-label { font-size: 15px; font-weight: 500; color: #868e96; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .prompt-text { background-color: #f1f3f5; border-radius: 6px; padding: 10px 14px; font-size: 14.5px; color: #212529; line-height: 1.65; font-family: "Courier New", monospace; }
+        .tip-banner { margin-top: 18px; background-color: #0D0D0D; border-radius: 8px; padding: 16px 22px; display: flex; align-items: center; gap: 20px; }
+        .tip-icon { font-size: 28px; color: #20C997; }
+        .tip-text { font-size: 18px; color: white; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code で API 開発を加速する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2><i class="fas fa-robot" style="color:#339AF0"></i> バックエンド開発で使えるプロンプトパターン</h2>
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <div class="prompt-label"><i class="fas fa-plus-circle" style="color:#339AF0"></i> API骨格生成</div>
+                    <div class="prompt-text">Express + better-sqlite3 を使って<br>/api/todos の GET・POST・DELETE の<br>CRUD APIを index.js に実装して。<br>CORSはlocalhost:5173を許可。</div>
+                </div>
+                <div class="prompt-card teal">
+                    <div class="prompt-label"><i class="fas fa-database" style="color:#20C997"></i> DB設計</div>
+                    <div class="prompt-text">todosテーブルにtagsカラム（TEXT）を<br>追加するALTER TABLEを書いて。<br>既存データが消えないようにして。</div>
+                </div>
+                <div class="prompt-card">
+                    <div class="prompt-label"><i class="fas fa-shield-alt" style="color:#339AF0"></i> バリデーション追加</div>
+                    <div class="prompt-text">POST /api/todos に入力バリデーションを追加して。textが空の場合は400エラー、20文字超も400エラーを返して。</div>
+                </div>
+                <div class="prompt-card teal">
+                    <div class="prompt-label"><i class="fas fa-bug" style="color:#20C997"></i> エラー解析</div>
+                    <div class="prompt-text">このエラーが出ています：<br>[エラー文をコピー]<br>index.js の何行目が原因か、<br>どう修正すればいいか教えて。</div>
+                </div>
+            </div>
+            <div class="tip-banner">
+                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="tip-text">「どんなAPIが必要か」を先に設計してからClaude Codeに依頼すると、意図通りのコードが生成されやすい。設計力が問われる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

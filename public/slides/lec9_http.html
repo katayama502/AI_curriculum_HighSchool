@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .http-col { }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .method-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .method-table th { padding: 10px 14px; font-size: 16px; font-weight: 700; text-align: left; }
+        .method-table th.method-col { background: #212529; color: white; width: 25%; }
+        .method-table th.crud-col { background: #339AF0; color: white; width: 25%; }
+        .method-table th.desc-col { background: #20C997; color: white; }
+        .method-table td { padding: 10px 14px; font-size: 16px; border: 1px solid #DEE2E6; }
+        .method-get { color: #2B8A3E; font-weight: 700; font-family: "Courier New", monospace; }
+        .method-post { color: #1971C2; font-weight: 700; font-family: "Courier New", monospace; }
+        .method-put { color: #E67700; font-weight: 700; font-family: "Courier New", monospace; }
+        .method-del { color: #C92A2A; font-weight: 700; font-family: "Courier New", monospace; }
+        .json-col { }
+        .code-block { background: #1A1A2E; padding: 18px; font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8; }
+        .json-key { color: #20C997; }
+        .json-str { color: #FCC419; }
+        .json-num { color: #F783AC; }
+        .json-bool { color: #339AF0; }
+        .requests-label { font-size: 17px; font-weight: 700; color: white; background: #212529; padding: 8px 14px; margin-top: 12px; }
+        .kw { color: #FFD43B; font-weight: 700; }
+        .fn { color: #F783AC; }
+        .str { color: #FCC419; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>HTTPメソッドとJSON</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="http-col">
+                <div class="section-title">HTTPメソッドの種類</div>
+                <table class="method-table">
+                    <thead>
+                        <tr>
+                            <th class="method-col">メソッド</th>
+                            <th class="crud-col">操作</th>
+                            <th class="desc-col">用途</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="method-get">GET</span></td>
+                            <td>Read</td>
+                            <td>データを取得する</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-post">POST</span></td>
+                            <td>Create</td>
+                            <td>新しいデータを送信する</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-put">PUT</span></td>
+                            <td>Update</td>
+                            <td>既存データを更新する</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-del">DELETE</span></td>
+                            <td>Delete</td>
+                            <td>データを削除する</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="background: white; padding: 12px 16px; font-size: 16px; color: #495057;">
+                    💡 Webアプリでは主に <span style="color:#2B8A3E; font-weight:700;">GET</span>（取得）と <span style="color:#1971C2; font-weight:700;">POST</span>（送信）を使う
+                </div>
+            </div>
+            <div class="json-col">
+                <div class="section-title">JSONデータの形式</div>
+                <div class="code-block">
+                    {<br>
+                    &nbsp;&nbsp;<span class="json-key">"name"</span>: <span class="json-str">"山田太郎"</span>,<br>
+                    &nbsp;&nbsp;<span class="json-key">"age"</span>: <span class="json-num">16</span>,<br>
+                    &nbsp;&nbsp;<span class="json-key">"subjects"</span>: [<span class="json-str">"数学"</span>, <span class="json-str">"英語"</span>],<br>
+                    &nbsp;&nbsp;<span class="json-key">"isStudent"</span>: <span class="json-bool">true</span><br>
+                    }
+                </div>
+                <div class="requests-label">🐍 Pythonでの使い方</div>
+                <div class="code-block">
+                    <span class="kw">import</span> requests<br><br>
+                    <span class="comment" style="color:#6C757D;"># GETリクエスト</span><br>
+                    res = requests.<span class="fn">get</span>(<span class="str">"https://api.example.com/data"</span>)<br>
+                    data = res.<span class="fn">json</span>()  <span class="comment" style="color:#6C757D;"># JSON→辞書に変換</span><br>
+                    <span class="fn">print</span>(data[<span class="str">"name"</span>])
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

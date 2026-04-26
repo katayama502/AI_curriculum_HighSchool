@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .task-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .task-card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .task-card:nth-child(2) { border-top-color: #20C997; }
+        .task-card:nth-child(3) { border-top-color: #f59f00; }
+        .task-card:nth-child(4) { border-top-color: #e64980; }
+        .task-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .task-num { width: 36px; height: 36px; background-color: #339AF0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; }
+        .task-card:nth-child(2) .task-num { background-color: #20C997; }
+        .task-card:nth-child(3) .task-num { background-color: #f59f00; }
+        .task-card:nth-child(4) .task-num { background-color: #e64980; }
+        .task-title { font-size: 20px; font-weight: 500; color: #212529; }
+        .step-list { list-style: none; }
+        .step-list li { font-size: 16px; color: #495057; padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+        .step-list li::before { content: "▶"; color: #339AF0; font-size: 12px; margin-top: 4px; flex-shrink: 0; }
+        .task-card:nth-child(2) .step-list li::before { color: #20C997; }
+        .task-card:nth-child(3) .step-list li::before { color: #f59f00; }
+        .task-card:nth-child(4) .step-list li::before { color: #e64980; }
+        .goal-bar { margin-top: 20px; background: #212529; border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+        .goal-bar span { font-size: 18px; color: #a9dc76; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ハンズオン演習</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="task-grid">
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-num">1</div>
+                        <div class="task-title">Vercelにフロントをデプロイ</div>
+                    </div>
+                    <ul class="step-list">
+                        <li>GitHubに最新コードをpush</li>
+                        <li>Vercel → Add New Project → リポジトリ選択</li>
+                        <li>VITE_API_URL を Railway URLに設定</li>
+                        <li>Deploy → 生成URLを確認</li>
+                    </ul>
+                </div>
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-num">2</div>
+                        <div class="task-title">Railwayにバックエンドをデプロイ</div>
+                    </div>
+                    <ul class="step-list">
+                        <li>Railway → New Project → GitHub連携</li>
+                        <li>Variables: JWT_SECRET / CORS_ORIGIN / NODE_ENV=production</li>
+                        <li>Settings → Generate Domain をクリック</li>
+                        <li>ヘルスチェック URL /api/health を確認</li>
+                    </ul>
+                </div>
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-num">3</div>
+                        <div class="task-title">動作確認・デバッグ</div>
+                    </div>
+                    <ul class="step-list">
+                        <li>ブラウザで公開 URL にアクセス</li>
+                        <li>新規登録・ログイン・CRUD を全て試す</li>
+                        <li>Network タブでエラーが出たら確認</li>
+                        <li>Vercel / Railway のログを確認</li>
+                    </ul>
+                </div>
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-num">4</div>
+                        <div class="task-title">Lighthouse スコアを計測</div>
+                    </div>
+                    <ul class="step-list">
+                        <li>Chrome → DevTools → Lighthouse タブ</li>
+                        <li>Generate Report → Performance スコア確認</li>
+                        <li>LCP / CLS の数値をメモ</li>
+                        <li>改善提案を 1 つ実施してみる</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="goal-bar">
+                <i class="fas fa-trophy" style="color:#ffd866;font-size:22px;"></i>
+                <span>目標: 4つ全てクリアして、公開URLをクラスに共有しよう！</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

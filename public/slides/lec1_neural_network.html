@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 50px; align-items: flex-start; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        p { font-size: 20px; font-weight: 300; line-height: 1.7; color: #495057; margin-bottom: 14px; }
+        .nn-visual { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .nn-diagram { display: flex; align-items: center; justify-content: space-around; gap: 10px; }
+        .layer { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .layer-label { font-size: 15px; color: #adb5bd; margin-bottom: 6px; font-weight: 500; }
+        .neuron { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: white; }
+        .n-input { background: #339AF0; }
+        .n-hidden1 { background: #20C997; }
+        .n-hidden2 { background: #20C997; }
+        .n-output { background: #E67700; }
+        .layer-arrows { display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+        .arrow-line { width: 30px; height: 1px; background: #dee2e6; }
+        .nn-desc { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .nn-desc-item { background: #F8F9FA; border-radius: 6px; padding: 10px 12px; text-align: center; }
+        .nn-desc-item .lbl { font-size: 14px; color: #adb5bd; margin-bottom: 4px; }
+        .nn-desc-item .val { font-size: 17px; font-weight: 500; }
+        .blue { color: #339AF0; }
+        .green { color: #20C997; }
+        .orange { color: #E67700; }
+        .fact-box { background: #212529; color: white; border-radius: 8px; padding: 18px 22px; margin-top: 16px; }
+        .fact-box p { color: #e9ecef; font-size: 19px; margin: 0; }
+        .fact-box strong { color: #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ニューラルネットワークの仕組み</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>人間の脳を模した情報処理の仕組み</h2>
+                <p>人間の脳には約860億個のニューロン（神経細胞）があり、互いに信号を伝えて思考しています。ニューラルネットワークはこの仕組みをコンピュータ上で再現したものです。</p>
+                <p>入力層→隠れ層→出力層の順に情報が流れ、各ニューロンが「どのくらい次のニューロンに信号を送るか」を学習します。</p>
+                <div class="fact-box">
+                    <p>GPT-4のパラメータ数は推定<strong>1兆個以上</strong>。Claudeも同様の規模。これだけ多くの「接続の重み」が学習されているから、高度な理解ができる。</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="nn-visual">
+                    <div class="nn-diagram">
+                        <div class="layer">
+                            <div class="layer-label">入力層</div>
+                            <div class="neuron n-input">入力</div>
+                            <div class="neuron n-input">入力</div>
+                            <div class="neuron n-input">入力</div>
+                        </div>
+                        <div style="font-size:24px;color:#dee2e6;">→</div>
+                        <div class="layer">
+                            <div class="layer-label">隠れ層①</div>
+                            <div class="neuron n-hidden1"></div>
+                            <div class="neuron n-hidden1"></div>
+                            <div class="neuron n-hidden1"></div>
+                            <div class="neuron n-hidden1"></div>
+                        </div>
+                        <div style="font-size:24px;color:#dee2e6;">→</div>
+                        <div class="layer">
+                            <div class="layer-label">隠れ層②</div>
+                            <div class="neuron n-hidden2"></div>
+                            <div class="neuron n-hidden2"></div>
+                            <div class="neuron n-hidden2"></div>
+                            <div class="neuron n-hidden2"></div>
+                        </div>
+                        <div style="font-size:24px;color:#dee2e6;">→</div>
+                        <div class="layer">
+                            <div class="layer-label">出力層</div>
+                            <div class="neuron n-output">犬</div>
+                            <div class="neuron n-output" style="opacity:0.4">猫</div>
+                        </div>
+                    </div>
+                    <div class="nn-desc">
+                        <div class="nn-desc-item">
+                            <div class="lbl">入力層</div>
+                            <div class="val blue">データを受け取る</div>
+                        </div>
+                        <div class="nn-desc-item">
+                            <div class="lbl">隠れ層</div>
+                            <div class="val green">特徴を抽出する</div>
+                        </div>
+                        <div class="nn-desc-item">
+                            <div class="lbl">出力層</div>
+                            <div class="val orange">結果を出力する</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

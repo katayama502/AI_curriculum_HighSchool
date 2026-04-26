@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .milestone-badge {
+            background: linear-gradient(135deg, #339AF0, #20C997);
+            color: white; padding: 12px 24px; font-size: 20px; font-weight: 700;
+            display: inline-block; margin-bottom: 20px;
+        }
+        .review-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px;
+        }
+        .review-item { background: white; padding: 14px 12px; text-align: center; }
+        .review-num { font-size: 14px; color: #20C997; font-weight: 700; margin-bottom: 4px; }
+        .review-icon { font-size: 26px; margin-bottom: 6px; }
+        .review-title { font-size: 15px; font-weight: 700; color: #212529; line-height: 1.3; }
+        .next-phase {
+            background: #212529; color: white; padding: 16px 24px;
+            display: flex; align-items: center; gap: 20px;
+        }
+        .next-label { background: #339AF0; color: white; padding: 8px 16px; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+        .next-text { font-size: 19px; line-height: 1.5; }
+        .next-text .hl { color: #20C997; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>前半10回 振り返り</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="milestone-badge">🎉 前半フェーズ完了！ここまでよく頑張りました！</div>
+            <div class="review-grid">
+                <div class="review-item">
+                    <div class="review-num">第1回</div>
+                    <div class="review-icon">🤖</div>
+                    <div class="review-title">AIとClaude基礎</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第2回</div>
+                    <div class="review-icon">✍️</div>
+                    <div class="review-title">プロンプト入門</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第3回</div>
+                    <div class="review-icon">📚</div>
+                    <div class="review-title">学習への活用</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第4回</div>
+                    <div class="review-icon">🎨</div>
+                    <div class="review-title">創作・表現</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第5回</div>
+                    <div class="review-icon">⚙️</div>
+                    <div class="review-title">高度プロンプト</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第6回</div>
+                    <div class="review-icon">🌐</div>
+                    <div class="review-title">HTML/CSS</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第7回</div>
+                    <div class="review-icon">⚡</div>
+                    <div class="review-title">JavaScript</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第8回</div>
+                    <div class="review-icon">🐍</div>
+                    <div class="review-title">Python基礎</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第9回</div>
+                    <div class="review-icon">🔌</div>
+                    <div class="review-title">API活用</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-num">第10回</div>
+                    <div class="review-icon">📦</div>
+                    <div class="review-title">Git/GitHub</div>
+                </div>
+            </div>
+            <div class="next-phase">
+                <div class="next-label">次のフェーズへ</div>
+                <div class="next-text">
+                    第11回からは <span class="hl">Claude Code</span> を使った本格的な開発へ！<br>
+                    AIと一緒にリアルなWebアプリを作り上げよう
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

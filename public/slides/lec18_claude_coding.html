@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .intro { font-size: 20px; color: #495057; margin-bottom: 22px; }
+        .pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pair-card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; }
+        .card-head { background: #212529; padding: 12px 20px; display: flex; gap: 10px; align-items: center; }
+        .card-num { background: #339AF0; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+        .card-title { color: white; font-size: 17px; font-weight: 600; }
+        .card-body { padding: 14px 18px; }
+        .prompt-box { background: #0D0D0D; color: #a9dc76; font-family: monospace; font-size: 13.5px; padding: 10px 14px; border-radius: 6px; line-height: 1.7; margin-bottom: 10px; }
+        .result-box { background: #e3fafc; border-left: 4px solid #20C997; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #0c7a6d; line-height: 1.5; }
+        .banner { margin-top: 18px; background: linear-gradient(90deg, #339AF0, #20C997); border-radius: 8px; padding: 14px 24px; display: flex; gap: 12px; align-items: center; color: white; font-size: 18px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Codeとペアプログラミング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro">実装で詰まったときや、コードを素早く書きたいときのClaude Code活用術</p>
+            <div class="pair-grid">
+                <div class="pair-card">
+                    <div class="card-head"><div class="card-num">1</div><div class="card-title">コード骨格の生成</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「React+Express+SQLiteで本の<br>読書記録アプリのコード骨格を<br>作って。認証付きで」</div>
+                        <div class="result-box"><i class="fas fa-check"></i> ディレクトリ構成、ファイル一覧、各ファイルの基本コードを一括生成</div>
+                    </div>
+                </div>
+                <div class="pair-card">
+                    <div class="card-head"><div class="card-num">2</div><div class="card-title">エラーの原因調査</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「このエラーが出ています：<br>[エラー全文]<br>コードはこれです：[コード]」</div>
+                        <div class="result-box"><i class="fas fa-check"></i> 原因の特定 + 修正コードを即提示。解説も付いて理解が深まる</div>
+                    </div>
+                </div>
+                <div class="pair-card">
+                    <div class="card-head"><div class="card-num">3</div><div class="card-title">コードレビュー</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「このコードをレビューして。<br>問題点・改善点を教えて。<br>[コード貼り付け]」</div>
+                        <div class="result-box"><i class="fas fa-check"></i> セキュリティ問題・パフォーマンス改善・可読性の改善点を提案</div>
+                    </div>
+                </div>
+                <div class="pair-card">
+                    <div class="card-head"><div class="card-num">4</div><div class="card-title">機能の追加実装</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「既存コードに検索機能を追加して。<br>タイトルと著者で絞り込めるようにしたい。<br>既存コード：[コード]」</div>
+                        <div class="result-box"><i class="fas fa-check"></i> 既存コードを崩さずに新機能を追加するコードを生成</div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">
+                <i class="fas fa-robot" style="font-size:22px"></i>
+                Claude Codeは「コードを書くパートナー」。指示が具体的なほど、高品質なコードが返ってくる！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

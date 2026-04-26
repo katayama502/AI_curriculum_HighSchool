@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        p { font-size: 20px; font-weight: 300; line-height: 1.7; color: #495057; margin-bottom: 14px; }
+        .company-card { background: white; border-radius: 10px; padding: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .company-card h3 { font-size: 22px; font-weight: 700; color: #212529; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+        .company-card h3 i { color: #339AF0; }
+        .stat-row { display: flex; gap: 14px; margin-top: 14px; }
+        .stat { flex: 1; text-align: center; background: #F8F9FA; border-radius: 8px; padding: 14px; }
+        .stat-num { font-size: 28px; font-weight: 700; color: #339AF0; }
+        .stat-label { font-size: 15px; color: #495057; margin-top: 4px; }
+        .highlight-box { background: white; border-left: 5px solid #20C997; padding: 18px 22px; border-radius: 0 8px 8px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .highlight-box p { margin: 0; font-size: 19px; }
+        .highlight-box strong { color: #20C997; }
+        .mission-box { background: #212529; color: white; border-radius: 10px; padding: 22px 26px; margin-top: 16px; }
+        .mission-box h3 { font-size: 20px; color: #20C997; margin-bottom: 10px; }
+        .mission-box p { color: #e9ecef; font-size: 19px; margin: 0; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Anthropicってどんな会社？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>AIの安全研究に特化したアメリカの企業</h2>
+                <div class="company-card">
+                    <h3><i class="fas fa-building"></i> 会社の基本情報</h3>
+                    <p style="margin:0;font-size:19px;font-weight:300;color:#495057;line-height:1.7">
+                        2021年に元OpenAI研究者たちが「AIを安全に開発する」というミッションのもと設立。本社はサンフランシスコ。
+                        Google・Amazon等から多額の投資を受けており、世界トップクラスのAI企業のひとつ。
+                    </p>
+                    <div class="stat-row">
+                        <div class="stat">
+                            <div class="stat-num">2021</div>
+                            <div class="stat-label">設立年</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">SF</div>
+                            <div class="stat-label">拠点（米国）</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">$15B+</div>
+                            <div class="stat-label">評価額（推定）</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Anthropicが大切にしていること</h2>
+                <div class="highlight-box">
+                    <p><strong>Constitutional AI（憲法的AI）</strong><br>
+                    Claudeは「AIの行動指針（憲法）」に従うよう訓練されており、有害なコンテンツを拒否し、誠実に回答するよう設計されています。</p>
+                </div>
+                <div class="highlight-box">
+                    <p><strong>Helpful・Harmless・Honest（3つのH）</strong><br>
+                    「役に立つ・害を与えない・誠実である」の3原則を最重要視。利益よりも安全性を優先する文化がある。</p>
+                </div>
+                <div class="mission-box">
+                    <h3>企業ミッション</h3>
+                    <p>「AIの安全性研究と有益なAIシステムの開発を通じて、<br>人類の長期的な利益のために取り組む」</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

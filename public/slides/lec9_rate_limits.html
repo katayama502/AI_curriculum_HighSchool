@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .concept-card { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border-left: 5px solid #7950F2; margin-bottom: 14px; }
+        .concept-card h3 { font-size: 20px; font-weight: 500; color: #7950F2; margin-bottom: 8px; }
+        .concept-card p { font-size: 17px; color: #495057; line-height: 1.6; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 14px 18px; border-radius: 6px; font-family: monospace; font-size: 16px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #7950F2; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .best-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .best-item { background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: flex; gap: 12px; align-items: center; }
+        .check { color: #2b8a3e; font-size: 20px; }
+        .best-item p { font-size: 17px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>レート制限とAPI利用の注意点</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>レート制限（Rate Limit）とは？</h2>
+                <div class="concept-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> リクエスト数の上限</h3>
+                    <p>多くのAPIは「1分間に60回まで」などリクエスト数に上限があります。超えると429エラーが返ってきます。</p>
+                </div>
+                <div class="concept-card">
+                    <h3><i class="fas fa-clock"></i> 対処法：少し待ってリトライ</h3>
+                    <p>429が返ってきたら一定時間待ってから再送する処理を実装します。</p>
+                </div>
+                <div class="code-block">
+<span class="kw">import</span> time, requests
+
+<span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(<span class="num">10</span>):
+    res = requests.<span class="func">get</span>(url)
+    <span class="kw">if</span> res.status_code == <span class="num">429</span>:
+        <span class="func">print</span>(<span class="str">"制限に達した。1秒待ちます"</span>)
+        time.<span class="func">sleep</span>(<span class="num">1</span>)
+        <span class="kw">continue</span>
+    <span class="cmt"># 正常処理</span>
+    data = res.<span class="func">json</span>()
+    time.<span class="func">sleep</span>(<span class="num">0.1</span>)  <span class="cmt"># 少し間隔を空ける</span>
+                </div>
+            </div>
+            <div class="right">
+                <h2>API利用のベストプラクティス</h2>
+                <ul class="best-list">
+                    <li class="best-item">
+                        <span class="check"><i class="fas fa-check-circle"></i></span>
+                        <p><strong>APIキーは環境変数に保存</strong>してコードに直書きしない</p>
+                    </li>
+                    <li class="best-item">
+                        <span class="check"><i class="fas fa-check-circle"></i></span>
+                        <p><strong>エラーハンドリングを必ず実装</strong>。ネットワーク障害や503に備える</p>
+                    </li>
+                    <li class="best-item">
+                        <span class="check"><i class="fas fa-check-circle"></i></span>
+                        <p><strong>不要なリクエストを減らす</strong>。同じデータは一度だけ取得してキャッシュする</p>
+                    </li>
+                    <li class="best-item">
+                        <span class="check"><i class="fas fa-check-circle"></i></span>
+                        <p><strong>利用規約を確認する</strong>。商用利用禁止・クレジット表記が必要なAPIもある</p>
+                    </li>
+                    <li class="best-item">
+                        <span class="check"><i class="fas fa-check-circle"></i></span>
+                        <p><strong>無料枠の上限に注意</strong>。超えると課金されるAPIは使用量を監視する</p>
+                    </li>
+                    <li class="best-item">
+                        <span class="check"><i class="fas fa-check-circle"></i></span>
+                        <p><strong>レスポンスの構造を確認</strong>してから実装。ドキュメントを読むかClaudeに聞く</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

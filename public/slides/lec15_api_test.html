@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 25px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1.3; }
+        .right { flex: 0.7; display: flex; flex-direction: column; gap: 14px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 18px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 13.5px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .pass { color: #20C997; }
+        .info-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .info-card.teal { border-left-color: #20C997; }
+        .info-title { font-size: 17px; font-weight: 500; margin-bottom: 6px; }
+        .info-body { font-size: 15px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>APIテスト：Supertest で統合テスト</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-network-wired" style="color:#339AF0"></i> Express API を丸ごとテスト</h2>
+                <div class="code-block">
+                    <pre><span class="cm">// npm install --save-dev jest supertest</span>
+<span class="kw">const</span> request = <span class="fn">require</span>(<span class="str">'supertest'</span>);
+<span class="kw">const</span> app     = <span class="fn">require</span>(<span class="str">'./app'</span>); <span class="cm">// Express アプリをexport</span>
+
+<span class="fn">describe</span>(<span class="str">'GET /api/todos'</span>, () =&gt; {
+  <span class="fn">test</span>(<span class="str">'200を返してリストを取得できる'</span>, <span class="kw">async</span> () =&gt; {
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">request</span>(app).<span class="fn">get</span>(<span class="str">'/api/todos'</span>);
+    <span class="fn">expect</span>(res.status).<span class="fn">toBe</span>(200);
+    <span class="fn">expect</span>(Array.isArray(res.body)).<span class="fn">toBe</span>(<span class="kw">true</span>);
+  });
+});
+
+<span class="fn">describe</span>(<span class="str">'POST /api/todos'</span>, () =&gt; {
+  <span class="fn">test</span>(<span class="str">'新しいToDoを作成して201を返す'</span>, <span class="kw">async</span> () =&gt; {
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">request</span>(app)
+      .<span class="fn">post</span>(<span class="str">'/api/todos'</span>)
+      .<span class="fn">send</span>({ text: <span class="str">'テスト用ToDo'</span> });
+    <span class="fn">expect</span>(res.status).<span class="fn">toBe</span>(201);
+    <span class="fn">expect</span>(res.body).<span class="fn">toHaveProperty</span>(<span class="str">'id'</span>);
+  });
+
+  <span class="fn">test</span>(<span class="str">'textが空の場合400を返す'</span>, <span class="kw">async</span> () =&gt; {
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">request</span>(app)
+      .<span class="fn">post</span>(<span class="str">'/api/todos'</span>).<span class="fn">send</span>({ text: <span class="str">''</span> });
+    <span class="fn">expect</span>(res.status).<span class="fn">toBe</span>(400);
+  });
+});</pre>
+                </div>
+            </div>
+            <div class="right">
+                <h2>テストのコツ</h2>
+                <div class="info-card">
+                    <div class="info-title"><i class="fas fa-database" style="color:#339AF0"></i> テスト用DBを分ける</div>
+                    <div class="info-body"><code>NODE_ENV=test</code> 時はインメモリDBを使うと、本番データを汚さずテストできる。</div>
+                </div>
+                <div class="info-card teal">
+                    <div class="info-title"><i class="fas fa-redo" style="color:#20C997"></i> beforeEach/afterEach</div>
+                    <div class="info-body">各テスト前後にDBリセットする処理を書くと、テスト間の干渉を防げる。</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-title"><i class="fas fa-percentage" style="color:#339AF0"></i> カバレッジ確認</div>
+                    <div class="info-body"><code>jest --coverage</code> でどのコードがテストされているか割合で確認できる。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

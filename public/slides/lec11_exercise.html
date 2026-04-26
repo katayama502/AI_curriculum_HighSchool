@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 40px; }
+        .ex-list { flex: 1; }
+        .ex-detail { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .ex-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .ex-header { padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+        .ex-header.a { background: #339AF0; }
+        .ex-header.b { background: #20C997; }
+        .ex-header.c { background: #7950F2; }
+        .ex-header.ch { background: #0D0D0D; }
+        .ex-tag { color: white; font-size: 14px; font-weight: 700; padding: 2px 10px; border-radius: 12px; background: rgba(0,0,0,0.2); }
+        .ex-name { color: white; font-size: 18px; font-weight: 500; }
+        .ex-body { padding: 12px 16px; }
+        .ex-desc { font-size: 16px; font-weight: 300; color: #495057; line-height: 1.6; margin-bottom: 8px; }
+        .ex-goal { font-size: 14px; color: #339AF0; font-weight: 500; }
+        .step-list { margin-top: 8px; }
+        .step-item { font-size: 14px; color: #495057; line-height: 1.8; }
+        .step-item::before { content: "→ "; color: #adb5bd; }
+        .prompt-sample {
+            background: #0D0D0D;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .ps-label { color: #20C997; font-size: 13px; font-weight: 700; margin-bottom: 10px; font-family: "Courier New", monospace; }
+        .ps-step { margin-bottom: 12px; }
+        .ps-num { color: #339AF0; font-size: 13px; font-family: "Courier New", monospace; margin-bottom: 4px; }
+        .ps-text { font-family: "Courier New", monospace; font-size: 13px; color: #E8E8E8; background: rgba(255,255,255,0.05); padding: 8px 10px; border-radius: 4px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="ex-list">
+                <h2>課題一覧</h2>
+                <div class="ex-card">
+                    <div class="ex-header a">
+                        <span class="ex-tag">課題A</span>
+                        <span class="ex-name">自己紹介ページを作る</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-desc">Claude Codeを使って、自分の名前・好きなことが書かれたHTMLページを作成する</div>
+                        <div class="ex-goal">目標: インストール確認 + 初めてのプロジェクト作成</div>
+                        <div class="step-list">
+                            <div class="step-item">my-profileフォルダを作りClaude Codeを起動</div>
+                            <div class="step-item">「自己紹介HTMLを作って」と指示する</div>
+                            <div class="step-item">ブラウザで確認する</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header b">
+                        <span class="ex-tag">課題B</span>
+                        <span class="ex-name">ボタンでメッセージを変える</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-desc">ボタンをクリックするたびにメッセージが変わるインタラクティブなページ</div>
+                        <div class="ex-goal">目標: DOM操作・イベントのおさらい</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header c">
+                        <span class="ex-tag">課題C</span>
+                        <span class="ex-name">シンプルな計算機</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-desc">2つの数を入力して四則演算ができる電卓を作る</div>
+                        <div class="ex-goal">目標: フォーム・JavaScript計算処理の実装</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header ch">
+                        <span class="ex-tag">★発展</span>
+                        <span class="ex-name">ToDoリストアプリ</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-desc">タスク追加・削除・完了チェックができるToDoアプリを作る</div>
+                        <div class="ex-goal">目標: イテレーション開発の実践</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ex-detail">
+                <h2>課題Aのプロンプト例</h2>
+                <div class="prompt-sample">
+                    <div class="ps-label"># ステップごとにClaudeに渡す</div>
+                    <div class="ps-step">
+                        <div class="ps-num">// STEP 1: ファイル構造を作る</div>
+                        <div class="ps-text">index.html, style.css の2ファイルで<br>自己紹介ページの構造を作ってください</div>
+                    </div>
+                    <div class="ps-step">
+                        <div class="ps-num">// STEP 2: 内容を追加する</div>
+                        <div class="ps-text">名前「山田太郎」、趣味「プログラミング」<br>「音楽」をindex.htmlに追加してください</div>
+                    </div>
+                    <div class="ps-step">
+                        <div class="ps-num">// STEP 3: スタイルを改善する</div>
+                        <div class="ps-text">背景色を薄い青にして、名前を大きく、<br>趣味をカード形式で表示してください</div>
+                    </div>
+                    <div class="ps-step">
+                        <div class="ps-num">// STEP 4: コードを理解する</div>
+                        <div class="ps-text">style.cssのflexboxの部分を<br>日本語で説明してください</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

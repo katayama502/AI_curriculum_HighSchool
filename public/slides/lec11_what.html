@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .compare-col { }
+        .compare-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .compare-box { padding: 16px; text-align: center; }
+        .compare-box.chat { background: #E7F5FF; border-top: 4px solid #339AF0; }
+        .compare-box.code { background: #0D0D0D; border-top: 4px solid #20C997; }
+        .compare-icon { font-size: 32px; margin-bottom: 8px; }
+        .compare-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .compare-name.chat { color: #339AF0; }
+        .compare-name.code { color: #20C997; }
+        .compare-desc { font-size: 15px; line-height: 1.6; }
+        .compare-desc.chat { color: #495057; }
+        .compare-desc.code { color: #E8E8E8; }
+        .features-col { }
+        .features-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .feature-item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .feature-icon { font-size: 24px; flex-shrink: 0; }
+        .feature-text { font-size: 18px; color: #212529; }
+        .feature-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .install-box { background: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-family: "Courier New", monospace; font-size: 16px; color: #20C997; }
+        .install-label { color: #6C757D; font-size: 14px; margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Codeとは？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="compare-col">
+                <div class="compare-title">💬 Claude vs 🖥️ Claude Code</div>
+                <div class="compare-row">
+                    <div class="compare-box chat">
+                        <div class="compare-icon">💬</div>
+                        <div class="compare-name chat">Claude（Web）</div>
+                        <div class="compare-desc chat">ブラウザで会話するAI。質問・文章作成・学習に最適</div>
+                    </div>
+                    <div class="compare-box code">
+                        <div class="compare-icon">🖥️</div>
+                        <div class="compare-name code">Claude Code</div>
+                        <div class="compare-desc code">ターミナルで動くAI。コードを直接書いて実行する</div>
+                    </div>
+                </div>
+                <div style="background: #339AF0; color: white; padding: 14px 18px; font-size: 18px; line-height: 1.6;">
+                    <strong>最大の違い：</strong>Claude Codeはファイルを読み書きし、コマンドを実行し、プロジェクト全体を理解してコードを書ける！
+                </div>
+            </div>
+            <div class="features-col">
+                <div class="features-title">🚀 Claude Codeの主な機能</div>
+                <div class="feature-item">
+                    <span class="feature-icon">📁</span>
+                    <div>
+                        <div class="feature-text">ファイルの読み書き・編集</div>
+                        <div class="feature-sub">プロジェクト全体を把握してコードを修正</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <div>
+                        <div class="feature-text">コマンドの実行</div>
+                        <div class="feature-sub">npm install、git commit等を自動で実行</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🐛</span>
+                    <div>
+                        <div class="feature-text">バグの自動修正</div>
+                        <div class="feature-sub">エラーを見て原因を特定・修正まで行う</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🏗️</span>
+                    <div>
+                        <div class="feature-text">プロジェクト全体の構築</div>
+                        <div class="feature-sub">「〇〇を作って」で複数ファイルを生成</div>
+                    </div>
+                </div>
+                <div class="install-box">
+                    <div class="install-label"># インストール</div>
+                    npm install -g @anthropic-ai/claude-code
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

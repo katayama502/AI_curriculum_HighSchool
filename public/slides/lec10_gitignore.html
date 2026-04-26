@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.9; margin-bottom: 14px; }
+        .cmt { color: #868e96; }
+        .file { color: #69db7c; }
+        .danger-box { background: #ffe3e3; border-radius: 8px; padding: 14px 18px; border-left: 5px solid #fa5252; margin-bottom: 14px; }
+        .danger-box h3 { font-size: 19px; font-weight: 700; color: #c92a2a; margin-bottom: 8px; }
+        .danger-box p { font-size: 17px; color: #c92a2a; line-height: 1.5; }
+        .ignore-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .ignore-item { background: white; border-radius: 8px; padding: 11px 16px; display: flex; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .ignore-icon { font-size: 20px; width: 28px; flex-shrink: 0; }
+        .ignore-text h3 { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 2px; }
+        .ignore-text p { font-size: 15px; color: #868e96; font-family: monospace; }
+        .tip-box { background: #f0fdf4; border-radius: 8px; padding: 14px 18px; border: 2px solid #2b8a3e; margin-top: 14px; }
+        .tip-box p { font-size: 17px; color: #2b8a3e; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>.gitignore — 管理しないファイルを指定</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>.gitignore ファイルの書き方</h2>
+                <div class="code-block">
+<span class="cmt"># .gitignore の例</span>
+
+<span class="cmt"># 環境変数ファイル（絶対にGitHubに上げない！）</span>
+<span class="file">.env</span>
+
+<span class="cmt"># Node.jsの依存パッケージ（巨大なので除外）</span>
+<span class="file">node_modules/</span>
+
+<span class="cmt"># Pythonのキャッシュ</span>
+<span class="file">__pycache__/</span>
+<span class="file">*.pyc</span>
+
+<span class="cmt"># macOSのシステムファイル</span>
+<span class="file">.DS_Store</span>
+
+<span class="cmt"># IDEの設定ファイル</span>
+<span class="file">.vscode/</span>
+<span class="file">.idea/</span>
+
+<span class="cmt"># ビルド生成物</span>
+<span class="file">dist/</span>
+<span class="file">build/</span>
+                </div>
+                <div class="tip-box">
+                    <p>💡 <strong>gitignore.io</strong> でプロジェクトに合った.gitignoreを自動生成できます。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>管理不要なファイル一覧</h2>
+                <div class="danger-box">
+                    <h3><i class="fas fa-exclamation-triangle"></i> 絶対に上げてはいけないもの</h3>
+                    <p>.envファイル（APIキー、パスワード）<br>
+                    秘密鍵ファイル（*.pem, *.key）</p>
+                </div>
+                <ul class="ignore-list">
+                    <li class="ignore-item">
+                        <div class="ignore-icon">📦</div>
+                        <div class="ignore-text"><h3>依存パッケージ</h3><p>node_modules/ &nbsp; .venv/</p></div>
+                    </li>
+                    <li class="ignore-item">
+                        <div class="ignore-icon">⚙️</div>
+                        <div class="ignore-text"><h3>IDE・エディタ設定</h3><p>.vscode/ &nbsp; .idea/</p></div>
+                    </li>
+                    <li class="ignore-item">
+                        <div class="ignore-icon">🖥️</div>
+                        <div class="ignore-text"><h3>OSのシステムファイル</h3><p>.DS_Store &nbsp; Thumbs.db</p></div>
+                    </li>
+                    <li class="ignore-item">
+                        <div class="ignore-icon">🔨</div>
+                        <div class="ignore-text"><h3>ビルド成果物</h3><p>dist/ &nbsp; build/ &nbsp; *.min.js</p></div>
+                    </li>
+                    <li class="ignore-item">
+                        <div class="ignore-icon">📝</div>
+                        <div class="ignore-text"><h3>ログ・一時ファイル</h3><p>*.log &nbsp; .tmp/ &nbsp; *.cache</p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

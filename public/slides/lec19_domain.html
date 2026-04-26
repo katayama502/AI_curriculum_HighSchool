@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .intro { font-size: 19px; color: #495057; margin-bottom: 18px; line-height: 1.6; }
+        .domain-flow { display: flex; flex-direction: column; gap: 0; margin-bottom: 16px; }
+        .domain-step { background: white; padding: 14px 18px; border-bottom: 1px solid #f1f3f5; display: flex; gap: 12px; align-items: center; }
+        .domain-step:first-child { border-radius: 8px 8px 0 0; }
+        .domain-step:last-child { border-radius: 0 0 8px 8px; border-bottom: none; }
+        .ds-icon { font-size: 20px; min-width: 24px; }
+        .ds-text { font-size: 16px; color: #495057; }
+        .https-box { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .https-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .https-items { display: flex; flex-direction: column; gap: 10px; }
+        .https-item { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; color: #495057; }
+        .https-dot { width: 10px; height: 10px; background: #20C997; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .url-compare { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+        .url-box { border-radius: 6px; padding: 10px 14px; font-family: monospace; font-size: 15px; font-weight: 600; }
+        .url-bad { background: #ffe3e3; color: #c92a2a; }
+        .url-good { background: #d3f9d8; color: #2b8a3e; }
+        .tip-banner { margin-top: 14px; background: #212529; color: white; padding: 12px 18px; border-radius: 6px; font-size: 16px; display: flex; gap: 10px; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ドメインとHTTPS設定</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-globe" style="color:#339AF0"></i> 独自ドメインを取得する</h2>
+                <p class="intro">Vercelのデフォルトは .vercel.app 。独自ドメインを取れば your-app.com のような短いURLになる。</p>
+                <div class="domain-flow">
+                    <div class="domain-step"><div class="ds-icon" style="color:#339AF0"><i class="fas fa-shopping-cart"></i></div><div class="ds-text"><strong>ドメイン取得：</strong> お名前.com / Xserver Domain / Cloudflare Registrar（安い）</div></div>
+                    <div class="domain-step"><div class="ds-icon" style="color:#20C997"><i class="fas fa-cog"></i></div><div class="ds-text"><strong>DNS設定：</strong> Aレコードまたは CNAMEをVercelのIPに向ける</div></div>
+                    <div class="domain-step"><div class="ds-icon" style="color:#f59f00"><i class="fab fa-vercel"></i></div><div class="ds-text"><strong>Vercelで追加：</strong> Settings → Domains → ドメインを入力</div></div>
+                    <div class="domain-step"><div class="ds-icon" style="color:#339AF0"><i class="fas fa-check-circle"></i></div><div class="ds-text"><strong>SSL自動発行：</strong> Let's Encryptが自動で証明書を発行（無料）</div></div>
+                </div>
+                <div class="tip-banner"><i class="fas fa-lightbulb"></i> 学生は .dev ドメインが格好いい！ 年間1,000〜2,000円程度</div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-lock" style="color:#20C997"></i> HTTPSの重要性</h2>
+                <div class="https-box">
+                    <div class="https-title"><i class="fas fa-shield-alt" style="color:#20C997"></i> なぜHTTPSが必要か？</div>
+                    <div class="https-items">
+                        <div class="https-item"><div class="https-dot"></div>通信の暗号化 → パスワードや個人情報が盗まれない</div>
+                        <div class="https-item"><div class="https-dot"></div>ブラウザの警告なし → Chromeが「安全でない」と表示しない</div>
+                        <div class="https-item"><div class="https-dot"></div>SEO有利 → GoogleはHTTPSサイトを優遇する</div>
+                        <div class="https-item"><div class="https-dot"></div>Service Worker / PWA → HTTPSでのみ動作する機能</div>
+                    </div>
+                    <div class="url-compare">
+                        <div class="url-box url-bad">❌ http://myapp.com — 暗号化なし・警告表示</div>
+                        <div class="url-box url-good">✅ https://myapp.com — 暗号化・安全マーク</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

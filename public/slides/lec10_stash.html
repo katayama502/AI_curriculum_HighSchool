@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 30px; font-weight: 500; color: #212529; margin-bottom: 20px; }
+        .scenario-box {
+            background: white;
+            border-left: 6px solid #495057;
+            padding: 18px 24px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .scenario-title { font-size: 18px; font-weight: 500; color: #495057; margin-bottom: 8px; }
+        .scenario-text { font-size: 20px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .cmd-card {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .cmd-code {
+            background: #212529;
+            color: #f8f9fa;
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            padding: 8px 14px;
+            border-radius: 4px;
+            white-space: nowrap;
+            min-width: 220px;
+        }
+        .cmd-desc { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.5; padding-top: 6px; }
+        .flow-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 14px 20px;
+            text-align: center;
+            border-radius: 6px;
+        }
+        .flow-box.dark { background: #212529; border-color: #212529; }
+        .flow-box .label { font-size: 20px; font-weight: 500; color: #212529; }
+        .flow-box.dark .label { color: white; }
+        .flow-box .sub { font-size: 16px; color: #868e96; margin-top: 4px; }
+        .flow-box.dark .sub { color: #adb5bd; }
+        .arrow-down { text-align: center; font-size: 22px; color: #adb5bd; margin: 6px 0; }
+        .tip-box {
+            background: #f8f9fa;
+            border: 2px solid #20C997;
+            padding: 14px 20px;
+            border-radius: 6px;
+            margin-top: 16px;
+        }
+        .tip-text { font-size: 19px; color: #212529; font-weight: 400; line-height: 1.6; }
+        .tip-text i { color: #20C997; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>git stash — 作業を一時退避する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>こんな時に使う</h2>
+                <div class="scenario-box">
+                    <div class="scenario-title"><i class="fas fa-exclamation-triangle" style="color:#F59F00"></i> 困ったシナリオ</div>
+                    <div class="scenario-text">feature/loginブランチで作業中に、緊急バグ修正を頼まれた。でもコミットできる状態じゃない…どうする？</div>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-code">git stash</div>
+                    <div class="cmd-desc">現在の変更を一時保存して、作業ディレクトリをきれいな状態に戻す</div>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-code">git stash list</div>
+                    <div class="cmd-desc">保存したstashの一覧を確認する</div>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-code">git stash pop</div>
+                    <div class="cmd-desc">最新のstashを取り出して作業を再開する</div>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-code">git stash drop</div>
+                    <div class="cmd-desc">不要になったstashを削除する</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>stashの流れ</h2>
+                <div class="flow-box dark">
+                    <div class="label"><i class="fas fa-code" style="color:#adb5bd"></i> feature/loginで作業中</div>
+                    <div class="sub">変更あり・コミット未完</div>
+                </div>
+                <div class="arrow-down"><i class="fas fa-arrow-down"></i></div>
+                <div class="flow-box" style="border-color:#212529">
+                    <div class="label">git stash</div>
+                    <div class="sub">変更を退避 → 作業ディレクトリがクリーンに</div>
+                </div>
+                <div class="arrow-down"><i class="fas fa-arrow-down"></i></div>
+                <div class="flow-box" style="border-color:#339AF0">
+                    <div class="label" style="color:#339AF0"><i class="fas fa-bug"></i> main に切り替えてバグ修正</div>
+                    <div class="sub">git checkout main → 修正 → commit</div>
+                </div>
+                <div class="arrow-down"><i class="fas fa-arrow-down"></i></div>
+                <div class="flow-box" style="border-color:#20C997">
+                    <div class="label" style="color:#20C997"><i class="fas fa-undo"></i> feature/login に戻る</div>
+                    <div class="sub">git checkout feature/login → git stash pop</div>
+                </div>
+                <div class="tip-box">
+                    <div class="tip-text"><i class="fas fa-lightbulb"></i> <strong>ポイント：</strong>stashは「引き出しの中に一時保管」するイメージ。複数のstashをスタックで管理できます。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

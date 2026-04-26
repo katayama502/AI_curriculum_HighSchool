@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Yu Gothic","Roboto",sans-serif;background:#F8F9FA;color:#212529}
+.slide-container{width:1280px;min-height:720px;background:#F8F9FA}
+.header{padding:40px 60px 0}
+h1{font-size:48px;font-weight:500;color:#339AF0}
+.divider{height:1px;background:#20C997;margin-top:20px}
+.content-area{padding:28px 60px;display:flex;gap:40px}
+.left{flex:1}.right{flex:1}
+h2{font-size:26px;font-weight:500;color:#212529;margin-bottom:16px}
+p{font-size:19px;font-weight:300;color:#495057;line-height:1.7;margin-bottom:14px}
+.role-list{display:flex;flex-direction:column;gap:12px}
+.role-item{background:white;border-radius:8px;padding:16px 18px;box-shadow:0 3px 10px rgba(0,0,0,.05);display:flex;gap:14px;align-items:flex-start}
+.role-icon{font-size:28px;min-width:36px}
+.role-text h3{font-size:19px;font-weight:600;color:#212529;margin-bottom:4px}
+.role-text p{font-size:16px;margin:0;line-height:1.5}
+.role-text .sample{margin-top:6px;background:#e7f5ff;border-radius:4px;padding:6px 10px;font-size:14px;color:#212529;border-left:3px solid #339AF0}
+.effect-box{background:#212529;color:white;border-radius:10px;padding:20px 24px;margin-top:16px}
+.effect-box h3{font-size:20px;color:#20C997;margin-bottom:10px}
+.effect-list{list-style:none;font-size:17px;font-weight:300;color:#e9ecef;line-height:2}
+.effect-list li::before{content:"→ ";color:#339AF0}
+</style></head><body>
+<div class="slide-container">
+<div class="header"><h1>Role（役割）の指定でAIが変わる</h1><div class="divider"></div></div>
+<div class="content-area">
+<div class="left">
+<h2>役割指定で回答の質が劇的に変わる</h2>
+<p>Roleを指定することで、AIは特定の専門家や立場として振る舞い、その分野に特化した回答を出してくれます。</p>
+<div class="role-list">
+<div class="role-item"><div class="role-icon">👩‍🏫</div><div class="role-text"><h3>先生・教師として</h3><p>難しい概念をわかりやすく段階的に説明。例題つき。</p><div class="sample">「あなたは親しみやすい高校の国語教師です」</div></div></div>
+<div class="role-item"><div class="role-icon">🔬</div><div class="role-text"><h3>専門家・研究者として</h3><p>専門的・詳細な情報。技術的な深い回答が得られる。</p><div class="sample">「あなたはAI研究の専門家です」</div></div></div>
+<div class="role-item"><div class="role-icon">🤝</div><div class="role-text"><h3>友人・コーチとして</h3><p>親しみやすいトーン。モチベーションを上げる回答に。</p><div class="sample">「あなたは私の信頼できる勉強仲間です」</div></div></div>
+<div class="role-item"><div class="role-icon">📝</div><div class="role-text"><h3>編集者・ライターとして</h3><p>文章の改善・フィードバックに最適。</p><div class="sample">「あなたは経験豊富な文章の編集者です」</div></div></div>
+</div>
+</div>
+<div class="right">
+<h2>役割なし vs 役割ありの比較</h2>
+<div style="background:white;border-radius:10px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.05);margin-bottom:16px;border-top:3px solid #fa5252">
+<div style="font-size:15px;font-weight:700;color:#fa5252;margin-bottom:8px">❌ 役割なし</div>
+<div style="font-size:16px;color:#495057;background:#F8F9FA;padding:8px 12px;border-radius:5px;margin-bottom:8px">「光合成について教えて」</div>
+<div style="font-size:15px;font-weight:300;color:#495057;line-height:1.6">一般的な教科書レベルの回答。誰向けかわからない中間的な説明になりがち。</div>
+</div>
+<div style="background:white;border-radius:10px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.05);margin-bottom:16px;border-top:3px solid #20C997">
+<div style="font-size:15px;font-weight:700;color:#20C997;margin-bottom:8px">✅ 役割あり</div>
+<div style="font-size:16px;color:#495057;background:#ebfbee;padding:8px 12px;border-radius:5px;margin-bottom:8px">「あなたは中学理科を教える熱心な先生です。光合成について教えて」</div>
+<div style="font-size:15px;font-weight:300;color:#495057;line-height:1.6">中学生向けにわかりやすく、比喩や図解の説明を含む丁寧な回答に！</div>
+</div>
+<div class="effect-box">
+<h3>Role指定の効果</h3>
+<ul class="effect-list">
+<li>回答のトーン・レベルが適切になる</li>
+<li>専門知識を活かした深い回答になる</li>
+<li>対象読者に合わせた表現になる</li>
+</ul>
+</div>
+</div>
+</div></div></body></html>

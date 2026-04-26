@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); border-top: 5px solid #7950F2; }
+        .quiz-num { font-size: 13px; font-weight: 700; color: #7950F2; letter-spacing: 1px; margin-bottom: 8px; }
+        .quiz-q { font-size: 19px; font-weight: 500; color: #212529; line-height: 1.5; margin-bottom: 12px; }
+        .choices { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+        .choice { background: #f8f9fa; border-radius: 5px; padding: 7px 12px; font-size: 16px; color: #495057; }
+        .choice.correct { background: #f3f0ff; color: #5f3dc4; font-weight: 500; border-left: 4px solid #7950F2; }
+        .answer-box { background: #f3f0ff; border-radius: 6px; padding: 8px 12px; font-size: 15px; color: #5f3dc4; }
+        code { background: #212529; color: #da77f2; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ — API活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-card">
+                <div class="quiz-num">Q1</div>
+                <div class="quiz-q">HTTPのGETメソッドの主な用途は？</div>
+                <div class="choices">
+                    <div class="choice correct">A. データの取得（読み取り） ✓</div>
+                    <div class="choice">B. データの作成・送信</div>
+                    <div class="choice">C. データの削除</div>
+                    <div class="choice">D. データの更新</div>
+                </div>
+                <div class="answer-box">GETはデータを読み取るだけ。変更しない。POSTが作成、PUTが更新、DELETEが削除。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q2</div>
+                <div class="quiz-q">HTTPステータスコード 404 の意味は？</div>
+                <div class="choices">
+                    <div class="choice">A. 認証が必要</div>
+                    <div class="choice correct">B. URLが存在しない（Not Found） ✓</div>
+                    <div class="choice">C. サーバーエラー</div>
+                    <div class="choice">D. リクエスト成功</div>
+                </div>
+                <div class="answer-box">404はNot Found。URLが間違っているか、リソースが削除されたときに返ってくる。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q3</div>
+                <div class="quiz-q">APIキーの安全な管理方法として正しいのは？</div>
+                <div class="choices">
+                    <div class="choice">A. ソースコードに直接書く</div>
+                    <div class="choice">B. コメントとして書いておく</div>
+                    <div class="choice correct">C. 環境変数（.envファイル）に保存し、GitHubに公開しない ✓</div>
+                    <div class="choice">D. ファイル名に含める</div>
+                </div>
+                <div class="answer-box">環境変数+.gitignoreが基本。コードに書いてGitHubに上げると第三者に使われる危険がある。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q4</div>
+                <div class="quiz-q">PythonのrequestsでGETリクエストを送る正しいコードは？</div>
+                <div class="choices">
+                    <div class="choice correct">A. <code>requests.get(url, params=params)</code> ✓</div>
+                    <div class="choice">B. <code>requests.fetch(url)</code></div>
+                    <div class="choice">C. <code>http.get(url)</code></div>
+                    <div class="choice">D. <code>urllib.request(url)</code></div>
+                </div>
+                <div class="answer-box">requests.get()がシンプルで最もよく使われる。paramsを渡すとクエリ文字列を自動生成してくれる。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

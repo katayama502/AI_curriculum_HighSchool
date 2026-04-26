@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .flex-demo-row { display: flex; gap: 20px; margin-bottom: 18px; }
+        .demo-col { flex: 1; }
+        .demo-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .demo-title.no-flex { color: #fa5252; }
+        .demo-title.with-flex { color: #20C997; }
+        .demo-visual { background: white; border-radius: 8px; padding: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 10px; min-height: 80px; }
+        .no-flex-items { }
+        .no-flex-items .item { background: #e9ecef; padding: 8px 12px; font-size: 16px; margin-bottom: 6px; border-radius: 4px; }
+        .flex-items { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+        .flex-items .item { background: #339AF0; color: white; padding: 8px 12px; font-size: 16px; border-radius: 4px; flex: 1; text-align: center; }
+        .flex-center-items { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 60px; }
+        .flex-center-items .item { background: #20C997; color: white; padding: 8px 14px; font-size: 16px; border-radius: 4px; }
+        .demo-code { background: #1A1A2E; border-radius: 4px; padding: 8px 12px; font-family: monospace; font-size: 14px; color: #e9ecef; line-height: 1.7; }
+        .dc-prop { color: #74c0fc; }
+        .dc-val { color: #8ce99a; }
+        .cheat-box { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .cb-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 10px; }
+        .flex-props { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .fp-item { background: #F8F9FA; border-radius: 6px; padding: 8px 12px; }
+        .fp-name { font-family: monospace; font-size: 15px; font-weight: 700; color: #845EF7; margin-bottom: 3px; }
+        .fp-desc { font-size: 15px; font-weight: 300; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Flexbox — 横並びレイアウトの基本</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>display: flex を使うと要素を自在に並べられる</h2>
+            <div class="flex-demo-row">
+                <div class="demo-col">
+                    <div class="demo-title no-flex">❌ flexなし（縦に積まれる）</div>
+                    <div class="demo-visual">
+                        <div class="no-flex-items">
+                            <div class="item">ボックス1</div>
+                            <div class="item">ボックス2</div>
+                            <div class="item">ボックス3</div>
+                        </div>
+                    </div>
+                    <div class="demo-code"><span class="dc-prop">div</span> { }</div>
+                </div>
+                <div class="demo-col">
+                    <div class="demo-title with-flex">✅ flex + space-between（横に広がる）</div>
+                    <div class="demo-visual">
+                        <div class="flex-items">
+                            <div class="item">Box1</div>
+                            <div class="item">Box2</div>
+                            <div class="item">Box3</div>
+                        </div>
+                    </div>
+                    <div class="demo-code"><span class="dc-prop">display</span>: <span class="dc-val">flex</span>;<br><span class="dc-prop">justify-content</span>: <span class="dc-val">space-between</span>;</div>
+                </div>
+                <div class="demo-col">
+                    <div class="demo-title with-flex">✅ flex + center（中央寄せ）</div>
+                    <div class="demo-visual">
+                        <div class="flex-center-items">
+                            <div class="item">Box1</div>
+                            <div class="item">Box2</div>
+                        </div>
+                    </div>
+                    <div class="demo-code"><span class="dc-prop">display</span>: <span class="dc-val">flex</span>;<br><span class="dc-prop">justify-content</span>: <span class="dc-val">center</span>;<br><span class="dc-prop">align-items</span>: <span class="dc-val">center</span>;</div>
+                </div>
+            </div>
+            <div class="cheat-box">
+                <div class="cb-title">Flexboxの主要プロパティ</div>
+                <div class="flex-props">
+                    <div class="fp-item"><div class="fp-name">justify-content</div><div class="fp-desc">横方向の揃え方</div></div>
+                    <div class="fp-item"><div class="fp-name">align-items</div><div class="fp-desc">縦方向の揃え方</div></div>
+                    <div class="fp-item"><div class="fp-name">gap</div><div class="fp-desc">要素間のすき間</div></div>
+                    <div class="fp-item"><div class="fp-name">flex: 1</div><div class="fp-desc">均等に幅を分ける</div></div>
+                    <div class="fp-item"><div class="fp-name">flex-wrap</div><div class="fp-desc">折り返し設定</div></div>
+                    <div class="fp-item"><div class="fp-name">flex-direction</div><div class="fp-desc">並ぶ方向(row/column)</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

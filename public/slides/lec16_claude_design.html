@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .intro { font-size: 21px; color: #495057; font-weight: 300; margin-bottom: 24px; }
+        .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .prompt-card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; }
+        .card-header { background: #212529; padding: 12px 20px; display: flex; align-items: center; gap: 10px; }
+        .card-num { background: #339AF0; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+        .card-title { color: white; font-size: 18px; font-weight: 600; }
+        .card-body { padding: 16px 20px; }
+        .prompt-box { background: #0D0D0D; color: #a9dc76; font-family: monospace; font-size: 14px; line-height: 1.7; padding: 12px 16px; border-radius: 6px; margin-bottom: 12px; }
+        .output-box { background: #e3fafc; border-left: 4px solid #20C997; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #0c7a6d; line-height: 1.5; }
+        .footer-tip { margin-top: 18px; background: linear-gradient(90deg, #339AF0, #20C997); border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; gap: 12px; color: white; font-size: 18px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Codeで設計を加速する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro">設計フェーズもClaude Codeに相談すると、アイデアを素早く形にできます。</p>
+            <div class="cards">
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">1</div><div class="card-title">ER図生成</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「読書記録アプリのER図を<br>Mermaid記法で作って。<br>users, books, reviews テーブル」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> users 1→N books, books 1→N reviews のER図コードを即生成</div>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">2</div><div class="card-title">APIエンドポイント設計</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「読書記録アプリのREST API<br>エンドポイント一覧を<br>表形式で作ってください」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> GET/POST/PUT/DELETE の一覧と リクエスト形式を整理して提示</div>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">3</div><div class="card-title">ディレクトリ構成</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「React + Express + SQLite<br>のプロジェクト構成を<br>ベストプラクティスで作って」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> client/ server/ の推奨ディレクトリツリーをコメント付きで生成</div>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="card-header"><div class="card-num">4</div><div class="card-title">ユーザーストーリー整理</div></div>
+                    <div class="card-body">
+                        <div class="prompt-box">「読書記録アプリのユーザー<br>ストーリーを優先度付きで<br>10個考えてください」</div>
+                        <div class="output-box"><i class="fas fa-check-circle"></i> P1〜P3に分類されたストーリーをすぐに生成。設計の出発点に最適</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-tip">
+                <i class="fas fa-robot" style="font-size:24px"></i>
+                設計は「完璧に考えてから」ではなく「Claude Codeと一緒に考えながら」進めよう！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

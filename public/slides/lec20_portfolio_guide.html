@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left-col { flex: 1; }
+        .right-col { flex: 1; }
+        .section-head { font-size: 20px; font-weight: 700; color: #339AF0; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+        .portfolio-item { background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 14px; align-items: flex-start; }
+        .pi-icon { font-size: 22px; color: #339AF0; width: 28px; flex-shrink: 0; margin-top: 2px; }
+        .pi-body {}
+        .pi-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .pi-desc { font-size: 14px; color: #868e96; line-height: 1.5; }
+        .readme-box { background: #0D0D0D; border-radius: 8px; padding: 18px 20px; }
+        .readme-title { font-size: 13px; color: #ffd866; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; font-family: monospace; }
+        .readme-line { font-size: 14px; font-family: monospace; line-height: 2.0; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ポートフォリオの作り方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left-col">
+                <div class="section-head"><i class="fas fa-folder-open"></i> ポートフォリオに載せること</div>
+                <div class="portfolio-item">
+                    <div class="pi-icon"><i class="fas fa-link"></i></div>
+                    <div class="pi-body">
+                        <div class="pi-title">公開URL（必須）</div>
+                        <div class="pi-desc">Vercel でデプロイした URL。動くアプリが一番の証拠</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="pi-icon"><i class="fab fa-github"></i></div>
+                    <div class="pi-body">
+                        <div class="pi-title">GitHub リポジトリ</div>
+                        <div class="pi-desc">コードが見られる状態に。README に丁寧な説明を</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="pi-icon"><i class="fas fa-camera"></i></div>
+                    <div class="pi-body">
+                        <div class="pi-title">スクリーンショット / デモ動画</div>
+                        <div class="pi-desc">見た目が伝わる画像を 3〜5 枚。動画なら 30秒で十分</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="pi-icon"><i class="fas fa-tools"></i></div>
+                    <div class="pi-body">
+                        <div class="pi-title">使用技術スタック</div>
+                        <div class="pi-desc">React / Express / SQLite / Vercel など箇条書きで</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="readme-box">
+                    <div class="readme-title">▌ README.md テンプレート</div>
+                    <div class="readme-line"><span class="c-yellow"># アプリ名</span></div>
+                    <div class="readme-line"><span class="c-gray">## 概要</span></div>
+                    <div class="readme-line"><span class="c-green">〇〇を管理できるWebアプリです。</span></div>
+                    <div class="readme-line"><span class="c-gray">## デモ</span></div>
+                    <div class="readme-line"><span class="c-blue">[🔗 アプリを開く](https://...)</span></div>
+                    <div class="readme-line"><span class="c-gray">## 技術スタック</span></div>
+                    <div class="readme-line"><span class="c-green">- フロントエンド: React + Vite</span></div>
+                    <div class="readme-line"><span class="c-green">- バックエンド: Node.js + Express</span></div>
+                    <div class="readme-line"><span class="c-green">- DB: SQLite / デプロイ: Vercel+Railway</span></div>
+                    <div class="readme-line"><span class="c-gray">## 機能</span></div>
+                    <div class="readme-line"><span class="c-green">- ユーザー認証(JWT) / CRUD</span></div>
+                    <div class="readme-line"><span class="c-gray">## 工夫した点</span></div>
+                    <div class="readme-line"><span class="c-green">〇〇の部分で△△を工夫しました。</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

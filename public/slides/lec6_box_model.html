@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 60px; align-items: flex-start; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .box-diagram { position: relative; margin: 0 auto 16px; width: 360px; }
+        .margin-layer { background: #ffd8a8; border-radius: 8px; padding: 20px; text-align: center; }
+        .border-layer { background: #74c0fc; border-radius: 4px; padding: 16px; }
+        .padding-layer { background: #8ce99a; padding: 16px; }
+        .content-layer { background: white; padding: 20px; font-size: 18px; font-weight: 700; color: #212529; }
+        .layer-label { position: absolute; font-size: 13px; font-weight: 700; }
+        .box-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .legend-item { display: flex; align-items: center; gap: 10px; background: white; padding: 10px 14px; border-radius: 6px; }
+        .li-color { width: 20px; height: 20px; border-radius: 4px; flex-shrink: 0; }
+        .li-text { font-size: 17px; }
+        .li-text strong { color: #212529; }
+        .li-text span { font-size: 15px; color: #868e96; }
+        .code-example { background: #1A1A2E; border-radius: 8px; padding: 16px 18px; font-family: monospace; font-size: 15px; line-height: 1.9; color: #e9ecef; margin-top: 16px; }
+        .ce-prop { color: #74c0fc; }
+        .ce-val { color: #8ce99a; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CSSボックスモデル — 余白を使いこなす</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>すべての要素は「箱」でできている</h2>
+                <div class="box-diagram">
+                    <div class="margin-layer">
+                        <div style="font-size:13px;font-weight:700;color:#864d0b;text-align:left;margin-bottom:6px;">MARGIN（外側の余白）</div>
+                        <div class="border-layer">
+                            <div style="font-size:13px;font-weight:700;color:#1864ab;text-align:left;margin-bottom:6px;">BORDER（枠線）</div>
+                            <div class="padding-layer">
+                                <div style="font-size:13px;font-weight:700;color:#2b8a3e;text-align:left;margin-bottom:6px;">PADDING（内側の余白）</div>
+                                <div class="content-layer">
+                                    CONTENT<br><span style="font-size:14px;font-weight:300;color:#868e96;">テキスト・画像など</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-legend">
+                    <div class="legend-item"><div class="li-color" style="background:#ffd8a8;"></div><div class="li-text"><strong>margin</strong> <span>他要素との距離</span></div></div>
+                    <div class="legend-item"><div class="li-color" style="background:#74c0fc;"></div><div class="li-text"><strong>border</strong> <span>要素の境界線</span></div></div>
+                    <div class="legend-item"><div class="li-color" style="background:#8ce99a;"></div><div class="li-text"><strong>padding</strong> <span>内容との距離</span></div></div>
+                    <div class="legend-item"><div class="li-color" style="background:white;border:1px solid #dee2e6;"></div><div class="li-text"><strong>content</strong> <span>実際の内容</span></div></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>実際のCSSコード</h2>
+                <div class="code-example">
+.card {<br>
+&nbsp;&nbsp;<span class="ce-prop">width</span>: <span class="ce-val">300px</span>;<br>
+&nbsp;&nbsp;<span class="ce-prop">padding</span>: <span class="ce-val">20px</span>;  <span style="color:#868e96;">← 内側余白</span><br>
+&nbsp;&nbsp;<span class="ce-prop">margin</span>: <span class="ce-val">16px 0</span>;  <span style="color:#868e96;">← 外側余白</span><br>
+&nbsp;&nbsp;<span class="ce-prop">border</span>: <span class="ce-val">2px solid #dee2e6</span>;<br>
+&nbsp;&nbsp;<span class="ce-prop">border-radius</span>: <span class="ce-val">8px</span>;  <span style="color:#868e96;">← 角丸</span><br>
+&nbsp;&nbsp;<span class="ce-prop">background-color</span>: <span class="ce-val">white</span>;<br>
+}
+                </div>
+                <div style="background:#e7f5ff;border-radius:8px;padding:14px 18px;margin-top:14px;">
+                    <div style="font-size:18px;font-weight:500;color:#212529;">💡 paddingとmarginの違いが分からなくなったら、Claudeに「paddingとmarginの違いを図で説明して」と聞いてみよう！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

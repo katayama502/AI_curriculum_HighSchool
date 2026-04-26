@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+        .wf-step { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .wf-header { padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+        .wf-num { color: white; font-size: 14px; font-weight: 700; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .wf-title-text { font-size: 17px; font-weight: 500; color: white; }
+        .wf-body { padding: 10px 16px; }
+        .wf-cmd { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 6px 10px; border-radius: 4px; color: #212529; margin-bottom: 6px; display: block; }
+        .wf-desc { font-size: 14px; font-weight: 300; color: #495057; line-height: 1.4; }
+        .commit-tips { background: #0D0D0D; border-radius: 8px; padding: 16px 20px; }
+        .ct-title { color: #20C997; font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+        .ct-row { display: flex; gap: 14px; }
+        .ct-col { flex: 1; }
+        .ct-label { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+        .ct-bad { color: #ff6b6b; }
+        .ct-good { color: #51CF66; }
+        .ct-item { font-family: "Courier New", monospace; font-size: 13px; padding: 4px 8px; border-radius: 3px; margin-bottom: 6px; }
+        .ct-item.bad { background: rgba(250,82,82,0.15); color: #ff6b6b; }
+        .ct-item.good { background: rgba(81,207,102,0.15); color: #51CF66; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code × Git — 実践ワークフロー</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>AIと開発する時のGitフロー</h2>
+            <div class="workflow-grid">
+                <div class="wf-step">
+                    <div class="wf-header" style="background:#1864AB"><div class="wf-num" style="background:rgba(255,255,255,0.2)">1</div><div class="wf-title-text">機能ブランチを作る</div></div>
+                    <div class="wf-body">
+                        <code class="wf-cmd">git checkout -b feature/dark-mode</code>
+                        <div class="wf-desc">mainブランチを守るために、機能ごとにブランチを切る</div>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-header" style="background:#0D0D0D"><div class="wf-num" style="background:#20C997;color:#0D0D0D">2</div><div class="wf-title-text">Claude Codeで実装する</div></div>
+                    <div class="wf-body">
+                        <code class="wf-cmd">claude</code>
+                        <div class="wf-desc">AIと対話しながら機能を実装。コミットはAIに頼んでもOK</div>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-header" style="background:#1A5E37"><div class="wf-num" style="background:rgba(255,255,255,0.2)">3</div><div class="wf-title-text">こまめにcommitする</div></div>
+                    <div class="wf-body">
+                        <code class="wf-cmd">git add . && git commit -m "feat: ダークモード追加"</code>
+                        <div class="wf-desc">小さな単位でcommit。「git add .」の前にgit statusで確認</div>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-header" style="background:#4A3284"><div class="wf-num" style="background:rgba(255,255,255,0.2)">4</div><div class="wf-title-text">mainにマージする</div></div>
+                    <div class="wf-body">
+                        <code class="wf-cmd">git checkout main && git merge feature/dark-mode</code>
+                        <div class="wf-desc">テストが通ったらmainにマージ。GitHubならPRを使う</div>
+                    </div>
+                </div>
+            </div>
+            <div class="commit-tips">
+                <div class="ct-title"><i class="fas fa-comment-alt"></i> 良いcommitメッセージの書き方</div>
+                <div class="ct-row">
+                    <div class="ct-col">
+                        <div class="ct-label ct-bad">✗ 悪い例</div>
+                        <div class="ct-item bad">修正</div>
+                        <div class="ct-item bad">いろいろ変えた</div>
+                        <div class="ct-item bad">test</div>
+                        <div class="ct-item bad">作業中</div>
+                    </div>
+                    <div class="ct-col">
+                        <div class="ct-label ct-good">✓ 良い例（何をしたか一目瞭然）</div>
+                        <div class="ct-item good">feat: ダークモード切り替え機能を追加</div>
+                        <div class="ct-item good">fix: 大阪の緯度経度が間違っていたのを修正</div>
+                        <div class="ct-item good">style: ヘッダーのレスポンシブ対応</div>
+                        <div class="ct-item good">docs: README.mdにインストール手順を追記</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

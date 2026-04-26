@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .test-concept { background: white; border-left: 6px solid #339AF0; padding: 14px 20px; border-radius: 6px; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .tc-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .test-types { display: flex; flex-direction: column; gap: 10px; }
+        .tt-card { background: white; border: 2px solid #dee2e6; padding: 12px 16px; border-radius: 6px; display: flex; gap: 14px; }
+        .tt-icon { font-size: 24px; flex-shrink: 0; }
+        .tt-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .tt-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.4; }
+        .code-box { background: #0D0D0D; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+        .cb-header { padding: 8px 14px; font-size: 13px; font-weight: 700; background: #1864AB; color: white; }
+        .cb-body { padding: 12px 16px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.8; }
+        .cc { color: #20C997; }
+        .cf { color: #ffd43b; }
+        .cs { color: #E599F7; }
+        .cn { color: #f8f9fa; }
+        .cg { color: #868e96; }
+        .manual-checklist { background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 14px 18px; }
+        .mc-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 10px; }
+        .mc-item { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.9; }
+        .mc-item i { color: #339AF0; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>テストをAIと書く</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>テストとは何か？</h2>
+                <div class="test-concept">
+                    <div class="tc-text">テストとは「コードが正しく動くことを自動で確認するプログラム」です。バグが入り込んだときに気づけます。</div>
+                </div>
+                <div class="test-types">
+                    <div class="tt-card">
+                        <span class="tt-icon">🔬</span>
+                        <div>
+                            <div class="tt-title">ユニットテスト</div>
+                            <div class="tt-desc">関数1つの動作を確認。例：「getTemp()は数値を返すか」</div>
+                        </div>
+                    </div>
+                    <div class="tt-card">
+                        <span class="tt-icon">🔗</span>
+                        <div>
+                            <div class="tt-title">結合テスト</div>
+                            <div class="tt-desc">複数の部品を組み合わせた動作を確認</div>
+                        </div>
+                    </div>
+                    <div class="tt-card">
+                        <span class="tt-icon">🖥️</span>
+                        <div>
+                            <div class="tt-title">手動テスト</div>
+                            <div class="tt-desc">ブラウザで実際に操作して確認する。高校生のうちはこれが中心</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>AIにテストを書いてもらう</h2>
+                <div class="code-box">
+                    <div class="cb-header">テスト生成プロンプトと結果例</div>
+                    <div class="cb-body">
+                        <div class="cg">// プロンプト: calcTemperature()の</div>
+                        <div class="cg">// テストをJestで書いて</div>
+                        <br>
+                        <div><span class="cc">import </span><span class="cn">{ calcTemperature } from './utils';</span></div>
+                        <br>
+                        <div><span class="cf">describe</span><span class="cn">(</span><span class="cs">'calcTemperature'</span><span class="cn">, () => {</span></div>
+                        <div><span class="cf">  test</span><span class="cn">(</span><span class="cs">'正常値: 25度を変換'</span><span class="cn">, () => {</span></div>
+                        <div><span class="cn">    expect(calcTemperature(25)).toBe(25);</span></div>
+                        <div><span class="cn">  });</span></div>
+                        <div><span class="cf">  test</span><span class="cn">(</span><span class="cs">'null入力でエラー'</span><span class="cn">, () => {</span></div>
+                        <div><span class="cn">    expect(() => calcTemperature(null))</span></div>
+                        <div><span class="cn">      .toThrow(</span><span class="cs">'Invalid temperature'</span><span class="cn">);</span></div>
+                        <div><span class="cn">  });</span></div>
+                        <div><span class="cn">});</span></div>
+                    </div>
+                </div>
+                <div class="manual-checklist">
+                    <div class="mc-title"><i class="fas fa-clipboard-check" style="color:#339AF0;margin-right:8px"></i>手動テストチェックリスト</div>
+                    <div class="mc-item"><i class="fas fa-square"></i>正常なデータで正しく動くか</div>
+                    <div class="mc-item"><i class="fas fa-square"></i>存在しない都市を入力したらどうなるか</div>
+                    <div class="mc-item"><i class="fas fa-square"></i>インターネットが切れたらどうなるか</div>
+                    <div class="mc-item"><i class="fas fa-square"></i>スマホの画面で見てもOKか</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

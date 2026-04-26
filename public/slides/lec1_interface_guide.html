@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .ui-mockup { background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .mock-titlebar { background: #e9ecef; padding: 10px 16px; display: flex; gap: 6px; align-items: center; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .d1 { background: #FF5F57; }
+        .d2 { background: #FEBC2E; }
+        .d3 { background: #28C840; }
+        .mock-url { background: white; border-radius: 4px; padding: 4px 12px; font-size: 13px; color: #495057; margin-left: 10px; flex: 1; }
+        .mock-body { display: flex; height: 320px; }
+        .mock-sidebar { width: 180px; background: #1a1a2e; padding: 16px; }
+        .mock-sidebar-item { padding: 8px 10px; border-radius: 6px; color: #adb5bd; font-size: 13px; margin-bottom: 4px; cursor: pointer; }
+        .mock-sidebar-item.active { background: rgba(51,154,240,0.2); color: #339AF0; }
+        .mock-main { flex: 1; display: flex; flex-direction: column; }
+        .mock-messages { flex: 1; padding: 16px; }
+        .msg { margin-bottom: 12px; }
+        .msg-user { text-align: right; }
+        .msg-bubble { display: inline-block; padding: 8px 14px; border-radius: 16px; font-size: 13px; max-width: 70%; text-align: left; }
+        .msg-user .msg-bubble { background: #339AF0; color: white; }
+        .msg-ai .msg-bubble { background: #f1f3f5; color: #212529; }
+        .mock-input { border-top: 1px solid #e9ecef; padding: 12px; display: flex; gap: 8px; }
+        .mock-input-box { flex: 1; border: 1px solid #dee2e6; border-radius: 20px; padding: 8px 14px; font-size: 13px; color: #495057; }
+        .mock-send { background: #339AF0; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+        .guide-list { margin-top: 0; }
+        .guide-item { background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+        .guide-num { background: #339AF0; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+        .guide-text h3 { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .guide-text p { font-size: 16px; font-weight: 300; color: #495057; margin: 0; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeの画面の使い方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>claude.ai の画面構成</h2>
+                <div class="ui-mockup">
+                    <div class="mock-titlebar">
+                        <div class="dot d1"></div>
+                        <div class="dot d2"></div>
+                        <div class="dot d3"></div>
+                        <div class="mock-url">claude.ai</div>
+                    </div>
+                    <div class="mock-body">
+                        <div class="mock-sidebar">
+                            <div class="mock-sidebar-item" style="color:#339AF0;font-weight:600;margin-bottom:12px;">+ 新しい会話</div>
+                            <div class="mock-sidebar-item active">📝 今日の会話</div>
+                            <div class="mock-sidebar-item">📝 英語の質問</div>
+                            <div class="mock-sidebar-item">📝 数学の解説</div>
+                            <div class="mock-sidebar-item">📝 プログラム...</div>
+                        </div>
+                        <div class="mock-main">
+                            <div class="mock-messages">
+                                <div class="msg msg-user">
+                                    <div class="msg-bubble">量子コンピュータについて教えて</div>
+                                </div>
+                                <div class="msg msg-ai">
+                                    <div class="msg-bubble">量子コンピュータは、従来のコンピュータとは異なる原理で動く...</div>
+                                </div>
+                            </div>
+                            <div class="mock-input">
+                                <div class="mock-input-box">メッセージを入力...</div>
+                                <div class="mock-send"><i class="fas fa-arrow-up" style="font-size:12px"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>基本操作ガイド</h2>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <div class="guide-num">1</div>
+                        <div class="guide-text">
+                            <h3>新しい会話を始める</h3>
+                            <p>左上の「＋新しい会話」をクリック。話題が変わるときは新しい会話を作ろう</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-num">2</div>
+                        <div class="guide-text">
+                            <h3>メッセージを送る</h3>
+                            <p>下の入力欄にテキストを入力してEnterキーか→ボタンで送信</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-num">3</div>
+                        <div class="guide-text">
+                            <h3>会話履歴を見る</h3>
+                            <p>左サイドバーで過去の会話を一覧表示・再開できる</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-num">4</div>
+                        <div class="guide-text">
+                            <h3>ファイルを添付する</h3>
+                            <p>📎ボタンでPDF・画像・テキストを添付して質問できる</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

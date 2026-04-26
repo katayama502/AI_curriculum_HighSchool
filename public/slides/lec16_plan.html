@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .step-num { width: 32px; height: 32px; background: #E67700; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .timeline-item { background: white; padding: 12px 18px; margin-top: 8px; display: flex; align-items: flex-start; gap: 14px; }
+        .week-badge { background: #E67700; color: white; padding: 4px 10px; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+        .week-content { font-size: 16px; color: #212529; }
+        .week-tasks { font-size: 13px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>プロジェクト計画の立て方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">📅 計画の5ステップ</div>
+                <div class="item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="item-text">アイデアを決める</div>
+                        <div class="item-sub">「何を作るか」を1文で言えるようにする</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="item-text">機能リストを作る</div>
+                        <div class="item-sub">Must/Should/Couldに分類する</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="item-text">技術スタックを決める</div>
+                        <div class="item-sub">React？Express？どのDBを使うか</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="item-text">週ごとのマイルストーンを設定</div>
+                        <div class="item-sub">「何週目までに何を完成させるか」</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">5</div>
+                    <div>
+                        <div class="item-text">Claude Codeで開発スタート！</div>
+                        <div class="item-sub">計画をClaudeに渡して実装を依頼</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">📊 スケジュール例（4週間）</div>
+                <div class="timeline-item">
+                    <div class="week-badge">Week 1</div>
+                    <div>
+                        <div class="week-content">設計・環境構築</div>
+                        <div class="week-tasks">要件定義・DB設計・プロジェクト初期化</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="week-badge">Week 2</div>
+                    <div>
+                        <div class="week-content">バックエンド実装</div>
+                        <div class="week-tasks">API作成・DB接続・認証機能</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="week-badge">Week 3</div>
+                    <div>
+                        <div class="week-content">フロントエンド実装</div>
+                        <div class="week-tasks">UI作成・API連携・レスポンシブ対応</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="week-badge">Week 4</div>
+                    <div>
+                        <div class="week-content">テスト・デプロイ・発表</div>
+                        <div class="week-tasks">バグ修正・Vercelデプロイ・発表準備</div>
+                    </div>
+                </div>
+                <div class="green-box">✅ 計画をClaudeに渡して「この計画で開発して」と頼もう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .iteration-flow { display: flex; align-items: center; gap: 0; margin-bottom: 24px; justify-content: center; }
+        .it-step { background: white; border-radius: 8px; padding: 20px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; width: 220px; }
+        .it-step:nth-child(1) { border-top: 4px solid #339AF0; }
+        .it-step:nth-child(3) { border-top: 4px solid #F59F00; }
+        .it-step:nth-child(5) { border-top: 4px solid #20C997; }
+        .it-step:nth-child(7) { border-top: 4px solid #845EF7; }
+        .it-icon { font-size: 36px; margin-bottom: 10px; }
+        .it-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .it-desc { font-size: 16px; font-weight: 300; color: #868e96; }
+        .it-arrow { font-size: 28px; color: #adb5bd; margin: 0 8px; }
+        .example-row { display: flex; gap: 20px; }
+        .ver-box { flex: 1; background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .ver-label { font-size: 14px; font-weight: 700; color: #868e96; margin-bottom: 8px; }
+        .ver-prompt { font-size: 17px; font-weight: 300; color: #495057; font-style: italic; line-height: 1.5; background: #F8F9FA; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; }
+        .ver-result { font-size: 16px; color: #fa5252; }
+        .ver-result.ok { color: #20C997; font-weight: 500; }
+        .ver-box:last-child { border-left: 4px solid #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>「改善サイクル」でプロンプトを育てる</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>プロンプトはv1から始めて徐々に改善するもの</h2>
+            <div class="iteration-flow">
+                <div class="it-step">
+                    <div class="it-icon">✏️</div>
+                    <div class="it-title">① 書く</div>
+                    <div class="it-desc">思いつくまま最初のプロンプトを書く</div>
+                </div>
+                <div class="it-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="it-step">
+                    <div class="it-icon">🔍</div>
+                    <div class="it-title">② 評価する</div>
+                    <div class="it-desc">「期待と何が違う？」を具体的に言語化</div>
+                </div>
+                <div class="it-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="it-step">
+                    <div class="it-icon">🔧</div>
+                    <div class="it-title">③ 修正する</div>
+                    <div class="it-desc">1か所だけ変えて差分を確認</div>
+                </div>
+                <div class="it-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="it-step">
+                    <div class="it-icon">✅</div>
+                    <div class="it-title">④ 完成</div>
+                    <div class="it-desc">納得いくまで繰り返す</div>
+                </div>
+            </div>
+            <div class="example-row">
+                <div class="ver-box">
+                    <div class="ver-label">v1（最初）</div>
+                    <div class="ver-prompt">「環境問題についてまとめて」</div>
+                    <div class="ver-result">→ 長すぎる・一般的すぎる</div>
+                </div>
+                <div class="ver-box">
+                    <div class="ver-label">v2（形式追加）</div>
+                    <div class="ver-prompt">「環境問題について、3つのポイントを箇条書きで」</div>
+                    <div class="ver-result">→ 短くなったが深さが足りない</div>
+                </div>
+                <div class="ver-box">
+                    <div class="ver-label">v3（対象・深さ追加）</div>
+                    <div class="ver-prompt">「高校生向けに、日本の環境問題3つを、各問題の原因・現状・自分にできることの3点で」</div>
+                    <div class="ver-result ok">→ 目的通りの出力！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

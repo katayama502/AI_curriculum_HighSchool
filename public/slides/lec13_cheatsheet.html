@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 22px; padding-left: 60px; padding-right: 60px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .panel { background-color: #0D0D0D; border-radius: 8px; padding: 18px 20px; }
+        .panel-title { font-size: 17px; font-weight: 500; color: #20C997; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .code-line { font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .banner { margin-top: 18px; background-color: #212529; border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .banner-text { font-size: 20px; font-weight: 500; color: white; }
+        .banner-badge { background-color: #339AF0; color: white; padding: 6px 18px; border-radius: 30px; font-size: 16px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>React 基礎 チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="grid">
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-cube"></i> コンポーネント & JSX</div>
+                    <div class="code-line"><span class="kw">function</span> <span class="fn">Card</span>({ title, body }) {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="kw">return</span> &lt;div className=<span class="str">"card"</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;{title}&lt;/h2&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{body}&lt;/p&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&lt;/div&gt;;</div>
+                    <div class="code-line">}</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">// 使うとき</span></div>
+                    <div class="code-line">&lt;<span class="fn">Card</span> title=<span class="str">"天気"</span> body=<span class="str">"晴れ"</span> /&gt;</div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-exchange-alt"></i> useState / イベント</div>
+                    <div class="code-line"><span class="kw">const</span> [count, setCount] = <span class="fn">useState</span>(0);</div>
+                    <div class="code-line"><span class="kw">const</span> [text, setText]   = <span class="fn">useState</span>(<span class="str">""</span>);</div>
+                    <div class="code-line" style="margin-top:8px;">&lt;button <span class="kw">onClick</span>={() =&gt; <span class="fn">setCount</span>(count+1)}&gt;</div>
+                    <div class="code-line">&lt;input <span class="kw">value</span>={text} <span class="kw">onChange</span>={e =&gt; <span class="fn">setText</span>(e.target.value)}/&gt;</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">// 条件表示</span></div>
+                    <div class="code-line">{count &gt; 0 &amp;&amp; &lt;<span class="fn">Badge</span> /&gt;}</div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-list"></i> リスト描画</div>
+                    <div class="code-line">{items.<span class="fn">map</span>(item =&gt; (</div>
+                    <div class="code-line">&nbsp;&nbsp;&lt;li <span class="kw">key</span>={item.id}&gt;{item.name}&lt;/li&gt;</div>
+                    <div class="code-line">))}</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">// keyは必ず一意のIDを使うこと</span></div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">// 条件付き</span></div>
+                    <div class="code-line">{isLoading ? &lt;<span class="fn">Spinner</span>/&gt; : &lt;<span class="fn">List</span>/&gt;}</div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-cloud"></i> useEffect / API取得</div>
+                    <div class="code-line"><span class="fn">useEffect</span>(() =&gt; {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="kw">async function</span> <span class="fn">load</span>() {</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> r = <span class="kw">await</span> <span class="fn">fetch</span>(URL);</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">setData</span>(<span class="kw">await</span> r.<span class="fn">json</span>());</div>
+                    <div class="code-line">&nbsp;&nbsp;}</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="fn">load</span>();</div>
+                    <div class="code-line">}, []); <span class="cm">// []= マウント時1回だけ</span></div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-text"><i class="fas fa-rocket" style="color:#20C997; margin-right:10px;"></i> 第13回：React基礎 完了！</div>
+                <div class="banner-badge">次回：Express でバックエンド開発 →</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

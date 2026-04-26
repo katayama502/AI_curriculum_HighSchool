@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .patterns-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+        .pattern-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .pc-header { padding: 10px 16px; }
+        .pc-name { font-size: 15px; font-weight: 700; color: white; }
+        .pc-body { padding: 12px 14px; }
+        .pc-use { font-size: 13px; color: #6c757d; margin-bottom: 8px; font-weight: 400; }
+        .pc-prompt { font-family: "Courier New", monospace; font-size: 12px; background: #f1f3f5; padding: 8px 10px; border-radius: 4px; color: #212529; line-height: 1.7; }
+        .pc-effect { font-size: 13px; color: #495057; margin-top: 8px; font-weight: 400; }
+        .pc-effect i { color: #20C997; margin-right: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>発展プロンプトパターン集</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>実務でよく使うパターン</h2>
+            <div class="patterns-grid">
+                <div class="pattern-card">
+                    <div class="pc-header" style="background:#1864AB"><div class="pc-name">🔎 コード説明パターン</div></div>
+                    <div class="pc-body">
+                        <div class="pc-use">使うとき：コードの意味がわからない時</div>
+                        <div class="pc-prompt">script.jsの30〜45行目のコードを、高校生にわかるように日本語で説明してください。特に非同期処理の部分を重点的に。</div>
+                        <div class="pc-effect"><i class="fas fa-arrow-right"></i>コードを理解して自分のものにできる</div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pc-header" style="background:#1A5E37"><div class="pc-name">🔄 リファクタリングパターン</div></div>
+                    <div class="pc-body">
+                        <div class="pc-use">使うとき：コードをきれいにしたい時</div>
+                        <div class="pc-prompt">script.jsのgetWeather関数をリファクタリングしてください。エラーハンドリングを追加し、コードの重複を減らしてください。動作は変えないこと��</div>
+                        <div class="pc-effect"><i class="fas fa-arrow-right"></i>読みやすく保守しやすいコードになる</div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pc-header" style="background:#4A3284"><div class="pc-name">🐛 デバッグ依頼パターン</div></div>
+                    <div class="pc-body">
+                        <div class="pc-use">使うとき：エラーが出ている時</div>
+                        <div class="pc-prompt">以下のエラーが出ています。原因を特定して修正してください。[エラー文をペースト] やろうとしていたこと：[説明]</div>
+                        <div class="pc-effect"><i class="fas fa-arrow-right"></i>バグを素早く特定・修正できる</div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pc-header" style="background:#212529"><div class="pc-name">⚡ 機能追加パターン</div></div>
+                    <div class="pc-body">
+                        <div class="pc-use">使うとき：新機能を実装する時</div>
+                        <div class="pc-prompt">既存のindex.html・style.css・script.jsを修正して、[機能名]を追加してください。変更するファイルと変更内容を先に教えてから実装してください。</div>
+                        <div class="pc-effect"><i class="fas fa-arrow-right"></i>影響範囲を把握してから実装でき��</div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pc-header" style="background:#5C3317"><div class="pc-name">🧪 テスト生成パターン</div></div>
+                    <div class="pc-body">
+                        <div class="pc-use">使うとき：テストケースを考える時</div>
+                        <div class="pc-prompt">getWeather()関数のテストケースを5つ考えてください。正常系・異常系・エッジケースを含めてください。</div>
+                        <div class="pc-effect"><i class="fas fa-arrow-right"></i>見落としがちなケースを発見できる</div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pc-header" style="background:#5C1F1F"><div class="pc-name">📐 設計相談パターン</div></div>
+                    <div class="pc-body">
+                        <div class="pc-use">使うとき：実装方法に迷った時</div>
+                        <div class="pc-prompt">[機能]を実装するのに、AとBのどちらのアプローチが良いですか？それぞれのメリット・デメリットを教えてください。</div>
+                        <div class="pc-effect"><i class="fas fa-arrow-right"></i>最適な設計判断ができる</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

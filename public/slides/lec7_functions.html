@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-win { background: #1A1A2E; border-radius: 8px; padding: 16px 18px; font-family: monospace; font-size: 15px; line-height: 1.9; color: #e9ecef; margin-bottom: 14px; }
+        .ck { color: #74c0fc; } .cv { color: #ffd43b; } .cs { color: #8ce99a; } .cn { color: #ff8787; } .cc { color: #868e96; }
+        .anatomy { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .an-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .an-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
+        .an-badge { padding: 3px 12px; border-radius: 12px; font-size: 13px; font-weight: 700; min-width: 80px; text-align: center; flex-shrink: 0; }
+        .an-badge.kw { background: #e7f5ff; color: #1c7ed6; }
+        .an-badge.name { background: #fff9db; color: #e67700; }
+        .an-badge.param { background: #ebfbee; color: #2f9e44; }
+        .an-badge.ret { background: #f3f0ff; color: #6741d9; }
+        .an-text { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .arrow-fn { background: #ebfbee; border-radius: 8px; padding: 14px 18px; border-left: 4px solid #20C997; }
+        .af-title { font-size: 18px; font-weight: 700; color: #2f9e44; margin-bottom: 8px; }
+        .af-code { font-family: monospace; font-size: 15px; color: #212529; line-height: 1.7; }
+        .af-code .ck { color: #339AF0; }
+        .af-code .cv { color: #e67700; }
+        .af-code .cs { color: #2f9e44; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>関数 — 処理を「部品」にする</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>関数の宣言と呼び出し</h2>
+                <div class="code-win">
+<span class="cc">// 関数の定義</span><br>
+<span class="ck">function</span> <span class="cv">greet</span>(<span class="cv">name</span>) {<br>
+&nbsp;&nbsp;<span class="ck">return</span> <span class="cs">`こんにちは、${</span><span class="cv">name</span><span class="cs">}さん！`</span>;<br>
+}<br><br>
+<span class="cc">// 関数の呼び出し</span><br>
+<span class="ck">const</span> <span class="cv">message</span> = greet(<span class="cs">"颯斗"</span>);<br>
+console.log(<span class="cv">message</span>);<br>
+<span class="cc">// → "こんにちは、颯斗さん！"</span>
+                </div>
+                <div class="anatomy">
+                    <div class="an-title">関数の解剖</div>
+                    <div class="an-row"><span class="an-badge kw">function</span><span class="an-text">関数を定義するキーワード</span></div>
+                    <div class="an-row"><span class="an-badge name">greet</span><span class="an-text">関数の名前（動詞で命名するとわかりやすい）</span></div>
+                    <div class="an-row"><span class="an-badge param">name</span><span class="an-text">引数（関数に渡す値）。複数もOK</span></div>
+                    <div class="an-row"><span class="an-badge ret">return</span><span class="an-text">関数の戻り値。これが呼び出し元に返る</span></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>アロー関数（現代的な書き方）</h2>
+                <div class="code-win">
+<span class="cc">// 従来の書き方</span><br>
+<span class="ck">function</span> <span class="cv">add</span>(<span class="cv">a</span>, <span class="cv">b</span>) {<br>
+&nbsp;&nbsp;<span class="ck">return</span> <span class="cv">a</span> + <span class="cv">b</span>;<br>
+}<br><br>
+<span class="cc">// アロー関数（同じ意味）</span><br>
+<span class="ck">const</span> <span class="cv">add</span> = (<span class="cv">a</span>, <span class="cv">b</span>) => <span class="cv">a</span> + <span class="cv">b</span>;<br><br>
+<span class="cc">// コールバック関数として使う</span><br>
+[<span class="cn">1</span>, <span class="cn">2</span>, <span class="cn">3</span>].map(<span class="cv">x</span> => <span class="cv">x</span> * <span class="cn">2</span>);<br>
+<span class="cc">// → [2, 4, 6]</span>
+                </div>
+                <div class="arrow-fn">
+                    <div class="af-title">なぜ関数を使うのか？</div>
+                    <div style="font-size:18px;font-weight:300;color:#495057;line-height:1.7;">
+                        ① 同じ処理を何度も書かなくてよい（DRY原則）<br>
+                        ② 名前をつけることで「何をする処理か」が分かる<br>
+                        ③ テスト・修正が1箇所でできる
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

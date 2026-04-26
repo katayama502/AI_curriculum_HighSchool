@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.9; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>テストの基礎知識</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🧪 なぜテストが必要か？</div>
+                <div class="item">
+                    <span class="item-icon">🛡️</span>
+                    <div>
+                        <div class="item-text">バグを早期に発見できる</div>
+                        <div class="item-sub">本番環境に出る前に問題を検出</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔄</span>
+                    <div>
+                        <div class="item-text">リファクタリングが安全になる</div>
+                        <div class="item-sub">変更しても既存機能が壊れていないか確認</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📚</span>
+                    <div>
+                        <div class="item-text">コードの仕様書になる</div>
+                        <div class="item-sub">テストを読めば何をするコードか分かる</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🤝</span>
+                    <div>
+                        <div class="item-text">チーム開発の品質を保つ</div>
+                        <div class="item-sub">誰かの変更が他に影響しないか検証</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 Jestでユニットテスト</div>
+                <div class="code-block">
+<span style="color:#6C757D;">// テスト対象の関数</span><br>
+<span style="color:#FFD43B;">function</span> <span style="color:#F783AC;">add</span>(a, b) { <span style="color:#FFD43B;">return</span> a + b; }<br><br>
+<span style="color:#6C757D;">// テストコード</span><br>
+<span style="color:#F783AC;">describe</span>(<span style="color:#FCC419;">'add関数'</span>, () =&gt; {<br>
+&nbsp;&nbsp;<span style="color:#F783AC;">test</span>(<span style="color:#FCC419;">'1 + 2 は 3 になる'</span>, () =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F783AC;">expect</span>(<span style="color:#F783AC;">add</span>(<span style="color:#20C997;">1</span>, <span style="color:#20C997;">2</span>)).<span style="color:#F783AC;">toBe</span>(<span style="color:#20C997;">3</span>);<br>
+&nbsp;&nbsp;});<br><br>
+&nbsp;&nbsp;<span style="color:#F783AC;">test</span>(<span style="color:#FCC419;">'負の数も計算できる'</span>, () =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F783AC;">expect</span>(<span style="color:#F783AC;">add</span>(-<span style="color:#20C997;">1</span>, -<span style="color:#20C997;">2</span>)).<span style="color:#F783AC;">toBe</span>(-<span style="color:#20C997;">3</span>);<br>
+&nbsp;&nbsp;});<br>
+});<br><br>
+<span style="color:#6C757D;">// $ npx jest → ✓ 2 tests passed</span>
+                </div>
+                <div class="green-box">✅ Claudeに「このコードのテストを書いて」と頼もう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

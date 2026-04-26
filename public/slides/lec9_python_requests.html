@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #7950F2; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .compare-row { display: flex; gap: 14px; margin-bottom: 12px; }
+        .compare-card { flex: 1; background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .compare-card .lang { font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+        .js-label { color: #F59F00; }
+        .py-label { color: #20C997; }
+        .compare-card pre { font-family: monospace; font-size: 15px; color: #495057; line-height: 1.6; }
+        .tip-box { background: #f3f0ff; border-radius: 8px; padding: 14px 18px; border: 2px solid #7950F2; }
+        .tip-box p { font-size: 17px; color: #5f3dc4; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>PythonでAPI取得（requests）</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>requestsライブラリで簡潔に書ける</h2>
+                <div class="code-block">
+<span class="kw">import</span> requests
+
+<span class="cmt"># GETリクエスト（天気API）</span>
+params = {
+    <span class="str">"latitude"</span>: <span class="num">35.68</span>,
+    <span class="str">"longitude"</span>: <span class="num">139.69</span>,
+    <span class="str">"current"</span>: <span class="str">"temperature_2m"</span>
+}
+url = <span class="str">"https://api.open-meteo.com/v1/forecast"</span>
+
+res = requests.<span class="func">get</span>(url, params=params)
+
+<span class="cmt"># ステータスコード確認</span>
+<span class="func">print</span>(res.status_code)  <span class="cmt"># 200 = 成功</span>
+
+<span class="cmt"># JSONデータを辞書として取得</span>
+data = res.<span class="func">json</span>()
+temp = data[<span class="str">"current"</span>][<span class="str">"temperature_2m"</span>]
+<span class="func">print</span>(<span class="str">f"東京の気温: {temp}℃"</span>)
+
+<span class="cmt"># POSTリクエスト（データを送る）</span>
+res2 = requests.<span class="func">post</span>(api_url,
+    headers={<span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>},
+    json={<span class="str">"message"</span>: <span class="str">"こんにちは"</span>}
+)
+                </div>
+            </div>
+            <div class="right">
+                <h2>JSとPythonの比較</h2>
+                <div class="compare-row">
+                    <div class="compare-card">
+                        <div class="lang js-label">JavaScript (fetch)</div>
+                        <pre>await fetch(url)
+→ await res.json()
+（async/awaitが必要）</pre>
+                    </div>
+                    <div class="compare-card">
+                        <div class="lang py-label">Python (requests)</div>
+                        <pre>requests.get(url)
+→ res.json()
+（同期的に書ける！）</pre>
+                    </div>
+                </div>
+                <div class="tip-box" style="margin-top:14px;">
+                    <p>💡 <strong>requestsの便利な点：</strong><br>
+                    paramsに辞書を渡すだけでクエリ文字列を自動生成。jsonでPOSTボディも簡単に送れる。同期的に書けるのでコードが読みやすい。</p>
+                </div>
+                <div class="code-block" style="margin-top:14px;">
+<span class="cmt"># インストール</span>
+$ pip install requests</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

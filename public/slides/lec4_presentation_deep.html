@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .before-box { background: #fff5f5; border: 2px solid #ffc9c9; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+        .before-title { font-size: 18px; font-weight: 700; color: #e03131; margin-bottom: 10px; }
+        .before-slide { background: white; border: 1px solid #dee2e6; border-radius: 4px; padding: 12px 16px; }
+        .slide-title-fake { font-size: 16px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .slide-bullets { list-style: none; }
+        .slide-bullets li { font-size: 14px; color: #868e96; padding: 2px 0; }
+        .slide-bullets li::before { content: "• "; }
+        .after-box { background: #ebfbee; border: 2px solid #8ce99a; border-radius: 8px; padding: 16px 20px; }
+        .after-title { font-size: 18px; font-weight: 700; color: #2f9e44; margin-bottom: 10px; }
+        .step-list { list-style: none; }
+        .step-list li { font-size: 18px; font-weight: 300; color: #495057; padding: 10px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
+        .step-list li:last-child { border-bottom: none; }
+        .step-num { background: #339AF0; color: white; min-width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; margin-top: 2px; }
+        .prompt-box { background: white; border-left: 6px solid #339AF0; padding: 14px 18px; margin-top: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 0 8px 8px 0; }
+        .prompt-text { font-size: 17px; font-weight: 300; color: #495057; font-style: italic; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>発表資料をClaudeで磨く方法</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Before: よくある発表スライドの問題</h2>
+                <div class="before-box">
+                    <div class="before-title">❌ こんなスライドになっていない？</div>
+                    <div class="before-slide">
+                        <div class="slide-title-fake">環境問題について</div>
+                        <ul class="slide-bullets">
+                            <li>地球温暖化が進んでいる</li>
+                            <li>CO2が増えている</li>
+                            <li>氷が溶けている</li>
+                            <li>動物が絶滅しそう</li>
+                            <li>みんなで考えよう</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">「このスライドの問題点を指摘し、聴衆に刺さる構成に改善してください」</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Claudeに頼める発表改善ステップ</h2>
+                <ul class="step-list">
+                    <li><span class="step-num">1</span>スライドの骨子（アウトライン）を相談して作る</li>
+                    <li><span class="step-num">2</span>「冒頭1分で心を掴む言葉」を考えてもらう</li>
+                    <li><span class="step-num">3</span>データや数字の入れ方・引用方法を確認する</li>
+                    <li><span class="step-num">4</span>専門用語をわかりやすい言葉に置き換えてもらう</li>
+                    <li><span class="step-num">5</span>「想定質問＆回答」を事前にシミュレーション</li>
+                    <li><span class="step-num">6</span>締めくくりの一言を複数パターン出してもらう</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

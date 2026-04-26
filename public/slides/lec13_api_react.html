@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 25px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1.3; }
+        .right { flex: 0.7; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 20px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 13.5px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .state-row { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 14px; }
+        .state-icon { font-size: 24px; width: 40px; text-align: center; }
+        .state-name { font-size: 17px; font-weight: 500; color: #339AF0; width: 90px; }
+        .state-desc { font-size: 16px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ReactでAPIデータ取得（完全版）</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-cloud-download-alt" style="color:#339AF0"></i> ローディング・エラー処理込みのパターン</h2>
+                <div class="code-block">
+                    <pre><span class="kw">function</span> <span class="fn">WeatherApp</span>() {
+  <span class="kw">const</span> [data, setData]       = <span class="fn">useState</span>(<span class="kw">null</span>);
+  <span class="kw">const</span> [loading, setLoading] = <span class="fn">useState</span>(<span class="kw">true</span>);
+  <span class="kw">const</span> [error, setError]     = <span class="fn">useState</span>(<span class="kw">null</span>);
+
+  <span class="fn">useEffect</span>(() => {
+    <span class="kw">async function</span> <span class="fn">fetchWeather</span>() {
+      <span class="kw">try</span> {
+        <span class="kw">const</span> res  = <span class="kw">await</span> <span class="fn">fetch</span>(API_URL);
+        <span class="kw">if</span> (!res.ok) <span class="kw">throw new</span> Error(<span class="str">"取得失敗"</span>);
+        <span class="kw">const</span> json = <span class="kw">await</span> res.<span class="fn">json</span>();
+        <span class="fn">setData</span>(json);
+      } <span class="kw">catch</span>(err) {
+        <span class="fn">setError</span>(err.message);
+      } <span class="kw">finally</span> {
+        <span class="fn">setLoading</span>(<span class="kw">false</span>);
+      }
+    }
+    <span class="fn">fetchWeather</span>();
+  }, []);
+
+  <span class="kw">if</span> (loading) <span class="kw">return</span> &lt;p&gt;読み込み中...&lt;/p&gt;;
+  <span class="kw">if</span> (error)   <span class="kw">return</span> &lt;p&gt;エラー: {error}&lt;/p&gt;;
+  <span class="kw">return</span> &lt;p&gt;気温: {data.temp}℃&lt;/p&gt;;
+}</pre>
+                </div>
+            </div>
+            <div class="right">
+                <h2>3つのstate</h2>
+                <div class="state-row">
+                    <div class="state-icon"><i class="fas fa-database" style="color:#339AF0"></i></div>
+                    <div class="state-name">data</div>
+                    <div class="state-desc">取得した天気データ。最初はnull。</div>
+                </div>
+                <div class="state-row">
+                    <div class="state-icon"><i class="fas fa-spinner" style="color:#20C997"></i></div>
+                    <div class="state-name">loading</div>
+                    <div class="state-desc">データ取得中はtrue。完了でfalseに。</div>
+                </div>
+                <div class="state-row">
+                    <div class="state-icon"><i class="fas fa-exclamation-triangle" style="color:#fa5252"></i></div>
+                    <div class="state-name">error</div>
+                    <div class="state-desc">エラー発生時にメッセージを格納。</div>
+                </div>
+                <div class="state-row" style="border-left: 4px solid #20C997;">
+                    <div class="state-icon"><i class="fas fa-lightbulb" style="color:#20C997"></i></div>
+                    <div style="font-size: 16px; color: #495057;">この3状態管理パターンはAPI取得の<strong>基本形</strong>。覚えておこう！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .reflection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .ref-card { background: white; border-radius: 10px; padding: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .ref-card.blue { border-left: 6px solid #339AF0; }
+        .ref-card.teal { border-left: 6px solid #20C997; }
+        .ref-card.gold { border-left: 6px solid #f59f00; }
+        .ref-card.pink { border-left: 6px solid #e64980; }
+        .ref-icon { font-size: 28px; color: #339AF0; margin-bottom: 10px; }
+        .ref-card.teal .ref-icon { color: #20C997; }
+        .ref-card.gold .ref-icon { color: #f59f00; }
+        .ref-card.pink .ref-icon { color: #e64980; }
+        .ref-q { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .ref-hint { font-size: 15px; color: #868e96; line-height: 1.7; }
+        .ref-blank { background: #f1f3f5; border-radius: 4px; height: 50px; margin-top: 12px; display: flex; align-items: center; padding: 0 12px; font-size: 14px; color: #adb5bd; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>振り返りワークシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="reflection-grid">
+                <div class="ref-card blue">
+                    <div class="ref-icon"><i class="fas fa-star"></i></div>
+                    <div class="ref-q">一番楽しかった・印象に残ったことは？</div>
+                    <div class="ref-hint">授業の内容でも、作ったものでも、うまくいった体験でもOK</div>
+                    <div class="ref-blank">ここに書いてみよう...</div>
+                </div>
+                <div class="ref-card teal">
+                    <div class="ref-icon"><i class="fas fa-mountain"></i></div>
+                    <div class="ref-q">一番苦労したことと、どう乗り越えたか？</div>
+                    <div class="ref-hint">エラー・概念の理解・時間など、何でもOK。解決法も一緒に</div>
+                    <div class="ref-blank">ここに書いてみよう...</div>
+                </div>
+                <div class="ref-card gold">
+                    <div class="ref-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="ref-q">このコースで得たいちばん大きな「気づき」は？</div>
+                    <div class="ref-hint">技術的なことだけじゃなく、考え方・姿勢の変化でもOK</div>
+                    <div class="ref-blank">ここに書いてみよう...</div>
+                </div>
+                <div class="ref-card pink">
+                    <div class="ref-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="ref-q">これから何をやってみたいか？</div>
+                    <div class="ref-hint">次に学ぶこと・作りたいもの・挑戦してみたいことを自由に</div>
+                    <div class="ref-blank">ここに書いてみよう...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

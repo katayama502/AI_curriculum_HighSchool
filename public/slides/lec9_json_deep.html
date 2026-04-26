@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #7950F2; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .json-rule { background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 10px; display: flex; gap: 14px; align-items: center; }
+        .rule-icon { font-size: 22px; color: #7950F2; width: 30px; flex-shrink: 0; }
+        .rule-text { font-size: 17px; color: #495057; }
+        .rule-text strong { color: #212529; }
+        .tip-box { background: #f3f0ff; border-radius: 8px; padding: 14px 18px; border: 2px solid #7950F2; margin-top: 14px; }
+        .tip-box p { font-size: 17px; color: #5f3dc4; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>JSONを読む・使う</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>APIが返すデータの形式</h2>
+                <div class="code-block">
+<span class="cmt">// 天気APIのレスポンス例（JSON）</span>
+{
+  <span class="str">"city"</span>: <span class="str">"東京"</span>,
+  <span class="str">"temperature"</span>: <span class="num">22</span>,
+  <span class="str">"condition"</span>: <span class="str">"晴れ"</span>,
+  <span class="str">"forecast"</span>: [
+    { <span class="str">"day"</span>: <span class="str">"月"</span>, <span class="str">"temp"</span>: <span class="num">20</span> },
+    { <span class="str">"day"</span>: <span class="str">"火"</span>, <span class="str">"temp"</span>: <span class="num">18</span> }
+  ]
+}
+
+<span class="cmt">// JSでの使い方</span>
+<span class="kw">const</span> data = <span class="kw">await</span> res.<span class="func">json</span>();
+console.log(data.city);            <span class="cmt">// "東京"</span>
+console.log(data.forecast[<span class="num">0</span>].day); <span class="cmt">// "月"</span>
+
+<span class="cmt"># Pythonでの使い方</span>
+data = res.<span class="func">json</span>()
+<span class="func">print</span>(data[<span class="str">"city"</span>])           <span class="cmt"># 東京</span>
+<span class="func">print</span>(data[<span class="str">"forecast"</span>][<span class="num">0</span>])   <span class="cmt"># {'day':'月','temp':20}</span>
+                </div>
+            </div>
+            <div class="right">
+                <h2>JSONの書き方ルール</h2>
+                <div class="json-rule">
+                    <div class="rule-icon"><i class="fas fa-quote-right"></i></div>
+                    <div class="rule-text"><strong>キーは必ず"ダブルクォート"で囲む</strong><br>シングルクォートはNG</div>
+                </div>
+                <div class="json-rule">
+                    <div class="rule-icon"><i class="fas fa-list"></i></div>
+                    <div class="rule-text"><strong>配列は [ ]、オブジェクトは { }</strong><br>入れ子にもできる</div>
+                </div>
+                <div class="json-rule">
+                    <div class="rule-icon"><i class="fas fa-ban"></i></div>
+                    <div class="rule-text"><strong>末尾カンマはNG</strong><br>最後の要素の後にカンマを付けない</div>
+                </div>
+                <div class="json-rule">
+                    <div class="rule-icon"><i class="fas fa-check"></i></div>
+                    <div class="rule-text"><strong>使える値の型</strong><br>文字列・数値・真偽値・null・配列・オブジェクト</div>
+                </div>
+                <div class="tip-box">
+                    <p>💡 JSONはJavaScriptのオブジェクトに似ているが、<strong>別の形式</strong>。JSでは<code style="background:#212529;color:#da77f2;padding:2px 6px;border-radius:3px;">JSON.parse()</code>で変換する。Pythonでは辞書として扱える。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block {
+            background-color: #212529; color: #f8f9fa; padding: 16px 20px;
+            border-radius: 6px; font-family: monospace; font-size: 17px;
+            line-height: 1.7; margin-bottom: 16px;
+        }
+        .kw { color: #F59F00; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .method { color: #da77f2; }
+        .event-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .event-table th { background-color: #F59F00; color: white; padding: 10px 14px; font-size: 18px; text-align: left; }
+        .event-table td { padding: 10px 14px; font-size: 17px; border-bottom: 1px solid #dee2e6; background: white; }
+        .event-table tr:nth-child(even) td { background: #fff3bf; }
+        .flow-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+        .flow-step { background: white; border: 2px solid #F59F00; border-radius: 6px; padding: 10px 18px; font-size: 18px; font-weight: 500; color: #212529; }
+        .flow-arrow { color: #F59F00; font-size: 22px; }
+        .tip-box { background-color: white; border-left: 5px solid #20C997; padding: 14px 18px; border-radius: 0 6px 6px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .tip-box p { font-size: 17px; color: #495057; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>イベント処理</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>「何かが起きたとき」に動く仕組み</h2>
+                <div class="flow-row">
+                    <div class="flow-step"><i class="fas fa-mouse-pointer"></i> ユーザー操作</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step"><i class="fas fa-bolt"></i> イベント発火</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step"><i class="fas fa-code"></i> 関数が実行</div>
+                </div>
+                <div class="code-block">
+<span class="cmt">// ボタンをクリックしたとき</span>
+<span class="kw">const</span> btn = document.<span class="method">getElementById</span>(<span class="str">"myBtn"</span>);
+
+btn.<span class="method">addEventListener</span>(<span class="str">"click"</span>, <span class="kw">function</span>() {
+    alert(<span class="str">"ボタンが押されました！"</span>);
+});
+
+<span class="cmt">// 入力フォームの値を取得</span>
+<span class="kw">const</span> input = document.<span class="method">getElementById</span>(<span class="str">"nameInput"</span>);
+input.<span class="method">addEventListener</span>(<span class="str">"input"</span>, <span class="kw">function</span>(e) {
+    <span class="kw">const</span> val = e.target.value;
+    document.<span class="method">getElementById</span>(<span class="str">"display"</span>)
+        .textContent = <span class="str">"こんにちは、"</span> + val;
+});
+                </div>
+            </div>
+            <div class="right">
+                <h2>主なイベント一覧</h2>
+                <table class="event-table">
+                    <tr><th>イベント名</th><th>発生タイミング</th></tr>
+                    <tr><td>click</td><td>クリックされた</td></tr>
+                    <tr><td>dblclick</td><td>ダブルクリック</td></tr>
+                    <tr><td>mouseover</td><td>マウスが乗った</td></tr>
+                    <tr><td>input</td><td>入力内容が変わった</td></tr>
+                    <tr><td>change</td><td>値が確定した</td></tr>
+                    <tr><td>submit</td><td>フォームが送信された</td></tr>
+                    <tr><td>keydown</td><td>キーが押された</td></tr>
+                    <tr><td>load</td><td>ページが読み込まれた</td></tr>
+                </table>
+                <div class="tip-box">
+                    <p><strong>🔑 addEventListenerの形：</strong><br>
+                    要素.addEventListener(<strong>イベント名</strong>, <strong>実行する関数</strong>)<br>
+                    第2引数にアロー関数も使えます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

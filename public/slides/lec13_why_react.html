@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .side { background: white; border-radius: 8px; padding: 18px 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .side.vanilla { border-top: 4px solid #ffd43b; }
+        .side.react { border-top: 4px solid #339AF0; }
+        .side-label { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+        .side.vanilla .side-label { color: #e67700; }
+        .side.react .side-label { color: #339AF0; }
+        .code { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 10px 12px; border-radius: 4px; line-height: 1.8; color: #212529; margin-bottom: 10px; }
+        .pain-point { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; margin-top: 8px; }
+        .pain-point i { color: #fa5252; margin-right: 6px; }
+        .benefit i { color: #20C997; margin-right: 6px; }
+        .reason-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+        .reason-card { background: white; border-top: 4px solid #339AF0; padding: 16px 18px; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
+        .reason-card:nth-child(2) { border-top-color: #20C997; }
+        .reason-card:nth-child(3) { border-top-color: #7950F2; }
+        .rc-icon { font-size: 28px; margin-bottom: 8px; }
+        .rc-title { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .rc-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>なぜReactを使うのか？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>バニラJSとReactの比較</h2>
+            <div class="compare-row">
+                <div class="side vanilla">
+                    <div class="side-label">✗ バニラJS — 手動でDOMを操作</div>
+                    <div class="code">// ToDoを追加するたびに…<br>const li = document.createElement('li');<br>li.textContent = newTodo;<br>li.className = 'todo-item';<br>document.querySelector('#list').appendChild(li);<br>// 削除・更新も全部手動で書く</div>
+                    <div class="pain-point"><i class="fas fa-times"></i>コードが長くなりバグが増える</div>
+                    <div class="pain-point"><i class="fas fa-times"></i>データとUIの同期が大変</div>
+                </div>
+                <div class="side react">
+                    <div class="side-label">✓ React — データを変えるだけでUIが自動更新</div>
+                    <div class="code">// データを更新するだけ！<br>const [todos, setTodos] = useState([]);<br><br>function addTodo(text) {<br>  setTodos([...todos, text]);<br>  // UIは自動で更新される！<br>}</div>
+                    <div class="pain-point benefit"><i class="fas fa-check"></i>データとUIが自動で同期する</div>
+                    <div class="pain-point benefit"><i class="fas fa-check"></i>部品（コンポーネント）を再利用できる</div>
+                </div>
+            </div>
+            <h2>Reactを学ぶ3つの理由</h2>
+            <div class="reason-row">
+                <div class="reason-card">
+                    <div class="rc-icon">🏢</div>
+                    <div class="rc-title">業界標準のライブラリ</div>
+                    <div class="rc-desc">Meta（Facebook）が開発。Instagram・Facebook・Airbnbなど世界中のサービスで使用されている</div>
+                </div>
+                <div class="reason-card">
+                    <div class="rc-icon">🧩</div>
+                    <div class="rc-title">コンポーネント設計</div>
+                    <div class="rc-desc">UIをレゴブロックのように組み合わせる考え方。一度作ったパーツを何度でも再利用できる</div>
+                </div>
+                <div class="reason-card">
+                    <div class="rc-icon">🤖</div>
+                    <div class="rc-title">AIとの相性が抜群</div>
+                    <div class="rc-desc">Claude Codeで「〇〇コンポーネントを作って」と指示するだけで高品質なコードが生成できる</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

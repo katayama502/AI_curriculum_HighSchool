@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .code-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .code-panel { background: #0D0D0D; border-radius: 10px; overflow: hidden; }
+        .panel-header { background: #1a1b1e; padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+        .panel-icon { font-size: 16px; }
+        .panel-title { font-size: 15px; font-weight: 600; }
+        .panel-code { padding: 14px 16px; }
+        .panel-code code { font-family: monospace; font-size: 13px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .tip-banner { margin-top: 16px; background: #d3f9d8; border-left: 4px solid #20C997; padding: 12px 20px; border-radius: 4px; font-size: 17px; color: #2b8a3e; display: flex; gap: 10px; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CRUD APIの実装パターン</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-tabs">
+                <div class="code-panel">
+                    <div class="panel-header"><div class="panel-icon" style="color:#20C997"><i class="fas fa-list"></i></div><div class="panel-title" style="color:#20C997">GET /api/books — 一覧取得</div></div>
+                    <div class="panel-code"><code>
+<span class="c-blue">router</span>.<span class="c-green">get</span>(<span class="c-yellow">'/'</span>, authMiddleware, (req, res) => {<br>
+  <span class="c-pink">const</span> books = db.prepare(<br>
+    <span class="c-yellow">'SELECT * FROM books<br>
+     WHERE user_id=? ORDER BY id DESC'</span><br>
+  ).all(req.user.userId);<br>
+  res.json(books);<br>
+});
+                    </code></div>
+                </div>
+                <div class="code-panel">
+                    <div class="panel-header"><div class="panel-icon" style="color:#339AF0"><i class="fas fa-plus"></i></div><div class="panel-title" style="color:#339AF0">POST /api/books — 追加</div></div>
+                    <div class="panel-code"><code>
+<span class="c-blue">router</span>.<span class="c-green">post</span>(<span class="c-yellow">'/'</span>, authMiddleware, (req, res) => {<br>
+  <span class="c-pink">const</span> { title, author } = req.body;<br>
+  <span class="c-pink">if</span> (!title) <span class="c-pink">return</span> res.status(400)<br>
+    .json({ error: <span class="c-yellow">'タイトルは必須'</span> });<br>
+  <span class="c-pink">const</span> result = db.prepare(<br>
+    <span class="c-yellow">'INSERT INTO books (title,author,user_id)<br>
+     VALUES (?,?,?)'</span><br>
+  ).run(title, author, req.user.userId);<br>
+  res.status(201).json({ id: result.lastInsertRowid });<br>
+});
+                    </code></div>
+                </div>
+                <div class="code-panel">
+                    <div class="panel-header"><div class="panel-icon" style="color:#f59f00"><i class="fas fa-edit"></i></div><div class="panel-title" style="color:#f59f00">PUT /api/books/:id — 更新</div></div>
+                    <div class="panel-code"><code>
+<span class="c-blue">router</span>.<span class="c-green">put</span>(<span class="c-yellow">'/:id'</span>, authMiddleware, (req, res) => {<br>
+  <span class="c-pink">const</span> { title, author } = req.body;<br>
+  db.prepare(<br>
+    <span class="c-yellow">'UPDATE books SET title=?, author=?<br>
+     WHERE id=? AND user_id=?'</span><br>
+  ).run(title, author, req.params.id,<br>
+         req.user.userId);<br>
+  res.json({ message: <span class="c-yellow">'更新しました'</span> });<br>
+});
+                    </code></div>
+                </div>
+                <div class="code-panel">
+                    <div class="panel-header"><div class="panel-icon" style="color:#ff6b6b"><i class="fas fa-trash"></i></div><div class="panel-title" style="color:#ff6b6b">DELETE /api/books/:id — 削除</div></div>
+                    <div class="panel-code"><code>
+<span class="c-blue">router</span>.<span class="c-green">delete</span>(<span class="c-yellow">'/:id'</span>, authMiddleware, (req, res) => {<br>
+  db.prepare(<br>
+    <span class="c-yellow">'DELETE FROM books<br>
+     WHERE id=? AND user_id=?'</span><br>
+  ).run(req.params.id, req.user.userId);<br>
+  res.json({ message: <span class="c-yellow">'削除しました'</span> });<br>
+});
+                    </code></div>
+                </div>
+            </div>
+            <div class="tip-banner">
+                <i class="fas fa-shield-alt"></i>
+                <strong>ポイント：</strong> WHERE user_id=? を付けることで、他人のデータを操作できないようにする（認可）
+            </div>
+        </div>
+    </div>
+</body>
+</html>

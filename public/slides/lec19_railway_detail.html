@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .step-list { display: flex; flex-direction: column; gap: 12px; }
+        .step { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; }
+        .step-num { background: #212529; color: #ffd866; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+        .step-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .step-text { font-size: 15px; color: #495057; }
+        .env-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 14px; }
+        .env-table th { background: #212529; color: white; font-size: 15px; padding: 10px 14px; text-align: left; }
+        .env-table td { font-size: 14px; padding: 9px 14px; border-bottom: 1px solid #f1f3f5; font-family: monospace; }
+        .env-table tr:last-child td { border-bottom: none; }
+        .env-key { color: #339AF0; }
+        .env-val { color: #20C997; }
+        .tip-box { background: #d3f9d8; border-left: 4px solid #20C997; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #2b8a3e; }
+        .warn-box { background: #fff3cd; border-left: 4px solid #fcc419; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #856404; margin-top: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Railwayでバックエンドをデプロイ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-train" style="color:#339AF0"></i> デプロイ手順</h2>
+                <div class="step-list">
+                    <div class="step"><div class="step-num">1</div><div><div class="step-title">railway.app でサインアップ</div><div class="step-text">GitHubアカウントで登録→「New Project」</div></div></div>
+                    <div class="step"><div class="step-num">2</div><div><div class="step-title">「Deploy from GitHub repo」を選択</div><div class="step-text">バックエンドのリポジトリ（server/）を選ぶ</div></div></div>
+                    <div class="step"><div class="step-num">3</div><div><div class="step-title">環境変数を設定</div><div class="step-text">JWT_SECRET・NODE_ENVなどを設定</div></div></div>
+                    <div class="step"><div class="step-num">4</div><div><div class="step-title">「Generate Domain」でURLを取得</div><div class="step-text">https://your-api.railway.app が生成される</div></div></div>
+                    <div class="step"><div class="step-num">5</div><div><div class="step-title">VercelのAPIURLを更新</div><div class="step-text">VercelのEnv変数に新しいRailwayのURLを設定</div></div></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-key" style="color:#20C997"></i> Railway環境変数の設定</h2>
+                <table class="env-table">
+                    <thead><tr><th>変数名</th><th>値の例</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="env-key">NODE_ENV</span></td><td><span class="env-val">production</span></td></tr>
+                        <tr><td><span class="env-key">JWT_SECRET</span></td><td><span class="env-val">長くランダムな文字列</span></td></tr>
+                        <tr><td><span class="env-key">CORS_ORIGIN</span></td><td><span class="env-val">https://your-app.vercel.app</span></td></tr>
+                        <tr><td><span class="env-key">PORT</span></td><td><span class="env-val">自動設定（設定不要）</span></td></tr>
+                    </tbody>
+                </table>
+                <div class="tip-box">
+                    <i class="fas fa-lightbulb"></i>
+                    JWT_SECRETは「password_generator」で32文字以上のランダム文字列を生成して使う
+                </div>
+                <div class="warn-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    SQLiteのDBファイルはRailwayの再デプロイで消える。本番では PostgreSQL に移行を検討
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

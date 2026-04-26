@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .writing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+        .writing-card { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .wc-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+        .wc-icon { font-size: 26px; }
+        .wc-title { font-size: 20px; font-weight: 600; color: #212529; }
+        .wc-items { list-style: none; }
+        .wc-items li { font-size: 17px; font-weight: 300; color: #495057; padding: 5px 0; border-bottom: 1px solid #f1f3f5; line-height: 1.4; }
+        .wc-items li:last-child { border-bottom: none; }
+        .wc-items li::before { content: "• "; color: #339AF0; font-weight: 700; }
+        .tip-box { background: linear-gradient(135deg, #e7f5ff, #d0f0e8); border-radius: 8px; padding: 16px 24px; display: flex; align-items: center; gap: 16px; }
+        .tip-icon { font-size: 32px; color: #339AF0; }
+        .tip-text { font-size: 20px; font-weight: 500; color: #212529; line-height: 1.5; }
+        .tip-text span { color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>創作活動でClaudeを活用する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>小説・詩・シナリオ・歌詞 — あらゆる創作に使える</h2>
+            <div class="writing-grid">
+                <div class="writing-card">
+                    <div class="wc-header"><span class="wc-icon">📖</span><span class="wc-title">小説・短編</span></div>
+                    <ul class="wc-items">
+                        <li>あらすじ・プロット作成</li>
+                        <li>登場人物の性格設計</li>
+                        <li>特定シーンの文章案</li>
+                        <li>書き出しの複数パターン</li>
+                    </ul>
+                </div>
+                <div class="writing-card">
+                    <div class="wc-header"><span class="wc-icon">🎭</span><span class="wc-title">脚本・漫画</span></div>
+                    <ul class="wc-items">
+                        <li>台詞（セリフ）の生成</li>
+                        <li>場面転換の演出案</li>
+                        <li>コマ割りの構成案</li>
+                        <li>キャラの口調調整</li>
+                    </ul>
+                </div>
+                <div class="writing-card">
+                    <div class="wc-header"><span class="wc-icon">🎵</span><span class="wc-title">詩・歌詞</span></div>
+                    <ul class="wc-items">
+                        <li>テーマ・感情を伝えての生成</li>
+                        <li>韻・リズムの調整</li>
+                        <li>言葉の言い換え候補</li>
+                        <li>サビ・Aメロ別の作成</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="tip-text">
+                    重要：Claudeは<span>「アシスタント」</span>として使う。最初から全部書かせるのではなく、<span>「自分のアイデアを膨らませる相談相手」</span>として使うのがベスト。最後の完成は自分の手で！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

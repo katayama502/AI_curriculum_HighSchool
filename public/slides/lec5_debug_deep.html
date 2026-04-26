@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .debug-table { width: 100%; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .dt-header { display: grid; grid-template-columns: 1.5fr 2fr 2fr; background: #212529; color: white; }
+        .dt-header div { padding: 12px 16px; font-size: 18px; font-weight: 600; }
+        .dt-row { display: grid; grid-template-columns: 1.5fr 2fr 2fr; border-bottom: 1px solid #f1f3f5; }
+        .dt-row:last-child { border-bottom: none; }
+        .dt-row div { padding: 12px 16px; font-size: 17px; font-weight: 300; color: #495057; vertical-align: top; line-height: 1.5; }
+        .dt-row div:first-child { font-weight: 600; color: #212529; }
+        .symptom { color: #fa5252 !important; font-weight: 500 !important; }
+        .fix { color: #20C997 !important; font-weight: 500 !important; }
+        .iterate-box { background: linear-gradient(135deg, #e7f5ff, #ebfbee); border-radius: 8px; padding: 16px 22px; display: flex; gap: 16px; align-items: center; }
+        .it-icon { font-size: 32px; }
+        .it-text { font-size: 20px; font-weight: 500; color: #212529; line-height: 1.6; }
+        .it-text span { color: #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>プロンプトのデバッグ診断表</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>「うまくいかない」原因を特定して修正する</h2>
+            <div class="debug-table">
+                <div class="dt-header">
+                    <div>症状</div>
+                    <div>考えられる原因</div>
+                    <div>修正方法</div>
+                </div>
+                <div class="dt-row">
+                    <div class="symptom">回答が的外れ</div>
+                    <div>目的・背景が不明確</div>
+                    <div class="fix">「目的は〇〇です。背景として△△があります」を追加</div>
+                </div>
+                <div class="dt-row">
+                    <div class="symptom">長すぎる / 短すぎる</div>
+                    <div>出力量の指定なし</div>
+                    <div class="fix">「200字程度で」「箇条書き5項目で」と明示する</div>
+                </div>
+                <div class="dt-row">
+                    <div class="symptom">難しすぎる / 簡単すぎる</div>
+                    <div>対象読者が不明</div>
+                    <div class="fix">「高校1年生向け」「専門家向け」など読者を明記</div>
+                </div>
+                <div class="dt-row">
+                    <div class="symptom">形式が違う</div>
+                    <div>フォーマット指定なし</div>
+                    <div class="fix">「表形式で」「Q&A形式で」と形式を指定、または例を見せる</div>
+                </div>
+                <div class="dt-row">
+                    <div class="symptom">いつも同じ答え</div>
+                    <div>多様性の指示なし</div>
+                    <div class="fix">「異なる視点から5パターン」「まず10個出してから絞って」</div>
+                </div>
+            </div>
+            <div class="iterate-box">
+                <div class="it-icon">🔄</div>
+                <div class="it-text">デバッグの基本は<span>「仮説を立てて→修正して→比較する」</span>の繰り返し。一度に全部変えると何が効いたか分からなくなるので、<span>1箇所ずつ</span>変えるのがコツ。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

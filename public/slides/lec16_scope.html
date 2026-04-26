@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 600; color: #212529; margin-bottom: 16px; }
+        .scope-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .scope-table th { background: #212529; color: white; font-size: 17px; padding: 12px 16px; text-align: left; }
+        .scope-table td { font-size: 17px; padding: 10px 16px; border-bottom: 1px solid #f1f3f5; color: #495057; }
+        .scope-table tr:last-child td { border-bottom: none; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 14px; font-weight: 600; }
+        .badge-in { background: #d3f9d8; color: #2b8a3e; }
+        .badge-out { background: #ffe3e3; color: #c92a2a; }
+        .risk-list { display: flex; flex-direction: column; gap: 14px; }
+        .risk-item { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; align-items: flex-start; }
+        .risk-icon { font-size: 24px; margin-top: 2px; }
+        .risk-content { flex: 1; }
+        .risk-title { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .risk-desc { font-size: 16px; color: #495057; line-height: 1.5; }
+        .risk-plan { font-size: 15px; color: #339AF0; margin-top: 4px; }
+        .tip-banner { margin-top: 20px; background: #212529; color: white; padding: 14px 20px; border-radius: 6px; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>スコープ管理とリスク対策</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-list-check" style="color:#339AF0"></i> スコープ（実装範囲）を決める</h2>
+                <table class="scope-table">
+                    <thead>
+                        <tr><th>機能</th><th>含む？</th><th>理由</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ユーザー認証（JWT）</td><td><span class="badge badge-in">IN</span></td><td>コア機能</td></tr>
+                        <tr><td>ToDo CRUD</td><td><span class="badge badge-in">IN</span></td><td>コア機能</td></tr>
+                        <tr><td>タグ・カテゴリ</td><td><span class="badge badge-in">IN</span></td><td>UX向上</td></tr>
+                        <tr><td>メール通知</td><td><span class="badge badge-out">OUT</span></td><td>時間不足</td></tr>
+                        <tr><td>スマホアプリ化</td><td><span class="badge badge-out">OUT</span></td><td>Phase2</td></tr>
+                        <tr><td>多言語対応</td><td><span class="badge badge-out">OUT</span></td><td>Phase3</td></tr>
+                    </tbody>
+                </table>
+                <div class="tip-banner">
+                    <i class="fas fa-compass"></i>
+                    「完璧」より「動く」を優先するのがプロの判断
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-exclamation-triangle" style="color:#ff6b6b"></i> リスクと対策</h2>
+                <div class="risk-list">
+                    <div class="risk-item">
+                        <div class="risk-icon" style="color:#ff6b6b">⏰</div>
+                        <div class="risk-content">
+                            <div class="risk-title">時間不足</div>
+                            <div class="risk-desc">機能が多すぎてスプリントに収まらない</div>
+                            <div class="risk-plan"><i class="fas fa-arrow-right"></i> スコープを削る / Claude Codeで加速</div>
+                        </div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-icon" style="color:#f59f00">🔧</div>
+                        <div class="risk-content">
+                            <div class="risk-title">技術的問題</div>
+                            <div class="risk-desc">ライブラリがうまく動かない / バグが取れない</div>
+                            <div class="risk-plan"><i class="fas fa-arrow-right"></i> Claude Codeにエラーを貼って原因を聞く</div>
+                        </div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-icon" style="color:#339AF0">💡</div>
+                        <div class="risk-content">
+                            <div class="risk-title">要件のブレ</div>
+                            <div class="risk-desc">「やっぱりこうしたい」が増えて収拾がつかない</div>
+                            <div class="risk-plan"><i class="fas fa-arrow-right"></i> ユーザーストーリーを更新してスコープを固定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

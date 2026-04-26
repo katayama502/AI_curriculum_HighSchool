@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container {
+            width: 1280px; min-height: 720px;
+            display: flex; justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            position: relative; overflow: hidden;
+        }
+        .terminal-frame {
+            background: #0D0D0D; border: 2px solid #20C997;
+            padding: 40px 60px; width: 80%; max-width: 1000px; text-align: left;
+            position: relative; z-index: 10;
+        }
+        .terminal-bar { display: flex; gap: 8px; margin-bottom: 24px; }
+        .dot { width: 14px; height: 14px; border-radius: 50%; }
+        .dot-red { background: #FF5F57; }
+        .dot-yellow { background: #FEBC2E; }
+        .dot-green { background: #28C840; }
+        .prompt { color: #20C997; font-family: "Courier New", monospace; font-size: 18px; margin-bottom: 8px; }
+        .cmd { color: #339AF0; font-family: "Courier New", monospace; font-size: 36px; font-weight: 700; margin-bottom: 24px; }
+        .cursor { display: inline-block; width: 20px; height: 36px; background: #339AF0; vertical-align: middle; }
+        .divider { height: 1px; background: #20C997; margin: 20px 0; opacity: 0.4; }
+        .subtitle { color: #E8E8E8; font-size: 28px; font-weight: 300; margin-bottom: 20px; }
+        .phase-badge { display: inline-block; background: #339AF0; color: white; padding: 8px 20px; font-size: 18px; font-weight: 700; margin-right: 12px; }
+        .lecture-badge { display: inline-block; background: #20C997; color: #0D0D0D; padding: 8px 20px; font-size: 18px; font-weight: 700; }
+        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(51,154,240,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(51,154,240,0.05) 1px, transparent 1px); background-size: 40px 40px; z-index: 1; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="bg-grid"></div>
+        <div class="terminal-frame">
+            <div class="terminal-bar">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+            <div class="prompt">$ claude --version</div>
+            <div class="cmd">Claude Code 入門<span class="cursor"></span></div>
+            <div class="divider"></div>
+            <div class="subtitle">～AIと一緒にコードを書こう～</div>
+            <div>
+                <span class="phase-badge">Phase 3</span>
+                <span class="lecture-badge">第11回 / 全20回</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

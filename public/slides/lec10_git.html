@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .concept-col { }
+        .what-box { background: #F05033; color: white; padding: 16px 20px; font-size: 19px; line-height: 1.6; margin-bottom: 16px; }
+        .analogy-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .analogy-item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: center; gap: 12px; font-size: 17px; }
+        .analogy-icon { font-size: 22px; flex-shrink: 0; }
+        .analogy-text { color: #212529; }
+        .analogy-sub { font-size: 14px; color: #6C757D; }
+        .commands-col { }
+        .commands-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .cmd-table { width: 100%; border-collapse: collapse; }
+        .cmd-table th { padding: 10px 14px; font-size: 16px; font-weight: 700; text-align: left; }
+        .cmd-table th.cmd-col { background: #212529; color: white; width: 45%; }
+        .cmd-table th.desc-col { background: #F05033; color: white; }
+        .cmd-table td { padding: 10px 14px; font-size: 16px; border: 1px solid #DEE2E6; }
+        .cmd-table td.cmd-cell { font-family: "Courier New", monospace; color: #F05033; background: white; font-weight: 700; }
+        .cmd-table td.desc-cell { background: white; color: #495057; }
+        .cmd-table tr:nth-child(even) td { background: #F8F9FA; }
+        .tip-bar { background: #212529; color: white; padding: 12px 18px; margin-top: 12px; font-size: 16px; }
+        .tip-bar .hl { color: #20C997; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Gitとは？バージョン管理の基本</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="concept-col">
+                <div class="what-box">
+                    <strong>Git</strong>とは：<br>
+                    コードの変更履歴を記録・管理するツール。「いつ・誰が・何を変更したか」を追跡できる。
+                </div>
+                <div class="analogy-title">📚 ゲームのセーブデータで例えると</div>
+                <div class="analogy-item">
+                    <span class="analogy-icon">💾</span>
+                    <div>
+                        <div class="analogy-text">commit = セーブポイントを作成</div>
+                        <div class="analogy-sub">「ここまでの進捗を保存」</div>
+                    </div>
+                </div>
+                <div class="analogy-item">
+                    <span class="analogy-icon">⏪</span>
+                    <div>
+                        <div class="analogy-text">checkout = 過去のセーブに戻る</div>
+                        <div class="analogy-sub">「バグが出たら以前の状態に戻せる」</div>
+                    </div>
+                </div>
+                <div class="analogy-item">
+                    <span class="analogy-icon">🌿</span>
+                    <div>
+                        <div class="analogy-text">branch = 別ルートで試す</div>
+                        <div class="analogy-sub">「本編を壊さず新機能を試せる」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="commands-col">
+                <div class="commands-title">基本コマンド一覧</div>
+                <table class="cmd-table">
+                    <thead>
+                        <tr>
+                            <th class="cmd-col">コマンド</th>
+                            <th class="desc-col">説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cmd-cell">git init</td>
+                            <td class="desc-cell">Gitリポジトリを初期化</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">git status</td>
+                            <td class="desc-cell">変更状態を確認</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">git add .</td>
+                            <td class="desc-cell">変更をステージングに追加</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">git commit -m</td>
+                            <td class="desc-cell">変更を記録（メッセージ付き）</td>
+                        </tr>
+                        <tr>
+                            <td class="cmd-cell">git log</td>
+                            <td class="desc-cell">コミット履歴を表示</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-bar">
+                    💡 Claudeに「<span class="hl">このエラーのgitコマンドを教えて</span>」と聞くと即解決！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

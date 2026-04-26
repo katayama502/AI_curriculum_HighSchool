@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .task-header { background: #339AF0; color: white; padding: 14px 20px; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .step-item { background: white; padding: 14px 18px; margin-top: 10px; display: flex; align-items: flex-start; gap: 14px; }
+        .step-num { width: 36px; height: 36px; background: #212529; color: white; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-text { font-size: 18px; color: #212529; line-height: 1.5; }
+        .step-sub { font-size: 14px; color: #6C757D; margin-top: 4px; }
+        .requirements-header { background: #20C997; color: white; padding: 14px 20px; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .req-item { background: white; padding: 12px 18px; margin-top: 8px; font-size: 18px; color: #212529; display: flex; align-items: center; gap: 12px; }
+        .req-icon { font-size: 20px; }
+        .time-badge { background: #212529; color: white; padding: 14px 20px; margin-top: 16px; font-size: 18px; display: flex; align-items: center; gap: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ハンズオン：チャットボット作成</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="task-header">🤖 作業手順</div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-text">APIキーを取得する</div>
+                        <div class="step-sub">console.anthropic.com でAPIキーを発行</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-text">Claudeにチャットボットのコードを依頼</div>
+                        <div class="step-sub">「Pythonでコマンドラインチャットボットを作って」</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-text">Google Colabで実行する</div>
+                        <div class="step-sub">APIキーをColab Secretsに保存して使う</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="step-text">System Promptでキャラクターを設定</div>
+                        <div class="step-sub">「関西弁で話す先生」など個性を付けてみよう</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="requirements-header">✅ 完成要件</div>
+                <div class="req-item"><span class="req-icon">💬</span>ユーザーが入力した質問に回答できる</div>
+                <div class="req-item"><span class="req-icon">🔄</span>会話を続けられる（ループ処理）</div>
+                <div class="req-item"><span class="req-icon">🎭</span>System Promptでキャラクター設定済み</div>
+                <div class="req-item"><span class="req-icon">🚪</span>「終了」と入力したら終了できる</div>
+                <div class="req-item"><span class="req-icon">🔑</span>APIキーが環境変数で管理されている</div>
+                <div class="time-badge">
+                    <span>⏱️</span>
+                    <span>目標時間：<strong>40分</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

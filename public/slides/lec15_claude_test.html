@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .prompt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .prompt-card { background-color: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .prompt-card.teal { border-top-color: #20C997; }
+        .prompt-label { font-size: 15px; font-weight: 500; color: #868e96; margin-bottom: 8px; }
+        .prompt-text { background-color: #f1f3f5; border-radius: 6px; padding: 10px 14px; font-size: 14px; color: #212529; line-height: 1.65; font-family: "Courier New", monospace; }
+        .flow-banner { margin-top: 18px; background-color: #0D0D0D; border-radius: 8px; padding: 16px 24px; display: flex; align-items: center; gap: 20px; }
+        .flow-icon { font-size: 28px; color: #20C997; }
+        .flow-text { font-size: 18px; color: white; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Code でテストを自動生成</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2><i class="fas fa-robot" style="color:#339AF0"></i> テスト生成・デバッグプロンプト集</h2>
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <div class="prompt-label"><i class="fas fa-file-code" style="color:#339AF0"></i> 単体テスト生成</div>
+                    <div class="prompt-text">utils.js の validateText 関数に対するJestテストを書いて。正常・空文字・長すぎる場合の3ケースを含めて。</div>
+                </div>
+                <div class="prompt-card teal">
+                    <div class="prompt-label"><i class="fas fa-network-wired" style="color:#20C997"></i> APIテスト生成</div>
+                    <div class="prompt-text">routes/todos.js の POST /api/todos エンドポイントのSupertestテストを書いて。201成功・400エラーのケースを含めて。</div>
+                </div>
+                <div class="prompt-card">
+                    <div class="prompt-label"><i class="fas fa-bug" style="color:#339AF0"></i> テスト失敗の解析</div>
+                    <div class="prompt-text">このテストが失敗しています：<br>[エラーメッセージをコピー]<br>utils.js のどこが原因か、<br>どう修正すればいいか教えて。</div>
+                </div>
+                <div class="prompt-card teal">
+                    <div class="prompt-label"><i class="fas fa-percentage" style="color:#20C997"></i> カバレッジ改善</div>
+                    <div class="prompt-text">jest --coverage でこのファイルのカバレッジが60%です。テストされていない分岐を追加テストして100%にして。</div>
+                </div>
+            </div>
+            <div class="flow-banner">
+                <div class="flow-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="flow-text">「テストを書いて」と依頼するだけでなく、「どんなケースをテストすべきか」も Claude Code に聞いてみよう。品質が格段に上がる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

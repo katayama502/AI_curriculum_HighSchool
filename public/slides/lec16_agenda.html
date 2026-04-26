@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .agenda-list { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+        .agenda-item { background-color: white; border-radius: 8px; padding: 14px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 16px; border-left: 6px solid #339AF0; }
+        .num { font-size: 20px; font-weight: 500; color: #339AF0; width: 28px; }
+        .text { font-size: 20px; font-weight: 500; color: #212529; }
+        .goal-box { flex: 0.7; background-color: #0D0D0D; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+        .goal-title { font-size: 18px; font-weight: 500; color: #20C997; }
+        .goal-text { font-size: 21px; font-weight: 500; color: white; line-height: 1.6; }
+        .badge { display: inline-block; background-color: #339AF0; color: white; font-size: 14px; padding: 2px 10px; border-radius: 30px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第16回：卒業制作 — プロジェクト設計</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-list">
+                <div class="agenda-item"><div class="num">1</div><div class="text">アイデア出しとコンセプト確定</div></div>
+                <div class="agenda-item"><div class="num">2</div><div class="text">ユーザーストーリーと要件定義</div></div>
+                <div class="agenda-item"><div class="num">3</div><div class="text">ER図・データベース設計</div></div>
+                <div class="agenda-item"><div class="num">4</div><div class="text">APIエンドポイント一覧設計</div></div>
+                <div class="agenda-item"><div class="num">5</div><div class="text">ディレクトリ構成の決定</div></div>
+                <div class="agenda-item"><div class="num">6</div><div class="text">MVP（最小構成）の定義</div></div>
+                <div class="agenda-item"><div class="num">7</div><div class="text">スプリント計画・タスク分解</div></div>
+            </div>
+            <div class="goal-box">
+                <div class="goal-title"><i class="fas fa-bullseye"></i> 今日のゴール</div>
+                <div class="goal-text">自分だけのオリジナルアプリのアイデアを決め、データ・API・画面の設計書を完成させよう！</div>
+                <div><span class="badge">第16回 / 全20回</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

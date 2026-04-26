@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 36px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; }
+        .sheet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .sheet-panel { background: #0D0D0D; border-radius: 8px; padding: 18px 20px; }
+        .panel-title { font-size: 13px; color: #ffd866; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; font-family: monospace; border-bottom: 1px solid #2d2d2d; padding-bottom: 8px; }
+        .code-line { font-size: 14px; font-family: monospace; line-height: 1.9; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .c-white { color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第19回 チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sheet-grid">
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ デプロイ前チェック</div>
+                    <div class="code-line"><span class="c-gray"># .gitignore に必ず含める</span></div>
+                    <div class="code-line"><span class="c-green">node_modules/</span></div>
+                    <div class="code-line"><span class="c-green">.env</span></div>
+                    <div class="code-line"><span class="c-green">*.db</span></div>
+                    <div class="code-line"><span class="c-gray"># package.json scripts</span></div>
+                    <div class="code-line"><span class="c-yellow">"build"</span><span class="c-white">: </span><span class="c-blue">"vite build"</span></div>
+                    <div class="code-line"><span class="c-yellow">"start"</span><span class="c-white">: </span><span class="c-blue">"node server.js"</span></div>
+                    <div class="code-line"><span class="c-gray"># PORT 対応</span></div>
+                    <div class="code-line"><span class="c-pink">app.listen(process.env.PORT || 3000)</span></div>
+                </div>
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ Vercel / Railway 環境変数</div>
+                    <div class="code-line"><span class="c-gray"># Vercel (フロントエンド)</span></div>
+                    <div class="code-line"><span class="c-yellow">VITE_API_URL</span><span class="c-white"> = https://api.railway.app</span></div>
+                    <div class="code-line"><span class="c-gray"># Railway (バックエンド)</span></div>
+                    <div class="code-line"><span class="c-yellow">NODE_ENV</span><span class="c-white">     = production</span></div>
+                    <div class="code-line"><span class="c-yellow">JWT_SECRET</span><span class="c-white">   = your-secret-key</span></div>
+                    <div class="code-line"><span class="c-yellow">CORS_ORIGIN</span><span class="c-white">  = https://app.vercel.app</span></div>
+                    <div class="code-line"><span class="c-gray"># フロント側 API 呼び出し</span></div>
+                    <div class="code-line"><span class="c-green">import.meta.env.VITE_API_URL</span></div>
+                </div>
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ セキュリティチェックリスト</div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> SQLはプレースホルダー(?) を使う</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> パスワードは bcrypt でハッシュ</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> CORS origin を本番 URL に限定</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> Helmet.js でセキュリティヘッダー</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> express-rate-limit でレート制限</span></div>
+                    <div class="code-line"><span class="c-green">✅</span><span class="c-white"> .env を絶対に GitHub にpushしない</span></div>
+                    <div class="code-line"><span class="c-yellow">⚠</span><span class="c-white">  JWT_SECRET は長くランダムに</span></div>
+                </div>
+                <div class="sheet-panel">
+                    <div class="panel-title">▌ CI/CD GitHub Actions</div>
+                    <div class="code-line"><span class="c-gray"># .github/workflows/deploy.yml</span></div>
+                    <div class="code-line"><span class="c-blue">on:</span><span class="c-white"> push:</span></div>
+                    <div class="code-line"><span class="c-white">  branches: </span><span class="c-green">[main]</span></div>
+                    <div class="code-line"><span class="c-blue">jobs:</span><span class="c-white"> deploy:</span></div>
+                    <div class="code-line"><span class="c-white">  - uses: </span><span class="c-green">actions/checkout@v3</span></div>
+                    <div class="code-line"><span class="c-white">  - run: </span><span class="c-yellow">npm ci && npm test</span></div>
+                    <div class="code-line"><span class="c-white">  - uses: </span><span class="c-green">amondnet/vercel-action@v25</span></div>
+                    <div class="code-line"><span class="c-gray"># push → test → deploy 自動化</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

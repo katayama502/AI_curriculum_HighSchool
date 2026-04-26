@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .system-layout { display: flex; gap: 30px; margin-bottom: 16px; }
+        .structure-col { flex: 1; }
+        .example-col { flex: 1.2; }
+        .struct-item { background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 12px; }
+        .si-badge { min-width: 80px; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; text-align: center; }
+        .si-badge.role { background: #e7f5ff; color: #1c7ed6; }
+        .si-badge.rule { background: #ebfbee; color: #2f9e44; }
+        .si-badge.tone { background: #fff9db; color: #e67700; }
+        .si-badge.limit { background: #fff5f5; color: #c92a2a; }
+        .si-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .code-box { background: #1A1A2E; border-radius: 8px; padding: 18px 20px; color: #e9ecef; font-family: monospace; font-size: 15px; line-height: 1.9; }
+        .code-comment { color: #74c0fc; }
+        .code-text { color: #e9ecef; }
+        .code-highlight { color: #ffd43b; }
+        .use-tip { background: #e7f5ff; border-radius: 8px; padding: 14px 20px; display: flex; gap: 14px; align-items: center; }
+        .tip-icon { font-size: 26px; color: #339AF0; }
+        .tip-text { font-size: 19px; font-weight: 400; color: #212529; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Systemプロンプトで「専用AI」を作る</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>Systemプロンプト = AIへの「取扱説明書」</h2>
+            <div class="system-layout">
+                <div class="structure-col">
+                    <div class="struct-item">
+                        <span class="si-badge role">役割</span>
+                        <div class="si-text">AIに誰になりきってほしいかを定義する</div>
+                    </div>
+                    <div class="struct-item">
+                        <span class="si-badge rule">ルール</span>
+                        <div class="si-text">答え方のルール・守ること・しないことを設定</div>
+                    </div>
+                    <div class="struct-item">
+                        <span class="si-badge tone">語調</span>
+                        <div class="si-text">丁寧・フレンドリー・厳格など、話し方を指定</div>
+                    </div>
+                    <div class="struct-item">
+                        <span class="si-badge limit">制約</span>
+                        <div class="si-text">答えてはいけないこと・範囲外の質問の扱い</div>
+                    </div>
+                </div>
+                <div class="example-col">
+                    <div class="code-box">
+                        <span class="code-comment"># 高校生向け数学家庭教師AIのSystem</span><br><br>
+                        <span class="code-highlight">## あなたの役割</span><br>
+                        <span class="code-text">高校数学専門の家庭教師です。</span><br>
+                        <span class="code-text">生徒は高校1〜2年生です。</span><br><br>
+                        <span class="code-highlight">## 答え方のルール</span><br>
+                        <span class="code-text">・必ずCoTで考えを見せる</span><br>
+                        <span class="code-text">・難しい用語は中学生に分かる言葉で</span><br>
+                        <span class="code-text">・答えを直接言わず、ヒントから始める</span><br><br>
+                        <span class="code-highlight">## 語調</span><br>
+                        <span class="code-text">フレンドリーだが丁寧。励ましを忘れずに。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="use-tip">
+                <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="tip-text">Systemプロンプトは「毎回プロンプトを書き直す手間」を省く。一度設定すれば、会話全体でAIが一貫した振る舞いをする。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

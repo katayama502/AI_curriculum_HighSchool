@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; }
+        .slide-container {
+            width: 1280px; min-height: 720px;
+            display: flex; justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #1C1C1C 0%, #1a1000 50%, #2D1B00 100%);
+            position: relative; overflow: hidden;
+        }
+        .terminal-frame {
+            background: #0D0D0D; border: 2px solid #FFD43B;
+            padding: 40px 60px; width: 80%; max-width: 1000px; text-align: left;
+            position: relative; z-index: 10;
+        }
+        .terminal-bar { display: flex; gap: 8px; margin-bottom: 24px; }
+        .dot { width: 14px; height: 14px; border-radius: 50%; }
+        .dot-red { background: #FF5F57; }
+        .dot-yellow { background: #FEBC2E; }
+        .dot-green { background: #28C840; }
+        .prompt { color: #FFD43B; font-family: "Courier New", monospace; font-size: 18px; margin-bottom: 8px; }
+        .cmd { color: #FFD43B; font-family: "Courier New", monospace; font-size: 36px; font-weight: 700; margin-bottom: 24px; }
+        .divider { height: 1px; background: #FFD43B; margin: 20px 0; opacity: 0.4; }
+        .subtitle { color: #E8E8E8; font-size: 28px; font-weight: 300; margin-bottom: 20px; }
+        .phase-badge { display: inline-block; background: #E67700; color: white; padding: 8px 20px; font-size: 18px; font-weight: 700; margin-right: 12px; }
+        .lecture-badge { display: inline-block; background: #FFD43B; color: #0D0D0D; padding: 8px 20px; font-size: 18px; font-weight: 700; }
+        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255,212,59,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,212,59,0.05) 1px, transparent 1px); background-size: 40px 40px; z-index: 1; }
+        .stars { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; }
+        .star { position: absolute; color: #FFD43B; font-size: 20px; opacity: 0.3; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="bg-grid"></div>
+        <div class="stars">
+            <span class="star" style="top:10%; left:5%;">★</span>
+            <span class="star" style="top:20%; left:90%;">★</span>
+            <span class="star" style="top:70%; left:8%;">★</span>
+            <span class="star" style="top:80%; left:88%;">★</span>
+            <span class="star" style="top:40%; left:95%;">✦</span>
+            <span class="star" style="top:60%; left:3%;">✦</span>
+        </div>
+        <div class="terminal-frame">
+            <div class="terminal-bar">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+            <div class="prompt">$ claude --lecture 20 --final</div>
+            <div class="cmd">🎓 発表会・卒業式</div>
+            <div class="divider"></div>
+            <div class="subtitle">～全20回の学習を振り返り、未来へ踏み出そう～</div>
+            <div>
+                <span class="phase-badge">Phase 4: 実践プロジェクト</span>
+                <span class="lecture-badge">最終回 第20回 / 全20回</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

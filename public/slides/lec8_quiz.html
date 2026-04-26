@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); border-top: 5px solid #20C997; }
+        .quiz-num { font-size: 13px; font-weight: 700; color: #20C997; letter-spacing: 1px; margin-bottom: 8px; }
+        .quiz-q { font-size: 19px; font-weight: 500; color: #212529; line-height: 1.5; margin-bottom: 12px; }
+        .code-inline { background: #212529; color: #20C997; padding: 3px 8px; border-radius: 4px; font-family: monospace; font-size: 17px; }
+        .choices { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+        .choice { background: #f8f9fa; border-radius: 5px; padding: 7px 12px; font-size: 16px; color: #495057; }
+        .choice.correct { background: #d3f9d8; color: #2b8a3e; font-weight: 500; border-left: 4px solid #2b8a3e; }
+        .answer-box { background: #f0fdf4; border-radius: 6px; padding: 8px 12px; font-size: 15px; color: #2b8a3e; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ — Python基礎</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-card">
+                <div class="quiz-num">Q1</div>
+                <div class="quiz-q">Pythonで文字列に変数を埋め込むもっとも現代的な書き方は？</div>
+                <div class="choices">
+                    <div class="choice">A. "名前は" + name</div>
+                    <div class="choice">B. "名前は %s" % name</div>
+                    <div class="choice correct">C. f"名前は{name}" ✓</div>
+                    <div class="choice">D. "名前は".format(name)</div>
+                </div>
+                <div class="answer-box">f文字列（f-strings）はPython 3.6以降の推奨書き方。最もシンプルで読みやすい。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q2</div>
+                <div class="quiz-q"><span class="code-inline">range(2, 10, 3)</span> が生成する数列は？</div>
+                <div class="choices">
+                    <div class="choice">A. 2, 3, 4, 5, 6, 7, 8, 9</div>
+                    <div class="choice correct">B. 2, 5, 8 ✓</div>
+                    <div class="choice">C. 3, 6, 9</div>
+                    <div class="choice">D. 2, 4, 6, 8</div>
+                </div>
+                <div class="answer-box">range(start, stop, step)。2から始まり3ずつ増加、10未満まで → 2, 5, 8。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q3</div>
+                <div class="quiz-q">辞書から値を安全に取り出す（キーがなくてもエラーにならない）メソッドは？</div>
+                <div class="choices">
+                    <div class="choice">A. dict.fetch(key)</div>
+                    <div class="choice correct">B. dict.get(key) ✓</div>
+                    <div class="choice">C. dict.find(key)</div>
+                    <div class="choice">D. dict.search(key)</div>
+                </div>
+                <div class="answer-box">.get()はキーが存在しないときNoneを返す（エラーにならない）。デフォルト値も設定可能。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q4</div>
+                <div class="quiz-q">外部ライブラリをインストールするコマンドは？</div>
+                <div class="choices">
+                    <div class="choice">A. python install numpy</div>
+                    <div class="choice correct">B. pip install numpy ✓</div>
+                    <div class="choice">C. import install numpy</div>
+                    <div class="choice">D. get numpy</div>
+                </div>
+                <div class="answer-box">pipはPythonのパッケージ管理ツール。インストール後はimportして使う。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

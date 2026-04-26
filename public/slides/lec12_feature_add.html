@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .roadmap { display: flex; gap: 0; margin-bottom: 20px; }
+        .rm-item { flex: 1; background: white; border: 2px solid #dee2e6; padding: 16px 14px; text-align: center; position: relative; }
+        .rm-item:not(:last-child)::after { content: '▶'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-size: 18px; color: #adb5bd; z-index: 10; }
+        .rm-item.done { border-color: #20C997; background: #F0FFF4; }
+        .rm-item.active { border-color: #339AF0; background: #E7F5FF; }
+        .rm-item.todo { opacity: 0.5; }
+        .rm-status { font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+        .rm-item.done .rm-status { color: #20C997; }
+        .rm-item.active .rm-status { color: #339AF0; }
+        .rm-icon { font-size: 24px; margin-bottom: 6px; }
+        .rm-label { font-size: 15px; font-weight: 500; color: #212529; }
+        .rm-sub { font-size: 13px; color: #6c757d; margin-top: 4px; }
+        .steps-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+        .step-card { background: white; border: 2px solid #dee2e6; border-radius: 8px; overflow: hidden; }
+        .sc-header { background: #212529; padding: 8px 14px; }
+        .sc-title { font-size: 15px; font-weight: 700; color: #20C997; }
+        .sc-body { padding: 12px 14px; }
+        .sc-prompt { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 8px 10px; border-radius: 4px; color: #212529; line-height: 1.6; margin-bottom: 8px; }
+        .sc-result { font-size: 13px; color: #40C057; font-weight: 400; }
+        .sc-result i { margin-right: 6px; }
+        .tip-row { display: flex; gap: 14px; margin-top: 16px; }
+        .tip-item { flex: 1; background: #E7F5FF; border-left: 4px solid #339AF0; padding: 12px 16px; border-radius: 4px; }
+        .tip-text { font-size: 16px; color: #212529; font-weight: 400; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>機能追加 — インクリメンタル開発</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>天気アプリへの機能追加ロードマップ</h2>
+            <div class="roadmap">
+                <div class="rm-item done">
+                    <div class="rm-status">✓ 完了</div>
+                    <div class="rm-icon">🌡️</div>
+                    <div class="rm-label">基本表示</div>
+                    <div class="rm-sub">東京の気温</div>
+                </div>
+                <div class="rm-item done">
+                    <div class="rm-status">✓ 完了</div>
+                    <div class="rm-icon">🎨</div>
+                    <div class="rm-label">デザイン</div>
+                    <div class="rm-sub">カードUI</div>
+                </div>
+                <div class="rm-item active">
+                    <div class="rm-status">→ 今回</div>
+                    <div class="rm-icon">🏙️</div>
+                    <div class="rm-label">複数都市</div>
+                    <div class="rm-sub">都市選択機能</div>
+                </div>
+                <div class="rm-item todo">
+                    <div class="rm-status">次回</div>
+                    <div class="rm-icon">📅</div>
+                    <div class="rm-label">週間予報</div>
+                    <div class="rm-sub">7日間表示</div>
+                </div>
+                <div class="rm-item todo">
+                    <div class="rm-status">将来</div>
+                    <div class="rm-icon">🔔</div>
+                    <div class="rm-label">通知機能</div>
+                    <div class="rm-sub">雨の日アラート</div>
+                </div>
+            </div>
+            <h2>「複数都市対応」を追加する手順</h2>
+            <div class="steps-row">
+                <div class="step-card">
+                    <div class="sc-header"><div class="sc-title">Step 1: UIを変更する</div></div>
+                    <div class="sc-body">
+                        <div class="sc-prompt">index.htmlに都市を選択するドロップダウンを追加して。東京・大阪・札幌・福岡の4都市</div>
+                        <div class="sc-result"><i class="fas fa-check"></i>selectタグが追加された</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="sc-header"><div class="sc-title">Step 2: データを対応させる</div></div>
+                    <div class="sc-body">
+                        <div class="sc-prompt">script.jsを修正して、選択した都市の緯度経度でAPIを呼ぶようにして</div>
+                        <div class="sc-result"><i class="fas fa-check"></i>都市ごとの座標マップが追加</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="sc-header"><div class="sc-title">Step 3: 動作確認 & commit</div></div>
+                    <div class="sc-body">
+                        <div class="sc-prompt">全都市で動作確認してから git commit -m "feat: 複数都市対応を追加"</div>
+                        <div class="sc-result"><i class="fas fa-check"></i>バージョン保存！次の機能へ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tip-row">
+                <div class="tip-item">
+                    <div class="tip-text"><strong>コツ①：</strong>機能を追加するたびにcommitする。失敗しても「git checkout .」で戻れる安心感が大切。</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-text"><strong>コツ②：</strong>「全部一気に」ではなく「1機能ずつ」進める。複数の変更が同時にあるとバグの原因が特定しにくくなる。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

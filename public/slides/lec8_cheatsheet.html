@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 20px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .sheet-card { background: #212529; border-radius: 10px; padding: 16px 20px; }
+        .sheet-card h3 { font-size: 19px; font-weight: 700; color: #20C997; margin-bottom: 10px; border-bottom: 1px solid #495057; padding-bottom: 7px; }
+        .sheet-card pre { font-family: monospace; font-size: 15px; line-height: 1.8; color: #f8f9fa; white-space: pre-wrap; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .banner { grid-column: 1 / -1; background: linear-gradient(135deg, #20C997, #0ca678); border-radius: 10px; padding: 14px 28px; display: flex; align-items: center; gap: 20px; }
+        .banner .icon { font-size: 32px; color: white; }
+        .banner p { font-size: 19px; color: white; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Python チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sheet-card">
+                <h3>📌 変数・型・文字列</h3>
+                <pre><span class="cmt"># 変数</span>
+name = <span class="str">"太郎"</span>; age = <span class="num">17</span>; pi = <span class="num">3.14</span>
+ok = <span class="kw">True</span>; nothing = <span class="kw">None</span>
+
+<span class="cmt"># f文字列</span>
+<span class="func">print</span>(<span class="str">f"私は{age}歳"</span>)
+<span class="cmt"># 型確認</span>
+<span class="func">type</span>(name)  <span class="cmt"># str</span>
+<span class="cmt"># 文字列操作</span>
+name.<span class="func">upper</span>()  name.<span class="func">split</span>(<span class="str">","</span>)</pre>
+            </div>
+            <div class="sheet-card">
+                <h3>🔀 条件・ループ</h3>
+                <pre><span class="cmt"># if/elif/else</span>
+<span class="kw">if</span> x > <span class="num">0</span>: <span class="func">print</span>(<span class="str">"正"</span>)
+<span class="kw">elif</span> x == <span class="num">0</span>: <span class="func">print</span>(<span class="str">"ゼロ"</span>)
+<span class="kw">else</span>: <span class="func">print</span>(<span class="str">"負"</span>)
+
+<span class="cmt"># for ループ</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(<span class="num">5</span>): <span class="func">print</span>(i)
+<span class="kw">for</span> item <span class="kw">in</span> my_list: <span class="func">print</span>(item)
+
+<span class="cmt"># while</span>
+<span class="kw">while</span> cond: <span class="cmt">...</span></pre>
+            </div>
+            <div class="sheet-card">
+                <h3>📦 リスト・辞書</h3>
+                <pre><span class="cmt"># リスト</span>
+nums = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]
+nums.<span class="func">append</span>(<span class="num">4</span>)
+[x*<span class="num">2</span> <span class="kw">for</span> x <span class="kw">in</span> nums]  <span class="cmt"># 内包表記</span>
+
+<span class="cmt"># 辞書</span>
+d = {<span class="str">"key"</span>: <span class="str">"val"</span>}
+d.<span class="func">get</span>(<span class="str">"key"</span>, <span class="str">"default"</span>)
+<span class="kw">for</span> k, v <span class="kw">in</span> d.<span class="func">items</span>(): <span class="cmt">...</span></pre>
+            </div>
+            <div class="sheet-card">
+                <h3>⚙️ 関数・ライブラリ</h3>
+                <pre><span class="cmt"># 関数定義</span>
+<span class="kw">def</span> <span class="func">add</span>(a, b=<span class="num">0</span>):
+    <span class="kw">return</span> a + b
+
+<span class="cmt"># よく使う組み込み関数</span>
+<span class="func">len</span>(x) <span class="func">range</span>(<span class="num">10</span>) <span class="func">type</span>(x)
+<span class="func">int</span>(x) <span class="func">str</span>(x) <span class="func">input</span>(<span class="str">"> "</span>)
+<span class="func">min</span>(x) <span class="func">max</span>(x) <span class="func">sum</span>(x)
+
+<span class="cmt"># ライブラリ</span>
+<span class="kw">import</span> math, random, datetime</pre>
+            </div>
+            <div class="banner">
+                <div class="icon"><i class="fab fa-python"></i></div>
+                <p>Pythonはシンプルさが強み。読めない・動かないときはコードをClaudeに貼って「説明してください」と頼もう！</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

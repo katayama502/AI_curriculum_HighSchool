@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 30px; }
+        .task-col { flex: 1; }
+        .task-card { background: white; border-radius: 10px; padding: 20px 22px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); margin-bottom: 16px; }
+        .task-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+        .badge-a { background: #d3f9d8; color: #2b8a3e; }
+        .badge-b { background: #dbe4ff; color: #364fc7; }
+        .badge-c { background: #ffe8cc; color: #e67700; }
+        .badge-challenge { background: #212529; color: #20C997; }
+        .task-card h3 { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 8px; }
+        .task-card p { font-size: 17px; color: #495057; line-height: 1.6; }
+        .task-card ol { padding-left: 20px; margin-top: 8px; }
+        .task-card li { font-size: 17px; color: #495057; line-height: 1.8; }
+        .hint-box { background: #f0fdf4; border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 16px; color: #2b8a3e; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題 — Python</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-a">TASK A — 基礎</div>
+                    <h3>FizzBuzz</h3>
+                    <p>1から30までの数を表示するプログラム。3の倍数は「Fizz」、5の倍数は「Buzz」、両方の倍数は「FizzBuzz」と表示するプログラムをClaudeと一緒に作ろう。</p>
+                    <div class="hint-box">💡 for + if/elif/else + % (余り)演算子を使う</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-b">TASK B — 応用</div>
+                    <h3>成績管理プログラム</h3>
+                    <p>科目名と点数を辞書に保存し、平均点・最高点・最低点を計算して表示するプログラムを作ろう。</p>
+                    <ol>
+                        <li>科目:点数の辞書を作る</li>
+                        <li>values()で点数を取り出す</li>
+                        <li>sum() / len() で平均を計算</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-c">TASK C — 発展</div>
+                    <h3>じゃんけんゲーム</h3>
+                    <p>ユーザーが「グー/チョキ/パー」を入力するとコンピュータがランダムに選び、勝敗を判定するゲームをPythonで作ろう。</p>
+                    <div class="hint-box">💡 input()でキーボード入力、random.choice()でランダム選択</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-challenge">🏆 チャレンジ</div>
+                    <h3>単語帳アプリ</h3>
+                    <p>英単語:日本語訳の辞書を作り、ランダムに英単語を出題→ユーザーが答えを入力→正誤判定を繰り返すシンプルな単語帳アプリを作ろう。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

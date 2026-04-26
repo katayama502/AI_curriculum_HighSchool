@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .prompt-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+        .pg-card { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .pg-tag { display: inline-block; padding: 3px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+        .pg-tag.blue { background: #e7f5ff; color: #1c7ed6; }
+        .pg-tag.green { background: #ebfbee; color: #2f9e44; }
+        .pg-tag.purple { background: #f3f0ff; color: #6741d9; }
+        .pg-tag.orange { background: #fff4e6; color: #e67700; }
+        .pg-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .pg-prompt { background: #F8F9FA; border-left: 3px solid #dee2e6; padding: 10px 14px; font-size: 17px; color: #495057; line-height: 1.5; font-style: italic; border-radius: 0 4px 4px 0; }
+        .summary-box { background: linear-gradient(135deg, #212529, #343a40); border-radius: 10px; padding: 18px 24px; color: white; display: flex; align-items: center; gap: 20px; }
+        .summary-icon { font-size: 40px; }
+        .summary-text { font-size: 22px; font-weight: 500; line-height: 1.6; }
+        .summary-text span { color: #74c0fc; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>創作・アイデア発想 プロンプト集</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>今日学んだテクニックをまとめて使えるようにしよう</h2>
+            <div class="prompt-gallery">
+                <div class="pg-card">
+                    <span class="pg-tag blue">ブレスト</span>
+                    <div class="pg-title">量で広げる</div>
+                    <div class="pg-prompt">「〇〇というテーマで、良し悪し関係なくアイデアを20個出してください。箇条書きで」</div>
+                </div>
+                <div class="pg-card">
+                    <span class="pg-tag green">深掘り</span>
+                    <div class="pg-title">1つのアイデアを育てる</div>
+                    <div class="pg-prompt">「この案【○○】を深めてください。①背景の問題 ②具体的なユーザー像 ③課題・リスクを教えて」</div>
+                </div>
+                <div class="pg-card">
+                    <span class="pg-tag purple">創作</span>
+                    <div class="pg-title">物語を設計する</div>
+                    <div class="pg-prompt">「【テーマ】の短編小説を三幕構成で設計して。各幕の概要を2〜3文で書いて」</div>
+                </div>
+                <div class="pg-card">
+                    <span class="pg-tag orange">フィードバック</span>
+                    <div class="pg-title">辛口評価をもらう</div>
+                    <div class="pg-prompt">「この文章を厳しい編集者の視点で批評して。良い点1つ・改善すべき点を2つ具体的に」</div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-icon">💡</div>
+                <div class="summary-text">Claudeは<span>「何でも話せる思考パートナー」</span>。アイデアの種を持ってきて、一緒に育てよう。最終的な判断と完成は<span>自分自身の手</span>で！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

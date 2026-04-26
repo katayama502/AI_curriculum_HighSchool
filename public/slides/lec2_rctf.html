@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-top: 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border: 2px solid #212529;
+        }
+        th, td {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+            font-size: 22px;
+            vertical-align: middle;
+            height: 80px;
+        }
+        th {
+            background-color: #339AF0;
+            color: white;
+            font-weight: 500;
+            font-size: 24px;
+            border: 1px solid #339AF0;
+        }
+        .element-col {
+            font-size: 36px;
+            font-weight: 500;
+            color: #20C997;
+            text-align: center;
+            width: 100px;
+            border-right: 2px solid #212529;
+        }
+        .english-col {
+            font-weight: 500;
+            color: #339AF0;
+            width: 250px;
+        }
+        .meaning-col {
+            width: 350px;
+            color: #495057;
+        }
+        .example-col {
+            color: #212529;
+            background-color: #f8f9fa;
+            font-family: "Courier New", monospace;
+        }
+        tr:nth-child(even) td:not(.element-col):not(.example-col) {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>良いプロンプトの4要素</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>RCTF フレームワーク</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">要素</th>
+                        <th>英語</th>
+                        <th>意味</th>
+                        <th>例</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="element-col">R</td>
+                        <td class="english-col">Role（役割）</td>
+                        <td class="meaning-col">AIに演じてほしい役割</td>
+                        <td class="example-col">「あなたは高校の数学教師です」</td>
+                    </tr>
+                    <tr>
+                        <td class="element-col">C</td>
+                        <td class="english-col">Context（文脈）</td>
+                        <td class="meaning-col">背景情報・状況</td>
+                        <td class="example-col">「私は高校1年生で...」</td>
+                    </tr>
+                    <tr>
+                        <td class="element-col">T</td>
+                        <td class="english-col">Task（タスク）</td>
+                        <td class="meaning-col">具体的にやってほしいこと</td>
+                        <td class="example-col">「〜を説明してください」</td>
+                    </tr>
+                    <tr>
+                        <td class="element-col">F</td>
+                        <td class="english-col">Format（形式）</td>
+                        <td class="meaning-col">出力の形式・長さ</td>
+                        <td class="example-col">「箇条書きで3点にまとめて」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

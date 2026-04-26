@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .combo-block { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .combo-title { font-size: 20px; font-weight: 700; color: #339AF0; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .badge-row { display: flex; gap: 8px; margin-bottom: 10px; }
+        .badge { padding: 3px 10px; border-radius: 12px; font-size: 13px; font-weight: 700; }
+        .badge.rctf { background: #e7f5ff; color: #1c7ed6; }
+        .badge.cot { background: #ebfbee; color: #2f9e44; }
+        .badge.few { background: #fff9db; color: #e67700; }
+        .badge.sys { background: #f3f0ff; color: #6741d9; }
+        .combo-prompt { background: #1A1A2E; border-radius: 6px; padding: 12px 14px; font-family: monospace; font-size: 14px; line-height: 1.8; color: #e9ecef; }
+        .cp-green { color: #8ce99a; }
+        .cp-blue { color: #74c0fc; }
+        .cp-yellow { color: #ffd43b; }
+        .cp-white { color: #e9ecef; }
+        .matrix-box { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .mt-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 12px; }
+        .mt-row { display: grid; grid-template-columns: 100px 1fr 1fr; gap: 0; border-bottom: 1px solid #e9ecef; }
+        .mt-row:last-child { border-bottom: none; }
+        .mt-cell { padding: 8px 12px; font-size: 16px; font-weight: 300; color: #495057; vertical-align: middle; }
+        .mt-cell.header { font-weight: 700; color: #212529; background: #f1f3f5; }
+        .mt-cell.ok { color: #2f9e44; font-weight: 500; }
+        .mt-cell.na { color: #adb5bd; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>テクニックを「組み合わせる」プロンプト</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>組み合わせの実例</h2>
+                <div class="combo-block">
+                    <div class="combo-title"><i class="fas fa-layer-group"></i> RCTF + CoT + Few-shot</div>
+                    <div class="badge-row">
+                        <span class="badge rctf">RCTF</span>
+                        <span class="badge cot">CoT</span>
+                        <span class="badge few">Few-shot</span>
+                    </div>
+                    <div class="combo-prompt">
+                        <span class="cp-green">## 役割・背景</span><br>
+                        <span class="cp-white">あなたは国語の添削教師です。</span><br>
+                        <span class="cp-white">相手は高校2年生です。</span><br>
+                        <span class="cp-green">## 添削の例</span><br>
+                        <span class="cp-blue">元:「〇〇」→ 改善:「△△」 理由:□□</span><br>
+                        <span class="cp-green">## タスク</span><br>
+                        <span class="cp-yellow">以下の文章を、ステップを見せながら添削して</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>使い分けの目安</h2>
+                <div class="matrix-box">
+                    <div class="mt-title">シーン別おすすめ組み合わせ</div>
+                    <div class="mt-row">
+                        <div class="mt-cell header">シーン</div>
+                        <div class="mt-cell header">主要技術</div>
+                        <div class="mt-cell header">組み合わせ</div>
+                    </div>
+                    <div class="mt-row">
+                        <div class="mt-cell">数学・計算</div>
+                        <div class="mt-cell ok">CoT必須</div>
+                        <div class="mt-cell na">Few-shotは任意</div>
+                    </div>
+                    <div class="mt-row">
+                        <div class="mt-cell">文章変換</div>
+                        <div class="mt-cell ok">Few-shot必須</div>
+                        <div class="mt-cell na">CoTは不要</div>
+                    </div>
+                    <div class="mt-row">
+                        <div class="mt-cell">繰り返し使う</div>
+                        <div class="mt-cell ok">System必須</div>
+                        <div class="mt-cell na">両方を含める</div>
+                    </div>
+                    <div class="mt-row">
+                        <div class="mt-cell">創作・発想</div>
+                        <div class="mt-cell ok">RCTF中心</div>
+                        <div class="mt-cell na">例を少し加える</div>
+                    </div>
+                    <div class="mt-row">
+                        <div class="mt-cell">分析・批評</div>
+                        <div class="mt-cell ok">CoT + RCTF</div>
+                        <div class="mt-cell na">System追加も有効</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

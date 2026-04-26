@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 30px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 14px; }
+        .content-area { padding: 18px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .panel {
+            background: #0D0D0D;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .panel-header { padding: 10px 16px; font-size: 16px; font-weight: 700; }
+        .ph1 { background: #1864AB; color: white; }
+        .ph2 { background: #1A5E37; color: white; }
+        .ph3 { background: #4A3284; color: white; }
+        .ph4 { background: #212529; color: #20C997; border-top: 2px solid #20C997; }
+        .panel-body { padding: 12px 16px; }
+        .item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+        .item-code { font-family: "Courier New", monospace; font-size: 13px; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 3px; color: #74C0FC; white-space: nowrap; flex-shrink: 0; }
+        .item-desc { font-size: 14px; color: #ced4da; line-height: 1.4; }
+        .section-label { font-size: 12px; font-weight: 700; color: #868e96; margin-bottom: 6px; margin-top: 4px; letter-spacing: 0.5px; }
+        .divider-line { height: 1px; background: rgba(255,255,255,0.1); margin: 8px 0; }
+        .banner {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1A1A2E, #16213E);
+            border-radius: 8px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .banner-text { font-size: 20px; font-weight: 500; color: white; }
+        .banner-text span { color: #20C997; }
+        .banner-badge { background: #339AF0; color: white; padding: 6px 18px; border-radius: 20px; font-size: 15px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>チートシート — Claude Code 入門</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="panel">
+                <div class="panel-header ph1">🖥️ ターミナル基本コマンド</div>
+                <div class="panel-body">
+                    <div class="item"><span class="item-code">pwd</span><span class="item-desc">現在のフォルダを表示</span></div>
+                    <div class="item"><span class="item-code">ls</span><span class="item-desc">ファイル一覧を表示</span></div>
+                    <div class="item"><span class="item-code">cd フォルダ名</span><span class="item-desc">フォルダに移動</span></div>
+                    <div class="item"><span class="item-code">cd ..</span><span class="item-desc">一つ上のフォルダへ</span></div>
+                    <div class="item"><span class="item-code">mkdir 名前</span><span class="item-desc">新しいフォルダを作る</span></div>
+                    <div class="item"><span class="item-code">touch ファイル</span><span class="item-desc">新しいファイルを作る</span></div>
+                    <div class="divider-line"></div>
+                    <div class="section-label">CLAUDE CODE</div>
+                    <div class="item"><span class="item-code">claude</span><span class="item-desc">Claude Codeを起動する</span></div>
+                    <div class="item"><span class="item-code">npm install -g @anthropic-ai/claude-code</span><span class="item-desc">インストール</span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header ph2">⚡ スラッシュコマンド</div>
+                <div class="panel-body">
+                    <div class="item"><span class="item-code">/help</span><span class="item-desc">コマンド一覧を表示</span></div>
+                    <div class="item"><span class="item-code">/clear</span><span class="item-desc">会話履歴をリセット</span></div>
+                    <div class="item"><span class="item-code">/init</span><span class="item-desc">CLAUDE.mdを自動生成</span></div>
+                    <div class="item"><span class="item-code">/review</span><span class="item-desc">変更のコードレビュー</span></div>
+                    <div class="item"><span class="item-code">/compact</span><span class="item-desc">会話を要約して圧縮</span></div>
+                    <div class="item"><span class="item-code">/cost</span><span class="item-desc">API使用コストを確認</span></div>
+                    <div class="item"><span class="item-code">/exit</span><span class="item-desc">Claude Codeを終了</span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header ph3">💬 良いプロンプトのパターン</div>
+                <div class="panel-body">
+                    <div class="section-label">基本パターン</div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">ファイル名を明示</span><span class="item-desc">「index.htmlの〇〇に…」</span></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">動作を説明</span><span class="item-desc">「押すと〇〇する…」</span></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">エラー貼り付け</span><span class="item-desc">エラー全文をそのままコピー</span></div>
+                    <div class="divider-line"></div>
+                    <div class="section-label">理解を深める</div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">説明付き</span><span class="item-desc">「修正して、理由も教えて」</span></div>
+                    <div class="item"><span class="item-code" style="color:#E599F7">確認</span><span class="item-desc">「このコードの意味は？」</span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header ph4">🔒 安全ルール</div>
+                <div class="panel-body">
+                    <div class="item"><span class="item-code" style="color:#ff6b6b">.env</span><span class="item-desc">APIキーはここに書く、GitHubにpushしない</span></div>
+                    <div class="item"><span class="item-code" style="color:#ff6b6b">.gitignore</span><span class="item-desc">.envを必ず追加する</span></div>
+                    <div class="divider-line"></div>
+                    <div class="section-label">良い開発習慣</div>
+                    <div class="item"><span class="item-code" style="color:#51CF66">小さく作る</span><span class="item-desc">機能は1つずつ実装する</span></div>
+                    <div class="item"><span class="item-code" style="color:#51CF66">git commit</span><span class="item-desc">動いたらすぐに保存する</span></div>
+                    <div class="item"><span class="item-code" style="color:#51CF66">理解する</span><span class="item-desc">コードの意味を読んでから進む</span></div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-text">第11回完了 — <span>Claude Code</span> で開発を始めよう！</div>
+                <div class="banner-badge">第11回 / 全20回</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.9; color: #E8E8E8; }
+        .t-you { color: #F59F00; }
+        .t-claude { color: #20C997; }
+        .t-output { color: #6C757D; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .step-item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .step-num { width: 32px; height: 32px; background: #E67700; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-text { font-size: 17px; color: #212529; }
+        .step-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeとペアプログラミング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🤝 ペアプログラミングの流れ</div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-text">やりたいことを説明する</div>
+                        <div class="step-sub">「〇〇機能を作りたい。現在の状況は〜」</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-text">実装してもらう</div>
+                        <div class="step-sub">コードを生成してもらい、動作確認する</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-text">コードを理解する</div>
+                        <div class="step-sub">「このコードを説明して」で学習する</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="step-text">改善・修正を繰り返す</div>
+                        <div class="step-sub">「〇〇の部分を変更して」で調整</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💬 ペアプログラミングの会話例</div>
+                <div class="code-block">
+<span class="t-you">あなた：</span>検索機能を追加したい。<br>
+現在のUserListコンポーネントに<br>
+名前で絞り込む機能を追加して<br><br>
+<span class="t-claude">Claude：</span>useState でsearchTermを管理して<br>
+filterでリストを絞り込みます<br><br>
+<span class="t-output">// 実装コードを提示...</span><br><br>
+<span class="t-you">あなた：</span>大文字小文字を区別しないように<br>
+してほしい<br><br>
+<span class="t-claude">Claude：</span>toLowerCase()を使って<br>
+大文字小文字を無視するよう修正します<br><br>
+<span class="t-output">// 修正コードを提示...</span>
+                </div>
+                <div class="green-box">✅ 対話しながら少しずつ完成させよう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

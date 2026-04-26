@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .trouble-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+        .tc { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .tc-header { background: #0D0D0D; padding: 10px 16px; }
+        .tc-problem { font-size: 15px; font-weight: 700; color: #ff6b6b; margin-bottom: 2px; }
+        .tc-error { font-family: "Courier New", monospace; font-size: 12px; color: #868e96; }
+        .tc-body { padding: 12px 16px; }
+        .tc-check { font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .tc-step { font-size: 13px; font-weight: 300; color: #495057; line-height: 1.7; }
+        .tc-step::before { content: "→ "; color: #339AF0; }
+        .tc-prompt { font-family: "Courier New", monospace; font-size: 12px; background: #f1f3f5; padding: 6px 8px; border-radius: 4px; color: #212529; margin-top: 8px; line-height: 1.5; }
+        .bottom-tip { background: #0D0D0D; border-radius: 8px; padding: 14px 20px; margin-top: 14px; display: flex; align-items: center; gap: 20px; }
+        .bt-icon { font-size: 28px; color: #20C997; flex-shrink: 0; }
+        .bt-text { font-size: 17px; color: #E8E8E8; line-height: 1.6; }
+        .bt-text strong { color: #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>よくあるトラブルと解決パターン</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>困ったときの対処法</h2>
+            <div class="trouble-grid">
+                <div class="tc">
+                    <div class="tc-header">
+                        <div class="tc-problem">🔴 APIが動かない</div>
+                        <div class="tc-error">TypeError: Cannot read property...</div>
+                    </div>
+                    <div class="tc-body">
+                        <div class="tc-check">確認ポイント</div>
+                        <div class="tc-step">APIキーが正しく設定されているか</div>
+                        <div class="tc-step">URLのスペルミスがないか</div>
+                        <div class="tc-step">ネットワーク接続はOKか</div>
+                        <div class="tc-prompt">「APIが動かない。エラー: [エラー文]。URLとキーを確認して」</div>
+                    </div>
+                </div>
+                <div class="tc">
+                    <div class="tc-header">
+                        <div class="tc-problem">🔴 CSSが反映されない</div>
+                        <div class="tc-error">スタイルが変わらない...</div>
+                    </div>
+                    <div class="tc-body">
+                        <div class="tc-check">確認ポイント</div>
+                        <div class="tc-step">ブラウザキャッシュをクリア（Ctrl+F5）</div>
+                        <div class="tc-step">HTMLにstyle.cssが正しく読み込まれているか</div>
+                        <div class="tc-step">クラス名・セレクタのタイポがないか</div>
+                        <div class="tc-prompt">「style.cssのchangesが反映されない。HTMLの&lt;link&gt;タグを確認して」</div>
+                    </div>
+                </div>
+                <div class="tc">
+                    <div class="tc-header">
+                        <div class="tc-problem">🔴 git pushが失敗</div>
+                        <div class="tc-error">error: failed to push some refs</div>
+                    </div>
+                    <div class="tc-body">
+                        <div class="tc-check">確認ポイント</div>
+                        <div class="tc-step">リモートに新しいコミットがあるか</div>
+                        <div class="tc-step">まずgit pullして最新を取得</div>
+                        <div class="tc-step">コンフリクトがあれば解消する</div>
+                        <div class="tc-prompt">「git push でエラー。解決手順を教えて: [エラー文]」</div>
+                    </div>
+                </div>
+                <div class="tc">
+                    <div class="tc-header">
+                        <div class="tc-problem">🟡 AIの回答が的外れ</div>
+                        <div class="tc-error">期待通りの修正にならない...</div>
+                    </div>
+                    <div class="tc-body">
+                        <div class="tc-check">対処方法</div>
+                        <div class="tc-step">/clearで会話をリセットする</div>
+                        <div class="tc-step">より具体的なプロンプトに書き直す</div>
+                        <div class="tc-step">ファイル名と行番号を明示する</div>
+                        <div class="tc-prompt">「違います。〇〇ではなく△△をしてください。具体的には[詳細]」</div>
+                    </div>
+                </div>
+                <div class="tc">
+                    <div class="tc-header">
+                        <div class="tc-problem">🟡 コードが壊れた</div>
+                        <div class="tc-error">修正後に動かなくなった...</div>
+                    </div>
+                    <div class="tc-body">
+                        <div class="tc-check">対処方法</div>
+                        <div class="tc-step">git checkout . で全変更を元に戻す</div>
+                        <div class="tc-step">commitがあれば git reset HEAD~1</div>
+                        <div class="tc-step">小さい変更から再実装する</div>
+                        <div class="tc-prompt">「修正後に動かなくなった。修正前の状態に戻して」</div>
+                    </div>
+                </div>
+                <div class="tc">
+                    <div class="tc-header">
+                        <div class="tc-problem">🟡 npm installが失敗</div>
+                        <div class="tc-error">EACCES: permission denied</div>
+                    </div>
+                    <div class="tc-body">
+                        <div class="tc-check">確認ポイント</div>
+                        <div class="tc-step">Node.jsが正しくインストールされているか</div>
+                        <div class="tc-step">node -vでバージョン確認</div>
+                        <div class="tc-step">Macなら sudo npm install -g</div>
+                        <div class="tc-prompt">「npmエラー: [エラー文]。OSはMacです。解決して」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-tip">
+                <div class="bt-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="bt-text"><strong>万能の対処法：</strong>困ったらまず「/clear」でリセット → エラー文を全文コピー → 「何をしたかったか」を一行で説明 → Claude Codeに貼り付ける。これだけで8割のトラブルは解決します！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

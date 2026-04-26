@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .method-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .method-item { background: white; border-radius: 6px; padding: 10px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .method-name { font-family: monospace; background: #212529; color: #20C997; padding: 3px 10px; border-radius: 4px; font-size: 15px; min-width: 180px; }
+        .method-desc { font-size: 17px; color: #495057; }
+        .tip-box { background: #f0fdf4; border-radius: 8px; padding: 14px 18px; border: 2px solid #20C997; margin-top: 14px; }
+        .tip-box p { font-size: 17px; color: #2b8a3e; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>文字列の操作</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>f文字列（f-strings）が超便利</h2>
+                <div class="code-block">
+name = <span class="str">"花子"</span>
+score = <span class="num">95</span>
+
+<span class="cmt"># f文字列で変数を埋め込む</span>
+<span class="func">print</span>(<span class="str">f"</span>{name}<span class="str">さんのスコアは</span>{score}<span class="str">点です"</span>)
+
+<span class="cmt"># 計算も直接できる</span>
+<span class="func">print</span>(<span class="str">f"偏差値は約</span>{score - <span class="num">50</span>}<span class="str">高いです"</span>)
+
+<span class="cmt"># 文字列のスライス（切り取り）</span>
+text = <span class="str">"Hello World"</span>
+<span class="func">print</span>(text[<span class="num">0</span>:<span class="num">5</span>])   <span class="cmt"># "Hello"</span>
+<span class="func">print</span>(text[-<span class="num">5</span>:])   <span class="cmt"># "World"</span>
+<span class="func">print</span>(<span class="func">len</span>(text))   <span class="cmt"># 11</span>
+                </div>
+                <div class="tip-box">
+                    <p>💡 <strong>f文字列の書き方：</strong>クォートの前に <code style="background:#212529;color:#20C997;padding:2px 6px;border-radius:3px;">f</code> を付け、変数を <code style="background:#212529;color:#20C997;padding:2px 6px;border-radius:3px;">{変数名}</code> で埋め込む。Python 3.6以降で使える最もモダンな書き方です。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>よく使う文字列メソッド</h2>
+                <ul class="method-list">
+                    <li class="method-item"><span class="method-name">.upper()</span><span class="method-desc">全て大文字に変換</span></li>
+                    <li class="method-item"><span class="method-name">.lower()</span><span class="method-desc">全て小文字に変換</span></li>
+                    <li class="method-item"><span class="method-name">.strip()</span><span class="method-desc">前後の空白を除去</span></li>
+                    <li class="method-item"><span class="method-name">.replace(a, b)</span><span class="method-desc">aをbに置換</span></li>
+                    <li class="method-item"><span class="method-name">.split(",")</span><span class="method-desc">区切り文字で分割→リスト</span></li>
+                    <li class="method-item"><span class="method-name">.startswith(s)</span><span class="method-desc">sで始まるか True/False</span></li>
+                    <li class="method-item"><span class="method-name">.count(s)</span><span class="method-desc">sが何回含まれるか</span></li>
+                    <li class="method-item"><span class="method-name">.join(list)</span><span class="method-desc">リストを文字列に結合</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

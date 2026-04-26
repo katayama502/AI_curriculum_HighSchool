@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #7950F2; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .analogy-box { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 3px 12px rgba(0,0,0,0.06); border-left: 6px solid #7950F2; margin-bottom: 16px; }
+        .analogy-box h3 { font-size: 22px; font-weight: 500; color: #7950F2; margin-bottom: 10px; }
+        .analogy-box p { font-size: 18px; color: #495057; line-height: 1.6; }
+        .flow-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .flow-node { background: white; border-radius: 8px; padding: 12px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); flex: 1; }
+        .flow-node .icon { font-size: 26px; color: #7950F2; margin-bottom: 6px; }
+        .flow-node p { font-size: 16px; font-weight: 500; color: #212529; }
+        .flow-arrow { color: #7950F2; font-size: 22px; flex-shrink: 0; }
+        .api-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 10px; display: flex; gap: 14px; align-items: center; }
+        .api-icon { font-size: 26px; }
+        .api-text h4 { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 3px; }
+        .api-text p { font-size: 16px; color: #868e96; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>APIとは？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Application Programming Interface</h2>
+                <div class="analogy-box">
+                    <h3>🍽️ レストランのメニュー表のようなもの</h3>
+                    <p>お客さん（あなたのアプリ）がメニュー（API）を見て注文（リクエスト）すると、キッチン（サービス）が料理（データ）を出してくれる。キッチンの中がどうなっているか知らなくていい。</p>
+                </div>
+                <h2 style="margin-top:14px;">通信の流れ</h2>
+                <div class="flow-row">
+                    <div class="flow-node"><div class="icon"><i class="fas fa-laptop-code"></i></div><p>あなたのアプリ</p></div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i><br><small style="font-size:13px;color:#868e96;">リクエスト</small></div>
+                    <div class="flow-node"><div class="icon"><i class="fas fa-plug"></i></div><p>API</p></div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i><br><small style="font-size:13px;color:#868e96;">レスポンス</small></div>
+                    <div class="flow-node"><div class="icon"><i class="fas fa-server"></i></div><p>外部サービス</p></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>身近なAPIの例</h2>
+                <div class="api-card">
+                    <div class="api-icon">🗺️</div>
+                    <div class="api-text"><h4>Google Maps API</h4><p>地図の表示・経路検索・場所情報の取得</p></div>
+                </div>
+                <div class="api-card">
+                    <div class="api-icon">🌤️</div>
+                    <div class="api-text"><h4>天気 API</h4><p>現在地や指定都市の天気・気温・予報</p></div>
+                </div>
+                <div class="api-card">
+                    <div class="api-icon">🌐</div>
+                    <div class="api-text"><h4>翻訳 API</h4><p>テキストを指定言語に自動翻訳</p></div>
+                </div>
+                <div class="api-card">
+                    <div class="api-icon">🤖</div>
+                    <div class="api-text"><h4>Claude API</h4><p>AI機能を自分のアプリに組み込む</p></div>
+                </div>
+                <div class="api-card">
+                    <div class="api-icon">🔑</div>
+                    <div class="api-text"><h4>認証 API</h4><p>GoogleアカウントでのログインなどSSO</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

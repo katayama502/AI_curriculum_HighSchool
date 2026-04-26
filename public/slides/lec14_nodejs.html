@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .compare-box { background-color: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; margin-bottom: 16px; }
+        .compare-box.teal { border-left-color: #20C997; }
+        .box-title { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 8px; }
+        .box-body { font-size: 16px; color: #495057; line-height: 1.6; }
+        .terminal { background-color: #0D0D0D; border-radius: 8px; padding: 20px; }
+        .terminal pre { font-family: "Courier New", monospace; font-size: 16px; line-height: 1.9; color: #f8f9fa; }
+        .prompt { color: #20C997; }
+        .cmd { color: #ffd43b; }
+        .out { color: #868e96; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Node.js とは？ ブラウザ外のJS</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-server" style="color:#339AF0"></i> Node.js の役割</h2>
+                <div class="compare-box">
+                    <div class="box-title"><i class="fas fa-globe" style="color:#339AF0"></i> ブラウザのJavaScript</div>
+                    <div class="box-body">ユーザーの操作に反応し、画面を動かす。ファイルやデータベースには直接アクセスできない。</div>
+                </div>
+                <div class="compare-box teal">
+                    <div class="box-title"><i class="fas fa-server" style="color:#20C997"></i> Node.js のJavaScript</div>
+                    <div class="box-body">サーバー上で動く。ファイル・DB操作ができ、クライアントのリクエストに応じてデータを返す。</div>
+                </div>
+                <div class="compare-box" style="border-left-color:#ffd43b;">
+                    <div class="box-title"><i class="fas fa-box" style="color:#ffd43b"></i> Express とは？</div>
+                    <div class="box-body">Node.js でWebサーバーを素早く作るための軽量フレームワーク。世界で最も使われているバックエンドの1つ。</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-terminal" style="color:#339AF0"></i> セットアップ</h2>
+                <div class="terminal">
+                    <pre><span class="prompt">$</span> <span class="cmd">mkdir my-server && cd my-server</span>
+<span class="prompt">$</span> <span class="cmd">npm init -y</span>
+<span class="out">Created package.json</span>
+
+<span class="prompt">$</span> <span class="cmd">npm install express</span>
+<span class="out">added 57 packages</span>
+
+<span class="prompt">$</span> <span class="cmd">node index.js</span>
+<span class="out">サーバーが起動しました！ port 3000</span></pre>
+                </div>
+                <div style="background-color:#e7f5ff; border-radius:8px; padding:16px; font-size:17px; color:#339AF0; font-weight:500; line-height:1.6;">
+                    <i class="fas fa-lightbulb"></i> JavaScriptが1つの言語でフロント・バック両方書けるのがNode.jsの強み！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

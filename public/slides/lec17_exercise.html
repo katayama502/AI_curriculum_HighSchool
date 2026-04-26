@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .ex-card { background: white; border-radius: 10px; padding: 22px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .ex-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .ex-badge { background: #339AF0; color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; }
+        .ex-badge.teal { background: #20C997; }
+        .ex-badge.dark { background: #212529; }
+        .ex-badge.star { background: linear-gradient(90deg, #ffd866, #f59f00); color: #212529; }
+        .ex-title { font-size: 19px; font-weight: 600; color: #212529; }
+        .ex-steps { display: flex; flex-direction: column; gap: 8px; }
+        .ex-step { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; color: #495057; }
+        .step-dot { width: 8px; height: 8px; background: #339AF0; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+        .step-dot.teal { background: #20C997; }
+        .time-badge { display: inline-block; background: #fff3cd; color: #856404; padding: 2px 8px; border-radius: 4px; font-size: 13px; font-weight: 600; margin-left: 8px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ハンズオン演習</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="ex-grid">
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge">課題A</div><div class="ex-title">カラーパレットを決める</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot"></div>自分のプロジェクトのテーマカラーを選ぶ<span class="time-badge">10分</span></div>
+                        <div class="ex-step"><div class="step-dot"></div>Primary・Accent・Text・BG の4色をCSSに定義</div>
+                        <div class="ex-step"><div class="step-dot"></div>Claude Codeに「このテーマに合うカラーパレット」を相談</div>
+                        <div class="ex-step"><div class="step-dot"></div>コントラスト比をチェックツールで確認（contrast-ratio.com）</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge teal">課題B</div><div class="ex-title">カードコンポーネントを作る</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot teal"></div>Claude Codeに「Tailwindで本のカードを作って」と依頼<span class="time-badge">15分</span></div>
+                        <div class="ex-step"><div class="step-dot teal"></div>title・author・rating を受け取るReactコンポーネント</div>
+                        <div class="ex-step"><div class="step-dot teal"></div>hoverで影が深くなるアニメーションを追加</div>
+                        <div class="ex-step"><div class="step-dot teal"></div>3枚並べてグリッドレイアウトで表示</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge dark">課題C</div><div class="ex-title">レスポンシブ対応</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>作成したカードグリッドをレスポンシブ対応<span class="time-badge">15分</span></div>
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>スマホ1列 → タブレット2列 → PC3列</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>Chrome DevToolsでデバイスを切り替えて確認</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#212529"></div>ナビゲーションのモバイル対応も試みる</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header"><div class="ex-badge star">★ 発展</div><div class="ex-title">ダークモードを実装</div></div>
+                    <div class="ex-steps">
+                        <div class="ex-step"><div class="step-dot" style="background:#fcc419"></div>CSS変数でカラーシステムを構築</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#fcc419"></div>@media prefers-color-scheme でダークモード定義</div>
+                        <div class="ex-step"><div class="step-dot" style="background:#fcc419"></div>トグルボタンでJS切り替えにも挑戦</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

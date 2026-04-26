@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 25px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; display: flex; flex-direction: column; gap: 14px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 20px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 14.5px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .method-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 14px; }
+        .method-badge { font-size: 15px; font-weight: 500; padding: 4px 12px; border-radius: 4px; width: 64px; text-align: center; }
+        .get { background-color: #e7f5ff; color: #339AF0; }
+        .post { background-color: #ebfbee; color: #20C997; }
+        .put { background-color: #fff9db; color: #e67700; }
+        .del { background-color: #fff5f5; color: #fa5252; }
+        .method-desc { font-size: 16px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ルーティング：URLとメソッドの組み合わせ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-code" style="color:#339AF0"></i> Express ルーティングの基本</h2>
+                <div class="code-block">
+                    <pre><span class="kw">const</span> express = <span class="fn">require</span>(<span class="str">'express'</span>);
+<span class="kw">const</span> app = <span class="fn">express</span>();
+
+app.<span class="fn">use</span>(express.<span class="fn">json</span>()); <span class="cm">// JSONを受け取る設定</span>
+
+<span class="cm">// GET: データを取得する</span>
+app.<span class="fn">get</span>(<span class="str">'/api/users'</span>, (req, res) =&gt; {
+  res.<span class="fn">json</span>([{ id: 1, name: <span class="str">'太郎'</span> }]);
+});
+
+<span class="cm">// POST: 新しいデータを作成する</span>
+app.<span class="fn">post</span>(<span class="str">'/api/users'</span>, (req, res) =&gt; {
+  <span class="kw">const</span> { name } = req.body;
+  res.<span class="fn">json</span>({ id: 2, name });
+});
+
+<span class="cm">// URLパラメータ (:id)</span>
+app.<span class="fn">get</span>(<span class="str">'/api/users/:id'</span>, (req, res) =&gt; {
+  res.<span class="fn">json</span>({ id: req.params.id });
+});
+
+app.<span class="fn">listen</span>(3000, () =&gt; console.<span class="fn">log</span>(<span class="str">'起動中!'</span>));</pre>
+                </div>
+            </div>
+            <div class="right">
+                <h2>HTTPメソッド</h2>
+                <div class="method-card">
+                    <div class="method-badge get">GET</div>
+                    <div class="method-desc">データを<strong>取得</strong>する（読み取り専用）</div>
+                </div>
+                <div class="method-card">
+                    <div class="method-badge post">POST</div>
+                    <div class="method-desc">新しいデータを<strong>作成</strong>する</div>
+                </div>
+                <div class="method-card">
+                    <div class="method-badge put">PUT</div>
+                    <div class="method-desc">既存のデータを<strong>更新</strong>する</div>
+                </div>
+                <div class="method-card">
+                    <div class="method-badge del">DELETE</div>
+                    <div class="method-desc">データを<strong>削除</strong>する</div>
+                </div>
+                <div style="background:#ebfbee; border-radius:8px; padding:14px; font-size:16px; color:#20C997; font-weight:500; line-height:1.6; margin-top:4px;">
+                    <i class="fas fa-lightbulb"></i> この4つの組み合わせを <strong>CRUD</strong>（クラッド）と呼ぶ。Webアプリの基本操作！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

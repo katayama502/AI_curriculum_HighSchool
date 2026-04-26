@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .intro { font-size: 20px; color: #495057; margin-bottom: 22px; }
+        .perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .perf-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 4px solid #339AF0; }
+        .perf-card:nth-child(2) { border-top-color: #20C997; }
+        .perf-card:nth-child(3) { border-top-color: #f59f00; }
+        .perf-card:nth-child(4) { border-top-color: #ff6b6b; }
+        .perf-card:nth-child(5) { border-top-color: #cc5de8; }
+        .perf-card:nth-child(6) { border-top-color: #212529; }
+        .perf-icon { font-size: 28px; margin-bottom: 10px; }
+        .perf-title { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .perf-text { font-size: 15px; color: #495057; line-height: 1.6; }
+        .perf-code { font-family: monospace; font-size: 13px; background: #f1f3f5; padding: 4px 8px; border-radius: 4px; display: block; margin-top: 6px; color: #339AF0; }
+        .banner { margin-top: 18px; background: #212529; color: white; padding: 14px 20px; border-radius: 6px; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>パフォーマンス改善の基本</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro">「動く」が完成したら次は「速い」を目指す。基本のチューニングを覚えよう。</p>
+            <div class="perf-grid">
+                <div class="perf-card">
+                    <div class="perf-icon" style="color:#339AF0">🔍</div>
+                    <div class="perf-title">DBにインデックスを付ける</div>
+                    <div class="perf-text">よく検索するカラムにINDEXを作ると検索が劇的に速くなる</div>
+                    <code class="perf-code">CREATE INDEX idx_user_id ON books(user_id);</code>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-icon" style="color:#20C997">📦</div>
+                    <div class="perf-title">React.memoで再描画を防ぐ</div>
+                    <div class="perf-text">propsが変わっていないコンポーネントの再描画をスキップ</div>
+                    <code class="perf-code">export default React.memo(BookCard);</code>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-icon" style="color:#f59f00">🖼️</div>
+                    <div class="perf-title">画像を最適化する</div>
+                    <div class="perf-text">WebP形式を使い、サイズを圧縮。loading="lazy"で遅延読み込み</div>
+                    <code class="perf-code">&lt;img loading="lazy"&gt;</code>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-icon" style="color:#ff6b6b">⚡</div>
+                    <div class="perf-title">APIレスポンスをキャッシュ</div>
+                    <div class="perf-text">変わらないデータは再取得しない。useMemoやReact Queryが有効</div>
+                    <code class="perf-code">const data = useMemo(()=>..., []);</code>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-icon" style="color:#cc5de8">🗜️</div>
+                    <div class="perf-title">バンドルサイズを小さくする</div>
+                    <div class="perf-text">Viteのビルドで自動的に最小化される。不要なライブラリを削除</div>
+                    <code class="perf-code">npm run build</code>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-icon" style="color:#212529">📊</div>
+                    <div class="perf-title">Lighthouseで計測する</div>
+                    <div class="perf-text">Chrome DevTools内蔵。パフォーマンス・SEO・アクセシビリティを計測</div>
+                    <code class="perf-code">DevTools → Lighthouse → 分析</code>
+                </div>
+            </div>
+            <div class="banner">
+                <i class="fas fa-robot"></i>
+                「このAPIが遅い。どうすれば速くなりますか？」とClaude Codeに相談するのが最短ルート！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

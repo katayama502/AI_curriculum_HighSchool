@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .cmd-block { background: #212529; border-radius: 8px; padding: 16px 20px; font-family: monospace; font-size: 17px; line-height: 1.9; color: #f8f9fa; margin-bottom: 14px; }
+        .prompt { color: #20C997; }
+        .cmd { color: #339AF0; }
+        .arg { color: #da77f2; }
+        .str { color: #69db7c; }
+        .cmt { color: #868e96; }
+        .flow-step { display: flex; align-items: center; gap: 14px; background: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); margin-bottom: 10px; }
+        .flow-icon { font-size: 22px; color: #339AF0; width: 30px; flex-shrink: 0; }
+        .flow-text h3 { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 2px; }
+        .flow-text p { font-size: 15px; color: #868e96; }
+        .area-box { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .area-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #f1f3f5; }
+        .area-row:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .area-name { background: #339AF0; color: white; padding: 6px 14px; border-radius: 6px; font-size: 16px; font-weight: 500; min-width: 130px; text-align: center; }
+        .area-desc { font-size: 17px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Gitの基本コマンド</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>最初に覚える7つのコマンド</h2>
+                <div class="cmd-block">
+<span class="cmt"># 1. リポジトリを初期化</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">init</span>
+
+<span class="cmt"># 2. 変更ファイルをステージに追加</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">add</span> index.html   <span class="cmt"># 1ファイル</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">add</span> .            <span class="cmt"># 全ファイル</span>
+
+<span class="cmt"># 3. コミット（変更を記録）</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">commit</span> -m <span class="str">"CSSを追加"</span>
+
+<span class="cmt"># 4. 現在の状態を確認</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">status</span>
+
+<span class="cmt"># 5. 変更履歴を表示</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">log</span> --oneline
+
+<span class="cmt"># 6. 変更内容の差分を表示</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="arg">diff</span>
+                </div>
+            </div>
+            <div class="right">
+                <h2>3つのエリア</h2>
+                <div class="area-box" style="margin-bottom:16px;">
+                    <div class="area-row">
+                        <div class="area-name">作業ディレクトリ</div>
+                        <div class="area-desc">実際にファイルを編集する場所</div>
+                    </div>
+                    <div class="area-row">
+                        <div class="area-name" style="background:#F59F00;">ステージ</div>
+                        <div class="area-desc">git addで「次にコミットするファイル」を集める場所</div>
+                    </div>
+                    <div class="area-row">
+                        <div class="area-name" style="background:#2b8a3e;">リポジトリ</div>
+                        <div class="area-desc">git commitで変更が永続的に記録される場所</div>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fas fa-pencil-alt"></i></div>
+                    <div class="flow-text"><h3>ファイルを編集</h3><p>コードを書く・修正する</p></div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fas fa-plus-circle"></i></div>
+                    <div class="flow-text"><h3>git add</h3><p>記録したいファイルをステージへ</p></div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fas fa-save"></i></div>
+                    <div class="flow-text"><h3>git commit</h3><p>変更を歴史として記録する</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

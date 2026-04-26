@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 44px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 20px 60px 0; }
+        .panel { background: #0D0D0D; border-radius: 10px; padding: 18px 20px; }
+        .panel-title { font-size: 17px; font-weight: 700; color: #20C997; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .banner { margin: 14px 60px 0; background: #212529; color: white; border-radius: 8px; padding: 14px 24px; text-align: center; font-size: 20px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第18回 チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="grid">
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-key"></i> JWT認証フロー</div>
+                <div class="code">
+                    <span class="c-gray">// ログイン → JWTを発行</span><br>
+                    <span class="c-pink">const</span> token = jwt.<span class="c-green">sign</span>(<br>
+                    &nbsp;&nbsp;{ userId: user.id },<br>
+                    &nbsp;&nbsp;process.env.<span class="c-blue">JWT_SECRET</span>,<br>
+                    &nbsp;&nbsp;{ expiresIn: <span class="c-yellow">'7d'</span> }<br>
+                    );<br><br>
+                    <span class="c-gray">// リクエスト → JWTを検証</span><br>
+                    <span class="c-pink">const</span> decoded = jwt.<span class="c-green">verify</span>(token, secret);<br>
+                    req.user = decoded; <span class="c-gray">// req.user.userId</span>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-database"></i> CRUD API</div>
+                <div class="code">
+                    <span class="c-green">GET</span>    <span class="c-blue">/api/books</span><span class="c-gray">       → .all(userId)</span><br>
+                    <span class="c-green">POST</span>   <span class="c-blue">/api/books</span><span class="c-gray">       → .run(data)</span><br>
+                    <span class="c-green">PUT</span>    <span class="c-blue">/api/books/:id</span><span class="c-gray">   → .run(data,id)</span><br>
+                    <span class="c-green">DELETE</span> <span class="c-blue">/api/books/:id</span><span class="c-gray">   → .run(id)</span><br><br>
+                    <span class="c-gray">// 必ず WHERE user_id=? を付ける</span><br>
+                    <span class="c-yellow">'... WHERE id=? AND user_id=?'</span>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-plug"></i> フロントAPI接続</div>
+                <div class="code">
+                    <span class="c-pink">const</span> <span class="c-green">authFetch</span> = (url, opts) =><br>
+                    &nbsp;&nbsp;<span class="c-blue">fetch</span>(BASE + url, {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;...opts,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;headers: { <span class="c-yellow">'Authorization'</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">`Bearer ${token}`</span> }<br>
+                    &nbsp;&nbsp;});<br><br>
+                    <span class="c-gray">// useEffect で呼び出し</span><br>
+                    <span class="c-green">getBooks</span>().then(data => setBooks(data));
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"><i class="fas fa-bug"></i> デバッグチェックリスト</div>
+                <div class="code">
+                    <span class="c-yellow">1.</span> <span class="c-green">エラーメッセージ</span><span class="c-gray">を全文読む</span><br>
+                    <span class="c-yellow">2.</span> <span class="c-green">console.log</span><span class="c-gray"> で値を確認</span><br>
+                    <span class="c-yellow">3.</span> <span class="c-blue">Network</span><span class="c-gray"> タブでリクエスト確認</span><br>
+                    <span class="c-yellow">4.</span> <span class="c-pink">Claude Code</span><span class="c-gray">にエラー全文を貼る</span><br><br>
+                    <span class="c-gray">よくあるエラー：</span><br>
+                    CORS → cors() ミドルウェア追加<br>
+                    401  → トークン確認・ログイン誘導
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            ⚙️ 「動く」→「速い」→「安全」の順でアプリを育てよう！
+        </div>
+    </div>
+</body>
+</html>

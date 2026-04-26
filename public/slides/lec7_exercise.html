@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 30px; }
+        .task-col { flex: 1; }
+        .task-card { background: white; border-radius: 10px; padding: 20px 22px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); margin-bottom: 16px; }
+        .task-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+        .badge-a { background: #d3f9d8; color: #2b8a3e; }
+        .badge-b { background: #dbe4ff; color: #364fc7; }
+        .badge-c { background: #ffe8cc; color: #e67700; }
+        .badge-challenge { background: #212529; color: #F59F00; }
+        .task-card h3 { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 8px; }
+        .task-card p { font-size: 17px; color: #495057; line-height: 1.6; }
+        .task-card ol { padding-left: 20px; margin-top: 8px; }
+        .task-card li { font-size: 17px; color: #495057; line-height: 1.8; }
+        .hint-box { background: #fff3bf; border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 16px; color: #664d03; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-a">TASK A — 基礎</div>
+                    <h3>名前を入力して挨拶表示</h3>
+                    <p>テキスト入力欄とボタンを作り、名前を入力してボタンを押すと「こんにちは、〇〇さん！」と表示されるページをClaudeに作ってもらう。</p>
+                    <div class="hint-box">💡 ヒント：getElementById・textContent・addEventListenerを使うように伝えよう</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-b">TASK B — 応用</div>
+                    <h3>シンプルな計算機</h3>
+                    <p>2つの数値を入力し「＋」「−」「×」「÷」のボタンを押すと計算結果が表示される計算機をClaudeに作ってもらう。</p>
+                    <ol>
+                        <li>入力欄を2つ作る</li>
+                        <li>4つの演算ボタンを作る</li>
+                        <li>それぞれのボタンに計算処理を追加</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-c">TASK C — 発展</div>
+                    <h3>ToDoリスト</h3>
+                    <p>入力欄にタスクを入力して「追加」ボタンを押すとリストに追加され、各タスクに「完了」ボタンを付けて押すと取り消し線が入るToDoリストを作る。</p>
+                    <div class="hint-box">💡 配列にタスクを保存し、forEachでHTMLを生成する考え方をClaudeに説明してもらおう</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-challenge">🏆 チャレンジ</div>
+                    <h3>天気アプリもどき</h3>
+                    <p>ボタンを押すと「今日の天気：晴れ ☀️ 気温25℃」などランダムに表示するミニ天気アプリを作る。配列に天気パターンを用意し、Math.random()で選択する方法をClaudeに聞いてみよう。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

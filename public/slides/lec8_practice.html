@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .task-header { background: #3776AB; color: white; padding: 14px 20px; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .step-item { background: white; padding: 14px 18px; margin-top: 10px; display: flex; align-items: flex-start; gap: 14px; }
+        .step-num { width: 36px; height: 36px; background: #212529; color: white; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-text { font-size: 18px; color: #212529; line-height: 1.5; }
+        .step-sub { font-size: 14px; color: #6C757D; margin-top: 4px; }
+        .requirements-header { background: #20C997; color: white; padding: 14px 20px; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .req-item { background: white; padding: 12px 18px; margin-top: 8px; font-size: 18px; color: #212529; display: flex; align-items: center; gap: 12px; }
+        .req-icon { font-size: 20px; }
+        .time-badge { background: #212529; color: white; padding: 14px 20px; margin-top: 16px; font-size: 18px; display: flex; align-items: center; gap: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ハンズオン：成績計算プログラム</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="task-header">🐍 作業手順</div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-text">Google Colab を開く</div>
+                        <div class="step-sub">colab.research.google.com（無料・インストール不要）</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-text">Claudeに成績計算プログラムを依頼</div>
+                        <div class="step-sub">「5科目の点数を入力して平均と評価を出すPythonプログラム」</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-text">コードをColabに貼り付けて実行</div>
+                        <div class="step-sub">Shift+Enter で実行できる</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="step-text">機能を追加してカスタマイズ</div>
+                        <div class="step-sub">「最高点・最低点も表示して」とClaudeに頼む</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="requirements-header">✅ 完成要件</div>
+                <div class="req-item"><span class="req-icon">📊</span>5科目の点数を入力できる</div>
+                <div class="req-item"><span class="req-icon">🔢</span>平均点を計算して表示</div>
+                <div class="req-item"><span class="req-icon">🏆</span>90以上→A、80以上→B…と評価表示</div>
+                <div class="req-item"><span class="req-icon">📈</span>最高点・最低点も表示</div>
+                <div class="req-item"><span class="req-icon">💬</span>Claudeに1回以上改善を依頼した</div>
+                <div class="time-badge">
+                    <span>⏱️</span>
+                    <span>目標時間：<strong>30分</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

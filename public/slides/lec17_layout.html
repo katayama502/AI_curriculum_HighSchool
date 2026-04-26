@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .grid-demo { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 16px; }
+        .grid-visual { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin-bottom: 10px; }
+        .grid-cell { height: 28px; background: #e3f2fd; border-radius: 2px; }
+        .grid-cell.active { background: #339AF0; }
+        .layout-examples { display: flex; flex-direction: column; gap: 8px; }
+        .layout-row { display: flex; gap: 6px; }
+        .layout-block { height: 28px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 600; }
+        .spacing-box { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .space-item { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+        .space-bar { height: 20px; border-radius: 3px; background: #339AF0; }
+        .space-label { font-size: 16px; color: #495057; font-family: monospace; min-width: 60px; }
+        .space-desc { font-size: 15px; color: #495057; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 16px 18px; }
+        .code-box code { font-family: monospace; font-size: 14px; line-height: 1.8; color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>レイアウトとグリッドシステム</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-th" style="color:#339AF0"></i> 12カラムグリッド</h2>
+                <div class="grid-demo">
+                    <div class="grid-visual">
+                        <div class="grid-cell active"></div><div class="grid-cell active"></div><div class="grid-cell active"></div><div class="grid-cell active"></div>
+                        <div class="grid-cell active"></div><div class="grid-cell active"></div><div class="grid-cell active"></div><div class="grid-cell active"></div>
+                        <div class="grid-cell active"></div><div class="grid-cell active"></div><div class="grid-cell active"></div><div class="grid-cell active"></div>
+                    </div>
+                    <div class="layout-examples">
+                        <div class="layout-row">
+                            <div class="layout-block" style="flex:12;background:#339AF0;">12カラム（全幅）</div>
+                        </div>
+                        <div class="layout-row">
+                            <div class="layout-block" style="flex:6;background:#1971c2;">6col</div>
+                            <div class="layout-block" style="flex:6;background:#20C997;">6col</div>
+                        </div>
+                        <div class="layout-row">
+                            <div class="layout-block" style="flex:4;background:#1971c2;">4col</div>
+                            <div class="layout-block" style="flex:4;background:#339AF0;">4col</div>
+                            <div class="layout-block" style="flex:4;background:#20C997;">4col</div>
+                        </div>
+                        <div class="layout-row">
+                            <div class="layout-block" style="flex:3;background:#212529;">3col</div>
+                            <div class="layout-block" style="flex:9;background:#495057;">9col（メインコンテンツ）</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacing-box">
+                    <div style="font-size:18px;font-weight:600;margin-bottom:10px;color:#212529;">スペーシング（8px基数）</div>
+                    <div class="space-item"><div class="space-bar" style="width:8px;"></div><div class="space-label">8px</div><div class="space-desc">要素内の小さな隙間</div></div>
+                    <div class="space-item"><div class="space-bar" style="width:16px;"></div><div class="space-label">16px</div><div class="space-desc">コンポーネント内のパディング</div></div>
+                    <div class="space-item"><div class="space-bar" style="width:24px;"></div><div class="space-label">24px</div><div class="space-desc">セクション間のギャップ</div></div>
+                    <div class="space-item"><div class="space-bar" style="width:48px;"></div><div class="space-label">48px</div><div class="space-desc">ページの大きなセクション分離</div></div>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-code" style="color:#20C997"></i> CSS FlexboxとGridの使い分け</h2>
+                <div class="code-box">
+                    <code>
+<span class="c-gray">/* 横並びレイアウト → Flexbox */</span><br>
+<span class="c-blue">.nav</span> {<br>
+  <span class="c-yellow">display</span>: flex;<br>
+  <span class="c-yellow">gap</span>: 24px;<br>
+  <span class="c-yellow">align-items</span>: center;<br>
+}<br><br>
+<span class="c-gray">/* カード一覧 → Grid */</span><br>
+<span class="c-blue">.card-grid</span> {<br>
+  <span class="c-yellow">display</span>: grid;<br>
+  <span class="c-yellow">grid-template-columns</span>:<br>
+    repeat(3, 1fr);<br>
+  <span class="c-yellow">gap</span>: 20px;<br>
+}<br><br>
+<span class="c-gray">/* レスポンシブ対応 */</span><br>
+<span class="c-blue">@media (max-width: 768px)</span> {<br>
+  <span class="c-blue">.card-grid</span> {<br>
+    <span class="c-yellow">grid-template-columns</span>: 1fr;<br>
+  }<br>
+}
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

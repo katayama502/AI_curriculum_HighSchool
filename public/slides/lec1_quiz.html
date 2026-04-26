@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 20px; }
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .q-num { font-size: 14px; font-weight: 700; color: #339AF0; margin-bottom: 8px; }
+        .q-text { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 16px; line-height: 1.5; }
+        .q-choices { display: flex; flex-direction: column; gap: 8px; }
+        .choice { background: #F8F9FA; border-radius: 6px; padding: 10px 14px; font-size: 17px; font-weight: 300; color: #495057; cursor: pointer; border: 2px solid transparent; }
+        .choice.correct { background: #ebfbee; border-color: #20C997; color: #20C997; font-weight: 500; }
+        .choice.wrong { background: #fff5f5; border-color: #fa5252; color: #fa5252; }
+        .answer-note { font-size: 15px; color: #20C997; margin-top: 10px; font-weight: 300; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>理解度チェック ✅</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>第1回の内容を確認しよう！答えは先生と一緒に確認します</h2>
+            <div class="quiz-grid">
+                <div class="quiz-card">
+                    <div class="q-num">問題 1</div>
+                    <div class="q-text">「大規模言語モデル」の英語略称は？</div>
+                    <div class="q-choices">
+                        <div class="choice">① AI（Artificial Intelligence）</div>
+                        <div class="choice correct">② LLM（Large Language Model）</div>
+                        <div class="choice">③ ML（Machine Learning）</div>
+                        <div class="choice">④ API（Application Programming Interface）</div>
+                    </div>
+                    <div class="answer-note">✓ LLM：大量のテキストを学習した巨大な言語モデル</div>
+                </div>
+                <div class="quiz-card">
+                    <div class="q-num">問題 2</div>
+                    <div class="q-text">Claudeを開発した会社の名前は？</div>
+                    <div class="q-choices">
+                        <div class="choice">① OpenAI</div>
+                        <div class="choice">② Google</div>
+                        <div class="choice correct">③ Anthropic</div>
+                        <div class="choice">④ Meta</div>
+                    </div>
+                    <div class="answer-note">✓ Anthropic：安全なAI開発を目的として2021年設立</div>
+                </div>
+                <div class="quiz-card">
+                    <div class="q-num">問題 3</div>
+                    <div class="q-text">AIが「もっともらしいウソ」をつくことを何という？</div>
+                    <div class="q-choices">
+                        <div class="choice">① バイアス（Bias）</div>
+                        <div class="choice correct">② ハルシネーション（Hallucination）</div>
+                        <div class="choice">③ オーバーフィット（Overfitting）</div>
+                        <div class="choice">④ プロンプト（Prompt）</div>
+                    </div>
+                    <div class="answer-note">✓ AIの情報は必ず自分でも確認する習慣をつけよう</div>
+                </div>
+                <div class="quiz-card">
+                    <div class="q-num">問題 4</div>
+                    <div class="q-text">良いプロンプトを書くために大切なことは？</div>
+                    <div class="q-choices">
+                        <div class="choice">① できるだけ短く書く</div>
+                        <div class="choice">② 難しい言葉を使う</div>
+                        <div class="choice correct">③ 目的・対象・形式を明確にする</div>
+                        <div class="choice">④ 英語で書く</div>
+                    </div>
+                    <div class="answer-note">✓ 「誰が・何を・どのように」を明確にすると良い回答が得られる</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

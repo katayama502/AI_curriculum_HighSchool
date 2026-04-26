@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); border-top: 5px solid #212529; }
+        .quiz-num { font-size: 13px; font-weight: 700; color: #212529; letter-spacing: 1px; margin-bottom: 8px; }
+        .quiz-q { font-size: 19px; font-weight: 500; color: #212529; line-height: 1.5; margin-bottom: 12px; }
+        code { background: #212529; color: #20C997; padding: 3px 8px; border-radius: 4px; font-family: monospace; font-size: 17px; }
+        .choices { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+        .choice { background: #f8f9fa; border-radius: 5px; padding: 7px 12px; font-size: 16px; color: #495057; }
+        .choice.correct { background: #d3f9d8; color: #2b8a3e; font-weight: 500; border-left: 4px solid #2b8a3e; }
+        .answer-box { background: #e9ecef; border-radius: 6px; padding: 8px 12px; font-size: 15px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ — Git・GitHub</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-card">
+                <div class="quiz-num">Q1</div>
+                <div class="quiz-q">変更したファイルをコミット前にステージに追加するコマンドは？</div>
+                <div class="choices">
+                    <div class="choice">A. <code>git commit</code></div>
+                    <div class="choice correct">B. <code>git add .</code> ✓</div>
+                    <div class="choice">C. <code>git push</code></div>
+                    <div class="choice">D. <code>git stage</code></div>
+                </div>
+                <div class="answer-box">git addでファイルをステージへ、git commitで記録する2ステップが基本。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q2</div>
+                <div class="quiz-q">新しいブランチを作りながら移動するコマンドは？</div>
+                <div class="choices">
+                    <div class="choice">A. <code>git branch new-feature</code></div>
+                    <div class="choice correct">B. <code>git checkout -b new-feature</code> ✓</div>
+                    <div class="choice">C. <code>git create new-feature</code></div>
+                    <div class="choice">D. <code>git switch --new new-feature</code></div>
+                </div>
+                <div class="answer-box">-bオプションで「作成＋移動」が一度にできる。git switch -cも同じ動作。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q3</div>
+                <div class="quiz-q">ローカルの変更をGitHubに送るコマンドは？</div>
+                <div class="choices">
+                    <div class="choice">A. <code>git send origin main</code></div>
+                    <div class="choice correct">B. <code>git push origin main</code> ✓</div>
+                    <div class="choice">C. <code>git upload origin main</code></div>
+                    <div class="choice">D. <code>git commit origin main</code></div>
+                </div>
+                <div class="answer-box">pushでローカル→リモート（GitHub）へ送信。pullはリモート→ローカルへの取得。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q4</div>
+                <div class="quiz-q">.gitignoreファイルに記載すべきでないものは？</div>
+                <div class="choices">
+                    <div class="choice">A. APIキーが入った.envファイル</div>
+                    <div class="choice">B. node_modules/フォルダ</div>
+                    <div class="choice correct">C. index.htmlやmain.pyなどのソースコード ✓</div>
+                    <div class="choice">D. .DS_Store（macOSのシステムファイル）</div>
+                </div>
+                <div class="answer-box">ソースコード（書いたコード）こそGitで管理すべきもの。環境・依存・機密情報は除外する。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

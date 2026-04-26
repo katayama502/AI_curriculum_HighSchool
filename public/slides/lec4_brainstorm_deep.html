@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 30px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .technique-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .technique-card { background: white; border-radius: 8px; padding: 22px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; }
+        .technique-card:nth-child(2) { border-top-color: #20C997; }
+        .technique-card:nth-child(3) { border-top-color: #845EF7; }
+        .technique-card:nth-child(4) { border-top-color: #F59F00; }
+        .card-title { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .card-icon { font-size: 22px; }
+        .card-icon.blue { color: #339AF0; }
+        .card-icon.teal { color: #20C997; }
+        .card-icon.purple { color: #845EF7; }
+        .card-icon.yellow { color: #F59F00; }
+        .prompt-box { background: #F8F9FA; border-left: 3px solid #dee2e6; padding: 10px 14px; margin-top: 10px; border-radius: 0 4px 4px 0; }
+        .prompt-text { font-size: 16px; color: #495057; line-height: 1.5; font-style: italic; }
+        .card-desc { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ブレインストーミングの4つのテクニック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>Claudeへの指示方法でアイデアの広がり方が変わる</h2>
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <div class="card-title"><span class="card-icon blue"><i class="fas fa-random"></i></span>① 数量指定法</div>
+                    <div class="card-desc">まず「とにかく20個出して」と量を求める。質より量でまず広げる。</div>
+                    <div class="prompt-box"><div class="prompt-text">「〇〇について、良い悪い関係なくアイデアを20個出してください」</div></div>
+                </div>
+                <div class="technique-card">
+                    <div class="card-title"><span class="card-icon teal"><i class="fas fa-user-friends"></i></span>② 視点変換法</div>
+                    <div class="card-desc">異なる立場や職業の人ならどう考えるかを聞く。意外な発想が生まれる。</div>
+                    <div class="prompt-box"><div class="prompt-text">「子ども・高齢者・外国人の3つの視点からアイデアを出してください」</div></div>
+                </div>
+                <div class="technique-card">
+                    <div class="card-title"><span class="card-icon purple"><i class="fas fa-ban"></i></span>③ 逆転発想法</div>
+                    <div class="card-desc">「逆にするとどうなるか」を考えさせる。常識を壊すアイデアが出る。</div>
+                    <div class="prompt-box"><div class="prompt-text">「〇〇の問題を"あえて悪化させる"方法を考え、その逆を提案して」</div></div>
+                </div>
+                <div class="technique-card">
+                    <div class="card-title"><span class="card-icon yellow"><i class="fas fa-puzzle-piece"></i></span>④ 組み合わせ法</div>
+                    <div class="card-desc">2つの無関係なものを組み合わせて新しいアイデアを生み出す。</div>
+                    <div class="prompt-box"><div class="prompt-text">「"カフェ"と"図書館"を組み合わせた新サービスを5つ考えて」</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

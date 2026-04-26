@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-win { background: #1A1A2E; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+        .cw-bar { background: #2d2d44; padding: 8px 14px; display: flex; gap: 6px; align-items: center; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot.r { background: #FF5F56; } .dot.y { background: #FFBD2E; } .dot.g { background: #27C93F; }
+        .cw-code { padding: 14px 18px; font-family: monospace; font-size: 15px; line-height: 1.9; color: #e9ecef; }
+        .ck { color: #74c0fc; } .cv { color: #ffd43b; } .cs { color: #8ce99a; } .cn { color: #ff8787; } .cc { color: #868e96; }
+        .flowchart { background: white; border-radius: 8px; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .fc-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .fc-row { display: flex; align-items: center; gap: 0; margin-bottom: 6px; }
+        .fc-box { padding: 10px 16px; border-radius: 6px; font-size: 16px; font-weight: 500; text-align: center; }
+        .fc-box.cond { background: #339AF0; color: white; }
+        .fc-box.yes { background: #20C997; color: white; }
+        .fc-box.no { background: #fa5252; color: white; }
+        .fc-box.end { background: #e9ecef; color: #495057; }
+        .fc-arrow { font-size: 16px; color: #adb5bd; margin: 0 8px; }
+        .fc-label { font-size: 14px; color: #868e96; margin-right: 4px; }
+        .ops-box { background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .ops-title { font-size: 18px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .ops-row { display: flex; gap: 8px; flex-wrap: wrap; }
+        .op-chip { background: #1A1A2E; color: #74c0fc; padding: 4px 12px; border-radius: 4px; font-family: monospace; font-size: 15px; font-weight: 700; }
+        .op-desc { font-size: 15px; color: #495057; padding: 4px 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>条件分岐 — if/else で判断を作る</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>基本の if / else if / else</h2>
+                <div class="code-win">
+                    <div class="cw-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+                    <div class="cw-code">
+<span class="ck">const</span> <span class="cv">score</span> = <span class="cn">75</span>;<br><br>
+<span class="ck">if</span> (<span class="cv">score</span> >= <span class="cn">90</span>) {<br>
+&nbsp;&nbsp;console.log(<span class="cs">"優秀！"</span>);<br>
+} <span class="ck">else if</span> (<span class="cv">score</span> >= <span class="cn">70</span>) {<br>
+&nbsp;&nbsp;console.log(<span class="cs">"合格"</span>);<br>
+} <span class="ck">else</span> {<br>
+&nbsp;&nbsp;console.log(<span class="cs">"再挑戦"</span>);<br>
+}<br><br>
+<span class="cc">// 出力: "合格"</span>
+                    </div>
+                </div>
+                <div class="ops-box">
+                    <div class="ops-title">比較演算子</div>
+                    <div class="ops-row">
+                        <span class="op-chip">===</span><span class="op-desc">等しい</span>
+                        <span class="op-chip">!==</span><span class="op-desc">等しくない</span>
+                        <span class="op-chip">&gt;</span><span class="op-desc">より大きい</span>
+                        <span class="op-chip">&lt;</span><span class="op-desc">より小さい</span>
+                        <span class="op-chip">&gt;=</span><span class="op-desc">以上</span>
+                        <span class="op-chip">&amp;&amp;</span><span class="op-desc">かつ</span>
+                        <span class="op-chip">||</span><span class="op-desc">または</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>フローチャートで理解する</h2>
+                <div class="flowchart">
+                    <div class="fc-title">score判定の流れ</div>
+                    <div class="fc-row">
+                        <div class="fc-box cond">score >= 90 ?</div>
+                        <span class="fc-arrow">→</span>
+                        <span class="fc-label">YES</span>
+                        <div class="fc-box yes">「優秀！」</div>
+                    </div>
+                    <div style="text-align:left;padding:4px 0 4px 8px;font-size:18px;color:#adb5bd;">↓ NO</div>
+                    <div class="fc-row">
+                        <div class="fc-box cond">score >= 70 ?</div>
+                        <span class="fc-arrow">→</span>
+                        <span class="fc-label">YES</span>
+                        <div class="fc-box yes">「合格」</div>
+                    </div>
+                    <div style="text-align:left;padding:4px 0 4px 8px;font-size:18px;color:#adb5bd;">↓ NO</div>
+                    <div class="fc-row">
+                        <div class="fc-box no">「再挑戦」</div>
+                    </div>
+                </div>
+                <div style="background:#e7f5ff;border-radius:8px;padding:14px 18px;margin-top:14px;font-size:18px;color:#212529;">
+                    💡 <strong>===</strong> を使う（<strong>==</strong> は型変換が起きてバグの原因になる）
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

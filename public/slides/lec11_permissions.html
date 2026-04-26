@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .perm-card {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .perm-icon { font-size: 24px; flex-shrink: 0; padding-top: 2px; }
+        .perm-title { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .perm-desc { font-size: 16px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .ask-box {
+            background: #339AF0;
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .ask-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+        .ask-item { font-size: 16px; font-weight: 300; line-height: 1.8; margin-bottom: 4px; }
+        .ask-item i { margin-right: 8px; }
+        .danger-box {
+            background: white;
+            border: 3px solid #fa5252;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .danger-title { font-size: 18px; font-weight: 700; color: #fa5252; margin-bottom: 12px; }
+        .danger-item { font-size: 16px; font-weight: 300; color: #495057; line-height: 1.8; margin-bottom: 6px; }
+        .danger-item i { color: #fa5252; margin-right: 8px; }
+        .terminal-sample {
+            background: #0D0D0D;
+            border-radius: 6px;
+            padding: 14px 18px;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+        .ts-q { color: #339AF0; }
+        .ts-a { color: #20C997; font-weight: 700; }
+        .ts-warn { color: #ffa94d; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>パーミッションと安全な使い方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Claude Codeができること</h2>
+                <div class="perm-card">
+                    <div class="perm-icon">📖</div>
+                    <div>
+                        <div class="perm-title">ファイルの読み取り</div>
+                        <div class="perm-desc">プロジェクト内のファイルを全て読むことができます。実行前に確認は不要。</div>
+                    </div>
+                </div>
+                <div class="perm-card">
+                    <div class="perm-icon">✏️</div>
+                    <div>
+                        <div class="perm-title">ファイルの書き込み・編集</div>
+                        <div class="perm-desc">ファイルを変更する前に「許可しますか？」と聞いてきます（確認が必要）。</div>
+                    </div>
+                </div>
+                <div class="perm-card">
+                    <div class="perm-icon">⚡</div>
+                    <div>
+                        <div class="perm-title">コマンドの実行</div>
+                        <div class="perm-desc">npm install や git コマンドを実行する前に必ず確認を求めます。</div>
+                    </div>
+                </div>
+                <div class="ask-box">
+                    <div class="ask-title"><i class="fas fa-question-circle"></i> このような確認が出ます</div>
+                    <div class="ask-item"><i class="fas fa-file-edit"></i>「index.htmlを編集してもいいですか？」</div>
+                    <div class="ask-item"><i class="fas fa-terminal"></i>「npm install を実行してもいいですか？」</div>
+                    <div class="ask-item"><i class="fas fa-trash"></i>「このファイルを削除してもいいですか？」</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>安全に使うためのルール</h2>
+                <div class="danger-box">
+                    <div class="danger-title"><i class="fas fa-exclamation-triangle"></i> 絶対NG！やってはいけないこと</div>
+                    <div class="danger-item"><i class="fas fa-times"></i>APIキーをコードに直書きしてGitHubにpush</div>
+                    <div class="danger-item"><i class="fas fa-times"></i>知らない人に送られてきたコードをそのまま実行</div>
+                    <div class="danger-item"><i class="fas fa-times"></i>「全ての権限を与えて」という指示に従う</div>
+                    <div class="danger-item"><i class="fas fa-times"></i>システムの重要フォルダ（/etc, /sys）を触らせる</div>
+                </div>
+                <div class="terminal-sample">
+                    <div class="ts-warn"># ⚠️ 確認プロンプトの例</div>
+                    <br>
+                    <div class="ts-q">Claude: package.jsonを作成してもよいですか？</div>
+                    <div style="color:#f8f9fa">path: /my-app/package.json</div>
+                    <br>
+                    <div style="color:#868e96">[y]es / [n]o / [a]lways / [d]on't ask again</div>
+                    <br>
+                    <div class="ts-q">あなたの入力: </div><span class="ts-a">y</span>
+                    <div class="ts-a">✓ ファイルを作成しました</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

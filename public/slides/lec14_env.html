@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 18px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .danger-card { background-color: #fff5f5; border: 2px solid #fa5252; border-radius: 8px; padding: 18px 22px; }
+        .danger-title { font-size: 18px; font-weight: 500; color: #fa5252; margin-bottom: 8px; }
+        .danger-body { font-size: 16px; color: #495057; line-height: 1.6; }
+        .safe-card { background-color: #ebfbee; border: 2px solid #20C997; border-radius: 8px; padding: 18px 22px; }
+        .safe-title { font-size: 18px; font-weight: 500; color: #20C997; margin-bottom: 8px; }
+        .safe-body { font-size: 16px; color: #495057; line-height: 1.6; }
+        .tip-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>環境変数：秘密情報を安全に管理</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-key" style="color:#339AF0"></i> .env ファイルの使い方</h2>
+                <div class="code-block">
+                    <pre><span class="cm"># .env ファイル（GitHubに上げない！）</span>
+<span class="kw">PORT</span>=3000
+<span class="kw">DB_PATH</span>=./data.db
+<span class="kw">API_KEY</span>=sk-xxxxxxxxxxxx
+<span class="kw">JWT_SECRET</span>=mysecretkey</pre>
+                </div>
+                <div style="margin-top: 16px;" class="code-block">
+                    <pre><span class="cm">// index.js で読み込む</span>
+<span class="kw">require</span>(<span class="str">'dotenv'</span>).<span class="kw">config</span>();
+
+<span class="cm">// process.env で参照</span>
+<span class="kw">const</span> port = process.env.PORT || 3000;
+<span class="kw">const</span> apiKey = process.env.API_KEY;</pre>
+                </div>
+            </div>
+            <div class="right">
+                <div class="danger-card">
+                    <div class="danger-title"><i class="fas fa-times-circle"></i> NG — コードにAPIキーを直書き</div>
+                    <div class="danger-body">GitHubに上げた瞬間に世界中に漏れる！クレジットカード不正利用の被害事例も多数あり。絶対にやめよう。</div>
+                </div>
+                <div class="safe-card">
+                    <div class="safe-title"><i class="fas fa-check-circle"></i> OK — .env ファイルで管理</div>
+                    <div class="safe-body"><code>.gitignore</code> に <code>.env</code> を追記すれば、ローカルにしか存在しないシークレット情報として安全に管理できる。</div>
+                </div>
+                <div class="tip-card">
+                    <div style="font-size:17px; font-weight:500; color:#212529; margin-bottom:6px;"><i class="fas fa-copy" style="color:#339AF0"></i> .env.example を用意しよう</div>
+                    <div style="font-size:15px; color:#495057; line-height:1.5;">キー名だけ書いた <code>.env.example</code> をGitに含めると、他の人がどんな変数が必要かわかる。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

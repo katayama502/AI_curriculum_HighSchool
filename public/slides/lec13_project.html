@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .tree { background-color: #0D0D0D; border-radius: 8px; padding: 22px; }
+        .tree pre { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #f8f9fa; }
+        .dir { color: #339AF0; font-weight: 500; }
+        .file { color: #dee2e6; }
+        .ann { color: #868e96; }
+        .component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .comp-card { background-color: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .comp-name { font-size: 17px; font-weight: 500; color: #339AF0; margin-bottom: 6px; font-family: "Courier New", monospace; }
+        .comp-desc { font-size: 15px; color: #495057; line-height: 1.5; }
+        .badge { display: inline-block; font-size: 13px; padding: 2px 8px; border-radius: 4px; font-weight: 500; margin-bottom: 6px; }
+        .badge.blue { background-color: #e7f5ff; color: #339AF0; }
+        .badge.green { background-color: #ebfbee; color: #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ミニプロジェクト：天気アプリ構成</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-folder-open" style="color:#339AF0"></i> ファイル構成</h2>
+                <div class="tree">
+                    <pre><span class="dir">weather-app/</span>
+├── <span class="dir">src/</span>
+│   ├── <span class="dir">components/</span>
+│   │   ├── <span class="file">SearchForm.jsx</span>  <span class="ann">← 検索フォーム</span>
+│   │   ├── <span class="file">WeatherCard.jsx</span> <span class="ann">← 天気カード</span>
+│   │   └── <span class="file">ErrorMsg.jsx</span>    <span class="ann">← エラー表示</span>
+│   ├── <span class="file">App.jsx</span>           <span class="ann">← state管理・API</span>
+│   ├── <span class="file">main.jsx</span>          <span class="ann">← エントリポイント</span>
+│   └── <span class="file">App.css</span>
+├── <span class="file">.env</span>              <span class="ann">← APIキー保管</span>
+└── <span class="file">package.json</span></pre>
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-puzzle-piece" style="color:#339AF0"></i> 各コンポーネントの役割</h2>
+                <div class="component-grid">
+                    <div class="comp-card">
+                        <div class="badge blue">親</div>
+                        <div class="comp-name">App.jsx</div>
+                        <div class="comp-desc">stateとAPI取得を担当。データを子コンポーネントにpropsで渡す。</div>
+                    </div>
+                    <div class="comp-card">
+                        <div class="badge green">子</div>
+                        <div class="comp-name">SearchForm.jsx</div>
+                        <div class="comp-desc">都市名の入力フォーム。検索ボタンを押すとAppに通知。</div>
+                    </div>
+                    <div class="comp-card">
+                        <div class="badge green">子</div>
+                        <div class="comp-name">WeatherCard.jsx</div>
+                        <div class="comp-desc">city・temp・iconをpropsで受け取り、カード形式で表示。</div>
+                    </div>
+                    <div class="comp-card">
+                        <div class="badge green">子</div>
+                        <div class="comp-name">ErrorMsg.jsx</div>
+                        <div class="comp-desc">エラーメッセージをpropsで受け取り赤字で表示する。</div>
+                    </div>
+                </div>
+                <div style="background-color:#e7f5ff; border-radius: 8px; padding: 14px 18px; margin-top: 14px; font-size: 16px; color: #339AF0; font-weight: 500;">
+                    <i class="fas fa-lightbulb"></i> データは「上から下へ」(props)、イベントは「下から上へ」(コールバック) が基本！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

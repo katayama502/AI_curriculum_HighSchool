@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 25px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1.2; }
+        .right { flex: 0.8; display: flex; flex-direction: column; gap: 14px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 18px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 13.5px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .num { color: #f06595; }
+        .status-card { background-color: white; border-radius: 8px; padding: 12px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 14px; }
+        .status-code { font-size: 22px; font-weight: 500; width: 50px; }
+        .s200 { color: #20C997; }
+        .s400 { color: #ffd43b; }
+        .s404 { color: #fd7e14; }
+        .s500 { color: #fa5252; }
+        .status-desc { font-size: 16px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>エラーハンドリング：適切なレスポンスを返す</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-exclamation-triangle" style="color:#339AF0"></i> Expressのエラー処理パターン</h2>
+                <div class="code-block">
+                    <pre><span class="cm">// バリデーション（入力チェック）</span>
+app.<span class="fn">post</span>(<span class="str">'/api/todos'</span>, (req, res) =&gt; {
+  <span class="kw">const</span> { text } = req.body;
+
+  <span class="kw">if</span> (!text || text.trim() === <span class="str">''</span>) {
+    <span class="kw">return</span> res.<span class="fn">status</span>(<span class="num">400</span>).<span class="fn">json</span>({
+      error: <span class="str">'テキストは必須です'</span>
+    });
+  }
+
+  <span class="kw">try</span> {
+    <span class="kw">const</span> result = insert.<span class="fn">run</span>(text);
+    res.<span class="fn">status</span>(<span class="num">201</span>).<span class="fn">json</span>({ id: result.lastInsertRowid });
+  } <span class="kw">catch</span> (err) {
+    res.<span class="fn">status</span>(<span class="num">500</span>).<span class="fn">json</span>({ error: <span class="str">'サーバーエラー'</span> });
+  }
+});
+
+<span class="cm">// 404 ハンドラー（最後に定義）</span>
+app.<span class="fn">use</span>((req, res) =&gt; {
+  res.<span class="fn">status</span>(<span class="num">404</span>).<span class="fn">json</span>({ error: <span class="str">'見つかりません'</span> });
+});</pre>
+                </div>
+            </div>
+            <div class="right">
+                <h2>HTTPステータスコード</h2>
+                <div class="status-card">
+                    <div class="status-code s200">200</div>
+                    <div class="status-desc">OK — 成功（GET・PUT）</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-code s200">201</div>
+                    <div class="status-desc">Created — 作成成功（POST）</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-code s400">400</div>
+                    <div class="status-desc">Bad Request — 入力が不正</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-code s404">404</div>
+                    <div class="status-desc">Not Found — 見つからない</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-code s500">500</div>
+                    <div class="status-desc">Server Error — サーバー側の問題</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 16px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .code-block { background: #0D0D0D; padding: 8px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 10px 16px; margin-top: 6px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 12px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>アプリを世界に広める</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">📢 シェアする場所</div>
+                <div class="item">
+                    <span class="item-icon">🐙</span>
+                    <div>
+                        <div class="item-text">GitHubに公開する</div>
+                        <div class="item-sub">ポートフォリオとして将来の就活にも活用</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🐦</span>
+                    <div>
+                        <div class="item-text">X（Twitter）でシェア</div>
+                        <div class="item-sub">「#高校生エンジニア」「#個人開発」タグで発信</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🏫</span>
+                    <div>
+                        <div class="item-text">学校・友達に紹介する</div>
+                        <div class="item-sub">実際に使ってもらってフィードバックをもらう</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📱</span>
+                    <div>
+                        <div class="item-text">Qiitaで技術記事を書く</div>
+                        <div class="item-sub">「〇〇を作った」という記事でアウトプット</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">📝 READMEをClaudeに書いてもらう</div>
+                <div class="code-block">
+<span class="t-prompt">Claude&gt; </span><span class="t-cmd">このプロジェクトのREADME.mdを書いて。GitHubに公開するので見栄えよく</span><br>
+<span class="t-success">● README.md を作成中...</span><br>
+<span class="t-output"># 📚 勉強スケジューラー<br>高校生のためのテスト対策スケジュール管理アプリ<br><br>## 🚀 デモ<br>https://study-scheduler.vercel.app<br><br>## ✨ 機能<br>- 科目別の勉強時間管理・カレンダー表示・達成率グラフ</span>
+                </div>
+                <div class="green-box">✅ READMEはClaudeに書いてもらおう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

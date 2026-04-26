@@ -32,6 +32,7 @@ export const units = [
         duration: 25,
         bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
+        slides: ['lec1_title','lec1_overview','lec1_what_is_ai','lec1_llm','lec1_claude','lec1_account','lec1_first_chat','lec1_summary'],
       },
       {
         id: 'u1-l2',
@@ -42,6 +43,7 @@ export const units = [
         duration: 30,
         bannerUrl: '/images/claude-intro.jpg',
         slideUrl: null,
+        slides: ['lec2_title','lec2_prompt','lec2_rctf','lec2_role','lec2_context','lec2_format','lec2_practice','lec2_summary'],
       },
       {
         id: 'u1-l3',
@@ -52,6 +54,7 @@ export const units = [
         duration: 30,
         bannerUrl: '/images/ai-vs-program.jpg',
         slideUrl: null,
+        slides: ['lec3_title','lec3_study','lec3_research','lec3_report','lec3_limits','lec3_summary'],
       },
       {
         id: 'u1-l4',
@@ -140,6 +143,7 @@ export const units = [
         duration: 30,
         bannerUrl: '/images/model-evaluation.jpg',
         slideUrl: null,
+        slides: ['lec4_title','lec4_brainstorm','lec4_creative','lec4_presentation','lec4_feedback','lec4_summary'],
       },
       {
         id: 'u2-l2',
@@ -150,6 +154,7 @@ export const units = [
         duration: 35,
         bannerUrl: '/images/claude-projects.jpg',
         slideUrl: null,
+        slides: ['lec5_title','lec5_cot','lec5_fewshot','lec5_system','lec5_debug','lec5_summary'],
       },
       {
         id: 'u2-l3',
@@ -160,6 +165,7 @@ export const units = [
         duration: 35,
         bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
+        slides: ['lec6_title','lec6_html','lec6_css','lec6_claude_code','lec6_practice','lec6_summary'],
       },
       {
         id: 'u2-l4',
@@ -231,6 +237,7 @@ export const units = [
         duration: 35,
         bannerUrl: '/images/data-importance.jpg',
         slideUrl: null,
+        slides: ['lec7_title','lec7_basics','lec7_dom','lec7_events','lec7_pair','lec7_summary'],
       },
       {
         id: 'u3-l2',
@@ -241,6 +248,7 @@ export const units = [
         duration: 40,
         bannerUrl: '/images/quiz.jpg',
         slideUrl: null,
+        slides: ['lec8_title','lec8_basics','lec8_collections','lec8_functions','lec8_practice','lec8_summary'],
       },
       {
         id: 'u3-l3',
@@ -307,6 +315,7 @@ export const units = [
         duration: 35,
         bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
+        slides: ['lec9_title','lec9_api_intro','lec9_http','lec9_claude_api','lec9_practice','lec9_summary'],
       },
       {
         id: 'u4-l2',
@@ -317,6 +326,7 @@ export const units = [
         duration: 30,
         bannerUrl: '/images/everyday-ai.jpg',
         slideUrl: null,
+        slides: ['lec10_title','lec10_git','lec10_github','lec10_review','lec10_summary'],
       },
       {
         id: 'u4-l3',
@@ -327,6 +337,7 @@ export const units = [
         duration: 30,
         bannerUrl: '/images/claude-intro.jpg',
         slideUrl: null,
+        slides: ['lec11_title','lec11_what','lec11_install','lec11_cli','lec11_first_project','lec11_summary'],
       },
       {
         id: 'u4-l4',
@@ -398,6 +409,7 @@ export const units = [
         duration: 25,
         bannerUrl: '/images/claude-setup.jpg',
         slideUrl: null,
+        slides: ['lec12_title','lec12_file_ops','lec12_explain','lec12_debug','lec12_refactor','lec12_summary'],
       },
       {
         id: 'u5-l2',
@@ -408,6 +420,7 @@ export const units = [
         duration: 30,
         bannerUrl: '/images/claude-skills.jpg',
         slideUrl: null,
+        slides: ['lec13_title','lec13_react','lec13_components','lec13_state','lec13_styling','lec13_summary'],
       },
       {
         id: 'u5-l3',
@@ -418,6 +431,7 @@ export const units = [
         duration: 35,
         bannerUrl: '/images/future-work.jpg',
         slideUrl: null,
+        slides: ['lec14_title','lec14_express','lec14_rest','lec14_db','lec14_connect','lec14_summary'],
       },
       {
         id: 'u5-l4',
@@ -428,6 +442,7 @@ export const units = [
         duration: 35,
         bannerUrl: '/images/ai-vs-program.jpg',
         slideUrl: null,
+        slides: ['lec15_title','lec15_test','lec15_debug','lec15_deploy','lec15_summary'],
       },
       {
         id: 'u5-l5',

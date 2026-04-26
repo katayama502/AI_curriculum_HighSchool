@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 40px; }
+        .ex-list { flex: 1.1; }
+        .ex-guide { flex: 0.9; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .ex-card { background: white; border-radius: 8px; overflow: hidden; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .ex-header { padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+        .ex-tag { color: white; font-size: 13px; font-weight: 700; padding: 2px 10px; border-radius: 12px; background: rgba(0,0,0,0.2); }
+        .ex-name { color: white; font-size: 18px; font-weight: 500; }
+        .ex-body { padding: 12px 16px; }
+        .ex-goal { font-size: 14px; color: #339AF0; font-weight: 500; margin-bottom: 6px; }
+        .ex-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; margin-bottom: 6px; }
+        .ex-steps { font-size: 14px; color: #6c757d; }
+        .ex-steps li { margin-bottom: 3px; margin-left: 18px; }
+        .guide-box { background: #0D0D0D; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+        .gb-title { color: #20C997; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+        .gb-step { margin-bottom: 10px; }
+        .gb-num { color: #339AF0; font-size: 13px; font-family: "Courier New", monospace; margin-bottom: 4px; }
+        .gb-text { font-size: 14px; color: #E8E8E8; font-family: "Courier New", monospace; background: rgba(255,255,255,0.05); padding: 6px 10px; border-radius: 4px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="ex-list">
+                <h2>課題一覧</h2>
+                <div class="ex-card">
+                    <div class="ex-header" style="background:#339AF0">
+                        <span class="ex-tag">課題A</span>
+                        <span class="ex-name">天気アプリにエラー処理を追加</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-goal">目標: デバッグとエラーハンドリングの実践</div>
+                        <div class="ex-desc">APIが失敗した場合に「データを取得できませんでした」というメッセージを表示する処理を追加する</div>
+                        <ol class="ex-steps">
+                            <li>現在のエラー処理を確認する</li>
+                            <li>try/catchとユーザー向けメッセージをAIと実装</li>
+                            <li>ネットワークを切って動作確認</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header" style="background:#20C997">
+                        <span class="ex-tag">課題B</span>
+                        <span class="ex-name">コードにJSDocコメントを追加</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-goal">目標: ドキュメント自動生成の実践</div>
+                        <div class="ex-desc">script.jsの全関数にJSDocコメントを追加して、コードの可読性を上げる</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header" style="background:#7950F2">
+                        <span class="ex-tag">課題C</span>
+                        <span class="ex-name">ローカルのToDo appをリファクタリング</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-goal">目標: リファクタリングの実践</div>
+                        <div class="ex-desc">前回作ったToDoアプリのコードをAIにレビューしてもらい、改善点を実装する</div>
+                    </div>
+                </div>
+                <div class="ex-card">
+                    <div class="ex-header" style="background:#0D0D0D">
+                        <span class="ex-tag">★発展</span>
+                        <span class="ex-name">天気アプリをGitHub Pagesに公開</span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-goal">目標: 実際のデプロイ体験</div>
+                        <div class="ex-desc">完成した天気アプリをGitHub Pagesで公開し、URLを共有する</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ex-guide">
+                <h2>課題Aの進め方</h2>
+                <div class="guide-box">
+                    <div class="gb-title">Claude Codeへの依頼手順</div>
+                    <div class="gb-step">
+                        <div class="gb-num">// Step 1: 現状確認</div>
+                        <div class="gb-text">script.jsのfetch処理で、APIエラーが起きた場合の処理はありますか？</div>
+                    </div>
+                    <div class="gb-step">
+                        <div class="gb-num">// Step 2: エラー処理追加</div>
+                        <div class="gb-text">APIが失敗した場合に、ユーザーに「データを取得できませんでした。後でもう一度お試しください。」と表示するエラー処理をtry/catchで追加してください</div>
+                    </div>
+                    <div class="gb-step">
+                        <div class="gb-num">// Step 3: ローディング表示</div>
+                        <div class="gb-text">API呼び出し中は「読み込み中...」のスピナーを表示し、完了したら非表示にしてください</div>
+                    </div>
+                    <div class="gb-step">
+                        <div class="gb-num">// Step 4: commit</div>
+                        <div class="gb-text">git commit -m "feat: エラー処理とローディング表示を追加"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

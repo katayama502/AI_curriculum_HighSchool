@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F8F9FA;
+        }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area {
+            padding-top: 36px;
+            padding-left: 60px;
+            padding-right: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+        .section-header {
+            font-size: 22px;
+            font-weight: 700;
+            padding: 12px 20px;
+            margin-bottom: 16px;
+        }
+        .section-header.limits { background: #E03131; color: white; }
+        .section-header.ethics { background: #20C997; color: white; }
+        .limit-item, .ethics-item {
+            background: white;
+            padding: 14px 18px;
+            margin-top: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { color: #212529; line-height: 1.5; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 4px; }
+        .bottom-msg {
+            grid-column: 1 / -1;
+            background: #339AF0;
+            color: white;
+            padding: 16px 24px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>AIの限界と正しい使い方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-header limits">⚠️ AIの限界</div>
+                <div class="limit-item">
+                    <span class="item-icon">📅</span>
+                    <div class="item-text">
+                        知識カットオフがある
+                        <div class="item-sub">最新ニュースや出来事は知らない場合がある</div>
+                    </div>
+                </div>
+                <div class="limit-item">
+                    <span class="item-icon">🤥</span>
+                    <div class="item-text">
+                        ハルシネーション（嘘）をつく
+                        <div class="item-sub">自信満々に間違った情報を答えることがある</div>
+                    </div>
+                </div>
+                <div class="limit-item">
+                    <span class="item-icon">⚖️</span>
+                    <div class="item-text">
+                        偏りが生じることがある
+                        <div class="item-sub">学習データの偏りが回答に影響する</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-header ethics">✅ 正しい使い方</div>
+                <div class="ethics-item">
+                    <span class="item-icon">🔍</span>
+                    <div class="item-text">
+                        重要な情報は必ず一次情報で確認
+                        <div class="item-sub">Wikipedia・公式サイト・教科書で裏付けを取る</div>
+                    </div>
+                </div>
+                <div class="ethics-item">
+                    <span class="item-icon">🎓</span>
+                    <div class="item-text">
+                        AIの回答をそのまま提出しない
+                        <div class="item-sub">自分の言葉で理解・再構成してから使う</div>
+                    </div>
+                </div>
+                <div class="ethics-item">
+                    <span class="item-icon">🤝</span>
+                    <div class="item-text">
+                        「補助ツール」として活用する
+                        <div class="item-sub">考える力はAIに任せず自分で鍛える</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-msg">
+                💬 AIは「答えを出してくれる機械」ではなく「一緒に考えてくれるパートナー」！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

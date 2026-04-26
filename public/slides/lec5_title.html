@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container {
+            width: 1280px; min-height: 720px;
+            display: flex; justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #F8F9FA 0%, #e9ecef 100%);
+            position: relative; overflow: hidden;
+        }
+        .content-block {
+            background: white; padding: 60px 80px; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center; z-index: 10; width: 80%; max-width: 1000px;
+        }
+        .lecture-num { font-size: 20px; color: #20C997; font-weight: 600; letter-spacing: 3px; margin-bottom: 16px; }
+        h1 { font-size: 58px; font-weight: 500; color: #339AF0; margin-bottom: 20px; letter-spacing: 2px; }
+        .divider { height: 2px; background: linear-gradient(to right, transparent, #20C997, transparent); margin: 28px 0; }
+        h2 { font-size: 30px; font-weight: 300; color: #495057; margin-bottom: 28px; }
+        .tech-tags { display: flex; justify-content: center; gap: 16px; margin-bottom: 32px; }
+        .tech-tag {
+            background: #212529; color: white;
+            padding: 8px 20px; font-size: 18px; font-weight: 500;
+        }
+        .tech-tag.blue { background: #339AF0; }
+        .tech-tag.teal { background: #20C997; }
+        .footer-badge {
+            display: inline-block; background-color: #212529; color: white;
+            padding: 10px 24px; border-radius: 30px; font-size: 20px; font-weight: 500; letter-spacing: 1px;
+        }
+        .bg-shape-1 { position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(51,154,240,0.1); border-radius: 50%; z-index: 1; }
+        .bg-shape-2 { position: absolute; bottom: -150px; right: -100px; width: 500px; height: 500px; background: rgba(32,201,151,0.1); border-radius: 50%; z-index: 1; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="bg-shape-1"></div>
+        <div class="bg-shape-2"></div>
+        <div class="content-block">
+            <div class="lecture-num">Lecture 05</div>
+            <h1>高度なプロンプト技術</h1>
+            <div class="divider"></div>
+            <h2>～Chain-of-Thought と Few-Shot 学習～</h2>
+            <div class="tech-tags">
+                <span class="tech-tag blue">Chain-of-Thought</span>
+                <span class="tech-tag teal">Few-Shot</span>
+                <span class="tech-tag">System Prompt</span>
+            </div>
+            <div class="footer-badge">第5回 / 全20回</div>
+        </div>
+    </div>
+</body>
+</html>

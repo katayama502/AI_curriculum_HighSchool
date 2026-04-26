@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .review-category { background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; border-left: 5px solid; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .rc-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 8px; }
+        .rc-title i { margin-right: 8px; }
+        .rc-example { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 6px 10px; border-radius: 4px; color: #495057; margin-bottom: 6px; }
+        .rc-fix { font-size: 14px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .review-prompt { background: #0D0D0D; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+        .rp-label { color: #339AF0; font-size: 13px; font-weight: 700; margin-bottom: 8px; font-family: "Courier New", monospace; }
+        .rp-text { font-family: "Courier New", monospace; font-size: 14px; color: #f8f9fa; line-height: 1.8; }
+        .rp-text .g { color: #20C997; }
+        .checklist { background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 14px 18px; }
+        .cl-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 10px; }
+        .cl-item { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.8; }
+        .cl-item::before { content: "☐ "; color: #339AF0; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>AIによるコードレビュー</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>AIがよく指摘する問題点</h2>
+                <div class="review-category" style="border-color:#fa5252">
+                    <div class="rc-title"><i class="fas fa-shield-alt" style="color:#fa5252"></i>セキュリティ問題</div>
+                    <div class="rc-example">APIキーがハードコードされている</div>
+                    <div class="rc-fix">→ .envファイルに移動してprocess.env.API_KEYで参照</div>
+                </div>
+                <div class="review-category" style="border-color:#ffa94d">
+                    <div class="rc-title"><i class="fas fa-exclamation-triangle" style="color:#ffa94d"></i>エラーハンドリング不足</div>
+                    <div class="rc-example">APIが失敗したときの処理がない</div>
+                    <div class="rc-fix">→ try/catchで例外処理を追加、ユーザーにエラーを伝える</div>
+                </div>
+                <div class="review-category" style="border-color:#339AF0">
+                    <div class="rc-title"><i class="fas fa-code" style="color:#339AF0"></i>コードの重複（DRY違反）</div>
+                    <div class="rc-example">同じ処理が3箇所に書かれている</div>
+                    <div class="rc-fix">→ 共通関数にまとめてコードを短くする</div>
+                </div>
+                <div class="review-category" style="border-color:#20C997">
+                    <div class="rc-title"><i class="fas fa-tachometer-alt" style="color:#20C997"></i>パフォーマンス問題</div>
+                    <div class="rc-example">毎回APIを呼んでいて遅い</div>
+                    <div class="rc-fix">→ キャッシュを使って不要なリクエストを減らす</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>レビュー依頼プロンプト</h2>
+                <div class="review-prompt">
+                    <div class="rp-label">// 包括的なレビュー依頼</div>
+                    <div class="rp-text">
+                        script.jsを以下の観点でレビューしてください：<br><br>
+                        <span class="g">1. セキュリティ</span>（APIキーの扱い、XSSなど）<br>
+                        <span class="g">2. エラーハンドリング</span>（例外処理の漏れ）<br>
+                        <span class="g">3. コード品質</span>（重複・読みやすさ）<br>
+                        <span class="g">4. パフォーマンス</span>（無駄な処理がないか）<br><br>
+                        問題があれば修正コードも一緒に示してください。
+                    </div>
+                </div>
+                <div class="checklist">
+                    <div class="cl-title"><i class="fas fa-clipboard-check" style="color:#339AF0;margin-right:8px"></i>レビュー前のセルフチェック</div>
+                    <div class="cl-item">APIキーを直接書いていないか</div>
+                    <div class="cl-item">全てのAPIコールにtry/catchがあるか</div>
+                    <div class="cl-item">変数名・関数名はわかりやすいか</div>
+                    <div class="cl-item">コピペコードがないか（DRY原則）</div>
+                    <div class="cl-item">空のcatchブロックがないか</div>
+                    <div class="cl-item">commitする前にブラウザで動作確認したか</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

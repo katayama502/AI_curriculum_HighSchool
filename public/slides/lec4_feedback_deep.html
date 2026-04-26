@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .feedback-types { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+        .ft-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .ft-icon { font-size: 32px; margin-bottom: 10px; }
+        .ft-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .ft-desc { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.5; margin-bottom: 10px; }
+        .ft-prompt { background: #F8F9FA; padding: 8px 12px; border-radius: 4px; font-size: 15px; color: #868e96; font-style: italic; line-height: 1.4; }
+        .warning-box { background: #FFF9DB; border: 2px solid #FFD43B; border-radius: 8px; padding: 14px 24px; display: flex; align-items: flex-start; gap: 16px; }
+        .warning-icon { font-size: 28px; color: #F59F00; margin-top: 2px; }
+        .warning-text { font-size: 20px; font-weight: 500; color: #212529; line-height: 1.6; }
+        .warning-text span { color: #e67700; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeに「批評」してもらう方法</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>フィードバックの種類を指定するのがポイント</h2>
+            <div class="feedback-types">
+                <div class="ft-card">
+                    <div class="ft-icon">🎯</div>
+                    <div class="ft-title">厳しめフィードバック</div>
+                    <div class="ft-desc">論理の弱点・説得力のなさを容赦なく指摘してもらう</div>
+                    <div class="ft-prompt">「この作品の弱点を、厳しい審査員の視点で3つ指摘してください」</div>
+                </div>
+                <div class="ft-card">
+                    <div class="ft-icon">✨</div>
+                    <div class="ft-title">良い点を伸ばす</div>
+                    <div class="ft-desc">自分では気づいていない強みを教えてもらう</div>
+                    <div class="ft-prompt">「この文章の優れている点を具体的に挙げ、さらに伸ばす方法を提案して」</div>
+                </div>
+                <div class="ft-card">
+                    <div class="ft-icon">⚖️</div>
+                    <div class="ft-title">バランスフィードバック</div>
+                    <div class="ft-desc">良い点・改善点を均等に出してもらう</div>
+                    <div class="ft-prompt">「良い点2つ・改善すべき点2つを、それぞれ具体例とともに教えて」</div>
+                </div>
+            </div>
+            <div class="warning-box">
+                <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="warning-text">
+                    注意：Claudeは<span>「褒める」方向に偏りやすい</span>ことがある。「厳しく評価して」「遠慮なく問題点を出して」と明示的に指示すると、より実践的なフィードバックが得られる。
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

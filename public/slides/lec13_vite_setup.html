@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .terminal { background-color: #0D0D0D; border-radius: 8px; padding: 22px; }
+        .terminal pre { font-family: "Courier New", monospace; font-size: 16px; line-height: 2; color: #f8f9fa; }
+        .prompt { color: #20C997; }
+        .cmd { color: #ffd43b; }
+        .out { color: #868e96; }
+        .step-card { background-color: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; display: flex; gap: 14px; align-items: flex-start; }
+        .step-num { width: 32px; height: 32px; background-color: #339AF0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; flex-shrink: 0; }
+        .step-title { font-size: 17px; font-weight: 500; }
+        .step-body { font-size: 15px; color: #495057; margin-top: 4px; }
+        .file-tree { background-color: #0D0D0D; border-radius: 8px; padding: 20px; }
+        .file-tree pre { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.8; color: #f8f9fa; }
+        .dir { color: #339AF0; }
+        .file { color: #dee2e6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Vite + React のセットアップ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-bolt" style="color:#339AF0"></i> コマンド一発で始められる</h2>
+                <div class="terminal">
+                    <pre><span class="prompt">$</span> <span class="cmd">npm create vite@latest my-app -- --template react</span>
+<span class="out">✔ Project created!</span>
+
+<span class="prompt">$</span> <span class="cmd">cd my-app</span>
+<span class="prompt">$</span> <span class="cmd">npm install</span>
+<span class="out">added 200 packages...</span>
+
+<span class="prompt">$</span> <span class="cmd">npm run dev</span>
+<span class="out">  ➜  Local:   http://localhost:5173/</span></pre>
+                </div>
+                <div style="margin-top: 18px;">
+                    <div class="file-tree">
+                        <pre><span class="dir">my-app/</span>
+├── <span class="dir">src/</span>
+│   ├── <span class="file">App.jsx</span>      ← ここを編集
+│   ├── <span class="file">main.jsx</span>     ← エントリーポイント
+│   └── <span class="file">App.css</span>
+├── <span class="file">index.html</span>
+└── <span class="file">package.json</span></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>各ステップの説明</h2>
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-title">npm create vite@latest</div>
+                        <div class="step-body">Viteのテンプレートからプロジェクトを自動生成。react を選択するだけ。</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-title">npm install</div>
+                        <div class="step-body">ReactなどのライブラリをダウンロードしてNode.jsに読み込ませる。</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-title">npm run dev</div>
+                        <div class="step-body">開発サーバーが起動。ブラウザで <code>localhost:5173</code> を開いて確認できる。</div>
+                    </div>
+                </div>
+                <div class="step-card" style="border-left-color: #20C997;">
+                    <div class="step-num" style="background:#20C997;">★</div>
+                    <div>
+                        <div class="step-title">src/App.jsx を自由に編集</div>
+                        <div class="step-body">保存するたびブラウザが自動更新（Hot Module Replacement）。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

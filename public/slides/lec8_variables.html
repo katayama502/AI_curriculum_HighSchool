@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .type-table { width: 100%; border-collapse: collapse; }
+        .type-table th { background: #20C997; color: white; padding: 10px 14px; font-size: 18px; text-align: left; }
+        .type-table td { padding: 10px 14px; font-size: 17px; border-bottom: 1px solid #dee2e6; background: white; }
+        .type-table tr:nth-child(even) td { background: #f0fdf4; }
+        .diff-box { background: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #339AF0; margin-top: 14px; }
+        .diff-box h3 { font-size: 19px; font-weight: 500; color: #339AF0; margin-bottom: 10px; }
+        .diff-box p { font-size: 17px; color: #495057; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>変数とデータ型</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>型宣言不要！シンプルに書ける</h2>
+                <div class="code-block">
+<span class="cmt"># 変数への代入（型を書かなくていい！）</span>
+name = <span class="str">"田中太郎"</span>
+age = <span class="num">17</span>
+height = <span class="num">168.5</span>
+is_student = <span class="kw">True</span>
+
+<span class="cmt"># 型を確認する</span>
+<span class="func">print</span>(<span class="func">type</span>(name))    <span class="cmt"># &lt;class 'str'&gt;</span>
+<span class="func">print</span>(<span class="func">type</span>(age))     <span class="cmt"># &lt;class 'int'&gt;</span>
+
+<span class="cmt"># 文字列 + 数値を組み合わせる</span>
+<span class="func">print</span>(<span class="str">f"私は</span>{age}<span class="str">歳です"</span>)  <span class="cmt"># f文字列</span>
+<span class="func">print</span>(<span class="str">"名前："</span> + name)      <span class="cmt"># 連結</span>
+                </div>
+                <div class="diff-box">
+                    <h3><i class="fas fa-exchange-alt"></i> JSとの違い</h3>
+                    <p>JavaScriptは <code style="background:#f8f9fa;padding:2px 6px;border-radius:3px;">let / const</code> が必要だが、Pythonは変数名だけでOK。<br>インデントがブロックを表す（{ }不要）。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>主なデータ型</h2>
+                <table class="type-table">
+                    <tr><th>型名</th><th>例</th><th>説明</th></tr>
+                    <tr><td>str</td><td>"こんにちは"</td><td>文字列</td></tr>
+                    <tr><td>int</td><td>42</td><td>整数</td></tr>
+                    <tr><td>float</td><td>3.14</td><td>小数</td></tr>
+                    <tr><td>bool</td><td>True / False</td><td>真偽値</td></tr>
+                    <tr><td>list</td><td>[1, 2, 3]</td><td>リスト（配列）</td></tr>
+                    <tr><td>dict</td><td>{"key": val}</td><td>辞書</td></tr>
+                    <tr><td>None</td><td>None</td><td>値なし</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

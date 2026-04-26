@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 36px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 12px; }
+        .state-diagram { background: white; border-radius: 10px; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 14px; }
+        .comp-tree { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .comp-node { border-radius: 6px; padding: 8px 20px; font-size: 15px; font-weight: 600; text-align: center; }
+        .node-app { background: #212529; color: white; }
+        .node-mid { background: #339AF0; color: white; }
+        .node-leaf { background: #e9ecef; color: #495057; }
+        .comp-children { display: flex; gap: 16px; }
+        .node-arrow { font-size: 14px; color: #adb5bd; }
+        .prop-label { font-size: 12px; color: #20C997; font-weight: 600; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 14px 16px; }
+        .code-box code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .tip-box { background: #fff3cd; border-left: 4px solid #fcc419; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #856404; margin-top: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Reactの状態管理パターン</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-sitemap" style="color:#339AF0"></i> Propsの受け渡し（Lifting State Up）</h2>
+                <div class="state-diagram">
+                    <div class="comp-tree">
+                        <div class="comp-node node-app">App（books, setBooks を持つ）</div>
+                        <div class="node-arrow"><i class="fas fa-arrow-down"></i> <span class="prop-label">books, onAdd を渡す</span></div>
+                        <div class="comp-children">
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                                <div class="comp-node node-mid">BookList</div>
+                                <div class="node-arrow"><i class="fas fa-arrow-down"></i></div>
+                                <div class="comp-node node-leaf">BookCard</div>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                                <div class="comp-node node-mid">AddBookForm</div>
+                                <div class="node-arrow"><span class="prop-label">onAdd(data) を呼ぶ</span> <i class="fas fa-arrow-up" style="color:#20C997"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <i class="fas fa-lightbulb"></i>
+                    状態は「共通の親」に置く。子から変更したいときは親の関数を props で渡す
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-code" style="color:#20C997"></i> Context APIで深いコンポーネントへ渡す</h2>
+                <div class="code-box"><code>
+<span class="c-gray">// AuthContext.js — ログイン状態を管理</span><br>
+<span class="c-pink">import</span> { createContext, useContext, useState } <span class="c-pink">from</span> <span class="c-yellow">'react'</span>;<br><br>
+<span class="c-pink">const</span> AuthContext = <span class="c-green">createContext</span>();<br><br>
+<span class="c-pink">export function</span> <span class="c-green">AuthProvider</span>({ children }) {<br>
+  <span class="c-pink">const</span> [user, setUser] = useState(null);<br>
+  <span class="c-pink">const</span> <span class="c-green">login</span> = (token) => {<br>
+    localStorage.setItem(<span class="c-yellow">'token'</span>, token);<br>
+    setUser({ token });<br>
+  };<br>
+  <span class="c-pink">return</span> (<br>
+    &lt;AuthContext.Provider value={{ user, login }}&gt;<br>
+      {children}<br>
+    &lt;/AuthContext.Provider&gt;<br>
+  );<br>
+}<br><br>
+<span class="c-gray">// どこでも使える</span><br>
+<span class="c-pink">export const</span> <span class="c-green">useAuth</span> = () => <span class="c-green">useContext</span>(AuthContext);
+                </code></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .compare-row { display: flex; gap: 12px; margin-bottom: 14px; }
+        .level-box { flex: 1; background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .lv-badge { display: inline-block; padding: 3px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .lv-badge.basic { background: #e9ecef; color: #868e96; }
+        .lv-badge.adv { background: #e7f5ff; color: #1c7ed6; }
+        .lv-title { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .lv-example { font-size: 17px; font-weight: 300; color: #495057; font-style: italic; background: #F8F9FA; padding: 8px 12px; border-radius: 4px; line-height: 1.5; }
+        .lv-result { font-size: 16px; color: #868e96; margin-top: 8px; }
+        .lv-result.good { color: #2f9e44; font-weight: 500; }
+        .pyramid { background: white; border-radius: 10px; padding: 20px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .py-title { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 16px; }
+        .py-level { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 6px; margin-bottom: 10px; }
+        .py-level:nth-child(2) { background: #e9ecef; }
+        .py-level:nth-child(3) { background: #e7f5ff; }
+        .py-level:nth-child(4) { background: #d0f0e8; }
+        .py-icon { font-size: 24px; }
+        .py-name { font-size: 20px; font-weight: 600; color: #212529; min-width: 140px; }
+        .py-desc { font-size: 18px; font-weight: 300; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>なぜ「上級プロンプト」が必要か？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>普通のプロンプトでは限界がある</h2>
+                <div class="compare-row">
+                    <div class="level-box">
+                        <span class="lv-badge basic">初級</span>
+                        <div class="lv-title">❌ 曖昧な指示</div>
+                        <div class="lv-example">「数学の問題を解いて」</div>
+                        <div class="lv-result">→ 答えだけ出て、解き方が分からない</div>
+                    </div>
+                    <div class="level-box">
+                        <span class="lv-badge adv">上級</span>
+                        <div class="lv-title">✅ CoT指示</div>
+                        <div class="lv-example">「ステップを明示しながら解いて」</div>
+                        <div class="lv-result good">→ 各ステップの理由も分かる</div>
+                    </div>
+                </div>
+                <div class="compare-row">
+                    <div class="level-box">
+                        <span class="lv-badge basic">初級</span>
+                        <div class="lv-title">❌ 例なし</div>
+                        <div class="lv-example">「メールを書いて」</div>
+                        <div class="lv-result">→ 形式が自分の想像と違う</div>
+                    </div>
+                    <div class="level-box">
+                        <span class="lv-badge adv">上級</span>
+                        <div class="lv-title">✅ Few-shot</div>
+                        <div class="lv-example">「この形式を参考に書いて→例文</div>
+                        <div class="lv-result good">→ 狙った形式で出力される</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="pyramid">
+                    <div class="py-title">プロンプト技術のレベル</div>
+                    <div class="py-level">
+                        <div class="py-icon">⭐</div>
+                        <div class="py-name">RCTF基本</div>
+                        <div class="py-desc">役割・背景・タスク・形式を指定</div>
+                    </div>
+                    <div class="py-level">
+                        <div class="py-icon">⭐⭐</div>
+                        <div class="py-name">Few-shot</div>
+                        <div class="py-desc">例を見せて形式・スタイルを固定</div>
+                    </div>
+                    <div class="py-level">
+                        <div class="py-icon">⭐⭐⭐</div>
+                        <div class="py-name">CoT / System</div>
+                        <div class="py-desc">推論の流れ・キャラを完全制御</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

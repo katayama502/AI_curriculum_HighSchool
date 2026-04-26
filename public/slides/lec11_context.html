@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .visual-box {
+            background: #0D0D0D;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .project-tree { font-family: "Courier New", monospace; font-size: 16px; line-height: 2; }
+        .tree-folder { color: #339AF0; font-weight: 700; }
+        .tree-file { color: #f8f9fa; }
+        .tree-eye { color: #20C997; }
+        .claude-card {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+        .card-title { font-size: 19px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .card-title i { margin-right: 8px; }
+        .card-desc { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .code-box {
+            background: #0D0D0D;
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .code-comment { color: #6c757d; }
+        .code-key { color: #20C997; }
+        .code-val { color: #f8f9fa; }
+        .highlight-row {
+            background: #339AF0;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Codeはプロジェクト全体を理解する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>Claude Codeが見ているもの</h2>
+                <div class="visual-box">
+                    <div class="project-tree">
+                        <div><span class="tree-folder">my-app/</span></div>
+                        <div><span class="tree-eye">  👁 </span><span class="tree-file">index.html</span><span style="color:#20C997;font-size:13px"> ← 読んでる</span></div>
+                        <div><span class="tree-eye">  👁 </span><span class="tree-file">style.css</span><span style="color:#20C997;font-size:13px"> ← 読んでる</span></div>
+                        <div><span class="tree-eye">  👁 </span><span class="tree-file">script.js</span><span style="color:#20C997;font-size:13px"> ← 読んでる</span></div>
+                        <div><span class="tree-eye">  👁 </span><span class="tree-file">CLAUDE.md</span><span style="color:#339AF0;font-size:13px"> ← 最重要！</span></div>
+                        <div><span style="color:#6c757d">  (node_modules/ は無視)</span></div>
+                    </div>
+                </div>
+                <div class="highlight-row">
+                    <i class="fas fa-brain"></i> Claude Codeは起動するとプロジェクトの全ファイルを読み込み、<strong>「このプロジェクトが何をしているか」</strong>を自動で把握します。
+                </div>
+            </div>
+            <div class="right">
+                <h2>CLAUDE.md — 説明書ファイル</h2>
+                <div class="claude-card">
+                    <div class="card-title"><i class="fas fa-file-alt" style="color:#339AF0"></i> CLAUDE.mdとは？</div>
+                    <div class="card-desc">プロジェクトのルールや説明をClaudeに伝えるファイル。<code>/init</code>コマンドで自動生成できます。</div>
+                </div>
+                <div class="code-box">
+                    <div class="code-comment"># CLAUDE.md の例</div>
+                    <br>
+                    <div class="code-key">## プロジェクト概要</div>
+                    <div class="code-val">高校生向け天気予報アプリ</div>
+                    <br>
+                    <div class="code-key">## 技術スタック</div>
+                    <div class="code-val">- HTML / CSS / JavaScript</div>
+                    <div class="code-val">- Open-Meteo API</div>
+                    <br>
+                    <div class="code-key">## コーディングルール</div>
+                    <div class="code-val">- コメントは日本語で書く</div>
+                    <div class="code-val">- 関数名は英語camelCase</div>
+                </div>
+                <div class="claude-card" style="margin-top:12px;border-color:#20C997">
+                    <div class="card-title"><i class="fas fa-lightbulb" style="color:#20C997"></i> ポイント</div>
+                    <div class="card-desc">CLAUDE.mdが詳しいほど、Claude Codeの回答精度が上がる！チーム開発でも全員が同じルールで書けます。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

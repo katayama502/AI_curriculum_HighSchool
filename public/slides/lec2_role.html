@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-top: 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-top: 0;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-top: 20px;
+        }
+        .example-container {
+            margin-top: 40px;
+            background-color: white;
+            border-top: 4px solid #339AF0;
+            padding-top: 30px;
+            padding-left: 40px;
+            padding-right: 40px;
+            min-height: 220px;
+        }
+        .example-label {
+            font-size: 20px;
+            font-weight: 500;
+            color: #339AF0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .example-text {
+            font-size: 28px;
+            font-weight: 500;
+            color: #212529;
+            line-height: 1.6;
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-height: 120px;
+            border: 1px solid #dee2e6;
+        }
+        .conclusion {
+            margin-top: 40px;
+            font-size: 26px;
+            font-weight: 500;
+            color: #20C997;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ロールプロンプティング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>AIに「役を演じさせる」と回答の質が上がる</h2>
+            <p>Claudeに特定の役割を与えることで、その専門家の視点から回答を得られます。</p>
+            
+            <div class="example-container">
+                <div class="example-label">
+                    <i class="fas fa-comment-dots"></i> 例文
+                </div>
+                <div class="example-text">
+                    「あなたは10年以上の経験を持つプロのWebデザイナーです。高校生が初めてポートフォリオサイトを作る際に、最も重要な3つのデザイン原則を教えてください。」
+                </div>
+            </div>
+            
+            <div class="conclusion">
+                <i class="fas fa-check-circle"></i>
+                役割を明確にすることで、AIは適切な専門知識レベルと語り口で回答します。
+            </div>
+        </div>
+    </div>
+</body>
+</html>

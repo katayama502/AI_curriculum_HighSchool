@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #F59F00; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 22px 24px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); border-top: 5px solid #F59F00; }
+        .quiz-num { font-size: 14px; font-weight: 700; color: #F59F00; letter-spacing: 1px; margin-bottom: 8px; }
+        .quiz-q { font-size: 20px; font-weight: 500; color: #212529; line-height: 1.5; margin-bottom: 14px; }
+        .code-inline { background: #212529; color: #F59F00; padding: 3px 8px; border-radius: 4px; font-family: monospace; font-size: 18px; }
+        .choices { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+        .choice { background: #f8f9fa; border-radius: 5px; padding: 8px 14px; font-size: 17px; color: #495057; }
+        .choice.correct { background: #d3f9d8; color: #2b8a3e; font-weight: 500; border-left: 4px solid #2b8a3e; }
+        .answer-box { background: #fff3bf; border-radius: 6px; padding: 10px 14px; font-size: 16px; color: #664d03; }
+        .answer-box strong { color: #e67700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ — JavaScript基礎</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-card">
+                <div class="quiz-num">Q1</div>
+                <div class="quiz-q">次のコードで <span class="code-inline">fruits[1]</span> の値は？<br><span class="code-inline">const fruits = ["りんご","バナナ","みかん"]</span></div>
+                <div class="choices">
+                    <div class="choice">A. りんご</div>
+                    <div class="choice correct">B. バナナ ✓</div>
+                    <div class="choice">C. みかん</div>
+                    <div class="choice">D. undefined</div>
+                </div>
+                <div class="answer-box">配列のインデックスは<strong>0始まり</strong>。[0]=りんご、[1]=バナナ、[2]=みかん。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q2</div>
+                <div class="quiz-q">DOMでIDが"title"の要素のテキストを変更する正しいコードは？</div>
+                <div class="choices">
+                    <div class="choice">A. title.change("新しい")</div>
+                    <div class="choice correct">B. document.getElementById("title").textContent = "新しい" ✓</div>
+                    <div class="choice">C. DOM.getElementById("title") = "新しい"</div>
+                    <div class="choice">D. getElement("title").setText("新しい")</div>
+                </div>
+                <div class="answer-box"><strong>document.getElementById</strong>で要素を取得し、<strong>.textContent</strong>でテキストを変更する。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q3</div>
+                <div class="quiz-q">ボタンのクリックイベントを登録する正しい書き方は？</div>
+                <div class="choices">
+                    <div class="choice">A. btn.onClick = function() {...}</div>
+                    <div class="choice correct">B. btn.addEventListener("click", function(){...}) ✓</div>
+                    <div class="choice">C. btn.event("click", function(){...})</div>
+                    <div class="choice">D. btn.on("click", function(){...})</div>
+                </div>
+                <div class="answer-box"><strong>addEventListener</strong>が標準的な書き方。第1引数にイベント名（文字列）を指定する。</div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-num">Q4</div>
+                <div class="quiz-q">async/awaitを使うのは主にどんな処理？</div>
+                <div class="choices">
+                    <div class="choice">A. 変数を定義するとき</div>
+                    <div class="choice">B. if文を使うとき</div>
+                    <div class="choice correct">C. サーバーからデータを取得するなど時間がかかる処理 ✓</div>
+                    <div class="choice">D. 配列を作るとき</div>
+                </div>
+                <div class="answer-box">通信など<strong>非同期処理</strong>（結果が後から来る処理）を同期的に書けるのがasync/await。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

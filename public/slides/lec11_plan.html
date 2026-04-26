@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .plan-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: white;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .step-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #0D0D0D;
+            color: #20C997;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-content .step-title { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .step-content .step-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .prompt-box {
+            background: #0D0D0D;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .pb-label { color: #339AF0; font-size: 13px; font-weight: 700; margin-bottom: 8px; font-family: "Courier New", monospace; }
+        .pb-text { font-family: "Courier New", monospace; font-size: 14px; color: #f8f9fa; line-height: 1.8; }
+        .pb-text .highlight { color: #20C997; }
+        .result-box {
+            background: white;
+            border: 2px solid #20C997;
+            border-radius: 6px;
+            padding: 12px 16px;
+        }
+        .result-title { font-size: 16px; font-weight: 500; color: #20C997; margin-bottom: 8px; }
+        .result-item { font-size: 15px; color: #495057; line-height: 1.8; font-weight: 300; }
+        .result-item i { color: #20C997; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>プロジェクト計画をAIと立てる</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>コーディング前の計画ステップ</h2>
+                <div class="plan-step">
+                    <div class="step-circle">1</div>
+                    <div class="step-content">
+                        <div class="step-title">アイデアを言語化する</div>
+                        <div class="step-desc">「何を作りたいか」「誰が使うか」「何ができるか」を箇条書きで書き出す</div>
+                    </div>
+                </div>
+                <div class="plan-step">
+                    <div class="step-circle">2</div>
+                    <div class="step-content">
+                        <div class="step-title">AIに技術相談する</div>
+                        <div class="step-desc">「このアプリを作るには何が必要か？」とClaude Codeに技術スタックを聞く</div>
+                    </div>
+                </div>
+                <div class="plan-step">
+                    <div class="step-circle">3</div>
+                    <div class="step-content">
+                        <div class="step-title">タスクに分解してもらう</div>
+                        <div class="step-desc">「開発ステップを5つに分解して」と頼むと実装順序が明確になる</div>
+                    </div>
+                </div>
+                <div class="plan-step">
+                    <div class="step-circle">4</div>
+                    <div class="step-content">
+                        <div class="step-title">CLAUDE.mdに記録する</div>
+                        <div class="step-desc">計画をCLAUDE.mdに書いておくことでAIが常に文脈を把握できる</div>
+                    </div>
+                </div>
+                <div class="plan-step">
+                    <div class="step-circle">5</div>
+                    <div class="step-content">
+                        <div class="step-title">最小機能（MVP）から始める</div>
+                        <div class="step-desc">全機能を一度に作ろうとせず、まず動くものを1つ作る</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>相談プロンプトの例</h2>
+                <div class="prompt-box">
+                    <div class="pb-label">// Claude Codeへの相談</div>
+                    <div class="pb-text">
+                        高校生向けの<span class="highlight">単語帳アプリ</span>を作りたいです。<br><br>
+                        機能：<br>
+                        - 英単語と日本語意味を登録<br>
+                        - 一覧表示<br>
+                        - ランダム出題クイズ<br><br>
+                        技術はHTML/CSS/JavaScriptのみ。<br>
+                        <span class="highlight">開発ステップを教えてください。</span>
+                    </div>
+                </div>
+                <div class="result-box">
+                    <div class="result-title"><i class="fas fa-robot"></i> AIが返す計画例</div>
+                    <div class="result-item"><i class="fas fa-check"></i>Step1: 単語登録フォームを作る</div>
+                    <div class="result-item"><i class="fas fa-check"></i>Step2: localStorageに保存する</div>
+                    <div class="result-item"><i class="fas fa-check"></i>Step3: 一覧表示機能を実装</div>
+                    <div class="result-item"><i class="fas fa-check"></i>Step4: クイズ機能を追加</div>
+                    <div class="result-item"><i class="fas fa-check"></i>Step5: デザインを整える</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

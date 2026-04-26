@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Yu Gothic","Roboto",sans-serif; background:#F8F9FA; color:#212529; }
+.slide-container { width:1280px; min-height:720px; background:#F8F9FA; }
+.header { padding:40px 60px 0; }
+h1 { font-size:48px; font-weight:500; color:#339AF0; }
+.divider { height:1px; background:#20C997; margin-top:20px; }
+.content-area { padding:28px 60px; }
+.agenda-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:20px; }
+.a-card { background:white; border-radius:10px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border-top:4px solid #339AF0; }
+.a-card:nth-child(2){border-top-color:#20C997}
+.a-card:nth-child(3){border-top-color:#E67700}
+.a-num { font-size:32px; font-weight:700; color:#339AF0; margin-bottom:8px; }
+.a-card:nth-child(2) .a-num{color:#20C997}
+.a-card:nth-child(3) .a-num{color:#E67700}
+.a-title { font-size:21px; font-weight:700; color:#212529; margin-bottom:6px; }
+.a-desc { font-size:16px; font-weight:300; color:#495057; line-height:1.6; }
+.goal { background:#212529; color:white; border-radius:8px; padding:18px 24px; display:flex; align-items:center; gap:14px; }
+.goal i { font-size:26px; color:#20C997; }
+.goal span { font-size:20px; font-weight:300; }
+.goal strong { color:#339AF0; }
+</style></head><body>
+<div class="slide-container">
+<div class="header"><h1>今日の授業の流れ</h1><div class="divider"></div></div>
+<div class="content-area">
+<div class="agenda-row">
+<div class="a-card"><div class="a-num">01</div><div class="a-title">プロンプトの基本</div><div class="a-desc">プロンプトとは何か・なぜ重要なのかを理解する</div></div>
+<div class="a-card"><div class="a-num">02</div><div class="a-title">RCTF フレームワーク</div><div class="a-desc">Role・Context・Task・Format の4要素を詳しく学ぶ</div></div>
+<div class="a-card"><div class="a-num">03</div><div class="a-title">実践・改善サイクル</div><div class="a-desc">実際にプロンプトを書き、フィードバックで改善する</div></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px">
+<div class="a-card" style="border-top-color:#212529"><div class="a-num" style="color:#212529">04</div><div class="a-title">よくある失敗パターン</div><div class="a-desc">初心者が陥りがちなミスと改善方法</div></div>
+<div class="a-card" style="border-top-color:#fa5252"><div class="a-num" style="color:#fa5252">05</div><div class="a-title">高校生向け活用術</div><div class="a-desc">勉強・部活・進路相談などへの応用</div></div>
+</div>
+<div class="goal"><i class="fas fa-bullseye"></i><span>今日のゴール：<strong>RCTFフレームワーク</strong>を使って、どんな場面でも質の高いプロンプトが書けるようになる</span></div>
+</div></div></body></html>

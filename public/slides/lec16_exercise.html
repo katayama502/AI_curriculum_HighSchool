@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .tasks { flex: 1.3; display: flex; flex-direction: column; gap: 14px; }
+        .guide { flex: 0.7; }
+        .task-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .task-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+        .badge { font-size: 14px; font-weight: 500; padding: 2px 10px; border-radius: 30px; background-color: #339AF0; color: white; }
+        .badge.bonus { background-color: #ffd43b; color: #212529; }
+        .task-title { font-size: 17px; font-weight: 500; }
+        .task-body { font-size: 14px; color: #495057; line-height: 1.6; }
+        h2 { font-size: 22px; font-weight: 500; margin-bottom: 14px; }
+        .guide-step { background-color: white; border-radius: 8px; padding: 12px 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 10px; display: flex; gap: 10px; }
+        .g-num { width: 24px; height: 24px; background-color: #20C997; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+        .g-text { font-size: 14px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題 — プロジェクト設計</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="tasks">
+                <div class="task-card">
+                    <div class="task-header"><span class="badge">課題A</span><span class="task-title">アイデアシートを埋める</span></div>
+                    <div class="task-body">「誰の・どんな困りごとを・どう解決するか」を1枚のメモにまとめよう。Claude Code に壁打ちしてもOK。</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-header"><span class="badge">課題B</span><span class="task-title">ユーザーストーリーを5つ書く</span></div>
+                    <div class="task-body">「〇〇として、〇〇したい。なぜなら〇〇だから」の形式でP1・P2・P3に分類しよう。</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-header"><span class="badge">課題C</span><span class="task-title">ER図とAPIエンドポイント一覧</span></div>
+                    <div class="task-body">必要なテーブルと関係を図にまとめ、CRUDを網羅したAPIエンドポイントの一覧表を作成しよう。</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-header"><span class="badge bonus">★ 発展</span><span class="task-title">GitHubにリポジトリ作成 + プロジェクト作成</span></div>
+                    <div class="task-body">Vite・Express のボイラープレートをセットアップし、GitHubのIssueにタスクを登録してスタートしよう！</div>
+                </div>
+            </div>
+            <div class="guide">
+                <h2><i class="fas fa-map-signs" style="color:#20C997"></i> Claude Code を活用</h2>
+                <div class="guide-step"><div class="g-num">1</div><div class="g-text">「このアイデアのユーザーストーリーを5つ考えて」</div></div>
+                <div class="guide-step"><div class="g-num">2</div><div class="g-text">「ER図をMermaid記法で書いて」</div></div>
+                <div class="guide-step"><div class="g-num">3</div><div class="g-text">「APIエンドポイントの一覧表を作って」</div></div>
+                <div class="guide-step"><div class="g-num">4</div><div class="g-text">「ディレクトリ構成を提案して」</div></div>
+                <div style="background:#e7f5ff; border-radius:8px; padding:12px; margin-top:10px; font-size:14px; color:#339AF0; font-weight:500; line-height:1.6;">
+                    <i class="fas fa-robot"></i> 設計書はClaude Codeと一緒に作るのが最速！
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

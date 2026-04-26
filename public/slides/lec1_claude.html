@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-bottom: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 50px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 40px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            color: #339AF0;
+            flex-shrink: 0;
+        }
+        .feature-item:nth-child(even) .feature-icon {
+            color: #20C997;
+        }
+        .feature-content {
+            flex: 1;
+        }
+        .feature-title {
+            font-size: 26px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+        .feature-desc {
+            font-size: 20px;
+            font-weight: 300;
+            color: #495057;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claudeとは？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>Anthropicが開発した、安全性を重視したAI</h2>
+            <p>ClaudeはAnthropic社（米国）が開発した生成AIです。Anthropicは「AIの安全な開発」を企業理念の中心に置いており、Claudeは有害なコンテンツの生成を拒否し、誠実で正確な回答を目指すよう設計されています。</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-align-left"></i></div>
+                    <div class="feature-content">
+                        <div class="feature-title">長いコンテキスト</div>
+                        <div class="feature-desc">一度に大量の文章を処理可能。長文の要約や複雑な資料の分析に優れています。</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="feature-content">
+                        <div class="feature-title">高い誠実性</div>
+                        <div class="feature-desc">分からないことは「分からない」と答えるなど、ハルシネーション（嘘）を減らす工夫がされています。</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
+                    <div class="feature-content">
+                        <div class="feature-title">コード生成能力</div>
+                        <div class="feature-desc">複数のプログラミング言語に対応し、高品質なコードの生成やデバッグが可能です。</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="feature-content">
+                        <div class="feature-title">安全性重視</div>
+                        <div class="feature-desc">Constitutional AI（憲法に基づくAI）という独自の手法による倫理的設計が施されています。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

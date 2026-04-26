@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .task-header {
+            background: #339AF0; color: white;
+            padding: 14px 20px; font-size: 22px; font-weight: 700;
+            margin-bottom: 16px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .step-list { }
+        .step-item {
+            background: white; padding: 16px 20px;
+            margin-top: 10px; display: flex; align-items: flex-start; gap: 14px;
+        }
+        .step-num {
+            width: 36px; height: 36px; background: #212529; color: white;
+            font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .step-text { font-size: 18px; color: #212529; line-height: 1.5; }
+        .step-sub { font-size: 14px; color: #6C757D; margin-top: 4px; }
+        .requirements-header {
+            background: #20C997; color: white;
+            padding: 14px 20px; font-size: 22px; font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .req-item {
+            background: white; padding: 12px 18px;
+            margin-top: 8px; font-size: 18px; color: #212529;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .req-icon { font-size: 20px; }
+        .time-badge {
+            background: #212529; color: white;
+            padding: 14px 20px; margin-top: 16px;
+            font-size: 18px; display: flex; align-items: center; gap: 12px;
+        }
+        .time-icon { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ハンズオン：自己紹介ページ作成</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="task-header">🛠️ 作業手順</div>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div>
+                            <div class="step-text">CodePen.io を開く</div>
+                            <div class="step-sub">無料で使えるオンラインエディタ（アカウント不要）</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div>
+                            <div class="step-text">Claudeに自己紹介ページのコードを依頼</div>
+                            <div class="step-sub">「自己紹介HTMLページを作って。名前・学校・趣味を含めて」</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div>
+                            <div class="step-text">コードをCodePenに貼り付ける</div>
+                            <div class="step-sub">HTMLとCSSをそれぞれのパネルに貼る</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div>
+                            <div class="step-text">自分の情報に書き換えてカスタマイズ</div>
+                            <div class="step-sub">好きな色・フォント・レイアウトに変更してみよう</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="requirements-header">✅ 完成要件</div>
+                <div class="req-item"><span class="req-icon">👤</span>名前・学校名が表示されている</div>
+                <div class="req-item"><span class="req-icon">🎯</span>趣味・好きなことが3つ以上</div>
+                <div class="req-item"><span class="req-icon">🎨</span>自分でCSSの色を1つ変更した</div>
+                <div class="req-item"><span class="req-icon">📱</span>見やすいレイアウトになっている</div>
+                <div class="req-item"><span class="req-icon">💬</span>Claudeに1回以上修正を依頼した</div>
+                <div class="time-badge">
+                    <span class="time-icon">⏱️</span>
+                    <span>目標時間：<strong>30分</strong>（残り時間で自由にカスタマイズ）</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #1A1A2E; padding: 20px; font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8; }
+        .kw { color: #FFD43B; font-weight: 700; }
+        .str { color: #FCC419; }
+        .num { color: #20C997; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .right-col { }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .op-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .op-table th { padding: 10px 14px; font-size: 16px; font-weight: 700; text-align: left; }
+        .op-table th.op-col { background: #3776AB; color: white; width: 45%; }
+        .op-table th.desc-col { background: #212529; color: white; }
+        .op-table td { padding: 9px 14px; font-size: 15px; border: 1px solid #DEE2E6; }
+        .op-table td.op-cell { font-family: "Courier New", monospace; color: #3776AB; background: white; font-weight: 700; }
+        .op-table td.desc-cell { background: white; color: #495057; }
+        .op-table tr:nth-child(even) td { background: #F8F9FA; }
+        .tip-bar { background: #FFD43B; color: #212529; padding: 12px 18px; font-size: 17px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>リストと辞書の操作</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment"># リスト操作</span><br>
+                fruits = [<span class="str">"apple"</span>, <span class="str">"banana"</span>]<br>
+                fruits.<span class="fn">append</span>(<span class="str">"cherry"</span>)  <span class="comment"># 追加</span><br>
+                fruits.<span class="fn">remove</span>(<span class="str">"banana"</span>)  <span class="comment"># 削除</span><br>
+                <span class="fn">len</span>(fruits)  <span class="comment"># 長さ → 2</span><br><br>
+                <span class="comment"># リスト内包表記（強力！）</span><br>
+                nums = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>]<br>
+                evens = [x <span class="kw">for</span> x <span class="kw">in</span> nums <span class="kw">if</span> x % <span class="num">2</span> == <span class="num">0</span>]<br>
+                <span class="comment"># → [2, 4]</span><br><br>
+                <span class="comment"># 辞書操作</span><br>
+                student = {<span class="str">"name"</span>: <span class="str">"太郎"</span>, <span class="str">"score"</span>: <span class="num">85</span>}<br>
+                student[<span class="str">"grade"</span>] = <span class="str">"A"</span>  <span class="comment"># 追加</span><br>
+                <span class="kw">for</span> key, val <span class="kw">in</span> student.<span class="fn">items</span>():<br>
+                &nbsp;&nbsp;<span class="fn">print</span>(<span class="str">f"{key}: {val}"</span>)
+            </div>
+            <div class="right-col">
+                <div class="section-title">リストの主要メソッド</div>
+                <table class="op-table">
+                    <thead>
+                        <tr>
+                            <th class="op-col">メソッド</th>
+                            <th class="desc-col">説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="op-cell">list.append(x)</td>
+                            <td class="desc-cell">末尾に要素を追加</td>
+                        </tr>
+                        <tr>
+                            <td class="op-cell">list.remove(x)</td>
+                            <td class="desc-cell">指定した要素を削除</td>
+                        </tr>
+                        <tr>
+                            <td class="op-cell">list.sort()</td>
+                            <td class="desc-cell">昇順に並び替え</td>
+                        </tr>
+                        <tr>
+                            <td class="op-cell">len(list)</td>
+                            <td class="desc-cell">要素数を返す</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-bar">
+                    ⭐ リスト内包表記はPythonの最大の強み！<br>
+                    <span style="font-size:15px; font-weight:400;">[式 for 変数 in リスト if 条件] の形で覚えよう</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

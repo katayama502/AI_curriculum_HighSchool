@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #20C997; }
+        .t-cmd { color: #339AF0; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .step-num { width: 32px; height: 32px; background: #339AF0; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .highlight-box { background: #339AF0; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>デバッグ戦略</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🔍 デバッグの手順</div>
+                <div class="item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="item-text">console.logで値を確認</div>
+                        <div class="item-sub">「どこで何の値が入っているか」を確認</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="item-text">ブラウザの開発者ツールを使う</div>
+                        <div class="item-sub">F12でConsole・Network・Sourceを確認</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="item-text">エラーメッセージを読む</div>
+                        <div class="item-sub">ファイル名・行番号・エラー種別を確認</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="item-text">Claudeにエラーを貼り付ける</div>
+                        <div class="item-sub">エラー文＋コードを渡して原因を特定</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 Claude Codeでデバッグ</div>
+                <div class="code-block">
+<span class="t-prompt">Claude&gt; </span><span class="t-cmd">このエラーを直して：<br>TypeError: Cannot read properties<br>of undefined (reading 'map')</span><br><br>
+<span class="t-success">● ファイルを確認中...</span><br>
+<span class="t-output">原因：usersがundefinedのまま<br>.map()を呼んでいます</span><br><br>
+<span class="t-success">● 修正案：</span><br>
+<span class="t-output">const [users, setUsers] = useState([]);<br>// ↑ 初期値を[]にする</span><br><br>
+<span class="t-success">✓ UserList.jsx を修正しました</span>
+                </div>
+                <div class="highlight-box">💡 エラーはコピペするだけ！Claudeが原因と修正方法を教えてくれる</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

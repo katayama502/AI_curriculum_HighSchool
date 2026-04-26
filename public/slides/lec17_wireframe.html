@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .wireframe-box { background: #212529; padding: 20px; font-family: "Courier New", monospace; font-size: 13px; color: #adb5bd; line-height: 1.8; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ワイヤーフレームで設計する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">📐 ワイヤーフレームとは？</div>
+                <div class="wireframe-box">
+┌─────────────────────┐<br>
+│  [ロゴ]  ナビゲーション  │ ← ヘッダー<br>
+├─────────────────────┤<br>
+│                     │<br>
+│   [ヒーロー画像]      │ ← メインビジュアル<br>
+│   タイトルテキスト    │<br>
+│   [CTAボタン]        │<br>
+│                     │<br>
+├─────────────────────┤<br>
+│ [カード] [カード] [カード] │ ← コンテンツ<br>
+├─────────────────────┤<br>
+│      フッター        │<br>
+└─────────────────────┘
+                </div>
+            </div>
+            <div>
+                <div class="section-title">✏️ ワイヤーフレームの作り方</div>
+                <div class="item">
+                    <span class="item-icon">📝</span>
+                    <div>
+                        <div class="item-text">紙に手書きで始める</div>
+                        <div class="item-sub">最初はラフスケッチでOK、完成度より速さ</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🤖</span>
+                    <div>
+                        <div class="item-text">Claudeに提案してもらう</div>
+                        <div class="item-sub">「このアプリのUI構成を提案して」</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔄</span>
+                    <div>
+                        <div class="item-text">フィードバックを繰り返す</div>
+                        <div class="item-sub">「このレイアウトの問題点は？」と聞く</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">💻</span>
+                    <div>
+                        <div class="item-text">コードに落とし込む</div>
+                        <div class="item-sub">「このワイヤーフレームをReactで実装して」</div>
+                    </div>
+                </div>
+                <div class="highlight-box">💡 「このワイヤーフレームを見て、UIを実装して」とClaudeに渡そう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

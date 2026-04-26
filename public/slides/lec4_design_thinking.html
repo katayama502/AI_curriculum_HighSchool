@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .dt-flow { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+        .dt-step { flex: 1; background: white; border-radius: 8px; padding: 16px 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; position: relative; }
+        .dt-step:nth-child(1) { border-top: 4px solid #339AF0; }
+        .dt-step:nth-child(3) { border-top: 4px solid #20C997; }
+        .dt-step:nth-child(5) { border-top: 4px solid #F59F00; }
+        .dt-step:nth-child(7) { border-top: 4px solid #845EF7; }
+        .dt-step:nth-child(9) { border-top: 4px solid #F03E3E; }
+        .dt-icon { font-size: 28px; margin-bottom: 6px; }
+        .dt-name { font-size: 17px; font-weight: 700; color: #212529; margin-bottom: 4px; }
+        .dt-en { font-size: 14px; color: #868e96; margin-bottom: 8px; }
+        .dt-claude { font-size: 14px; color: #339AF0; font-weight: 500; line-height: 1.4; }
+        .dt-arrow { font-size: 20px; color: #adb5bd; flex-shrink: 0; }
+        .example-box { background: white; border-radius: 8px; padding: 18px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #20C997; }
+        .ex-title { font-size: 20px; font-weight: 600; color: #20C997; margin-bottom: 10px; }
+        .ex-text { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>デザイン思考 × Claude</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>問題解決の5ステップを全部Claudeとやってみよう</h2>
+            <div class="dt-flow">
+                <div class="dt-step">
+                    <div class="dt-icon">❤️</div>
+                    <div class="dt-name">共感</div>
+                    <div class="dt-en">Empathize</div>
+                    <div class="dt-claude">「〇〇の立場からの悩みを10個出して」</div>
+                </div>
+                <div class="dt-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="dt-step">
+                    <div class="dt-icon">🔍</div>
+                    <div class="dt-name">問題定義</div>
+                    <div class="dt-en">Define</div>
+                    <div class="dt-claude">「この悩みの本質的な問題を一文で定義して」</div>
+                </div>
+                <div class="dt-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="dt-step">
+                    <div class="dt-icon">💡</div>
+                    <div class="dt-name">発想</div>
+                    <div class="dt-en">Ideate</div>
+                    <div class="dt-claude">「この問題の解決策を15個ブレスト」</div>
+                </div>
+                <div class="dt-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="dt-step">
+                    <div class="dt-icon">🔨</div>
+                    <div class="dt-name">試作</div>
+                    <div class="dt-en">Prototype</div>
+                    <div class="dt-claude">「この案の最もシンプルな試作方法は？」</div>
+                </div>
+                <div class="dt-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="dt-step">
+                    <div class="dt-icon">🧪</div>
+                    <div class="dt-name">テスト</div>
+                    <div class="dt-en">Test</div>
+                    <div class="dt-claude">「ユーザーへのテスト質問を設計して」</div>
+                </div>
+            </div>
+            <div class="example-box">
+                <div class="ex-title"><i class="fas fa-graduation-cap"></i> テーマ例：「高校の昼休みをもっと充実させたい」</div>
+                <div class="ex-text">このテーマに5つのステップを順番に当てはめることで、単なる要望が「実行可能なアイデア」に変わる。Claudeは各ステップの思考パートナーになれる。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

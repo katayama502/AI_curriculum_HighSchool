@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 24px; padding-left: 60px; padding-right: 60px; display: flex; gap: 36px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 12px; }
+        .flow-chain { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 18px; flex-wrap: wrap; }
+        .chain-box { background: white; border: 2px solid #dee2e6; border-radius: 6px; padding: 8px 14px; font-size: 15px; font-weight: 600; text-align: center; }
+        .chain-box.active { border-color: #339AF0; background: #d0ebff; color: #1971c2; }
+        .chain-arrow { font-size: 18px; color: #adb5bd; padding: 0 6px; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
+        .code-box code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .c-pink { color: #ff9ac1; }
+        .info-list { display: flex; flex-direction: column; gap: 10px; }
+        .info-item { background: white; border-radius: 6px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 10px; align-items: flex-start; }
+        .info-icon { font-size: 18px; min-width: 22px; }
+        .info-text { font-size: 16px; color: #495057; line-height: 1.5; }
+        .tip-box { background: #d3f9d8; border-left: 4px solid #20C997; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #2b8a3e; margin-top: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>認証ミドルウェアの仕組み</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-shield-alt" style="color:#339AF0"></i> リクエスト処理の流れ</h2>
+                <div class="flow-chain">
+                    <div class="chain-box">クライアント</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-box active">authMiddleware</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-box">ルートハンドラ</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-box">レスポンス</div>
+                </div>
+                <div class="code-box"><code>
+<span class="c-gray">// middleware/auth.js</span><br>
+<span class="c-pink">const</span> jwt = require(<span class="c-yellow">'jsonwebtoken'</span>);<br><br>
+<span class="c-pink">module.exports</span> = (req, res, next) => {<br>
+  <span class="c-pink">const</span> header = req.headers.authorization;<br>
+  <span class="c-pink">if</span> (!header) {<br>
+    <span class="c-pink">return</span> res.status(401)<br>
+      .json({ error: <span class="c-yellow">'トークンが必要です'</span> });<br>
+  }<br>
+  <span class="c-pink">const</span> token = header.split(<span class="c-yellow">' '</span>)[1];<br>
+  <span class="c-pink">try</span> {<br>
+    <span class="c-pink">const</span> decoded = jwt.<span class="c-green">verify</span>(token,<br>
+      process.env.<span class="c-blue">JWT_SECRET</span>);<br>
+    req.user = decoded; <span class="c-gray">// req.user.userId で使える</span><br>
+    <span class="c-green">next</span>(); <span class="c-gray">// 次の処理へ</span><br>
+  } <span class="c-pink">catch</span> {<br>
+    res.status(401).json({ error: <span class="c-yellow">'無効なトークン'</span> });<br>
+  }<br>
+};
+                </code></div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-info-circle" style="color:#20C997"></i> ミドルウェアの使い方</h2>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon" style="color:#339AF0"><i class="fas fa-route"></i></div>
+                        <div class="info-text"><strong>個別ルートに適用：</strong> router.get('/', authMiddleware, handler) — そのルートだけ保護</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color:#20C997"><i class="fas fa-layer-group"></i></div>
+                        <div class="info-text"><strong>ルーター全体に適用：</strong> router.use(authMiddleware) — 以降のルート全てに適用</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color:#f59f00"><i class="fas fa-user-tag"></i></div>
+                        <div class="info-text"><strong>req.user に情報が入る：</strong> req.user.userId でどのユーザーのリクエストか判定できる</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color:#ff6b6b"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="info-text"><strong>注意：</strong> ログイン・登録エンドポイントには authMiddleware を付けない！</div>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <i class="fas fa-lightbulb"></i>
+                    next() を呼ぶ＝「次のミドルウェアへ進む」。呼ばないとリクエストがストップする
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

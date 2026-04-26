@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .use-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+        .use-card { background: white; border-radius: 8px; padding: 20px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .uc-icon { font-size: 32px; margin-bottom: 8px; }
+        .uc-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .uc-prompt { font-size: 16px; font-weight: 300; color: #495057; font-style: italic; background: #F8F9FA; padding: 8px 10px; border-radius: 4px; line-height: 1.5; border-left: 3px solid #339AF0; }
+        .uc-result { font-size: 16px; color: #20C997; font-weight: 500; margin-top: 8px; }
+        .advanced-box { background: white; border-radius: 8px; padding: 18px 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #845EF7; }
+        .adv-title { font-size: 20px; font-weight: 600; color: #845EF7; margin-bottom: 10px; }
+        .adv-content { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .adv-content code { background: #f3f0ff; padding: 2px 8px; border-radius: 4px; font-size: 17px; color: #6741d9; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CoTプロンプトの実践パターン</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>3つのシーンでCoTを使いこなす</h2>
+            <div class="use-grid">
+                <div class="use-card">
+                    <div class="uc-icon">🔢</div>
+                    <div class="uc-title">数学・論理問題</div>
+                    <div class="uc-prompt">「この数学の証明問題を、各ステップに番号をつけて、なぜそのステップが必要かを説明しながら解いて」</div>
+                    <div class="uc-result">→ 解答プロセスが丸見えで学習に最適</div>
+                </div>
+                <div class="use-card">
+                    <div class="uc-icon">⚖️</div>
+                    <div class="uc-title">意思決定・比較</div>
+                    <div class="uc-prompt">「A大学とB大学のどちらに出願すべきか。①メリット②デメリット③結論の順で考えて」</div>
+                    <div class="uc-result">→ 判断基準が明確になる</div>
+                </div>
+                <div class="use-card">
+                    <div class="uc-icon">🔍</div>
+                    <div class="uc-title">文章の読解・分析</div>
+                    <div class="uc-prompt">「この文章の主張を①要約→②根拠の確認→③評価の順で分析して」</div>
+                    <div class="uc-result">→ 批判的思考の練習になる</div>
+                </div>
+            </div>
+            <div class="advanced-box">
+                <div class="adv-title">🎯 上級テクニック：スキャフォールディング CoT</div>
+                <div class="adv-content">
+                    <code>「まず〇〇について考えて。次に△△を検討して。最後に□□の観点から結論を出して」</code><br><br>
+                    このように<strong>考える枠組みを自分で設計</strong>してClaudeに渡すと、思考の方向性を完全にコントロールできる。レポートや論述の準備に特に有効。
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

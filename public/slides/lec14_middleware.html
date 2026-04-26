@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .flow-row { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .flow-box { background-color: white; border: 2px solid #339AF0; border-radius: 8px; padding: 10px 16px; font-size: 16px; font-weight: 500; color: #212529; text-align: center; }
+        .flow-box.mw { background-color: #339AF0; color: white; border-color: #339AF0; }
+        .flow-arrow { color: #adb5bd; font-size: 18px; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 18px 20px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 14px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .mw-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #339AF0; margin-bottom: 12px; }
+        .mw-name { font-size: 17px; font-weight: 500; color: #339AF0; margin-bottom: 4px; }
+        .mw-desc { font-size: 15px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ミドルウェア：リクエストの「処理チェーン」</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-filter" style="color:#339AF0"></i> ミドルウェアの流れ</h2>
+                <div class="flow-row">
+                    <div class="flow-box">クライアント<br>リクエスト</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-box mw">ログ記録<br>MW</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-box mw">認証<br>MW</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-box mw">JSON<br>解析</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-box">ルート<br>ハンドラ</div>
+                </div>
+                <div class="code-block">
+                    <pre><span class="cm">// ロギングミドルウェアの例</span>
+app.<span class="fn">use</span>((req, res, <span class="fn">next</span>) =&gt; {
+  console.<span class="fn">log</span>(<span class="str">`${req.method} ${req.url}`</span>);
+  <span class="fn">next</span>(); <span class="cm">// 次の処理へ進む</span>
+});
+
+<span class="cm">// CORS ミドルウェア（重要！）</span>
+<span class="kw">const</span> cors = <span class="fn">require</span>(<span class="str">'cors'</span>);
+app.<span class="fn">use</span>(<span class="fn">cors</span>({ origin: <span class="str">'http://localhost:5173'</span> }));</pre>
+                </div>
+            </div>
+            <div class="right">
+                <h2>よく使うミドルウェア</h2>
+                <div class="mw-card">
+                    <div class="mw-name"><i class="fas fa-exchange-alt"></i> cors</div>
+                    <div class="mw-desc">フロントエンドからのリクエストを許可する。Reactと接続するときに必須。</div>
+                </div>
+                <div class="mw-card">
+                    <div class="mw-name"><i class="fas fa-file-code"></i> express.json()</div>
+                    <div class="mw-desc">リクエストボディのJSONを自動でパース。POSTデータを受け取るのに必要。</div>
+                </div>
+                <div class="mw-card">
+                    <div class="mw-name"><i class="fas fa-folder"></i> express.static()</div>
+                    <div class="mw-desc">画像・CSS・JSなどの静的ファイルを配信するための設定。</div>
+                </div>
+                <div class="mw-card">
+                    <div class="mw-name"><i class="fas fa-shield-alt"></i> helmet</div>
+                    <div class="mw-desc">セキュリティ関連のHTTPヘッダーを自動設定。本番環境で使おう。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

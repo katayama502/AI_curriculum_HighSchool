@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .concept-box {
+            background: white;
+            border-left: 6px solid #212529;
+            padding: 16px 22px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        .concept-text { font-size: 20px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .cmd-row {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .cmd { font-family: "Courier New", monospace; font-size: 17px; background: #212529; color: #f8f9fa; padding: 6px 12px; border-radius: 4px; white-space: nowrap; }
+        .cmd-desc { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.4; }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid #dee2e6;
+        }
+        .commit-dot {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .commit-dot::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #adb5bd;
+        }
+        .commit-dot.tagged::before { background: #212529; }
+        .commit-inner {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 12px 16px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .commit-inner.tagged { border-color: #212529; }
+        .tag-badge {
+            background: #212529;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .commit-label { font-size: 18px; font-weight: 400; color: #495057; }
+        .tip-box {
+            background: #e9ecef;
+            border: 2px solid #212529;
+            padding: 14px 20px;
+            border-radius: 6px;
+            margin-top: 16px;
+        }
+        .tip-text { font-size: 18px; color: #212529; font-weight: 400; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>git tag — バージョンに名前をつける</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>タグとは？</h2>
+                <div class="concept-box">
+                    <div class="concept-text">タグは特定のコミットに「バージョン名」を貼り付ける機能です。<strong>v1.0, v2.0</strong> のようにリリースポイントを明確にするために使います。</div>
+                </div>
+                <h2 style="margin-top:8px">主なコマンド</h2>
+                <div class="cmd-row">
+                    <div class="cmd">git tag v1.0</div>
+                    <div class="cmd-desc">現在のコミットにタグ「v1.0」をつける</div>
+                </div>
+                <div class="cmd-row">
+                    <div class="cmd">git tag</div>
+                    <div class="cmd-desc">タグの一覧を表示する</div>
+                </div>
+                <div class="cmd-row">
+                    <div class="cmd">git push origin v1.0</div>
+                    <div class="cmd-desc">タグをGitHubにpushする</div>
+                </div>
+                <div class="cmd-row">
+                    <div class="cmd">git tag -d v1.0</div>
+                    <div class="cmd-desc">タグを削除する</div>
+                </div>
+                <div class="tip-box">
+                    <div class="tip-text"><i class="fas fa-info-circle"></i> GitHubでは、タグが自動で「Releases」ページに表示され、ZIPダウンロードリンクも作られます。</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>コミット履歴とタグのイメージ</h2>
+                <div class="timeline">
+                    <div class="commit-dot tagged">
+                        <div class="commit-inner tagged">
+                            <span class="tag-badge">v1.0</span>
+                            <span class="commit-label">最初のリリース！ログイン機能完成</span>
+                        </div>
+                    </div>
+                    <div class="commit-dot">
+                        <div class="commit-inner">
+                            <span class="commit-label" style="color:#adb5bd">バグ修正: パスワードバリデーション</span>
+                        </div>
+                    </div>
+                    <div class="commit-dot">
+                        <div class="commit-inner">
+                            <span class="commit-label" style="color:#adb5bd">プロフィール画面追加</span>
+                        </div>
+                    </div>
+                    <div class="commit-dot tagged">
+                        <div class="commit-inner tagged">
+                            <span class="tag-badge">v1.1</span>
+                            <span class="commit-label">プロフィール機能リリース</span>
+                        </div>
+                    </div>
+                    <div class="commit-dot">
+                        <div class="commit-inner">
+                            <span class="commit-label" style="color:#adb5bd">検索機能を実装中...</span>
+                        </div>
+                    </div>
+                    <div class="commit-dot">
+                        <div class="commit-inner" style="border-style:dashed">
+                            <span class="commit-label" style="color:#adb5bd">（開発中）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

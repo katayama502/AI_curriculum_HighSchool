@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 30px 60px; }
+        h2 { font-size: 30px; font-weight: 500; color: #212529; margin-bottom: 24px; }
+        .types-row { display: flex; gap: 24px; }
+        .type-card { flex: 1; background: white; border-radius: 10px; padding: 28px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: center; position: relative; }
+        .type-card.t1 { border-top: 5px solid #339AF0; }
+        .type-card.t2 { border-top: 5px solid #20C997; }
+        .type-card.t3 { border-top: 5px solid #E67700; }
+        .type-icon { font-size: 40px; margin-bottom: 12px; }
+        .t1 .type-icon { color: #339AF0; }
+        .t2 .type-icon { color: #20C997; }
+        .t3 .type-icon { color: #E67700; }
+        .type-name { font-size: 24px; font-weight: 700; color: #212529; margin-bottom: 8px; }
+        .type-en { font-size: 15px; color: #adb5bd; margin-bottom: 14px; }
+        .type-desc { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.6; text-align: left; }
+        .type-example { margin-top: 14px; background: #F8F9FA; border-radius: 6px; padding: 10px 14px; font-size: 17px; color: #495057; text-align: left; }
+        .type-example span { font-weight: 500; color: #339AF0; }
+        .t2 .type-example span { color: #20C997; }
+        .t3 .type-example span { color: #E67700; }
+        .arrow-label { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; font-size: 18px; color: #495057; }
+        .arrow-label i { color: #20C997; font-size: 22px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>AIの3つの種類</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>AIには大きく分けて3つのカテゴリがある</h2>
+            <div class="types-row">
+                <div class="type-card t1">
+                    <div class="type-icon"><i class="fas fa-cog"></i></div>
+                    <div class="type-name">機械学習</div>
+                    <div class="type-en">Machine Learning</div>
+                    <div class="type-desc">データからパターンを自動的に学習し、予測や分類を行う。明示的にプログラムしなくても「経験」から賢くなる技術。</div>
+                    <div class="type-example"><span>例：</span> スパムメール判定、商品のおすすめ表示、顔認識</div>
+                </div>
+                <div class="type-card t2">
+                    <div class="type-icon"><i class="fas fa-brain"></i></div>
+                    <div class="type-name">ディープラーニング</div>
+                    <div class="type-en">Deep Learning</div>
+                    <div class="type-desc">人間の脳のニューロンを模した「ニューラルネットワーク」を使う機械学習の一種。画像・音声・言語に特に強い。</div>
+                    <div class="type-example"><span>例：</span> 画像認識、音声アシスタント、翻訳エンジン</div>
+                </div>
+                <div class="type-card t3">
+                    <div class="type-icon"><i class="fas fa-magic"></i></div>
+                    <div class="type-name">生成AI</div>
+                    <div class="type-en">Generative AI</div>
+                    <div class="type-desc">テキスト・画像・音声・コードなど「新しいコンテンツ」を生み出すAI。ディープラーニングを活用した最新技術。</div>
+                    <div class="type-example"><span>例：</span> ChatGPT、Claude、Midjourney、GitHub Copilot</div>
+                </div>
+            </div>
+            <div class="arrow-label">
+                <i class="fas fa-arrow-right"></i>
+                このコースで使う「Claude」は<strong>生成AI</strong>の一種 → 文章・コード・分析など何でも生成できる！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

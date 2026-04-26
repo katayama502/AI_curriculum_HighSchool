@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; min-height: 720px; 
+            display: flex; justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #e7f5ff 0%, #ebfbee 50%, #fff9db 100%);
+            position: relative; overflow: hidden;
+        }
+        .bg-shape-1 { position: absolute; top: -80px; left: -80px; width: 320px; height: 320px; background: rgba(51,154,240,0.12); border-radius: 50%; }
+        .bg-shape-2 { position: absolute; bottom: -100px; right: -80px; width: 400px; height: 400px; background: rgba(32,201,151,0.12); border-radius: 50%; }
+        .bg-shape-3 { position: absolute; top: 60px; right: 160px; width: 200px; height: 200px; background: rgba(255,212,0,0.10); border-radius: 50%; }
+        .content-block { background: white; padding: 60px 80px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); text-align: center; z-index: 10; width: 85%; max-width: 1000px; }
+        .trophy { font-size: 72px; margin-bottom: 20px; }
+        h1 { font-size: 60px; font-weight: 700; color: #339AF0; margin-bottom: 16px; letter-spacing: 2px; }
+        .subtitle { font-size: 28px; font-weight: 300; color: #495057; margin-bottom: 32px; }
+        .divider { height: 2px; background: linear-gradient(to right, transparent, #20C997, transparent); margin: 0 auto 32px; width: 70%; }
+        .message { font-size: 22px; font-weight: 300; color: #495057; line-height: 1.8; margin-bottom: 32px; }
+        .badges { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .badge { display: flex; align-items: center; gap: 8px; background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 30px; padding: 10px 20px; font-size: 16px; font-weight: 500; color: #495057; }
+        .badge i { font-size: 18px; }
+        .badge.blue { border-color: #339AF0; color: #339AF0; }
+        .badge.teal { border-color: #20C997; color: #20C997; }
+        .badge.gold { border-color: #f59f00; color: #e67700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="bg-shape-1"></div>
+        <div class="bg-shape-2"></div>
+        <div class="bg-shape-3"></div>
+        <div class="content-block">
+            <div class="trophy">🏆</div>
+            <h1>コース修了おめでとう！</h1>
+            <div class="subtitle">20回のコースを完走したあなたはすごい</div>
+            <div class="divider"></div>
+            <p class="message">
+                HTML/CSS から始まり、JavaScript・React・Node.js・データベース・認証・デプロイまで<br>
+                フルスタック開発者として必要な技術を全て学びきりました。<br>
+                あとは作り続けること。成長は止まらない。
+            </p>
+            <div class="badges">
+                <div class="badge blue"><i class="fab fa-react"></i> React 開発者</div>
+                <div class="badge teal"><i class="fas fa-server"></i> API 設計者</div>
+                <div class="badge gold"><i class="fas fa-rocket"></i> デプロイ経験者</div>
+                <div class="badge blue"><i class="fas fa-robot"></i> AI 活用者</div>
+                <div class="badge teal"><i class="fab fa-github"></i> GitHub ユーザー</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F8F9FA;
+        }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area {
+            padding-top: 36px;
+            padding-left: 60px;
+            padding-right: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+        .col-title {
+            font-size: 22px;
+            font-weight: 700;
+            padding: 12px 20px;
+            margin-bottom: 16px;
+        }
+        .col-title.good { background: #339AF0; color: white; }
+        .col-title.caution { background: #FD7E14; color: white; }
+        .item-list { list-style: none; }
+        .item-list li {
+            background: white;
+            padding: 14px 18px;
+            margin-top: 10px;
+            font-size: 19px;
+            color: #212529;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .item-list li .icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .warning-bar {
+            grid-column: 1 / -1;
+            background: #FFF3CD;
+            border-left: 5px solid #FD7E14;
+            padding: 16px 20px;
+            font-size: 19px;
+            color: #664D03;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .warning-bar .warn-icon { font-size: 28px; flex-shrink: 0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>情報収集とファクトチェック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="col-title good">✅ Claudeが得意なこと</div>
+                <ul class="item-list">
+                    <li><span class="icon">📚</span>概念・用語の説明と要約</li>
+                    <li><span class="icon">🔍</span>複数の視点から情報を整理</li>
+                    <li><span class="icon">📝</span>レポートの構成案を提案</li>
+                    <li><span class="icon">🌐</span>英語の文献を日本語で要約</li>
+                </ul>
+            </div>
+            <div>
+                <div class="col-title caution">⚠️ 注意が必要なこと</div>
+                <ul class="item-list">
+                    <li><span class="icon">🚫</span>最新情報は知識カットオフあり</li>
+                    <li><span class="icon">🚫</span>数字・統計は必ず一次情報を確認</li>
+                    <li><span class="icon">🚫</span>ハルシネーション（嘘をつく）がある</li>
+                    <li><span class="icon">🚫</span>引用文献は実在確認が必須</li>
+                </ul>
+            </div>
+            <div class="warning-bar">
+                <span class="warn-icon">💡</span>
+                <span><strong>ハルシネーション</strong>とは：AIが自信満々に間違った情報を答えること。重要な情報は必ず別のソースで確認しよう！</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

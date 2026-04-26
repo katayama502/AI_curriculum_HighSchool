@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .mode-preview { display: flex; gap: 16px; margin-bottom: 18px; }
+        .light-preview { flex: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .dark-preview { flex: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .preview-nav { padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+        .light-preview .preview-nav { background: white; border-bottom: 1px solid #dee2e6; }
+        .dark-preview .preview-nav { background: #1a1b1e; border-bottom: 1px solid #373a40; }
+        .preview-logo { width: 20px; height: 20px; border-radius: 4px; background: #339AF0; }
+        .preview-title { font-size: 13px; font-weight: 600; }
+        .light-preview .preview-title { color: #212529; }
+        .dark-preview .preview-title { color: #c1c2c5; }
+        .preview-body { padding: 12px 14px; }
+        .light-preview .preview-body { background: #F8F9FA; }
+        .dark-preview .preview-body { background: #25262b; }
+        .preview-card { border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+        .light-preview .preview-card { background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+        .dark-preview .preview-card { background: #2c2e33; }
+        .preview-text { font-size: 12px; margin-bottom: 3px; }
+        .light-preview .preview-text { color: #212529; }
+        .dark-preview .preview-text { color: #c1c2c5; }
+        .preview-sub { font-size: 11px; }
+        .light-preview .preview-sub { color: #868e96; }
+        .dark-preview .preview-sub { color: #5c5f66; }
+        .mode-label { text-align: center; padding: 8px; font-size: 14px; font-weight: 600; }
+        .light-preview .mode-label { background: white; color: #212529; }
+        .dark-preview .mode-label { background: #1a1b1e; color: #c1c2c5; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 16px 18px; }
+        .code-box code { font-family: monospace; font-size: 13.5px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .tip-banner { margin-top: 14px; background: #d3f9d8; border-left: 4px solid #20C997; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #2b8a3e; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ダークモード対応とCSS変数</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-moon" style="color:#339AF0"></i> ライト / ダークモード</h2>
+                <div class="mode-preview">
+                    <div class="light-preview">
+                        <div class="preview-nav"><div class="preview-logo"></div><div class="preview-title">読書記録</div></div>
+                        <div class="preview-body">
+                            <div class="preview-card"><div class="preview-text">React入門</div><div class="preview-sub">著: 山田太郎</div></div>
+                            <div class="preview-card"><div class="preview-text">TypeScript実践</div><div class="preview-sub">著: 鈴木一郎</div></div>
+                        </div>
+                        <div class="mode-label">☀️ ライトモード</div>
+                    </div>
+                    <div class="dark-preview">
+                        <div class="preview-nav"><div class="preview-logo"></div><div class="preview-title">読書記録</div></div>
+                        <div class="preview-body">
+                            <div class="preview-card"><div class="preview-text">React入門</div><div class="preview-sub">著: 山田太郎</div></div>
+                            <div class="preview-card"><div class="preview-text">TypeScript実践</div><div class="preview-sub">著: 鈴木一郎</div></div>
+                        </div>
+                        <div class="mode-label">🌙 ダークモード</div>
+                    </div>
+                </div>
+                <div class="tip-banner"><i class="fas fa-lightbulb"></i> ユーザーの好みに合わせられるアプリはUXが高い！近年は必須機能に近い</div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-code" style="color:#20C997"></i> CSS変数で切り替える</h2>
+                <div class="code-box">
+                    <code>
+<span class="c-gray">/* ライトモード（デフォルト）*/</span><br>
+<span class="c-blue">:root</span> {<br>
+  <span class="c-green">--bg</span>: <span class="c-yellow">#F8F9FA</span>;<br>
+  <span class="c-green">--card-bg</span>: <span class="c-yellow">#ffffff</span>;<br>
+  <span class="c-green">--text</span>: <span class="c-yellow">#212529</span>;<br>
+  <span class="c-green">--sub-text</span>: <span class="c-yellow">#868e96</span>;<br>
+}<br><br>
+<span class="c-gray">/* ダークモード */</span><br>
+<span class="c-blue">@media (prefers-color-scheme: dark)</span> {<br>
+  <span class="c-blue">:root</span> {<br>
+    <span class="c-green">--bg</span>: <span class="c-yellow">#25262b</span>;<br>
+    <span class="c-green">--card-bg</span>: <span class="c-yellow">#2c2e33</span>;<br>
+    <span class="c-green">--text</span>: <span class="c-yellow">#c1c2c5</span>;<br>
+    <span class="c-green">--sub-text</span>: <span class="c-yellow">#5c5f66</span>;<br>
+  }<br>
+}<br><br>
+<span class="c-gray">/* 使い方 */</span><br>
+<span class="c-blue">body</span> { <span class="c-yellow">background</span>: <span class="c-green">var(--bg)</span>; }<br>
+<span class="c-blue">.card</span> { <span class="c-yellow">background</span>: <span class="c-green">var(--card-bg)</span>; }
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

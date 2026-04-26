@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 50px; }
+        .agenda-col { flex: 1; }
+        .goal-col { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .agenda-item { display: flex; align-items: center; gap: 16px; background: white; padding: 14px 18px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #339AF0; }
+        .agenda-num { background: #339AF0; color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+        .agenda-text { font-size: 20px; font-weight: 400; color: #212529; }
+        .goal-box { background: #0D0D0D; padding: 24px 28px; border-radius: 8px; margin-bottom: 16px; }
+        .goal-title { font-size: 20px; font-weight: 700; color: #20C997; margin-bottom: 16px; }
+        .goal-item { font-size: 19px; font-weight: 300; color: #E8E8E8; line-height: 1.7; margin-bottom: 8px; }
+        .goal-item i { color: #339AF0; margin-right: 10px; }
+        .badge-row { display: flex; gap: 12px; }
+        .badge { display: inline-block; padding: 8px 18px; font-size: 16px; font-weight: 700; border-radius: 4px; }
+        .badge.phase { background: #339AF0; color: white; }
+        .badge.lec { background: #20C997; color: #0D0D0D; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第13回 — アジェンダ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-col">
+                <h2>今日のカリキュラム</h2>
+                <div class="agenda-item"><div class="agenda-num">1</div><div class="agenda-text">Reactとは？なぜ使うのか</div></div>
+                <div class="agenda-item"><div class="agenda-num">2</div><div class="agenda-text">JSXとコンポーネントの基本</div></div>
+                <div class="agenda-item"><div class="agenda-num">3</div><div class="agenda-text">Props — データを渡す仕組み</div></div>
+                <div class="agenda-item"><div class="agenda-num">4</div><div class="agenda-text">State & useState でインタラクティブに</div></div>
+                <div class="agenda-item"><div class="agenda-num">5</div><div class="agenda-text">useEffect でAPIデータを取得する</div></div>
+                <div class="agenda-item"><div class="agenda-num">6</div><div class="agenda-text">スタイリング — CSS ModulesとTailwind</div></div>
+                <div class="agenda-item" style="border-left-color:#20C997"><div class="agenda-num" style="background:#20C997;color:#0D0D0D">★</div><div class="agenda-text">演習 + チートシート</div></div>
+            </div>
+            <div class="goal-col">
+                <h2>今回のゴール</h2>
+                <div class="goal-box">
+                    <div class="goal-title"><i class="fas fa-bullseye"></i> この回を終えたら…</div>
+                    <div class="goal-item"><i class="fas fa-check-circle"></i>ReactとJSXの書き方がわかる</div>
+                    <div class="goal-item"><i class="fas fa-check-circle"></i>コンポーネントを分割・再利用できる</div>
+                    <div class="goal-item"><i class="fas fa-check-circle"></i>useStateで状態管理ができる</div>
+                    <div class="goal-item"><i class="fas fa-check-circle"></i>useEffectでAPIデータを表示できる</div>
+                    <div class="goal-item"><i class="fas fa-check-circle"></i>Claude CodeでReactアプリを作れる</div>
+                </div>
+                <div class="badge-row">
+                    <span class="badge phase">Phase 3: AI開発</span>
+                    <span class="badge lec">第13回 / 全20回</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .col { flex: 1; }
+        .section-title { font-size: 20px; font-weight: 700; color: #339AF0; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .check-list { list-style: none; }
+        .check-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e9ecef; font-size: 18px; color: #495057; line-height: 1.5; }
+        .check-box { width: 22px; height: 22px; border: 2px solid #339AF0; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+        .demo-flow { background: #212529; border-radius: 10px; padding: 24px; margin-top: 0; }
+        .flow-title { font-size: 14px; color: #ffd866; letter-spacing: 1px; margin-bottom: 14px; font-family: monospace; }
+        .flow-step { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .flow-step-num { width: 28px; height: 28px; background: #339AF0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: white; flex-shrink: 0; }
+        .flow-step-text { font-size: 16px; color: #f8f9fa; }
+        .flow-arrow { font-size: 14px; color: #495057; margin-left: 14px; margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>発表前デモチェックリスト</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="col">
+                <div class="section-title"><i class="fas fa-laptop-code"></i> 技術チェック</div>
+                <ul class="check-list">
+                    <li><div class="check-box"></div>本番 URL でアプリが開く</li>
+                    <li><div class="check-box"></div>新規登録 → ログイン → CRUD が動く</li>
+                    <li><div class="check-box"></div>スマホブラウザでも表示される</li>
+                    <li><div class="check-box"></div>テストデータを事前に入れてある</li>
+                    <li><div class="check-box"></div>コンソールにエラーが出ていない</li>
+                </ul>
+                <div class="section-title" style="margin-top:24px;"><i class="fas fa-presentation-screen"></i> 発表準備チェック</div>
+                <ul class="check-list">
+                    <li><div class="check-box"></div>話す順番が決まっている（PREP法）</li>
+                    <li><div class="check-box"></div>「なぜこのアプリを作ったか」が言える</li>
+                    <li><div class="check-box"></div>一番苦労した点が説明できる</li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="demo-flow">
+                    <div class="flow-title">▌ デモの流れ（5分版）</div>
+                    <div class="flow-step"><div class="flow-step-num">1</div><div class="flow-step-text">アプリの紹介・作った理由（30秒）</div></div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step"><div class="flow-step-num">2</div><div class="flow-step-text">実際に操作してデモ（2分）</div></div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step"><div class="flow-step-num">3</div><div class="flow-step-text">工夫したポイント・コードの説明（1分）</div></div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step"><div class="flow-step-num">4</div><div class="flow-step-text">苦労したことと解決方法（30秒）</div></div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step"><div class="flow-step-num">5</div><div class="flow-step-text">今後追加したい機能（30秒）</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

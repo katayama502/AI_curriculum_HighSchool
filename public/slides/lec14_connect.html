@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 40px; padding-right: 40px; }
+        h1 { font-size: 42px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 12px; padding-left: 40px; padding-right: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .code-block { background: #0D0D0D; padding: 10px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.45; color: #E8E8E8; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .arch-box { background: #212529; padding: 12px; text-align: center; }
+        .arch-layer { padding: 10px 18px; margin: 6px auto; font-size: 16px; font-weight: 700; width: 80%; }
+        .layer-front { background: #339AF0; color: white; }
+        .layer-api { background: #20C997; color: #0D0D0D; }
+        .layer-db { background: #E67700; color: white; }
+        .arch-arrow { color: #adb5bd; font-size: 20px; text-align: center; margin: 2px 0; }
+        .highlight-box { background: #339AF0; color: white; padding: 10px 14px; margin-top: 10px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>フロントエンドとバックエンドの接続</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🏗️ フルスタックアーキテクチャ</div>
+                <div class="arch-box">
+                    <div class="arch-layer layer-front">⚛️ React フロントエンド</div>
+                    <div class="arch-arrow">↕ HTTP / JSON</div>
+                    <div class="arch-layer layer-api">🔌 Express.js API サーバー</div>
+                    <div class="arch-arrow">↕ SQL</div>
+                    <div class="arch-layer layer-db">🗄️ SQLite データベース</div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💻 ReactからAPIを呼び出す</div>
+                <div class="code-block">
+<span style="color:#FFD43B;">import</span> { useState, useEffect } <span style="color:#FFD43B;">from</span> <span style="color:#FCC419;">'react'</span>;<br><br>
+<span style="color:#FFD43B;">function</span> <span style="color:#F783AC;">UserList</span>() {<br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">const</span> [users, setUsers] = <span style="color:#F783AC;">useState</span>([]);<br><br>
+&nbsp;&nbsp;<span style="color:#F783AC;">useEffect</span>(() =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6C757D;">// バックエンドAPIを呼び出す</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F783AC;">fetch</span>(<span style="color:#FCC419;">'/api/users'</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span style="color:#F783AC;">then</span>(res =&gt; res.<span style="color:#F783AC;">json</span>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span style="color:#F783AC;">then</span>(data =&gt; <span style="color:#F783AC;">setUsers</span>(data));<br>
+&nbsp;&nbsp;}, []);<br><br>
+&nbsp;&nbsp;<span style="color:#FFD43B;">return</span> (<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color:#339AF0;">ul</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{users.<span style="color:#F783AC;">map</span>(u =&gt; &lt;<span style="color:#339AF0;">li</span>&gt;{u.name}&lt;/<span style="color:#339AF0;">li</span>&gt;)}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color:#339AF0;">ul</span>&gt;<br>
+&nbsp;&nbsp;);<br>
+}
+                </div>
+                <div class="highlight-box">💡 フルスタックアプリを作ってとClaude Codeに頼めば繋がります</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

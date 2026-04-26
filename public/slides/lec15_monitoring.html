@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .tool-card { background-color: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .tool-card.teal { border-left-color: #20C997; }
+        .tool-name { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .tool-badge { display: inline-block; font-size: 13px; background-color: #e7f5ff; color: #339AF0; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; }
+        .tool-badge.free { background-color: #ebfbee; color: #20C997; }
+        .tool-body { font-size: 15px; color: #495057; line-height: 1.5; }
+        .tip-box { background-color: #e7f5ff; border-radius: 8px; padding: 16px 20px; font-size: 16px; color: #339AF0; font-weight: 500; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>本番環境のモニタリング</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-chart-line" style="color:#339AF0"></i> アクセス解析</h2>
+                <div class="tool-card">
+                    <div class="tool-name"><i class="fab fa-google" style="color:#339AF0"></i> Google Analytics 4</div>
+                    <div class="tool-badge free">無料</div>
+                    <div class="tool-body">訪問者数・ページビュー・滞在時間・デバイス種別などを詳細に計測。</div>
+                </div>
+                <div class="tool-card teal">
+                    <div class="tool-name"><i class="fas fa-chart-bar" style="color:#20C997"></i> Vercel Analytics</div>
+                    <div class="tool-badge free">Vercel内蔵</div>
+                    <div class="tool-body">Core Web Vitals（LCP・FID・CLS）をリアルタイムで計測。ページのUX品質を数値で把握。</div>
+                </div>
+                <div class="tip-box">
+                    <i class="fas fa-lightbulb"></i> まずはVercel Analyticsを有効にするだけで多くの情報が得られる！
+                </div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-bell" style="color:#339AF0"></i> エラー監視・アラート</h2>
+                <div class="tool-card">
+                    <div class="tool-name"><i class="fas fa-bug" style="color:#339AF0"></i> Sentry</div>
+                    <div class="tool-badge">無料枠あり</div>
+                    <div class="tool-body">本番で発生したエラーをリアルタイムで通知。スタックトレースと発生回数を自動記録。</div>
+                </div>
+                <div class="tool-card teal">
+                    <div class="tool-name"><i class="fas fa-eye" style="color:#20C997"></i> Uptime Monitor</div>
+                    <div class="tool-badge free">UptimeRobot 無料</div>
+                    <div class="tool-body">5分ごとにURLにアクセスしてサーバーが落ちたらメールで通知。サービスの稼働率を確認。</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name"><i class="fas fa-file-alt" style="color:#339AF0"></i> サーバーログ確認</div>
+                    <div class="tool-badge">Railway標準</div>
+                    <div class="tool-body">RailwayのダッシュボードでExpressのconsole.log出力を確認できる。エラー調査に必須。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .color-row { display: flex; gap: 8px; margin-top: 12px; }
+        .color-chip { height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>カラーとタイポグラフィ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🎨 カラーパレットの作り方</div>
+                <div class="item">
+                    <span class="item-icon">🔵</span>
+                    <div>
+                        <div class="item-text">メインカラー（1色）</div>
+                        <div class="item-sub">ブランドを象徴する色。ボタン・リンクに使う</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">⚪</span>
+                    <div>
+                        <div class="item-text">背景・テキスト（白黒系）</div>
+                        <div class="item-sub">読みやすさのためコントラストを確保</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🟢</span>
+                    <div>
+                        <div class="item-text">アクセントカラー（1〜2色）</div>
+                        <div class="item-sub">成功・警告・エラーなど状態を表す</div>
+                    </div>
+                </div>
+                <div class="color-row">
+                    <div class="color-chip" style="background:#4F46E5; color:white;">Primary</div>
+                    <div class="color-chip" style="background:#10B981; color:white;">Success</div>
+                    <div class="color-chip" style="background:#F59F00; color:#212529;">Warning</div>
+                    <div class="color-chip" style="background:#EF4444; color:white;">Error</div>
+                    <div class="color-chip" style="background:#F8F9FA; color:#212529; border:1px solid #dee2e6;">BG</div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">🔤 タイポグラフィの基本</div>
+                <div class="item">
+                    <span class="item-icon">📏</span>
+                    <div>
+                        <div class="item-text">フォントサイズの階層を作る</div>
+                        <div class="item-sub">見出し32px → 小見出し20px → 本文16px</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔡</span>
+                    <div>
+                        <div class="item-text">フォントは2種類まで</div>
+                        <div class="item-sub">見出し用＋本文用。それ以上は混乱を招く</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📖</span>
+                    <div>
+                        <div class="item-text">行間は1.5〜1.8倍</div>
+                        <div class="item-sub">詰めすぎると読みにくい、広すぎると散漫</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📱</span>
+                    <div>
+                        <div class="item-text">スマホでも読めるサイズに</div>
+                        <div class="item-sub">最小フォントサイズは14px以上</div>
+                    </div>
+                </div>
+                <div class="green-box">✅ Claudeに「このデザインのカラーパレットを提案して」と頼もう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

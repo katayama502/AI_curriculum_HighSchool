@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .seed-box { background: #339AF0; color: white; border-radius: 8px; padding: 20px 24px; text-align: center; margin-bottom: 20px; }
+        .seed-title { font-size: 20px; font-weight: 500; margin-bottom: 6px; opacity: 0.85; }
+        .seed-idea { font-size: 28px; font-weight: 700; }
+        .expand-step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+        .step-num { background: #212529; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; flex-shrink: 0; margin-top: 4px; }
+        .step-content { flex: 1; }
+        .step-label { font-size: 20px; font-weight: 600; color: #339AF0; margin-bottom: 4px; }
+        .step-prompt { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.5; background: white; padding: 8px 12px; border-radius: 4px; border-left: 3px solid #339AF0; font-style: italic; }
+        .result-box { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #20C997; }
+        .result-title { font-size: 20px; font-weight: 600; color: #20C997; margin-bottom: 10px; }
+        .result-item { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.8; }
+        .result-item::before { content: "→ "; color: #20C997; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>アイデアを「深める」会話術</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>種のアイデアを育てる3ステップ</h2>
+                <div class="seed-box">
+                    <div class="seed-title">スタートのアイデア（種）</div>
+                    <div class="seed-idea">💡 学校に休憩スペースを作る</div>
+                </div>
+                <div class="expand-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <div class="step-label">なぜ？を深掘り</div>
+                        <div class="step-prompt">「このアイデアが解決する根本的な問題は何？」と聞く</div>
+                    </div>
+                </div>
+                <div class="expand-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <div class="step-label">具体化する</div>
+                        <div class="step-prompt">「どんな人が・いつ・どうやって使う？を具体的に描いて」</div>
+                    </div>
+                </div>
+                <div class="expand-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <div class="step-label">課題を見つける</div>
+                        <div class="step-prompt">「このアイデアの弱点・問題点を3つ挙げて」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Claudeからの回答例</h2>
+                <div class="result-box">
+                    <div class="result-title"><i class="fas fa-robot"></i> 深掘りした結果</div>
+                    <div class="result-item">根本問題：授業の切れ目に脳を休める場所がない</div>
+                    <div class="result-item">ユーザー像：集中力が続かない3年生が昼休みに使う</div>
+                    <div class="result-item">具体的形：防音・暗め・スマホNG・5分タイマー付き</div>
+                    <div class="result-item">課題①：管理・監督できる先生が必要</div>
+                    <div class="result-item">課題②：スペース確保のコストが問題</div>
+                    <div class="result-item">課題③：「ずっといる生徒」への対応ルール</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

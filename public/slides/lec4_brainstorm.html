@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .techniques-col { }
+        .technique-item {
+            background: white;
+            padding: 16px 20px;
+            margin-top: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .tech-icon {
+            width: 44px;
+            height: 44px;
+            background: #339AF0;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .tech-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 4px; }
+        .tech-desc { font-size: 16px; color: #6C757D; }
+        .example-col { }
+        .example-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            background: #212529;
+            padding: 12px 18px;
+            margin-bottom: 14px;
+        }
+        .prompt-example {
+            background: #212529;
+            color: #F8F9FA;
+            padding: 18px 20px;
+            font-family: "Courier New", monospace;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+        .prompt-example .hl { color: #20C997; }
+        .result-box {
+            background: white;
+            border-left: 4px solid #20C997;
+            padding: 14px 18px;
+        }
+        .result-title { font-size: 16px; font-weight: 700; color: #20C997; margin-bottom: 8px; }
+        .result-item { font-size: 16px; color: #495057; padding-top: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ブレインストーミングへの活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="techniques-col">
+                <div class="technique-item">
+                    <div class="tech-icon">🔢</div>
+                    <div>
+                        <div class="tech-title">量を出す</div>
+                        <div class="tech-desc">「アイデアを20個出して」と指示。質より量を優先</div>
+                    </div>
+                </div>
+                <div class="technique-item">
+                    <div class="tech-icon">🔄</div>
+                    <div>
+                        <div class="tech-title">逆転思考</div>
+                        <div class="tech-desc">「逆の視点から考えると？」で新しい発想を得る</div>
+                    </div>
+                </div>
+                <div class="technique-item">
+                    <div class="tech-icon">🔗</div>
+                    <div>
+                        <div class="tech-title">組み合わせ</div>
+                        <div class="tech-desc">「AとBを組み合わせたアイデアは？」で発展させる</div>
+                    </div>
+                </div>
+                <div class="technique-item">
+                    <div class="tech-icon">❓</div>
+                    <div>
+                        <div class="tech-title">「もし〜なら」</div>
+                        <div class="tech-desc">「もし予算が無制限なら？」で制約を外す</div>
+                    </div>
+                </div>
+            </div>
+            <div class="example-col">
+                <div class="example-title">💬 実践例：文化祭の企画</div>
+                <div class="prompt-example">
+                    「<span class="hl">文化祭の出し物</span>のアイデアを<br>
+                    <span class="hl">10個</span>出してください。<br>
+                    テーマは<span class="hl">テクノロジー×エンタメ</span>で、<br>
+                    高校生が実現できるものにして。」
+                </div>
+                <div class="result-box">
+                    <div class="result-title">Claudeからの回答例</div>
+                    <div class="result-item">1. AIが似顔絵を描くブース</div>
+                    <div class="result-item">2. VRで体験する歴史旅行</div>
+                    <div class="result-item">3. プログラミングで動くゲーム展示</div>
+                    <div class="result-item" style="color:#339AF0;">... など10個のアイデア</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

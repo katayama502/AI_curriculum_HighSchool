@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .idea-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .idea-item { background: white; padding: 14px 16px; }
+        .idea-icon { font-size: 28px; text-align: center; margin-bottom: 6px; }
+        .idea-title { font-size: 16px; font-weight: 700; color: #212529; text-align: center; }
+        .idea-examples { font-size: 13px; color: #6C757D; text-align: center; margin-top: 4px; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>アイデア発想法</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">💡 プロジェクトアイデアの種類</div>
+                <div class="idea-grid">
+                    <div class="idea-item">
+                        <div class="idea-icon">🏫</div>
+                        <div class="idea-title">学校生活</div>
+                        <div class="idea-examples">時間割アプリ<br>宿題管理・成績記録</div>
+                    </div>
+                    <div class="idea-item">
+                        <div class="idea-icon">🎮</div>
+                        <div class="idea-title">趣味・エンタメ</div>
+                        <div class="idea-examples">ゲーム攻略Wiki<br>音楽・映画レビュー</div>
+                    </div>
+                    <div class="idea-item">
+                        <div class="idea-icon">👥</div>
+                        <div class="idea-title">社会・地域</div>
+                        <div class="idea-examples">地域情報マップ<br>ボランティア募集</div>
+                    </div>
+                    <div class="idea-item">
+                        <div class="idea-icon">🛠️</div>
+                        <div class="idea-title">便利ツール</div>
+                        <div class="idea-examples">家計簿・カロリー計算<br>天気連動タスク管理</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💬 Claudeでアイデアを膨らませる</div>
+                <div class="code-block">
+<span class="t-prompt">あなた：</span><span class="t-cmd">高校生が使える<br>便利なWebアプリのアイデアを<br>10個出して</span><br><br>
+<span class="t-success">Claude：</span><br>
+<span class="t-output">1. 定期テスト対策スケジューラー<br>
+2. 部活の練習記録アプリ<br>
+3. 文化祭の予算管理ツール<br>
+4. 友達と共有できる読書記録<br>
+5. 進路相談AIチャットボット<br>
+6. 給食メニュー評価アプリ<br>
+7. 校内イベント告知掲示板<br>
+8. 自習室の空き状況確認<br>
+9. 単語帳メーカー<br>
+10. 部員募集マッチング</span>
+                </div>
+                <div class="highlight-box">💡 「〇〇に困っている」→「それを解決するアプリ」という発想が最強！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

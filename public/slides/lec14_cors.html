@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .scenario { background-color: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .sc-title { font-size: 18px; font-weight: 500; margin-bottom: 10px; color: #212529; }
+        .ports { display: flex; align-items: center; gap: 12px; }
+        .port-box { background-color: #f1f3f5; border-radius: 6px; padding: 10px 14px; font-size: 16px; font-weight: 500; text-align: center; }
+        .port-box.blue { background-color: #e7f5ff; color: #339AF0; }
+        .port-box.green { background-color: #ebfbee; color: #20C997; }
+        .arrow { font-size: 20px; color: #adb5bd; }
+        .error-box { background-color: #fff5f5; border: 2px solid #fa5252; border-radius: 8px; padding: 14px; font-family: "Courier New", monospace; font-size: 14px; color: #fa5252; line-height: 1.5; }
+        .code-block { background-color: #0D0D0D; border-radius: 8px; padding: 18px; }
+        .code-block pre { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.75; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .info-card { background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #20C997; font-size: 16px; color: #495057; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CORS：ポートが違うと弾かれる！</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-shield-alt" style="color:#fa5252"></i> なぜ CORS エラーが起きるか</h2>
+                <div class="scenario">
+                    <div class="sc-title">React と Express は別ポートで動いている</div>
+                    <div class="ports">
+                        <div class="port-box blue">React<br>:5173</div>
+                        <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="port-box green">Express<br>:3000</div>
+                    </div>
+                </div>
+                <div class="error-box">
+                    Access to fetch at 'http://localhost:3000'<br>
+                    from origin 'http://localhost:5173'<br>
+                    has been blocked by CORS policy.
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="code-block">
+                        <pre><span class="kw">const</span> cors = <span class="fn">require</span>(<span class="str">'cors'</span>);
+
+<span class="cm">// 開発中：Reactのポートを許可</span>
+app.<span class="fn">use</span>(<span class="fn">cors</span>({
+  origin: <span class="str">'http://localhost:5173'</span>
+}));</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>CORSとは？</h2>
+                <div style="background-color: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="font-size:17px; font-weight:500; margin-bottom:10px;">Cross-Origin Resource Sharing</div>
+                    <div style="font-size:15px; color:#495057; line-height:1.7;">ブラウザには「異なるオリジン（ドメイン・ポート）へのリクエストは危険かも」という安全機能があります。<br><br>サーバー側で「このオリジンは許可する」と明示することで、React ↔ Express間の通信が可能になります。</div>
+                </div>
+                <div class="info-card">
+                    <strong>本番環境では？</strong><br>フロントとバックが同一オリジンになるか、本番URLを指定する。<br><code>origin: process.env.FRONTEND_URL</code>
+                </div>
+                <div class="info-card" style="border-left-color: #339AF0;">
+                    <strong>開発の便利設定：</strong> Vite の <code>vite.config.js</code> でプロキシを設定する方法もある。
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

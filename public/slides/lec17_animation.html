@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 600; color: #212529; margin-bottom: 14px; }
+        .intro { font-size: 19px; color: #495057; margin-bottom: 18px; line-height: 1.6; }
+        .anim-list { display: flex; flex-direction: column; gap: 14px; }
+        .anim-item { background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; }
+        .anim-demo { width: 60px; display: flex; align-items: center; justify-content: center; }
+        .demo-box { width: 40px; height: 40px; background: #339AF0; border-radius: 6px; }
+        .anim-content { flex: 1; }
+        .anim-name { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .anim-use { font-size: 15px; color: #495057; }
+        .code-box { background: #0D0D0D; border-radius: 8px; padding: 16px 18px; }
+        .code-box code { font-family: monospace; font-size: 14px; line-height: 1.8; color: #e9ecef; }
+        .c-green { color: #a9dc76; }
+        .c-blue { color: #78c8ff; }
+        .c-yellow { color: #ffd866; }
+        .c-gray { color: #adb5bd; }
+        .tip-box { margin-top: 14px; background: #fff3cd; border-left: 4px solid #fcc419; padding: 12px 16px; border-radius: 4px; font-size: 16px; color: #856404; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CSSアニメーションでUXを向上</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2><i class="fas fa-magic" style="color:#339AF0"></i> よく使うアニメーション</h2>
+                <p class="intro">適切なアニメーションはUIをリッチにし、ユーザーの操作感を向上させます。</p>
+                <div class="anim-list">
+                    <div class="anim-item">
+                        <div class="anim-demo"><div class="demo-box" style="transform:translateY(-4px);box-shadow:0 8px 20px rgba(51,154,240,0.3);"></div></div>
+                        <div class="anim-content">
+                            <div class="anim-name">Hover浮き上がり</div>
+                            <div class="anim-use">カードやボタンのhoverで使用。立体感を演出</div>
+                        </div>
+                    </div>
+                    <div class="anim-item">
+                        <div class="anim-demo"><div class="demo-box" style="opacity:0.3;"></div></div>
+                        <div class="anim-content">
+                            <div class="anim-name">フェードイン/アウト</div>
+                            <div class="anim-use">モーダルや通知の表示・非表示に使用</div>
+                        </div>
+                    </div>
+                    <div class="anim-item">
+                        <div class="anim-demo"><div class="demo-box" style="transform:scale(0.8);"></div></div>
+                        <div class="anim-content">
+                            <div class="anim-name">スケール（拡大縮小）</div>
+                            <div class="anim-use">ボタンクリック時やアイコンのhoverに使用</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tip-box"><i class="fas fa-exclamation-triangle"></i> アニメーションはやりすぎNG！ duration は 200〜400ms が心地よい</div>
+            </div>
+            <div class="right">
+                <h2><i class="fas fa-code" style="color:#20C997"></i> CSSの書き方</h2>
+                <div class="code-box">
+                    <code>
+<span class="c-gray">/* Hover浮き上がり */</span><br>
+<span class="c-blue">.card</span> {<br>
+  <span class="c-yellow">transition</span>: <span class="c-green">transform 0.2s, box-shadow 0.2s</span>;<br>
+}<br>
+<span class="c-blue">.card:hover</span> {<br>
+  <span class="c-yellow">transform</span>: <span class="c-green">translateY(-4px)</span>;<br>
+  <span class="c-yellow">box-shadow</span>: <span class="c-green">0 8px 24px rgba(0,0,0,0.12)</span>;<br>
+}<br><br>
+<span class="c-gray">/* フェードイン */</span><br>
+<span class="c-blue">@keyframes fadeIn</span> {<br>
+  <span class="c-green">from</span> { <span class="c-yellow">opacity</span>: 0; <span class="c-yellow">transform</span>: translateY(10px); }<br>
+  <span class="c-green">to</span>   { <span class="c-yellow">opacity</span>: 1; <span class="c-yellow">transform</span>: translateY(0); }<br>
+}<br>
+<span class="c-blue">.modal</span> {<br>
+  <span class="c-yellow">animation</span>: <span class="c-green">fadeIn 0.3s ease-out</span>;<br>
+}<br><br>
+<span class="c-gray">/* ボタンクリック */</span><br>
+<span class="c-blue">.btn:active</span> {<br>
+  <span class="c-yellow">transform</span>: <span class="c-green">scale(0.96)</span>;<br>
+}
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

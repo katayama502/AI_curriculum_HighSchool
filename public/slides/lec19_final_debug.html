@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .t-warn { color: #F59F00; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .check-item { background: white; padding: 10px 16px; margin-top: 8px; display: flex; align-items: center; gap: 12px; }
+        .check-box { width: 24px; height: 24px; border: 2px solid #E67700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .check-text { font-size: 16px; color: #212529; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>最終QAチェックリスト</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">✅ 公開前の確認事項</div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">全ての機能が正常に動作する</div></div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">スマホ・タブレットで表示が崩れない</div></div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">エラーメッセージが適切に表示される</div></div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">パスワードなどの機密情報が露出していない</div></div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">ページの読み込みが3秒以内</div></div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">リンク切れがない</div></div>
+                <div class="check-item"><div class="check-box">□</div><div class="check-text">友達に試してもらってフィードバックを得た</div></div>
+            </div>
+            <div>
+                <div class="section-title">💻 Claudeに最終レビューを依頼</div>
+                <div class="code-block">
+<span class="t-prompt">Claude&gt; </span><span class="t-cmd">このプロジェクトを<br>公開前にレビューして。<br>問題点を全て教えて</span><br><br>
+<span class="t-success">● 全ファイルを確認中...</span><br>
+<span class="t-warn">⚠️ 問題点が3件見つかりました：</span><br><br>
+<span class="t-output">1. .env ファイルがGitに含まれている<br>
+   → .gitignoreに追加が必要<br><br>
+2. パスワードが平文で保存されている<br>
+   → bcryptでハッシュ化が必要<br><br>
+3. APIエラー時の処理がない<br>
+   → try-catchを追加が必要</span>
+                </div>
+                <div class="highlight-box">🔒 セキュリティの問題は公開前に必ず修正！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

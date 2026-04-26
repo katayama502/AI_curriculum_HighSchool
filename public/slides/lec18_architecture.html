@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .arch-diagram { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 24px; }
+        .arch-box { border-radius: 10px; padding: 22px 28px; text-align: center; }
+        .arch-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .arch-sub { font-size: 14px; opacity: 0.8; margin-bottom: 10px; }
+        .arch-items { font-size: 15px; line-height: 1.7; }
+        .front-box { background: #d0ebff; border: 2px solid #339AF0; }
+        .front-box .arch-title { color: #1971c2; }
+        .api-box { background: #212529; color: white; margin: 0 20px; }
+        .api-box .arch-title { color: #20C997; }
+        .db-box { background: #d3f9d8; border: 2px solid #20C997; }
+        .db-box .arch-title { color: #2b8a3e; }
+        .arch-arrow { font-size: 30px; color: #adb5bd; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .arrow-label { font-size: 13px; color: #868e96; }
+        .flow-steps { display: flex; gap: 16px; }
+        .flow-step { flex: 1; background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 4px solid #339AF0; }
+        .flow-step:nth-child(2) { border-left-color: #20C997; }
+        .flow-step:nth-child(3) { border-left-color: #f59f00; }
+        .flow-step:nth-child(4) { border-left-color: #ff6b6b; }
+        .fs-num { font-size: 22px; font-weight: 700; color: #339AF0; margin-bottom: 6px; }
+        .fs-num:nth-child(1) { color: #339AF0; }
+        .fs-title { font-size: 16px; font-weight: 600; color: #212529; margin-bottom: 4px; }
+        .fs-text { font-size: 14px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>フルスタック実装の全体像</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="arch-diagram">
+                <div class="arch-box front-box">
+                    <div class="arch-title">🖥️ フロントエンド</div>
+                    <div class="arch-sub">React + Vite (port: 5173)</div>
+                    <div class="arch-items">
+                        コンポーネント<br>
+                        状態管理 (useState)<br>
+                        API呼び出し (fetch)<br>
+                        ルーティング
+                    </div>
+                </div>
+                <div class="arch-arrow">
+                    <div>→</div>
+                    <div class="arrow-label">HTTP リクエスト</div>
+                    <div>←</div>
+                    <div class="arrow-label">JSONレスポンス</div>
+                </div>
+                <div class="arch-box api-box">
+                    <div class="arch-title">⚙️ バックエンド API</div>
+                    <div class="arch-sub">Express.js (port: 3000)</div>
+                    <div class="arch-items" style="color:#e9ecef;">
+                        ルーティング<br>
+                        認証 (JWT)<br>
+                        バリデーション<br>
+                        エラーハンドリング
+                    </div>
+                </div>
+                <div class="arch-arrow">
+                    <div>→</div>
+                    <div class="arrow-label">SQL クエリ</div>
+                    <div>←</div>
+                    <div class="arrow-label">データ</div>
+                </div>
+                <div class="arch-box db-box">
+                    <div class="arch-title">🗄️ データベース</div>
+                    <div class="arch-sub">SQLite (better-sqlite3)</div>
+                    <div class="arch-items">
+                        users テーブル<br>
+                        books テーブル<br>
+                        reviews テーブル
+                    </div>
+                </div>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="fs-num" style="color:#339AF0">①</div>
+                    <div class="fs-title">ユーザー操作</div>
+                    <div class="fs-text">Reactのフォームで「本を追加」ボタンをクリック</div>
+                </div>
+                <div class="flow-step">
+                    <div class="fs-num" style="color:#20C997">②</div>
+                    <div class="fs-title">API呼び出し</div>
+                    <div class="fs-text">fetch('/api/books', {method:'POST',...}) でExpressへ</div>
+                </div>
+                <div class="flow-step">
+                    <div class="fs-num" style="color:#f59f00">③</div>
+                    <div class="fs-title">DB操作</div>
+                    <div class="fs-text">Express がSQLiteに INSERT INTO books ... を実行</div>
+                </div>
+                <div class="flow-step">
+                    <div class="fs-num" style="color:#ff6b6b">④</div>
+                    <div class="fs-title">UI更新</div>
+                    <div class="fs-text">201レスポンスを受け取りsetState で一覧を再描画</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .project-header { background: #0D0D0D; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+        .ph-title { font-size: 18px; font-weight: 700; color: #20C997; margin-bottom: 4px; }
+        .ph-desc { font-size: 15px; font-weight: 300; color: #adb5bd; }
+        .timeline-item { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
+        .tl-time { font-size: 13px; font-weight: 700; color: #339AF0; width: 50px; flex-shrink: 0; padding-top: 3px; }
+        .tl-card { flex: 1; background: white; border: 2px solid #dee2e6; padding: 10px 14px; border-radius: 6px; }
+        .tl-action { font-size: 16px; font-weight: 500; color: #212529; margin-bottom: 4px; }
+        .tl-detail { font-size: 14px; font-weight: 300; color: #495057; line-height: 1.4; }
+        .tl-result { font-size: 13px; color: #20C997; margin-top: 4px; }
+        .lesson-box { background: white; border-left: 5px solid #339AF0; padding: 14px 18px; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 10px; }
+        .lb-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .lb-title i { color: #339AF0; margin-right: 8px; }
+        .lb-text { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>実プロジェクト — 天気アプリ完成編</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>開発タイムライン（2時間の作業）</h2>
+                <div class="project-header">
+                    <div class="ph-title">🌤 My Weather App — 複数都市対応版</div>
+                    <div class="ph-desc">HTML/CSS/JS + Open-Meteo API使用</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-time">00:00</div>
+                    <div class="tl-card">
+                        <div class="tl-action">プロジェクト設計</div>
+                        <div class="tl-detail">「何を作るか」をClaude Codeに相談、CLAUDE.mdを作成</div>
+                        <div class="tl-result">✓ 開発計画が明確に</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-time">00:20</div>
+                    <div class="tl-card">
+                        <div class="tl-action">基本UI実装</div>
+                        <div class="tl-detail">HTML/CSSの骨格 → 「東京の気温表示」が動作</div>
+                        <div class="tl-result">✓ git commit #1</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-time">00:50</div>
+                    <div class="tl-card">
+                        <div class="tl-action">複数都市対応</div>
+                        <div class="tl-detail">ドロップダウン追加 → バグ修正 → テスト</div>
+                        <div class="tl-result">✓ git commit #2, #3</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-time">01:30</div>
+                    <div class="tl-card">
+                        <div class="tl-action">デザイン改善 + レスポンシブ</div>
+                        <div class="tl-detail">ダークモード・スマホ対応</div>
+                        <div class="tl-result">✓ git commit #4</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-time">01:50</div>
+                    <div class="tl-card">
+                        <div class="tl-action">GitHub Pages公開</div>
+                        <div class="tl-detail">git push → Settings → Pages設定</div>
+                        <div class="tl-result">✓ 世界に公開！</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>今回の開発から学んだこと</h2>
+                <div class="lesson-box">
+                    <div class="lb-title"><i class="fas fa-lightbulb"></i>計画が8割</div>
+                    <div class="lb-text">最初にClaude Codeと設計を相談したことで、実装がスムーズに進んだ。「まず動くものを作る」という方針が大切。</div>
+                </div>
+                <div class="lesson-box">
+                    <div class="lb-title"><i class="fas fa-code-branch"></i>小さいcommitが安全</div>
+                    <div class="lb-text">機能ごとにcommitしていたので、複数都市機能で問題が起きた時もすぐ前の状態に戻せた。</div>
+                </div>
+                <div class="lesson-box">
+                    <div class="lb-title"><i class="fas fa-bug"></i>バグは必ず起きる</div>
+                    <div class="lb-text">福岡の座標が間違っていてデータが取れなかった。エラーをそのままAIに渡したら5秒で原因がわかった。</div>
+                </div>
+                <div class="lesson-box" style="border-color:#20C997">
+                    <div class="lb-title"><i class="fas fa-rocket" style="color:#20C997"></i>公開がモチベーションになる</div>
+                    <div class="lb-text">GitHub PagesでURLが発行されて友達に送れた。「誰かに使ってもらえる」という体験がプログラミングの楽しさ。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

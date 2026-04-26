@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        .section-label { font-size: 18px; font-weight: 700; color: #339AF0; margin-bottom: 14px; }
+        .feedback-form { display: flex; flex-direction: column; gap: 14px; }
+        .form-row { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #339AF0; }
+        .form-row:nth-child(2) { border-left-color: #20C997; }
+        .form-row:nth-child(3) { border-left-color: #f59f00; }
+        .form-row:nth-child(4) { border-left-color: #e64980; }
+        .form-q { font-size: 17px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .form-blank { background: #f8f9fa; border: 1px dashed #ced4da; border-radius: 4px; height: 36px; }
+        .rules-box { background: #212529; border-radius: 10px; padding: 24px; }
+        .rules-title { font-size: 14px; color: #ffd866; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; font-family: monospace; }
+        .rule-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+        .rule-icon { color: #a9dc76; font-size: 16px; margin-top: 3px; }
+        .rule-text { font-size: 16px; color: #f8f9fa; line-height: 1.6; }
+        .sbi-badge { display: inline-block; background: #339AF0; color: white; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ピアフィードバック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <div class="section-label"><i class="fas fa-pen"></i> フィードバックシート（発表を聞きながら記入）</div>
+                <div class="feedback-form">
+                    <div class="form-row">
+                        <div class="form-q">① 良かったと思った点（具体的に）</div>
+                        <div class="form-blank"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-q">② 印象に残ったアイデア・機能</div>
+                        <div class="form-blank"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-q">③ 「こんな機能があったら？」提案</div>
+                        <div class="form-blank"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-q">④ 一言メッセージ</div>
+                        <div class="form-blank"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="rules-box">
+                    <div class="rules-title">▌ よいフィードバックのルール</div>
+                    <div class="rule-item">
+                        <div class="rule-icon"><i class="fas fa-check"></i></div>
+                        <div class="rule-text"><span class="sbi-badge">具体的</span>「良かった」ではなく「〇〇の部分が〜だから良かった」と言う</div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-icon"><i class="fas fa-check"></i></div>
+                        <div class="rule-text"><span class="sbi-badge">建設的</span>批判ではなく「こうしたらもっと良くなる」という提案で伝える</div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-icon"><i class="fas fa-check"></i></div>
+                        <div class="rule-text"><span class="sbi-badge">正直</span>お世辞より本音のフィードバックが相手の成長につながる</div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-icon"><i class="fas fa-check"></i></div>
+                        <div class="rule-text"><span class="sbi-badge">尊重</span>相手の努力を尊重しながら、温かいトーンで伝える</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

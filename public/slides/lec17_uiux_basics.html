@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        .comparison { display: flex; gap: 30px; margin-bottom: 28px; }
+        .def-box { flex: 1; background: white; border-radius: 10px; padding: 24px 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #339AF0; }
+        .def-box.teal { border-top-color: #20C997; }
+        .def-title { font-size: 24px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .def-sub { font-size: 18px; color: #339AF0; font-weight: 500; margin-bottom: 10px; }
+        .def-sub.teal { color: #20C997; }
+        .def-text { font-size: 18px; color: #495057; line-height: 1.7; }
+        .principles { display: flex; gap: 18px; }
+        .principle { flex: 1; background: white; border-radius: 8px; padding: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
+        .p-icon { font-size: 32px; color: #339AF0; margin-bottom: 10px; }
+        .p-title { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 6px; }
+        .p-text { font-size: 16px; color: #495057; line-height: 1.5; }
+        h2 { font-size: 26px; font-weight: 600; color: #212529; margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>UI / UX とは？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="comparison">
+                <div class="def-box">
+                    <div class="def-title">🎨 UI（User Interface）</div>
+                    <div class="def-sub">ユーザーインターフェース＝「見た目」</div>
+                    <div class="def-text">ボタン・色・フォント・レイアウトなど、ユーザーが目で見て触れる部分のデザイン。<br>「きれい」「使いやすそう」という印象を決める。</div>
+                </div>
+                <div class="def-box teal">
+                    <div class="def-title">✨ UX（User Experience）</div>
+                    <div class="def-sub teal">ユーザーエクスペリエンス＝「体験」</div>
+                    <div class="def-text">アプリを使う際の感情・体験全体のこと。<br>「すぐ使えた」「迷わなかった」「また使いたい」という感覚を設計する。</div>
+                </div>
+            </div>
+            <h2>良いUI/UXの5原則</h2>
+            <div class="principles">
+                <div class="principle">
+                    <div class="p-icon"><i class="fas fa-eye"></i></div>
+                    <div class="p-title">視認性</div>
+                    <div class="p-text">重要情報が一目でわかる</div>
+                </div>
+                <div class="principle">
+                    <div class="p-icon"><i class="fas fa-hand-pointer"></i></div>
+                    <div class="p-title">操作性</div>
+                    <div class="p-text">迷わずに操作できる</div>
+                </div>
+                <div class="principle">
+                    <div class="p-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="p-title">効率性</div>
+                    <div class="p-text">少ない操作で目的達成</div>
+                </div>
+                <div class="principle">
+                    <div class="p-icon"><i class="fas fa-undo"></i></div>
+                    <div class="p-title">可逆性</div>
+                    <div class="p-text">間違いを簡単に戻せる</div>
+                </div>
+                <div class="principle">
+                    <div class="p-icon"><i class="fas fa-smile"></i></div>
+                    <div class="p-title">満足感</div>
+                    <div class="p-text">使って楽しい・気持ちいい</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

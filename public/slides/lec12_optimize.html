@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .before-after { background: #0D0D0D; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+        .ba-header { display: flex; }
+        .ba-tab { flex: 1; padding: 8px 14px; font-size: 13px; font-weight: 700; text-align: center; }
+        .ba-before { background: #4a1a1a; color: #ff6b6b; }
+        .ba-after { background: #1a4a2e; color: #51CF66; }
+        .ba-body { display: flex; }
+        .ba-col { flex: 1; padding: 12px 14px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.8; border-right: 1px solid rgba(255,255,255,0.1); }
+        .ba-col:last-child { border-right: none; }
+        .bc { color: #ff6b6b; }
+        .ac { color: #51CF66; }
+        .nc { color: #f8f9fa; }
+        .gc { color: #20C997; }
+        .opt-card { background: white; border: 2px solid #dee2e6; padding: 14px 18px; border-radius: 6px; margin-bottom: 10px; }
+        .oc-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .oc-title i { margin-right: 8px; }
+        .oc-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .oc-prompt { font-family: "Courier New", monospace; font-size: 13px; background: #f1f3f5; padding: 6px 10px; border-radius: 4px; color: #212529; margin-top: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>パフォーマンス最適化をAIと行う</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>よくある最適化パターン</h2>
+                <div class="before-after">
+                    <div class="ba-header">
+                        <div class="ba-tab ba-before">✗ 毎回APIを呼ぶ（遅い）</div>
+                        <div class="ba-tab ba-after">✓ キャッシュを使う（速い）</div>
+                    </div>
+                    <div class="ba-body">
+                        <div class="ba-col">
+                            <div class="bc">// ボタンを押すたびにAPI呼び出し</div>
+                            <div class="nc">btn.addEventListener('click', </div>
+                            <div class="nc">  async () => {</div>
+                            <div class="bc">    const data = await fetch(url);</div>
+                            <div class="nc">    display(data);</div>
+                            <div class="nc">  }</div>
+                            <div class="nc">);</div>
+                        </div>
+                        <div class="ba-col">
+                            <div class="gc">// キャッシュがあれば再利用</div>
+                            <div class="nc">const cache = {};</div>
+                            <div class="nc">async function getWeather(city) {</div>
+                            <div class="gc">  if (cache[city]) return cache[city];</div>
+                            <div class="nc">  const data = await fetch(url);</div>
+                            <div class="gc">  cache[city] = data;</div>
+                            <div class="nc">  return data;</div>
+                            <div class="nc">}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>最適化の依頼パターン</h2>
+                <div class="opt-card">
+                    <div class="oc-title"><i class="fas fa-database" style="color:#339AF0"></i>キャッシュの追加</div>
+                    <div class="oc-desc">同じデータを何度もAPIから取得しないようにする</div>
+                    <div class="oc-prompt">script.jsにキャッシュを追加して。同じ都市のデータは5分間は再取得しない。</div>
+                </div>
+                <div class="opt-card">
+                    <div class="oc-title"><i class="fas fa-clock" style="color:#20C997"></i>デバウンスの実装</div>
+                    <div class="oc-desc">キーボード入力のたびにAPIを呼ばないようにする</div>
+                    <div class="oc-prompt">検索入力のイベントにdebounceを追加して。入力後500ms待ってからAPIを呼ぶ。</div>
+                </div>
+                <div class="opt-card">
+                    <div class="oc-title"><i class="fas fa-spinner" style="color:#ffa94d"></i>ローディング表示</div>
+                    <div class="oc-desc">API待ち中はローディングスピナーを表示する</div>
+                    <div class="oc-prompt">API呼び出し中はローディングアニメーションを表示して。完了したら非表示に。</div>
+                </div>
+                <div class="opt-card">
+                    <div class="oc-title"><i class="fas fa-mobile-alt" style="color:#7950F2"></i>レスポンシブ対応</div>
+                    <div class="oc-desc">スマートフォンでも見やすいレイアウトにする</div>
+                    <div class="oc-prompt">style.cssをモバイル対応にして。スマホ画面（375px以下）でも使いやすいレイアウトに。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

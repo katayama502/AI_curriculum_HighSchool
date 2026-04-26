@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background-color: #F8F9FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            color: #339AF0;
+            margin-top: 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #20C997;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .content-area {
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #212529;
+            margin-top: 0;
+        }
+        .comparison-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .example-box {
+            flex: 1;
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: #e9ecef;
+            border-top: 4px solid #adb5bd;
+            min-height: 350px;
+        }
+        .good-box {
+            background-color: rgba(32, 201, 151, 0.1);
+            border-top-color: #20C997;
+        }
+        .example-title {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .bad-title {
+            color: #495057;
+        }
+        .good-title {
+            color: #20C997;
+        }
+        .example-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #212529;
+            line-height: 1.6;
+            background-color: white;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-height: 200px;
+            border: 1px solid #dee2e6;
+        }
+        .highlight {
+            color: #339AF0;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>実践演習</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>プロンプトを改善してみよう</h2>
+            
+            <div class="comparison-container">
+                <div class="example-box">
+                    <div class="example-title bad-title">
+                        <i class="fas fa-times"></i> 元のプロンプト（改善前）
+                    </div>
+                    <div class="example-text">
+                        「英語の勉強法を教えて」
+                    </div>
+                </div>
+                
+                <div class="example-box good-box">
+                    <div class="example-title good-title">
+                        <i class="fas fa-check"></i> 改善後のプロンプト
+                    </div>
+                    <div class="example-text">
+                        「<span class="highlight">あなたは英語教育の専門家です。</span><br>
+                        <span class="highlight">私は高校2年生で、英語が苦手（特にリスニング）です。大学受験まで1年あります。毎日30分しか時間が取れない場合、</span><br>
+                        最も効果的なリスニング力向上の学習計画を、<br>
+                        <span class="highlight">週ごとのスケジュール表形式で作成してください。</span>」
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

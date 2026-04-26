@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 30px; }
+        .task-col { flex: 1; }
+        .task-card { background: white; border-radius: 10px; padding: 20px 22px; box-shadow: 0 3px 12px rgba(0,0,0,0.07); margin-bottom: 16px; }
+        .task-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+        .badge-a { background: #d3f9d8; color: #2b8a3e; }
+        .badge-b { background: #dbe4ff; color: #364fc7; }
+        .badge-c { background: #ffe8cc; color: #e67700; }
+        .badge-challenge { background: #212529; color: white; }
+        .task-card h3 { font-size: 20px; font-weight: 500; color: #212529; margin-bottom: 8px; }
+        .task-card p { font-size: 17px; color: #495057; line-height: 1.6; }
+        .task-card ol { padding-left: 20px; margin-top: 8px; }
+        .task-card li { font-size: 17px; color: #495057; line-height: 1.8; }
+        .hint-box { background: #e9ecef; border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 16px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>演習課題 — Git・GitHub</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-a">TASK A — 基礎</div>
+                    <h3>最初のコミット</h3>
+                    <p>新しいフォルダを作成してgit initし、HTMLファイルを作成してgit add → git commitの一連の流れを実践しよう。</p>
+                    <ol>
+                        <li>mkdir my-project && cd my-project</li>
+                        <li>git init</li>
+                        <li>index.htmlを作成してコードを書く</li>
+                        <li>git add . → git commit -m "初回コミット"</li>
+                    </ol>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-b">TASK B — 応用</div>
+                    <h3>GitHubに公開する</h3>
+                    <p>Task Aで作ったリポジトリをGitHubに公開しよう。GitHub上でNew repositoryを作り、pushまで完了させる。</p>
+                    <div class="hint-box">💡 GitHubの画面に表示されるコマンドをそのままターミナルに貼ればOK！</div>
+                </div>
+            </div>
+            <div class="task-col">
+                <div class="task-card">
+                    <div class="task-badge badge-c">TASK C — 発展</div>
+                    <h3>ブランチを使った機能追加</h3>
+                    <p>featureブランチを作ってCSSを追加し、mainにマージするまでの流れを実践しよう。</p>
+                    <ol>
+                        <li>git checkout -b feature/style でブランチ作成</li>
+                        <li>style.cssを作成してデザインを追加</li>
+                        <li>コミット後、mainに戻ってマージ</li>
+                        <li>GitHubにpushして確認</li>
+                    </ol>
+                </div>
+                <div class="task-card">
+                    <div class="task-badge badge-challenge">🏆 チャレンジ</div>
+                    <h3>Pull Requestを作成する</h3>
+                    <p>GitHubでフォーク→ブランチ作成→変更→プッシュ→プルリクエスト作成の流れをClaudeに聞きながら実践しよう。チームで開発する練習！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

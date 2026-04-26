@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #20C997; }
+        .divider { height: 1px; background-color: #339AF0; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: flex; gap: 40px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-block { background: #212529; color: #f8f9fa; padding: 16px 20px; border-radius: 6px; font-family: monospace; font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+        .kw { color: #20C997; }
+        .str { color: #69db7c; }
+        .num { color: #74c0fc; }
+        .cmt { color: #868e96; }
+        .func { color: #da77f2; }
+        .op-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+        .op-table th { background: #20C997; color: white; padding: 10px 14px; font-size: 18px; }
+        .op-table td { padding: 10px 14px; font-size: 17px; border-bottom: 1px solid #dee2e6; background: white; text-align: center; }
+        .op-table tr:nth-child(even) td { background: #f0fdf4; }
+        .indent-note { background: #fff3bf; border-radius: 8px; padding: 14px 18px; border-left: 5px solid #F59F00; }
+        .indent-note p { font-size: 17px; color: #664d03; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>条件分岐 — if / elif / else</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>インデント（字下げ）がブロックを作る</h2>
+                <div class="code-block">
+score = <span class="num">75</span>
+
+<span class="kw">if</span> score >= <span class="num">90</span>:
+    <span class="func">print</span>(<span class="str">"優秀！"</span>)
+<span class="kw">elif</span> score >= <span class="num">70</span>:
+    <span class="func">print</span>(<span class="str">"合格"</span>)
+<span class="kw">elif</span> score >= <span class="num">60</span>:
+    <span class="func">print</span>(<span class="str">"ギリギリ合格"</span>)
+<span class="kw">else</span>:
+    <span class="func">print</span>(<span class="str">"不合格"</span>)
+
+<span class="cmt"># and / or も使える</span>
+age = <span class="num">17</span>
+has_id = <span class="kw">True</span>
+<span class="kw">if</span> age >= <span class="num">18</span> <span class="kw">and</span> has_id:
+    <span class="func">print</span>(<span class="str">"入場できます"</span>)
+<span class="kw">elif</span> age >= <span class="num">16</span> <span class="kw">or</span> has_id:
+    <span class="func">print</span>(<span class="str">"保護者同伴で入場可"</span>)
+                </div>
+                <div class="indent-note">
+                    <p>⚠️ <strong>インデント（スペース4個）が超重要！</strong><br>
+                    { } の代わりに字下げでブロックを表します。インデントがズレるとエラーになります。</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>比較・論理演算子</h2>
+                <table class="op-table">
+                    <tr><th>演算子</th><th>意味</th><th>例</th></tr>
+                    <tr><td>==</td><td>等しい</td><td>a == b</td></tr>
+                    <tr><td>!=</td><td>等しくない</td><td>a != b</td></tr>
+                    <tr><td>&gt;</td><td>より大きい</td><td>a &gt; 10</td></tr>
+                    <tr><td>&gt;=</td><td>以上</td><td>a &gt;= 18</td></tr>
+                    <tr><td>&lt;</td><td>未満</td><td>a &lt; 0</td></tr>
+                    <tr><td>and</td><td>かつ</td><td>a &gt; 0 and b &gt; 0</td></tr>
+                    <tr><td>or</td><td>または</td><td>a == 1 or b == 1</td></tr>
+                    <tr><td>not</td><td>否定</td><td>not is_valid</td></tr>
+                    <tr><td>in</td><td>含む</td><td>"a" in "abc"</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

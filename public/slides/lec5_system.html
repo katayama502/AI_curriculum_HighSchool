@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .left-col { }
+        .what-box {
+            background: #339AF0;
+            color: white;
+            padding: 16px 20px;
+            font-size: 19px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .use-case-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .use-item {
+            background: white;
+            padding: 14px 18px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+        }
+        .use-icon { font-size: 22px; }
+        .right-col { }
+        .example-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background: #212529;
+            padding: 12px 18px;
+            margin-bottom: 0;
+        }
+        .system-prompt-box {
+            background: #1A1A2E;
+            color: #E8E8E8;
+            padding: 20px 22px;
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .sp-comment { color: #6C757D; }
+        .sp-key { color: #20C997; }
+        .sp-value { color: #F8F9FA; }
+        .result-label {
+            font-size: 16px;
+            font-weight: 700;
+            color: #339AF0;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+        .result-text { font-size: 16px; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>System Prompt の活用</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left-col">
+                <div class="what-box">
+                    <strong>System Prompt</strong>とは：<br>
+                    会話の「前提条件」をAIに設定するための特別な指示。ユーザーの質問より前に処理される。
+                </div>
+                <div class="use-case-title">活用シーン</div>
+                <div class="use-item">
+                    <span class="use-icon">🎭</span>
+                    AIのキャラクター・役割を固定する
+                </div>
+                <div class="use-item">
+                    <span class="use-icon">📏</span>
+                    回答の形式・長さを統一する
+                </div>
+                <div class="use-item">
+                    <span class="use-icon">🌐</span>
+                    使用言語・専門レベルを設定する
+                </div>
+                <div class="use-item">
+                    <span class="use-icon">🔒</span>
+                    特定のトピックに絞り込む
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="example-title">📝 System Prompt 例：勉強サポートBot</div>
+                <div class="system-prompt-box">
+                    <span class="sp-comment"># あなたの役割</span><br>
+                    <span class="sp-value">あなたは高校生向けの</span><br>
+                    <span class="sp-value">勉強サポートAIです。</span><br><br>
+                    <span class="sp-comment"># 回答ルール</span><br>
+                    <span class="sp-key">- </span><span class="sp-value">中学〜高校レベルで説明</span><br>
+                    <span class="sp-key">- </span><span class="sp-value">必ず具体例を1つ含める</span><br>
+                    <span class="sp-key">- </span><span class="sp-value">300字以内で回答する</span><br>
+                    <span class="sp-key">- </span><span class="sp-value">励ましの言葉で締める</span>
+                </div>
+                <div class="result-label">→ 効果</div>
+                <div class="result-text">毎回同じ指示をしなくても、<br>常に一貫したスタイルで回答してくれる！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

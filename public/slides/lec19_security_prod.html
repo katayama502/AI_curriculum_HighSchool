@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        .intro { font-size: 20px; color: #495057; margin-bottom: 20px; }
+        .sec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .sec-card { background: white; border-radius: 10px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 5px solid #ff6b6b; }
+        .sec-card.ok { border-left-color: #20C997; }
+        .sec-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .sec-icon { font-size: 22px; }
+        .sec-title { font-size: 17px; font-weight: 700; color: #212529; }
+        .sec-bad { background: #ffe3e3; border-radius: 4px; padding: 8px 12px; font-size: 14px; color: #c92a2a; font-family: monospace; margin-bottom: 8px; }
+        .sec-good { background: #d3f9d8; border-radius: 4px; padding: 8px 12px; font-size: 14px; color: #2b8a3e; font-family: monospace; }
+        .final-banner { margin-top: 18px; background: #212529; color: white; padding: 14px 24px; border-radius: 8px; display: flex; gap: 12px; align-items: center; font-size: 17px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>本番環境のセキュリティ対策</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="intro">公開後は攻撃対象になる可能性があります。最低限の対策を確認しましょう。</p>
+            <div class="sec-grid">
+                <div class="sec-card">
+                    <div class="sec-header"><div class="sec-icon" style="color:#ff6b6b">💉</div><div class="sec-title">SQLインジェクション対策</div></div>
+                    <div class="sec-bad">❌ db.prepare(`SELECT * FROM users WHERE email='${email}'`)</div>
+                    <div class="sec-good">✅ db.prepare('SELECT * FROM users WHERE email=?').get(email)</div>
+                </div>
+                <div class="sec-card">
+                    <div class="sec-header"><div class="sec-icon" style="color:#ff6b6b">🔑</div><div class="sec-title">パスワードハッシュ化</div></div>
+                    <div class="sec-bad">❌ db.run('INSERT INTO users VALUES (?)', password)</div>
+                    <div class="sec-good">✅ const hash = bcrypt.hashSync(password, 10)<br>db.run('INSERT INTO users VALUES (?)', hash)</div>
+                </div>
+                <div class="sec-card">
+                    <div class="sec-header"><div class="sec-icon" style="color:#ff6b6b">🌐</div><div class="sec-title">CORS設定（本番用）</div></div>
+                    <div class="sec-bad">❌ app.use(cors()) // 全てのオリジンを許可</div>
+                    <div class="sec-good">✅ app.use(cors({ origin: process.env.CORS_ORIGIN }))<br>// 本番フロントのURLだけ許可</div>
+                </div>
+                <div class="sec-card ok">
+                    <div class="sec-header"><div class="sec-icon" style="color:#20C997">🛡️</div><div class="sec-title">Helmetでヘッダー保護</div></div>
+                    <div class="sec-good">✅ npm install helmet<br>app.use(helmet())<br>// XSS・クリックジャッキング等を防ぐ</div>
+                </div>
+                <div class="sec-card">
+                    <div class="sec-header"><div class="sec-icon" style="color:#ff6b6b">⚡</div><div class="sec-title">レートリミット（ブルートフォース対策）</div></div>
+                    <div class="sec-bad">❌ ログインAPIに制限なし（何度でも試せる）</div>
+                    <div class="sec-good">✅ npm install express-rate-limit<br>app.use('/api/auth', rateLimit({ max: 5 }))</div>
+                </div>
+                <div class="sec-card ok">
+                    <div class="sec-header"><div class="sec-icon" style="color:#20C997">🔒</div><div class="sec-title">環境変数の管理</div></div>
+                    <div class="sec-good">✅ JWT_SECRET は 32文字以上のランダム文字列<br>✅ .env は絶対にGitにpushしない<br>✅ デプロイ先のEnv設定を使う</div>
+                </div>
+            </div>
+            <div class="final-banner">
+                <i class="fas fa-shield-alt" style="font-size:20px"></i>
+                セキュリティは「後回し」厳禁！特に SQL インジェクション対策は今すぐ確認しよう
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .debug-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .debug-table th {
+            padding: 14px 18px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: left;
+        }
+        .debug-table th.symptom { background: #E03131; color: white; width: 30%; }
+        .debug-table th.cause { background: #FD7E14; color: white; width: 30%; }
+        .debug-table th.fix { background: #20C997; color: white; width: 40%; }
+        .debug-table td {
+            padding: 12px 18px;
+            font-size: 17px;
+            border: 1px solid #DEE2E6;
+            vertical-align: middle;
+        }
+        .debug-table tr:nth-child(even) td { background: #F8F9FA; }
+        .debug-table tr:nth-child(odd) td { background: white; }
+        .tips-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .tip-item {
+            background: #212529;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+        }
+        .tip-icon { font-size: 28px; margin-bottom: 8px; }
+        .tip-text { font-size: 16px; line-height: 1.5; }
+        .tip-text .hl { color: #20C997; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>プロンプトのデバッグと改善</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <table class="debug-table">
+                <thead>
+                    <tr>
+                        <th class="symptom">😕 症状</th>
+                        <th class="cause">🔍 原因</th>
+                        <th class="fix">✅ 改善策</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>回答が長すぎる・短すぎる</td>
+                        <td>出力形式を指定していない</td>
+                        <td>「200字以内で」「箇条書き3点で」と明示する</td>
+                    </tr>
+                    <tr>
+                        <td>的外れな回答が返ってくる</td>
+                        <td>文脈・背景情報が不足</td>
+                        <td>「私は〇〇で、〇〇のために〜」と状況を詳しく説明</td>
+                    </tr>
+                    <tr>
+                        <td>毎回違う形式で返ってくる</td>
+                        <td>フォーマット指定がない</td>
+                        <td>出力例を示す（Few-Shot）かフォーマットを明記</td>
+                    </tr>
+                    <tr>
+                        <td>難しすぎる・簡単すぎる</td>
+                        <td>対象読者を伝えていない</td>
+                        <td>「高校1年生向けに」「専門家向けに」と明示</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="tips-row">
+                <div class="tip-item">
+                    <div class="tip-icon">🔄</div>
+                    <div class="tip-text"><span class="hl">反復改善</span><br>1回で完璧を求めず、フィードバックを重ねる</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">📋</div>
+                    <div class="tip-text"><span class="hl">良いプロンプトを保存</span><br>うまくいったプロンプトはメモしておく</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🎯</div>
+                    <div class="tip-text"><span class="hl">1回1タスク</span><br>複数の依頼を1つのプロンプトに詰め込まない</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

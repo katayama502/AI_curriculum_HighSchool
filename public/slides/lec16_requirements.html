@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .req-box { background: white; padding: 18px; margin-top: 8px; }
+        .req-title { font-size: 16px; font-weight: 700; color: #E67700; margin-bottom: 8px; }
+        .req-item { font-size: 15px; color: #212529; padding: 4px 0; border-bottom: 1px solid #F1F3F5; }
+        .req-item:last-child { border-bottom: none; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>要件定義の書き方</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">📋 要件定義のポイント</div>
+                <div class="item">
+                    <span class="item-icon">👤</span>
+                    <div>
+                        <div class="item-text">ターゲットユーザーを明確に</div>
+                        <div class="item-sub">「誰が」「どんな場面で」使うのか</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">✅</span>
+                    <div>
+                        <div class="item-text">機能要件（何ができるか）</div>
+                        <div class="item-sub">Must（必須）・Should（あれば良い）・Could（余裕があれば）</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">⚡</span>
+                    <div>
+                        <div class="item-text">非機能要件（どう動くか）</div>
+                        <div class="item-sub">速度・セキュリティ・スマホ対応</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🎯</span>
+                    <div>
+                        <div class="item-text">スコープを絞る（最初は小さく）</div>
+                        <div class="item-sub">MVP（最小限の製品）から始める</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">📝 要件定義の例（勉強スケジューラー）</div>
+                <div class="req-box">
+                    <div class="req-title">👤 ターゲット</div>
+                    <div class="req-item">定期テスト前に計画を立てたい高校生</div>
+                </div>
+                <div class="req-box" style="margin-top: 8px;">
+                    <div class="req-title">✅ 必須機能（Must）</div>
+                    <div class="req-item">📅 科目別の勉強時間を入力できる</div>
+                    <div class="req-item">📊 カレンダーで予定を確認できる</div>
+                    <div class="req-item">✔️ 完了した項目をチェックできる</div>
+                </div>
+                <div class="req-box" style="margin-top: 8px;">
+                    <div class="req-title">💡 あれば良い（Should）</div>
+                    <div class="req-item">🔔 リマインダー通知</div>
+                    <div class="req-item">📈 達成率グラフ</div>
+                </div>
+                <div class="highlight-box">💡 Claudeに「要件定義を手伝って」と頼もう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

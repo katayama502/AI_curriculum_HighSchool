@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .structure-row { display: flex; align-items: stretch; gap: 0; margin-bottom: 20px; }
+        .struct-item { flex: 1; background: white; padding: 18px 16px; border-top: 4px solid #dee2e6; position: relative; }
+        .struct-item:nth-child(1) { border-top-color: #339AF0; }
+        .struct-item:nth-child(2) { border-top-color: #845EF7; }
+        .struct-item:nth-child(3) { border-top-color: #F59F00; }
+        .struct-item:nth-child(4) { border-top-color: #20C997; }
+        .struct-item:nth-child(5) { border-top-color: #F03E3E; }
+        .struct-label { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+        .struct-label.blue { color: #339AF0; }
+        .struct-label.purple { color: #845EF7; }
+        .struct-label.yellow { color: #F59F00; }
+        .struct-label.teal { color: #20C997; }
+        .struct-label.red { color: #F03E3E; }
+        .struct-jp { font-size: 22px; font-weight: 600; color: #212529; margin-bottom: 8px; }
+        .struct-desc { font-size: 16px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .arrow-row { display: flex; align-items: center; justify-content: space-between; padding: 0 2%; margin-bottom: 6px; }
+        .arrow { font-size: 24px; color: #adb5bd; }
+        .prompt-row { background: white; border-radius: 8px; padding: 16px 24px; border-left: 6px solid #339AF0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .prompt-title { font-size: 20px; font-weight: 600; color: #339AF0; margin-bottom: 8px; }
+        .prompt-text { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.6; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>物語の「型」をClaudeと一緒に作る</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>三幕構成（起承転結の進化版）— 世界中の映画・小説で使われる</h2>
+            <div class="structure-row">
+                <div class="struct-item">
+                    <div class="struct-label blue">ACT 1</div>
+                    <div class="struct-jp">① 日常と設定</div>
+                    <div class="struct-desc">主人公・世界観・目標を提示。読者を引き込む</div>
+                </div>
+                <div class="struct-item">
+                    <div class="struct-label purple">ACT 2-A</div>
+                    <div class="struct-jp">② 挑戦と試練</div>
+                    <div class="struct-desc">目標に向かうが、障害が立ちはだかる</div>
+                </div>
+                <div class="struct-item">
+                    <div class="struct-label yellow">ACT 2-B</div>
+                    <div class="struct-jp">③ 最大の危機</div>
+                    <div class="struct-desc">全てを失う最低点。ここが最も緊張する</div>
+                </div>
+                <div class="struct-item">
+                    <div class="struct-label teal">ACT 3-A</div>
+                    <div class="struct-jp">④ 立ち上がり</div>
+                    <div class="struct-desc">新しい視点・力で再挑戦。クライマックスへ</div>
+                </div>
+                <div class="struct-item">
+                    <div class="struct-label red">ACT 3-B</div>
+                    <div class="struct-jp">⑤ 解決と変化</div>
+                    <div class="struct-desc">問題解決＋主人公の内面的成長を描く</div>
+                </div>
+            </div>
+            <div class="prompt-row">
+                <div class="prompt-title"><i class="fas fa-keyboard"></i> 使ってみようプロンプト</div>
+                <div class="prompt-text">「高校生が部活を通じて自己成長する物語を三幕構成で設計してください。各幕に1〜2行の概要をつけてください」</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

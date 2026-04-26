@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 28px 60px; display: flex; gap: 50px; }
+        .left { flex: 1.1; }
+        .right { flex: 0.9; }
+        h2 { font-size: 28px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        p { font-size: 21px; font-weight: 300; line-height: 1.7; color: #495057; margin-bottom: 16px; }
+        .comparison { display: flex; gap: 16px; margin-top: 20px; }
+        .comp-box { flex: 1; background: white; border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .comp-box.bad { border-top: 4px solid #fa5252; }
+        .comp-box.good { border-top: 4px solid #20C997; }
+        .comp-label { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+        .bad .comp-label { color: #fa5252; }
+        .good .comp-label { color: #20C997; }
+        .comp-text { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .flow-section { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .flow-title { font-size: 22px; font-weight: 500; color: #212529; margin-bottom: 20px; }
+        .flow-step { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        .step-badge { background: #339AF0; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+        .step-text { font-size: 20px; color: #212529; font-weight: 300; }
+        .step-arrow { color: #adb5bd; font-size: 18px; margin: 4px 0 4px 50px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>機械学習ってどんな仕組み？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>「経験から学ぶ」AIの基本原理</h2>
+                <p>従来のプログラムは、人間がルールをすべて書く必要がありました。でも機械学習では、大量のデータを見せるだけでAIが自分でルールを見つけます。</p>
+                <div class="comparison">
+                    <div class="comp-box bad">
+                        <div class="comp-label">❌ 従来のプログラム</div>
+                        <div class="comp-text">「犬の耳は三角、鼻は黒い、毛がある…」とすべてのルールを人間が書く必要がある</div>
+                    </div>
+                    <div class="comp-box good">
+                        <div class="comp-label">✅ 機械学習</div>
+                        <div class="comp-text">「犬の写真」を10万枚見せると、AIが自動的に犬の特徴を学習して判定できるようになる</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="flow-section">
+                    <div class="flow-title">機械学習の学習サイクル</div>
+                    <div class="flow-step">
+                        <div class="step-badge">1</div>
+                        <div class="step-text">大量の<strong>データ</strong>を用意する（例：犬・猫の画像100万枚）</div>
+                    </div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step">
+                        <div class="step-badge">2</div>
+                        <div class="step-text">モデルが<strong>予測</strong>する（「これは犬？猫？」）</div>
+                    </div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step">
+                        <div class="step-badge">3</div>
+                        <div class="step-text">正解と比べて<strong>誤差</strong>を計算する</div>
+                    </div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step">
+                        <div class="step-badge">4</div>
+                        <div class="step-text">誤差を減らすようにモデルを<strong>更新</strong>する</div>
+                    </div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="flow-step">
+                        <div class="step-badge" style="background:#20C997">✓</div>
+                        <div class="step-text"><strong>精度が上がる</strong>まで繰り返す！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

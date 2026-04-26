@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 36px; padding-left: 60px; padding-right: 60px; display: flex; gap: 50px; }
+        .agenda-list { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+        .agenda-item { display: flex; align-items: center; gap: 18px; background: white; border-radius: 8px; padding: 14px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .agenda-num { font-size: 28px; font-weight: 700; color: #dee2e6; min-width: 40px; }
+        .agenda-icon { font-size: 24px; color: #339AF0; min-width: 30px; }
+        .agenda-text { font-size: 20px; font-weight: 500; color: #212529; }
+        .agenda-item.active { border-left: 4px solid #339AF0; }
+        .goal-box { width: 360px; background: linear-gradient(135deg, #339AF0, #20C997); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .goal-label { color: rgba(255,255,255,0.8); font-size: 18px; margin-bottom: 16px; }
+        .goal-text { color: white; font-size: 22px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第19回 アジェンダ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-list">
+                <div class="agenda-item active"><div class="agenda-num">01</div><div class="agenda-icon"><i class="fas fa-rocket"></i></div><div class="agenda-text">デプロイ前の最終チェック</div></div>
+                <div class="agenda-item"><div class="agenda-num">02</div><div class="agenda-icon"><i class="fab fa-vercel"></i></div><div class="agenda-text">Vercelでフロントをデプロイ</div></div>
+                <div class="agenda-item"><div class="agenda-num">03</div><div class="agenda-icon"><i class="fas fa-server"></i></div><div class="agenda-text">Railwayでバックエンドをデプロイ</div></div>
+                <div class="agenda-item"><div class="agenda-num">04</div><div class="agenda-icon"><i class="fas fa-globe"></i></div><div class="agenda-text">ドメインとHTTPS設定</div></div>
+                <div class="agenda-item"><div class="agenda-num">05</div><div class="agenda-icon"><i class="fas fa-chart-line"></i></div><div class="agenda-text">アクセス解析とモニタリング</div></div>
+                <div class="agenda-item"><div class="agenda-num">06</div><div class="agenda-icon"><i class="fas fa-shield-alt"></i></div><div class="agenda-text">本番環境のセキュリティ</div></div>
+                <div class="agenda-item"><div class="agenda-num">07</div><div class="agenda-icon"><i class="fas fa-share-alt"></i></div><div class="agenda-text">SNSでシェア・ポートフォリオ化</div></div>
+            </div>
+            <div class="goal-box">
+                <div class="goal-label"><i class="fas fa-bullseye"></i> 今回のゴール</div>
+                <div class="goal-text">自分のアプリを<br>インターネットに公開し、<br>URLを取得する！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

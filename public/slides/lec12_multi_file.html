@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; display: flex; gap: 44px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .scenario-box { background: white; border-left: 6px solid #339AF0; padding: 16px 20px; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .scenario-text { font-size: 19px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .file-flow { display: flex; flex-direction: column; gap: 10px; }
+        .file-row { display: flex; align-items: center; gap: 14px; }
+        .file-box { background: #0D0D0D; border-radius: 6px; padding: 10px 16px; display: flex; align-items: center; gap: 10px; flex: 1; }
+        .file-icon { font-size: 18px; }
+        .file-name { font-family: "Courier New", monospace; font-size: 16px; color: #f8f9fa; }
+        .file-change { font-size: 13px; color: #20C997; margin-top: 2px; }
+        .arrow-right { font-size: 18px; color: #adb5bd; flex-shrink: 0; }
+        .prompt-box { background: #0D0D0D; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+        .pb-label { color: #339AF0; font-size: 13px; font-weight: 700; margin-bottom: 8px; font-family: "Courier New", monospace; }
+        .pb-text { font-family: "Courier New", monospace; font-size: 14px; color: #f8f9fa; line-height: 1.8; }
+        .pb-text .g { color: #20C997; }
+        .tip-card { background: white; border: 2px solid #dee2e6; padding: 14px 18px; border-radius: 6px; margin-bottom: 10px; }
+        .tip-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 6px; }
+        .tip-title i { color: #339AF0; margin-right: 8px; }
+        .tip-desc { font-size: 15px; font-weight: 300; color: #495057; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>複数ファイルをまたいだ編集</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>複数ファイルへの変更例</h2>
+                <div class="scenario-box">
+                    <div class="scenario-text">「ダークモードを追加して」と頼むと Claude Codeは <strong>HTML・CSS・JS</strong> を一度に更新してくれる！</div>
+                </div>
+                <div class="file-flow">
+                    <div class="file-row">
+                        <div class="file-box">
+                            <span class="file-icon">📄</span>
+                            <div>
+                                <div class="file-name">index.html</div>
+                                <div class="file-change">→ data-theme属性を追加</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center;color:#adb5bd;font-size:14px;padding-left:20px"><i class="fas fa-arrow-down"></i> 同時に変更</div>
+                    <div class="file-row">
+                        <div class="file-box">
+                            <span class="file-icon">🎨</span>
+                            <div>
+                                <div class="file-name">style.css</div>
+                                <div class="file-change">→ [data-theme="dark"]のスタイルを追加</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center;color:#adb5bd;font-size:14px;padding-left:20px"><i class="fas fa-arrow-down"></i> 同時に変更</div>
+                    <div class="file-row">
+                        <div class="file-box">
+                            <span class="file-icon">⚡</span>
+                            <div>
+                                <div class="file-name">script.js</div>
+                                <div class="file-change">→ トグルボタンのイベントを追加</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>効果的な依頼の仕方</h2>
+                <div class="prompt-box">
+                    <div class="pb-label">// ✓ 良い例：影響範囲を意識した依頼</div>
+                    <div class="pb-text">
+                        ダークモード切り替えボタンを追加してください。<br><br>
+                        変更が必要なファイル：<br>
+                        <span class="g">- index.html：</span>ヘッダーにボタンを追加<br>
+                        <span class="g">- style.css：</span>ダークテーマの色定義<br>
+                        <span class="g">- script.js：</span>クリックでdata-theme切り替え<br><br>
+                        各ファイルの変更点も教えてください。
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-title"><i class="fas fa-lightbulb"></i> 変更前にバックアップする習慣</div>
+                    <div class="tip-desc">複数ファイルを変更する前に <code>git commit</code> しておくと、問題が起きたときに <code>git checkout .</code> で元に戻せる。</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-title"><i class="fas fa-eye"></i> 変更内容を確認する</div>
+                    <div class="tip-desc">Claude Codeが変更を提案したら「/review」で差分を確認してから承認する。盲目的にyesを押さない！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 30px; padding-left: 60px; padding-right: 60px; }
+        .subtitle { font-size: 22px; font-weight: 300; color: #495057; margin-bottom: 24px; }
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .quiz-num { display: inline-block; background: #339AF0; color: white; width: 32px; height: 32px; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .quiz-q { font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 14px; line-height: 1.5; }
+        .choices { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .choices li { font-size: 16px; color: #495057; padding: 8px 14px; border-radius: 6px; background: #f8f9fa; border: 1px solid #dee2e6; cursor: pointer; }
+        .choices li.correct { background: #d3f9d8; border-color: #20C997; color: #2f9e44; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>20回コース 理解度チェック</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <p class="subtitle">全20回で学んだ内容を振り返ろう</p>
+            <div class="quiz-grid">
+                <div class="quiz-card">
+                    <div class="quiz-num">1</div>
+                    <div class="quiz-q">Claude Code でエラーを解決するとき、最初にすべきことは？</div>
+                    <ul class="choices">
+                        <li>A. すぐにコードを全部書き直す</li>
+                        <li class="correct">B. エラーメッセージをコピーしてClaudeに貼り付ける</li>
+                        <li>C. コンソールを閉じて無視する</li>
+                        <li>D. 別のライブラリに切り替える</li>
+                    </ul>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">2</div>
+                    <div class="quiz-q">JWT 認証でアクセストークンを送る HTTP ヘッダーは？</div>
+                    <ul class="choices">
+                        <li>A. Content-Type: Bearer token</li>
+                        <li>B. X-Auth-Token: jwt.xxx</li>
+                        <li class="correct">C. Authorization: Bearer &lt;token&gt;</li>
+                        <li>D. Cookie: token=xxx</li>
+                    </ul>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">3</div>
+                    <div class="quiz-q">Vercel にフロントエンドをデプロイする際、API URLはどこで設定する？</div>
+                    <ul class="choices">
+                        <li>A. index.html に直接書く</li>
+                        <li>B. app.js の定数として書く</li>
+                        <li class="correct">C. Vercel の Environment Variables に VITE_API_URL を設定</li>
+                        <li>D. GitHub の README に書く</li>
+                    </ul>
+                </div>
+                <div class="quiz-card">
+                    <div class="quiz-num">4</div>
+                    <div class="quiz-q">SQL インジェクション攻撃を防ぐ正しい方法は？</div>
+                    <ul class="choices">
+                        <li>A. SQL 文を大文字で書く</li>
+                        <li>B. データベースをパスワードで保護する</li>
+                        <li class="correct">C. プレースホルダー（?）を使ったパラメータバインディング</li>
+                        <li>D. SELECT 文だけ使う</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; font-family: "Courier New", monospace; }
+        .code-snippet { background: #212529; color: #E8E8E8; padding: 12px 16px; font-family: "Courier New", monospace; font-size: 13px; line-height: 1.7; margin-top: 12px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>SEOとパフォーマンス最適化</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🔍 SEO対策の基本</div>
+                <div class="item">
+                    <span class="item-icon">📄</span>
+                    <div>
+                        <div class="item-text">titleタグを設定する</div>
+                        <div class="item-sub">&lt;title&gt;アプリ名 - キャッチコピー&lt;/title&gt;</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📝</span>
+                    <div>
+                        <div class="item-text">meta descriptionを書く</div>
+                        <div class="item-sub">検索結果に表示される説明文（120文字以内）</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🖼️</span>
+                    <div>
+                        <div class="item-text">OGP（SNSシェア用）を設定</div>
+                        <div class="item-sub">og:title, og:image, og:descriptionを設定</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🏷️</span>
+                    <div>
+                        <div class="item-text">見出しタグを適切に使う</div>
+                        <div class="item-sub">h1は1つ、h2〜h6で階層構造を作る</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">⚡ パフォーマンス改善</div>
+                <div class="item">
+                    <span class="item-icon">🗜️</span>
+                    <div>
+                        <div class="item-text">画像を圧縮する</div>
+                        <div class="item-sub">WebP形式・適切なサイズにリサイズ</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🦥</span>
+                    <div>
+                        <div class="item-text">遅延読み込み（Lazy Loading）</div>
+                        <div class="item-sub">loading="lazy" で画像を必要になったら読み込む</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📦</span>
+                    <div>
+                        <div class="item-text">バンドルサイズを最小化</div>
+                        <div class="item-sub">不要なライブラリを削除・コード分割</div>
+                    </div>
+                </div>
+                <div class="green-box">✅ Claudeに「SEO対策をして」と頼めばmetaタグを自動追加！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

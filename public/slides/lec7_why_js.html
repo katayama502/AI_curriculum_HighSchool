@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .role-row { display: flex; gap: 16px; margin-bottom: 18px; }
+        .role-card { flex: 1; background: white; border-radius: 8px; padding: 18px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+        .rc-icon { font-size: 32px; margin-bottom: 8px; }
+        .rc-name { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+        .rc-role { font-size: 16px; font-weight: 300; color: #495057; }
+        .rc-role strong { color: #339AF0; }
+        .example-list { list-style: none; }
+        .example-list li { background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 12px; }
+        .el-icon { font-size: 22px; min-width: 30px; text-align: center; }
+        .el-text { font-size: 18px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .el-text strong { color: #F59F00; font-weight: 600; }
+        .where-box { background: #1A1A2E; border-radius: 8px; padding: 18px 20px; color: #e9ecef; }
+        .wb-title { font-size: 18px; font-weight: 700; color: #74c0fc; margin-bottom: 12px; }
+        .wb-item { font-size: 17px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .wb-item:last-child { border-bottom: none; }
+        .wb-item::before { content: "→ "; color: #8ce99a; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>JavaScriptとは — Webを「動かす」言語</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>HTML・CSS・JSの役割</h2>
+                <div class="role-row">
+                    <div class="role-card">
+                        <div class="rc-icon">🦴</div>
+                        <div class="rc-name">HTML</div>
+                        <div class="rc-role"><strong>構造・骨格</strong><br>内容と意味</div>
+                    </div>
+                    <div class="role-card">
+                        <div class="rc-icon">🎨</div>
+                        <div class="rc-name">CSS</div>
+                        <div class="rc-role"><strong>見た目・装飾</strong><br>色・形・レイアウト</div>
+                    </div>
+                    <div class="role-card">
+                        <div class="rc-icon">⚡</div>
+                        <div class="rc-name">JavaScript</div>
+                        <div class="rc-role"><strong>動き・ロジック</strong><br>インタラクション</div>
+                    </div>
+                </div>
+                <div class="where-box">
+                    <div class="wb-title">JSはどこで動く？</div>
+                    <div class="wb-item">ブラウザ（フロントエンド）</div>
+                    <div class="wb-item">サーバー（Node.js / バックエンド）</div>
+                    <div class="wb-item">スマホアプリ（React Native）</div>
+                    <div class="wb-item">デスクトップアプリ（Electron）</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>JSがないと何ができない？</h2>
+                <ul class="example-list">
+                    <li><span class="el-icon">🔔</span><span class="el-text">ボタンを押すと<strong>ポップアップが出る</strong></span></li>
+                    <li><span class="el-icon">🔍</span><span class="el-text">検索ボックスで<strong>リアルタイムに候補が表示</strong>される</span></li>
+                    <li><span class="el-icon">🛒</span><span class="el-text">カートに<strong>商品を追加</strong>して合計が変わる</span></li>
+                    <li><span class="el-icon">🎮</span><span class="el-text">ブラウザ上で<strong>ゲームが遊べる</strong></span></li>
+                    <li><span class="el-icon">📱</span><span class="el-text"><strong>ダークモード</strong>の切り替えができる</span></li>
+                    <li><span class="el-icon">🤖</span><span class="el-text">ClaudeなどのAIと<strong>チャットができる</strong></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

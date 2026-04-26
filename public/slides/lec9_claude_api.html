@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        /* Reduced inner vertical spacing to avoid overflow */
+        .content-area { padding-top: 12px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .setup-col { }
+        .setup-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 10px; }
+        .setup-step { background: white; padding: 8px 12px; margin-top: 6px; display: flex; align-items: flex-start; gap: 10px; }
+        .step-num { width: 32px; height: 32px; background: #339AF0; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-content { font-size: 17px; color: #212529; }
+        .step-sub { font-size: 13px; color: #6C757D; margin-top: 3px; }
+        .warning-box { background: #FFF3BF; padding: 10px 12px; margin-top: 8px; font-size: 16px; color: #664D03; }
+        .warning-title { font-weight: 700; margin-bottom: 4px; }
+        .code-col { }
+        .code-title { font-size: 18px; font-weight: 700; color: white; background: #212529; padding: 8px 12px; }
+        .code-block { background: #1A1A2E; padding: 12px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .kw { color: #FFD43B; font-weight: 700; }
+        .str { color: #FCC419; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .prop { color: #20C997; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude APIを使ってみよう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="setup-col">
+                <div class="setup-title">🔑 セットアップ手順</div>
+                <div class="setup-step">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div class="step-content">Anthropicのサイトでアカウント作成</div>
+                        <div class="step-sub">console.anthropic.com にアクセス</div>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div class="step-content">APIキーを発行する</div>
+                        <div class="step-sub">「API Keys」メニューから新規作成</div>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div class="step-content">anthropicライブラリをインストール</div>
+                        <div class="step-sub">pip install anthropic</div>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="step-num">4</div>
+                    <div>
+                        <div class="step-content">APIキーを環境変数に設定</div>
+                        <div class="step-sub">ANTHROPIC_API_KEY=sk-ant-...</div>
+                    </div>
+                </div>
+                <div class="warning-box">
+                    <div class="warning-title">⚠️ APIキーの注意点</div>
+                    APIキーは絶対にGitHubに公開しないこと！<br>
+                    環境変数（.env）で管理しよう
+                </div>
+            </div>
+            <div class="code-col">
+                <div class="code-title">💻 Claude APIの基本コード</div>
+                <div class="code-block">
+                    <span class="kw">import</span> anthropic<br><br>
+                    <span class="comment"># クライアントを初期化</span><br>
+                    client = anthropic.<span class="fn">Anthropic</span>()<br><br>
+                    <span class="comment"># メッセージを送信</span><br>
+                    message = client.messages.<span class="fn">create</span>(<br>
+                    &nbsp;&nbsp;<span class="prop">model</span>=<span class="str">"claude-opus-4-5"</span>,<br>
+                    &nbsp;&nbsp;<span class="prop">max_tokens</span>=<span class="num" style="color:#20C997;">1024</span>,<br>
+                    &nbsp;&nbsp;<span class="prop">messages</span>=[<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"role"</span>: <span class="str">"user"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"content"</span>: <span class="str">"こんにちは！"</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;]<br>
+                    )<br><br>
+                    <span class="comment"># 返答を表示</span><br>
+                    <span class="fn">print</span>(message.<span class="prop">content</span>[<span class="num" style="color:#20C997;">0</span>].<span class="prop">text</span>)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

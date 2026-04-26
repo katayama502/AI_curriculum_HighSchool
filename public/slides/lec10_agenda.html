@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #212529; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 18px; }
+        .content-area { padding: 30px 60px; display: flex; gap: 50px; }
+        .agenda-col { flex: 1; }
+        .goal-col { flex: 1; }
+        .agenda-item { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 18px; }
+        .item-num { background: #212529; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+        .item-text h3 { font-size: 22px; font-weight: 500; color: #212529; margin-bottom: 3px; }
+        .item-text p { font-size: 17px; color: #868e96; }
+        .goal-box { background: white; border-radius: 10px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); border-top: 5px solid #212529; }
+        .goal-box h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .goal-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .goal-item .star { color: #212529; font-size: 20px; }
+        .goal-item p { font-size: 19px; color: #495057; }
+        .badge { display: inline-block; background: #339AF0; color: white; padding: 8px 20px; border-radius: 20px; font-size: 16px; font-weight: 700; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>第10回 — Git・GitHub入門</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="agenda-col">
+                <div class="agenda-item">
+                    <div class="item-num">1</div>
+                    <div class="item-text"><h3>バージョン管理とは？</h3><p>なぜGitが必要なのかを理解する</p></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="item-num">2</div>
+                    <div class="item-text"><h3>Gitの基本コマンド</h3><p>init・add・commit・log・diff</p></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="item-num">3</div>
+                    <div class="item-text"><h3>ブランチとマージ</h3><p>並行開発の仕組みを習得</p></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="item-num">4</div>
+                    <div class="item-text"><h3>GitHubの使い方</h3><p>リモートリポジトリ・push/pull・PR</p></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="item-num">5</div>
+                    <div class="item-text"><h3>チーム開発のワークフロー</h3><p>GitHub Flowで協力して開発する</p></div>
+                </div>
+                <div class="agenda-item">
+                    <div class="item-num">6</div>
+                    <div class="item-text"><h3>フェーズ1・2の振り返り</h3><p>第1〜10回の学習を総まとめ</p></div>
+                </div>
+            </div>
+            <div class="goal-col">
+                <div class="goal-box">
+                    <h2><i class="fas fa-bullseye"></i> 今日のゴール</h2>
+                    <div class="goal-item"><span class="star">⭐</span><p>Gitの基本コマンドが打てる</p></div>
+                    <div class="goal-item"><span class="star">⭐</span><p>ブランチ・マージの意味がわかる</p></div>
+                    <div class="goal-item"><span class="star">⭐</span><p>GitHubにコードをpushできる</p></div>
+                    <div class="goal-item"><span class="star">⭐</span><p>GitHub Flowの流れを説明できる</p></div>
+                    <div class="badge">第10回 / 全20回 ★折り返し地点★</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

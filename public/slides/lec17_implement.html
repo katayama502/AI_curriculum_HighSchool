@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .highlight-box { background: #E67700; color: white; padding: 14px 18px; margin-top: 14px; font-size: 17px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude CodeでUIを実装する</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">💻 UI実装の依頼例</div>
+                <div class="code-block">
+<span class="t-prompt">Claude&gt; </span><span class="t-cmd">以下のUIを実装して：<br>・ヘッダー（ロゴ＋ナビ）<br>・ヒーローセクション<br>・カードグリッド（3列）<br>・フッター<br>Tailwind CSSを使って<br>スマホ対応もして</span><br><br>
+<span class="t-success">● App.jsx を作成中...</span><br>
+<span class="t-success">● Header.jsx を作成中...</span><br>
+<span class="t-success">● HeroSection.jsx を作成中...</span><br>
+<span class="t-success">● CardGrid.jsx を作成中...</span><br>
+<span class="t-success">✓ 全コンポーネント完成！</span>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">✅ UI実装チェックリスト</div>
+                <div class="item">
+                    <span class="item-icon">📱</span>
+                    <div>
+                        <div class="item-text">レスポンシブデザイン</div>
+                        <div class="item-sub">スマホ・タブレット・PCで崩れない</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">♿</span>
+                    <div>
+                        <div class="item-text">アクセシビリティ</div>
+                        <div class="item-sub">alt属性・aria-label・キーボード操作</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🎨</span>
+                    <div>
+                        <div class="item-text">デザインの一貫性</div>
+                        <div class="item-sub">色・フォント・余白が統一されている</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">⚡</span>
+                    <div>
+                        <div class="item-text">パフォーマンス</div>
+                        <div class="item-sub">画像の最適化・不要なレンダリングを防ぐ</div>
+                    </div>
+                </div>
+                <div class="highlight-box">💡 「このUIをレビューして改善点を教えて」とClaudeに頼もう！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1.1; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .selector-card { background: white; border-radius: 8px; padding: 16px 18px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sc-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .sc-badge { padding: 2px 10px; border-radius: 12px; font-size: 13px; font-weight: 700; }
+        .sc-badge.element { background: #e7f5ff; color: #1c7ed6; }
+        .sc-badge.class { background: #ebfbee; color: #2f9e44; }
+        .sc-badge.id { background: #fff9db; color: #e67700; }
+        .sc-code { font-family: monospace; font-size: 17px; background: #1A1A2E; color: #74c0fc; padding: 8px 14px; border-radius: 4px; margin-bottom: 8px; display: block; }
+        .sc-desc { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.5; }
+        .property-box { background: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .pb-title { font-size: 20px; font-weight: 600; color: #212529; margin-bottom: 12px; }
+        .prop-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f1f3f5; }
+        .prop-row:last-child { border-bottom: none; }
+        .prop-name { font-family: monospace; font-size: 16px; color: #845EF7; font-weight: 700; min-width: 160px; }
+        .prop-desc { font-size: 17px; font-weight: 300; color: #495057; }
+        .prop-example { font-family: monospace; font-size: 14px; color: #868e96; margin-left: auto; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>CSSのセレクタとプロパティ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>「どこに」スタイルを当てるか — セレクタ</h2>
+                <div class="selector-card">
+                    <div class="sc-title"><span class="sc-badge element">要素</span>タグ名セレクタ</div>
+                    <code class="sc-code">p { color: red; }</code>
+                    <div class="sc-desc">すべての &lt;p&gt; タグに適用される</div>
+                </div>
+                <div class="selector-card">
+                    <div class="sc-title"><span class="sc-badge class">クラス</span>クラスセレクタ</div>
+                    <code class="sc-code">.card { background: white; }</code>
+                    <div class="sc-desc">class="card" を持つ全要素に適用。最もよく使う</div>
+                </div>
+                <div class="selector-card">
+                    <div class="sc-title"><span class="sc-badge id">ID</span>IDセレクタ</div>
+                    <code class="sc-code">#header { font-size: 32px; }</code>
+                    <div class="sc-desc">id="header" を持つ1つの要素のみに適用</div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>「何を」変えるか — 主要プロパティ</h2>
+                <div class="property-box">
+                    <div class="pb-title">よく使うCSS プロパティ</div>
+                    <div class="prop-row">
+                        <span class="prop-name">color</span>
+                        <span class="prop-desc">文字色</span>
+                        <span class="prop-example">color: #339AF0</span>
+                    </div>
+                    <div class="prop-row">
+                        <span class="prop-name">background-color</span>
+                        <span class="prop-desc">背景色</span>
+                        <span class="prop-example">background-color: white</span>
+                    </div>
+                    <div class="prop-row">
+                        <span class="prop-name">font-size</span>
+                        <span class="prop-desc">文字サイズ</span>
+                        <span class="prop-example">font-size: 24px</span>
+                    </div>
+                    <div class="prop-row">
+                        <span class="prop-name">padding</span>
+                        <span class="prop-desc">内側の余白</span>
+                        <span class="prop-example">padding: 16px</span>
+                    </div>
+                    <div class="prop-row">
+                        <span class="prop-name">margin</span>
+                        <span class="prop-desc">外側の余白</span>
+                        <span class="prop-example">margin: 0 auto</span>
+                    </div>
+                    <div class="prop-row">
+                        <span class="prop-name">border-radius</span>
+                        <span class="prop-desc">角を丸くする</span>
+                        <span class="prop-example">border-radius: 8px</span>
+                    </div>
+                    <div class="prop-row">
+                        <span class="prop-name">display: flex</span>
+                        <span class="prop-desc">横並びレイアウト</span>
+                        <span class="prop-example">display: flex</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

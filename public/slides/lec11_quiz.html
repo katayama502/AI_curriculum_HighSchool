@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .quiz-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .quiz-header {
+            background: #0D0D0D;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .q-num { background: #339AF0; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+        .q-title { font-size: 16px; color: #E8E8E8; font-weight: 400; }
+        .quiz-body { padding: 14px 18px; }
+        .question { font-size: 18px; font-weight: 500; color: #212529; margin-bottom: 12px; line-height: 1.5; }
+        .options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+        .option { padding: 8px 14px; border: 2px solid #dee2e6; border-radius: 4px; font-size: 16px; color: #495057; font-weight: 300; }
+        .option.correct { border-color: #20C997; background: #F0FFF4; color: #212529; font-weight: 500; }
+        .option.correct::before { content: "✓ "; color: #20C997; font-weight: 700; }
+        .answer-box { background: #e9ecef; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #495057; line-height: 1.5; }
+        .answer-box strong { color: #212529; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>確認クイズ</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">1</div><div class="q-title">Claude Codeの特徴</div></div>
+                <div class="quiz-body">
+                    <div class="question">Claude Codeがブラウザ版のClaudeと最も違う点はどれ？</div>
+                    <div class="options">
+                        <div class="option">A. 日本語を使える</div>
+                        <div class="option correct">B. ファイルを直接読み書きしてコマンドを実行できる</div>
+                        <div class="option">C. 画像を認識できる</div>
+                        <div class="option">D. 無料で使える</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>Claude Codeはファイルシステムにアクセスし、実際にコードを書いて実行するのが最大の特徴。</div>
+                </div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">2</div><div class="q-title">ターミナル操作</div></div>
+                <div class="quiz-body">
+                    <div class="question">現在いるフォルダから一つ上の親フォルダに移動するコマンドは？</div>
+                    <div class="options">
+                        <div class="option">A. cd home</div>
+                        <div class="option">B. ls ..</div>
+                        <div class="option correct">C. cd ..</div>
+                        <div class="option">D. mv ..</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong><code>cd ..</code>は「親ディレクトリに移動」。<code>..</code>は一つ上を意味する。</div>
+                </div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">3</div><div class="q-title">CLAUDE.md</div></div>
+                <div class="quiz-body">
+                    <div class="question">CLAUDE.mdファイルの主な役割は何？</div>
+                    <div class="options">
+                        <div class="option">A. アプリのスタイルを定義するファイル</div>
+                        <div class="option">B. エラーログを記録するファイル</div>
+                        <div class="option correct">C. AIにプロジェクトのルールや説明を伝えるファイル</div>
+                        <div class="option">D. ユーザーデータを保存するファイル</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>CLAUDE.mdは「AIへの説明書」。詳しく書くほど回答精度が上がる。</div>
+                </div>
+            </div>
+            <div class="quiz-card">
+                <div class="quiz-header"><div class="q-num">4</div><div class="q-title">安全な使い方</div></div>
+                <div class="quiz-body">
+                    <div class="question">Claude Codeでやってはいけないことはどれ？</div>
+                    <div class="options">
+                        <div class="option">A. エラーメッセージをそのまま貼り付けて相談する</div>
+                        <div class="option correct">B. APIキーをコードに直書きしてGitHubにpushする</div>
+                        <div class="option">C. /clearで会話をリセットして新しいトピックを始める</div>
+                        <div class="option">D. 小さい機能から一つずつ実装する</div>
+                    </div>
+                    <div class="answer-box"><strong>解説：</strong>APIキーは<code>.env</code>ファイルに書き、<code>.gitignore</code>で除外する。公開したら即削除が必要。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

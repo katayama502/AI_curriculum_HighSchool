@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .analogy-col { }
+        .analogy-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 16px; }
+        .analogy-flow { display: flex; flex-direction: column; gap: 8px; }
+        .analogy-row { display: flex; align-items: center; gap: 12px; }
+        .analogy-box { padding: 14px 18px; font-size: 18px; font-weight: 600; text-align: center; flex: 1; }
+        .box-client { background: #339AF0; color: white; }
+        .box-api { background: #20C997; color: white; }
+        .box-server { background: #212529; color: white; }
+        .arrow { font-size: 24px; color: #339AF0; flex-shrink: 0; }
+        .analogy-label { font-size: 14px; color: #6C757D; margin-top: 4px; text-align: center; }
+        .restaurant-box { background: #FFF3BF; padding: 14px 18px; margin-top: 16px; font-size: 17px; color: #664D03; line-height: 1.6; }
+        .restaurant-title { font-weight: 700; margin-bottom: 6px; }
+        .terms-col { }
+        .terms-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .term-item { background: white; padding: 12px 16px; margin-top: 8px; display: grid; grid-template-columns: 110px 1fr; gap: 12px; align-items: center; }
+        .term-name { background: #212529; color: #20C997; font-family: "Courier New", monospace; font-size: 15px; font-weight: 700; padding: 6px 10px; text-align: center; }
+        .term-desc { font-size: 17px; color: #495057; }
+        .api-examples { background: #339AF0; color: white; padding: 14px 18px; margin-top: 14px; }
+        .api-ex-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .api-ex-list { font-size: 16px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>APIとは何か？</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="analogy-col">
+                <div class="analogy-title">🍽️ レストランで例えると</div>
+                <div class="analogy-flow">
+                    <div class="analogy-row">
+                        <div class="analogy-box box-client">お客さん<br><span style="font-size:14px;">(クライアント/あなたのアプリ)</span></div>
+                    </div>
+                    <div style="text-align:center; font-size:28px; color:#339AF0;">↕</div>
+                    <div class="analogy-row">
+                        <div class="analogy-box box-api">ウェイター<br><span style="font-size:14px;">(API = 窓口・仲介役)</span></div>
+                    </div>
+                    <div style="text-align:center; font-size:28px; color:#339AF0;">↕</div>
+                    <div class="analogy-row">
+                        <div class="analogy-box box-server">厨房<br><span style="font-size:14px;">(サーバー/データ)</span></div>
+                    </div>
+                </div>
+                <div class="restaurant-box">
+                    <div class="restaurant-title">📌 ポイント</div>
+                    お客さんは厨房に直接入れない。<br>
+                    ウェイター（API）を通じて注文（リクエスト）し、料理（レスポンス）を受け取る。
+                </div>
+            </div>
+            <div class="terms-col">
+                <div class="terms-title">APIの基本用語</div>
+                <div class="term-item">
+                    <div class="term-name">エンドポイント</div>
+                    <div class="term-desc">APIにアクセスするURL</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-name">リクエスト</div>
+                    <div class="term-desc">APIへのデータ要求</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-name">レスポンス</div>
+                    <div class="term-desc">APIからの返答データ</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-name">APIキー</div>
+                    <div class="term-desc">認証用のパスワード</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-name">JSON</div>
+                    <div class="term-desc">データのやり取りに使う形式</div>
+                </div>
+                <div class="api-examples">
+                    <div class="api-ex-title">🌐 身近なAPIの例</div>
+                    <div class="api-ex-list">・天気予報API → 今日の天気を取得<br>・YouTube API → 動画情報を取得<br>・Claude API → AIと会話する</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

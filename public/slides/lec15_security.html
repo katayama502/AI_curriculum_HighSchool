@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 18px; }
+        .sec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .sec-card { background-color: white; border-radius: 8px; padding: 18px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #fa5252; }
+        .sec-card.ok { border-left-color: #20C997; }
+        .sec-title { font-size: 17px; font-weight: 500; color: #212529; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .sec-body { font-size: 15px; color: #495057; line-height: 1.6; }
+        .sec-code { font-family: "Courier New", monospace; font-size: 14px; background-color: #f1f3f5; border-radius: 4px; padding: 8px 12px; margin-top: 8px; color: #212529; }
+        .checklist { margin-top: 18px; background-color: #0D0D0D; border-radius: 8px; padding: 14px 20px; display: flex; gap: 30px; }
+        .check-col { flex: 1; }
+        .check-title { font-size: 16px; font-weight: 500; color: #20C997; margin-bottom: 8px; }
+        .check-item { font-size: 14px; color: #dee2e6; line-height: 2; }
+        .check-icon { color: #20C997; margin-right: 6px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>セキュリティ：公開前に必ず確認しよう</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="sec-grid">
+                <div class="sec-card">
+                    <div class="sec-title"><i class="fas fa-times-circle" style="color:#fa5252"></i> SQLインジェクション</div>
+                    <div class="sec-body">ユーザー入力をそのままSQLに埋め込むと危険。悪意ある入力でDBが破壊される。</div>
+                    <div class="sec-code">❌ `WHERE id=${req.params.id}`<br>✅ prepare('...WHERE id=?').run(id)</div>
+                </div>
+                <div class="sec-card">
+                    <div class="sec-title"><i class="fas fa-times-circle" style="color:#fa5252"></i> APIキーの漏洩</div>
+                    <div class="sec-body">コードにAPIキーを直書きしてGitHubにpushすると即座に不正利用される。</div>
+                    <div class="sec-code">❌ apiKey = "sk-abc123..."<br>✅ apiKey = process.env.API_KEY</div>
+                </div>
+                <div class="sec-card ok">
+                    <div class="sec-title"><i class="fas fa-check-circle" style="color:#20C997"></i> 入力バリデーション</div>
+                    <div class="sec-body">全てのユーザー入力を検証しよう。長さ・型・必須チェックを必ず実装する。</div>
+                    <div class="sec-code">if (!text || text.length > 100) {<br>&nbsp;&nbsp;return res.status(400).json({error})<br>}</div>
+                </div>
+                <div class="sec-card ok">
+                    <div class="sec-title"><i class="fas fa-check-circle" style="color:#20C997"></i> HTTPS 必須</div>
+                    <div class="sec-body">VercelもRailwayも自動でHTTPS化してくれる。HTTPのAPIは絶対に使わない。</div>
+                    <div class="sec-code">✅ https://my-api.railway.app<br>❌ http://my-api.railway.app</div>
+                </div>
+            </div>
+            <div class="checklist">
+                <div class="check-col">
+                    <div class="check-title"><i class="fas fa-clipboard-check"></i> デプロイ前チェック</div>
+                    <div class="check-item"><span class="check-icon">✓</span>.gitignore に .env を含む</div>
+                    <div class="check-item"><span class="check-icon">✓</span>全APIにバリデーションがある</div>
+                    <div class="check-item"><span class="check-icon">✓</span>SQLはプリペアドステートメント使用</div>
+                </div>
+                <div class="check-col">
+                    <div class="check-title"><i class="fas fa-tools"></i> Claude Code に聞けること</div>
+                    <div class="check-item"><span class="check-icon">•</span>「このAPIにセキュリティ問題はある？」</div>
+                    <div class="check-item"><span class="check-icon">•</span>「SQLインジェクション対策を追加して」</div>
+                    <div class="check-item"><span class="check-icon">•</span>「バリデーションが不足している箇所を教えて」</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

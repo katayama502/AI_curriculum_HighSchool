@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 32px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 16px; width: 100%; }
+        .content-area { padding-top: 20px; padding-left: 60px; padding-right: 60px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .panel { background-color: #0D0D0D; border-radius: 8px; padding: 16px 18px; }
+        .panel-title { font-size: 16px; font-weight: 500; color: #20C997; margin-bottom: 10px; }
+        .code-line { font-family: "Courier New", monospace; font-size: 13.5px; line-height: 1.85; color: #f8f9fa; }
+        .kw { color: #339AF0; }
+        .fn { color: #20C997; }
+        .str { color: #ffd43b; }
+        .cm { color: #868e96; }
+        .banner { margin-top: 16px; background-color: #212529; border-radius: 8px; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .banner-text { font-size: 20px; font-weight: 500; color: white; }
+        .banner-badge { background-color: #339AF0; color: white; padding: 6px 18px; border-radius: 30px; font-size: 16px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>テスト・デプロイ チートシート</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="grid">
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-vial"></i> Jest テスト基本</div>
+                    <div class="code-line"><span class="fn">test</span>(<span class="str">'説明'</span>, () =&gt; {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="fn">expect</span>(<span class="fn">add</span>(2,3)).<span class="fn">toBe</span>(5);</div>
+                    <div class="code-line">});</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="fn">describe</span>(<span class="str">'グループ名'</span>, () =&gt; {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="fn">test</span>(<span class="str">'...'</span>, () =&gt; { <span class="cm">/* ... */</span> });</div>
+                    <div class="code-line">});</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm">$ npm test</span></div>
+                    <div class="code-line"><span class="cm">$ jest --coverage</span></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-network-wired"></i> Supertest APIテスト</div>
+                    <div class="code-line"><span class="kw">const</span> req = <span class="fn">require</span>(<span class="str">'supertest'</span>);</div>
+                    <div class="code-line"><span class="kw">const</span> app = <span class="fn">require</span>(<span class="str">'./app'</span>);</div>
+                    <div class="code-line"><span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">req</span>(app)</div>
+                    <div class="code-line">&nbsp;&nbsp;.<span class="fn">post</span>(<span class="str">'/api/todos'</span>)</div>
+                    <div class="code-line">&nbsp;&nbsp;.<span class="fn">send</span>({ text: <span class="str">'テスト'</span> });</div>
+                    <div class="code-line"><span class="fn">expect</span>(res.status).<span class="fn">toBe</span>(201);</div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-cloud-upload-alt"></i> Vercel デプロイ</div>
+                    <div class="code-line"><span class="cm">$ npm install -g vercel</span></div>
+                    <div class="code-line"><span class="cm">$ vercel</span></div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm"># または GitHub 自動デプロイ</span></div>
+                    <div class="code-line"><span class="cm"># push → Vercel が自動ビルド</span></div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm"># ビルドコマンド</span></div>
+                    <div class="code-line"><span class="cm">$ npm run build</span></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"><i class="fas fa-shield-alt"></i> セキュリティ チェック</div>
+                    <div class="code-line"><span class="cm"># .gitignore に .env を含める</span></div>
+                    <div class="code-line"><span class="cm"># プリペアドステートメント使用</span></div>
+                    <div class="code-line">db.<span class="fn">prepare</span>(<span class="str">'...WHERE id=?'</span>).<span class="fn">get</span>(id);</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm"># 環境変数</span></div>
+                    <div class="code-line">process.env.API_KEY</div>
+                    <div class="code-line" style="margin-top:8px;"><span class="cm"># helmet でヘッダー設定</span></div>
+                    <div class="code-line">app.<span class="fn">use</span>(<span class="fn">helmet</span>());</div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-text"><i class="fas fa-rocket" style="color:#20C997; margin-right:10px;"></i> 第15回：テスト・デプロイ 完了！</div>
+                <div class="banner-badge">次回：プロジェクト設計 →</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 36px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding: 22px 60px; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 16px; }
+        .flow-row {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 14px;
+        }
+        .flow-step {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 14px 18px;
+            border-radius: 8px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .flow-step.highlight { background: #339AF0; border-color: #339AF0; }
+        .flow-step.highlight2 { background: #0D0D0D; border-color: #0D0D0D; }
+        .step-icon { font-size: 26px; margin-bottom: 6px; }
+        .step-title { font-size: 16px; font-weight: 500; color: #212529; }
+        .flow-step.highlight .step-title { color: white; }
+        .flow-step.highlight2 .step-title { color: #20C997; }
+        .step-sub { font-size: 13px; color: #6c757d; margin-top: 4px; }
+        .flow-step.highlight .step-sub { color: rgba(255,255,255,0.8); }
+        .flow-step.highlight2 .step-sub { color: #868e96; }
+        .arrow { font-size: 20px; color: #adb5bd; padding: 0 8px; flex-shrink: 0; }
+        .tips-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        .do-box {
+            background: white;
+            border: 2px solid #40C057;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .dont-box {
+            background: white;
+            border: 2px solid #fa5252;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .box-label { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .box-label.do { color: #40C057; }
+        .box-label.dont { color: #fa5252; }
+        .item { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.8; margin-bottom: 4px; }
+        .item i { margin-right: 8px; }
+        .item.do i { color: #40C057; }
+        .item.dont i { color: #fa5252; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Claude Codeとの開発ワークフロー</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2>AIペアプログラミングの流れ</h2>
+            <div class="flow-row">
+                <div class="flow-step">
+                    <div class="step-icon">💡</div>
+                    <div class="step-title">① 機能を計画</div>
+                    <div class="step-sub">「何を作りたいか」を言語化</div>
+                </div>
+                <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="flow-step highlight">
+                    <div class="step-icon" style="color:white">💬</div>
+                    <div class="step-title">② AIに指示</div>
+                    <div class="step-sub">具体的なプロンプトを書く</div>
+                </div>
+                <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="flow-step highlight2">
+                    <div class="step-icon">⚡</div>
+                    <div class="step-title">③ 生成・実行</div>
+                    <div class="step-sub">Claude Codeがコードを書く</div>
+                </div>
+                <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="flow-step">
+                    <div class="step-icon">🔍</div>
+                    <div class="step-title">④ 確認・テスト</div>
+                    <div class="step-sub">ブラウザで動作を確認する</div>
+                </div>
+                <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="flow-step" style="border-color:#339AF0">
+                    <div class="step-icon">🔄</div>
+                    <div class="step-title">⑤ 修正・改善</div>
+                    <div class="step-sub">「〇〇が違う」とフィードバック</div>
+                </div>
+                <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="flow-step" style="border-color:#20C997">
+                    <div class="step-icon">✅</div>
+                    <div class="step-title">⑥ git commit</div>
+                    <div class="step-sub">完成したらバージョン保存</div>
+                </div>
+            </div>
+            <div class="tips-row">
+                <div class="do-box">
+                    <div class="box-label do">✅ やるべきこと（DO）</div>
+                    <div class="item do"><i class="fas fa-check"></i>小さい機能を1つずつ実装する</div>
+                    <div class="item do"><i class="fas fa-check"></i>コードの説明を必ず読む・理解する</div>
+                    <div class="item do"><i class="fas fa-check"></i>動いたらすぐgit commitする</div>
+                    <div class="item do"><i class="fas fa-check"></i>うまくいかない時は「何を試したか」も伝える</div>
+                </div>
+                <div class="dont-box">
+                    <div class="box-label dont">✗ 避けるべきこと（DON'T）</div>
+                    <div class="item dont"><i class="fas fa-times"></i>「全部作って」と丸投げしない</div>
+                    <div class="item dont"><i class="fas fa-times"></i>理解せずにコードを貼り付けない</div>
+                    <div class="item dont"><i class="fas fa-times"></i>エラーが出たまま放置しない</div>
+                    <div class="item dont"><i class="fas fa-times"></i>APIキーをコードに直書きしない</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

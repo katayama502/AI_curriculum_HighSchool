@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 42px; font-weight: 500; color: #E67700; }
+        .divider { height: 2px; background-color: #F59F00; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block { background: #0D0D0D; padding: 18px; font-family: "Courier New", monospace; font-size: 14px; line-height: 1.9; color: #E8E8E8; }
+        .t-prompt { color: #F59F00; }
+        .t-cmd { color: #FCC419; }
+        .t-output { color: #6C757D; }
+        .t-success { color: #28C840; }
+        .section-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 12px; }
+        .item { background: white; padding: 12px 16px; margin-top: 8px; display: flex; align-items: flex-start; gap: 12px; }
+        .item-icon { font-size: 22px; flex-shrink: 0; }
+        .item-text { font-size: 17px; color: #212529; }
+        .item-sub { font-size: 14px; color: #6C757D; margin-top: 3px; }
+        .green-box { background: #20C997; color: #0D0D0D; padding: 14px 18px; margin-top: 14px; font-size: 17px; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ユーザビリティテスト</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div>
+                <div class="section-title">🧪 ユーザビリティ評価の方法</div>
+                <div class="item">
+                    <span class="item-icon">👥</span>
+                    <div>
+                        <div class="item-text">ユーザーテスト</div>
+                        <div class="item-sub">実際に友達に使ってもらって感想を聞く</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">📋</span>
+                    <div>
+                        <div class="item-text">ヒューリスティック評価</div>
+                        <div class="item-sub">10のUIデザイン原則に照らし合わせて確認</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🔍</span>
+                    <div>
+                        <div class="item-text">認知的ウォークスルー</div>
+                        <div class="item-sub">初めて使う人の視点でタスクを実行してみる</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="item-icon">🤖</span>
+                    <div>
+                        <div class="item-text">AIレビュー（Claude）</div>
+                        <div class="item-sub">コードやUIの説明を渡してフィードバックをもらう</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">💬 ClaudeにUIレビューを依頼</div>
+                <div class="code-block">
+<span class="t-prompt">あなた：</span><span class="t-cmd">このTodoアプリのUIを<br>ユーザビリティの観点で<br>レビューして</span><br><br>
+<span class="t-success">Claude：</span><br>
+<span class="t-output">改善点が3つあります：<br><br>
+1. 削除ボタンが小さすぎる<br>
+   → スマホで押しにくい<br><br>
+2. 完了済みタスクが見分けにくい<br>
+   → 取り消し線＋グレーアウトを推奨<br><br>
+3. 空の状態のメッセージがない<br>
+   → 「タスクを追加しよう！」を表示</span>
+                </div>
+                <div class="green-box">✅ Claudeは「厳しいユーザー」として使える！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

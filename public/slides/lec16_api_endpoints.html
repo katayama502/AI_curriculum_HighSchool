@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; position: relative; overflow: hidden; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; width: 100%; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; }
+        h2 { font-size: 26px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .api-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .api-table th { background-color: #212529; color: white; padding: 10px 14px; font-size: 15px; text-align: left; }
+        .api-table td { padding: 10px 14px; font-size: 14px; color: #495057; border-bottom: 1px solid #f1f3f5; }
+        .method { font-family: "Courier New", monospace; font-size: 13px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
+        .get { background-color: #e7f5ff; color: #339AF0; }
+        .post { background-color: #ebfbee; color: #20C997; }
+        .put { background-color: #fff9db; color: #e67700; }
+        .del { background-color: #fff5f5; color: #fa5252; }
+        .path { font-family: "Courier New", monospace; color: #212529; font-size: 14px; }
+        .tip-row { display: flex; gap: 20px; }
+        .tip-card { flex: 1; background-color: white; border-radius: 8px; padding: 14px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #339AF0; }
+        .tip-card.teal { border-left-color: #20C997; }
+        .tip-body { font-size: 15px; color: #495057; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>APIエンドポイント設計一覧</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <h2><i class="fas fa-list-alt" style="color:#339AF0"></i> 読書記録アプリ：APIエンドポイント一覧</h2>
+            <table class="api-table">
+                <tr><th>メソッド</th><th>エンドポイント</th><th>説明</th><th>リクエスト</th><th>レスポンス</th></tr>
+                <tr>
+                    <td><span class="method post">POST</span></td>
+                    <td class="path">/api/auth/register</td>
+                    <td>ユーザー登録</td>
+                    <td><code>{name, email, password}</code></td>
+                    <td><code>{token, user}</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method post">POST</span></td>
+                    <td class="path">/api/auth/login</td>
+                    <td>ログイン</td>
+                    <td><code>{email, password}</code></td>
+                    <td><code>{token}</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method get">GET</span></td>
+                    <td class="path">/api/books</td>
+                    <td>本一覧取得（自分の）</td>
+                    <td>— (認証ヘッダー)</td>
+                    <td><code>[{id, title, author, memo}]</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method post">POST</span></td>
+                    <td class="path">/api/books</td>
+                    <td>本を登録</td>
+                    <td><code>{title, author, memo}</code></td>
+                    <td><code>{id, title, author}</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method put">PUT</span></td>
+                    <td class="path">/api/books/:id</td>
+                    <td>メモ更新</td>
+                    <td><code>{memo}</code></td>
+                    <td><code>{id, memo}</code></td>
+                </tr>
+                <tr>
+                    <td><span class="method del">DELETE</span></td>
+                    <td class="path">/api/books/:id</td>
+                    <td>本を削除</td>
+                    <td>—</td>
+                    <td><code>{message}</code></td>
+                </tr>
+            </table>
+            <div class="tip-row">
+                <div class="tip-card">
+                    <div class="tip-body"><i class="fas fa-lock" style="color:#339AF0"></i> <strong>認証が必要なAPI</strong>には Authorization ヘッダーに JWT トークンを付ける設計にしよう。</div>
+                </div>
+                <div class="tip-card teal">
+                    <div class="tip-body"><i class="fas fa-robot" style="color:#20C997"></i> Claude Code に「このユーザーストーリーからAPIエンドポイント一覧を設計して」と依頼すると素早く設計できる！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

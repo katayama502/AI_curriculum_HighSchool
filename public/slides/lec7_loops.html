@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding: 40px 60px 0; }
+        h1 { font-size: 48px; font-weight: 500; color: #339AF0; }
+        .divider { height: 1px; background-color: #20C997; margin-top: 20px; }
+        .content-area { padding: 26px 60px; display: flex; gap: 50px; }
+        .left { flex: 1; }
+        .right { flex: 1; }
+        h2 { font-size: 24px; font-weight: 500; color: #212529; margin-bottom: 14px; }
+        .code-win { background: #1A1A2E; border-radius: 8px; padding: 16px 18px; font-family: monospace; font-size: 15px; line-height: 1.9; color: #e9ecef; margin-bottom: 14px; }
+        .ck { color: #74c0fc; } .cv { color: #ffd43b; } .cs { color: #8ce99a; } .cn { color: #ff8787; } .cc { color: #868e96; }
+        .loop-card { background: white; border-radius: 8px; padding: 16px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 12px; border-left: 4px solid #339AF0; }
+        .lc-title { font-size: 20px; font-weight: 700; color: #339AF0; margin-bottom: 8px; }
+        .lc-desc { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.5; margin-bottom: 8px; }
+        .lc-code { background: #1A1A2E; border-radius: 4px; padding: 8px 12px; font-family: monospace; font-size: 14px; color: #e9ecef; line-height: 1.7; }
+        .use-box { background: #ebfbee; border-radius: 8px; padding: 14px 18px; border-left: 4px solid #20C997; }
+        .ub-title { font-size: 18px; font-weight: 700; color: #2f9e44; margin-bottom: 8px; }
+        .ub-item { font-size: 17px; font-weight: 300; color: #495057; line-height: 1.6; }
+        .ub-item::before { content: "→ "; color: #20C997; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>ループ — 繰り返し処理を使いこなす</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="left">
+                <h2>for ループの基本</h2>
+                <div class="code-win">
+<span class="cc">// 0から4まで5回繰り返す</span><br>
+<span class="ck">for</span> (<span class="ck">let</span> <span class="cv">i</span> = <span class="cn">0</span>; <span class="cv">i</span> &lt; <span class="cn">5</span>; <span class="cv">i</span>++) {<br>
+&nbsp;&nbsp;console.log(<span class="cv">i</span>); <span class="cc">// 0,1,2,3,4</span><br>
+}<br><br>
+<span class="cc">// 配列を順番に処理</span><br>
+<span class="ck">const</span> <span class="cv">fruits</span> = [<span class="cs">"りんご"</span>, <span class="cs">"バナナ"</span>, <span class="cs">"みかん"</span>];<br>
+<span class="cv">fruits</span>.forEach((<span class="cv">fruit</span>) => {<br>
+&nbsp;&nbsp;console.log(<span class="cv">fruit</span>);<br>
+});<br><br>
+<span class="cc">// 出力: りんご / バナナ / みかん</span>
+                </div>
+            </div>
+            <div class="right">
+                <h2>3種のループを使い分ける</h2>
+                <div class="loop-card">
+                    <div class="lc-title">for ループ</div>
+                    <div class="lc-desc">回数が決まっている時。インデックスが必要な時。</div>
+                    <div class="lc-code"><span style="color:#74c0fc;">for</span> (<span style="color:#74c0fc;">let</span> i = 0; i &lt; 10; i++) { ... }</div>
+                </div>
+                <div class="loop-card" style="border-left-color:#20C997;">
+                    <div class="lc-title" style="color:#20C997;">for...of ループ</div>
+                    <div class="lc-desc">配列の各要素を処理する時（最もシンプル）</div>
+                    <div class="lc-code"><span style="color:#74c0fc;">for</span> (<span style="color:#74c0fc;">const</span> item <span style="color:#74c0fc;">of</span> array) { ... }</div>
+                </div>
+                <div class="loop-card" style="border-left-color:#845EF7;">
+                    <div class="lc-title" style="color:#845EF7;">while ループ</div>
+                    <div class="lc-desc">条件が真の間ずっと繰り返す時</div>
+                    <div class="lc-code"><span style="color:#74c0fc;">while</span> (count &lt; 10) { count++; }</div>
+                </div>
+                <div class="use-box">
+                    <div class="ub-title">🎯 最もよく使うのは forEach / for...of</div>
+                    <div class="ub-item">配列の全要素を処理する時</div>
+                    <div class="ub-item">APIから取得したデータを表示する時</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

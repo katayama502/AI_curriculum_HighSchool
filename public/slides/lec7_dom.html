@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Yu Gothic", "Roboto", sans-serif; background-color: #F8F9FA; color: #212529; }
+        .slide-container { width: 1280px; min-height: 720px; background-color: #F8F9FA; }
+        .header { padding-top: 40px; padding-left: 60px; padding-right: 60px; }
+        h1 { font-size: 46px; font-weight: 500; color: #339AF0; }
+        .divider { height: 2px; background-color: #20C997; margin-top: 16px; }
+        .content-area { padding-top: 28px; padding-left: 60px; padding-right: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .code-block {
+            background: #1A1A2E; padding: 20px;
+            font-family: "Courier New", monospace; font-size: 15px; line-height: 1.9; color: #E8E8E8;
+        }
+        .kw { color: #339AF0; font-weight: 700; }
+        .str { color: #FCC419; }
+        .fn { color: #F783AC; }
+        .comment { color: #6C757D; }
+        .prop { color: #20C997; }
+        .right-col { }
+        .dom-title { font-size: 20px; font-weight: 700; color: #212529; margin-bottom: 14px; }
+        .dom-method {
+            background: white; padding: 12px 16px; margin-top: 8px;
+            display: grid; grid-template-columns: 220px 1fr; gap: 12px; align-items: center;
+        }
+        .method-name {
+            font-family: "Courier New", monospace; font-size: 15px;
+            color: #F783AC; font-weight: 700; background: #212529; padding: 6px 10px;
+        }
+        .method-desc { font-size: 17px; color: #495057; }
+        .demo-box {
+            background: #212529; color: white;
+            padding: 16px 20px; margin-top: 16px;
+        }
+        .demo-title { font-size: 16px; color: #20C997; font-weight: 600; margin-bottom: 10px; }
+        .demo-flow { display: flex; align-items: center; gap: 12px; font-size: 16px; }
+        .demo-step {
+            background: #339AF0; color: white;
+            padding: 8px 14px; font-size: 15px; text-align: center;
+        }
+        .demo-arrow { color: #20C997; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>DOM操作でページを動かす</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="content-area">
+            <div class="code-block">
+                <span class="comment">// HTML要素を取得</span><br>
+                <span class="kw">const</span> btn = document.<span class="fn">querySelector</span>(<span class="str">"#myBtn"</span>);<br>
+                <span class="kw">const</span> msg = document.<span class="fn">querySelector</span>(<span class="str">"#message"</span>);<br><br>
+                <span class="comment">// クリックイベントを設定</span><br>
+                btn.<span class="fn">addEventListener</span>(<span class="str">"click"</span>, () => {<br>
+                &nbsp;&nbsp;msg.<span class="prop">innerHTML</span> = <span class="str">"ボタンが押された！"</span>;<br>
+                &nbsp;&nbsp;msg.<span class="prop">style</span>.<span class="prop">color</span> = <span class="str">"#339AF0"</span>;<br>
+                });<br><br>
+                <span class="comment">// 要素を追加</span><br>
+                <span class="kw">const</span> newItem = document.<span class="fn">createElement</span>(<span class="str">"li"</span>);<br>
+                newItem.<span class="prop">textContent</span> = <span class="str">"新しいアイテム"</span>;<br>
+                list.<span class="fn">appendChild</span>(newItem);
+            </div>
+            <div class="right-col">
+                <div class="dom-title">主要なDOMメソッド</div>
+                <div class="dom-method">
+                    <div class="method-name">querySelector()</div>
+                    <div class="method-desc">CSS セレクタで要素を取得</div>
+                </div>
+                <div class="dom-method">
+                    <div class="method-name">innerHTML</div>
+                    <div class="method-desc">要素の中身のHTMLを変更</div>
+                </div>
+                <div class="dom-method">
+                    <div class="method-name">addEventListener()</div>
+                    <div class="method-desc">クリック等のイベントを監視</div>
+                </div>
+                <div class="dom-method">
+                    <div class="method-name">createElement()</div>
+                    <div class="method-desc">新しいHTML要素を作成</div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-title">🔄 動作の流れ</div>
+                    <div class="demo-flow">
+                        <div class="demo-step">ユーザー<br>クリック</div>
+                        <div class="demo-arrow">→</div>
+                        <div class="demo-step">イベント<br>発火</div>
+                        <div class="demo-arrow">→</div>
+                        <div class="demo-step">DOM<br>更新</div>
+                        <div class="demo-arrow">→</div>
+                        <div class="demo-step">画面<br>変化</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
