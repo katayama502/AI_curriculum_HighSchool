@@ -148,7 +148,7 @@ export const units = [
         description: 'AIの性能はデータで決まる。良いデータとは何かを学びます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1628277613843-a9c8ec7b0f20?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -305,7 +305,7 @@ export const units = [
         description: 'AIの偏見・差別問題を具体的な事例から学び、その原因と対策を考えます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1618005182212-4b9034ac9a76?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
