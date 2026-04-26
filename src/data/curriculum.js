@@ -40,7 +40,7 @@ export const units = [
         description: 'スマホ・家電・サービスに潜むAI技術を発見し、AIが日常にどれだけ浸透しているかを実感します。',
         type: 'activity',
         duration: 30,
-        bannerUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -50,7 +50,7 @@ export const units = [
         description: '従来のプログラムとAI（機械学習）の根本的な違いを理解します。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -60,7 +60,7 @@ export const units = [
         description: 'AIの基礎知識を確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
         quiz: {
           questions: [
@@ -138,7 +138,7 @@ export const units = [
         description: '教師あり学習・教師なし学習・強化学習の違いを理解します。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -148,7 +148,7 @@ export const units = [
         description: 'AIの性能はデータで決まる。良いデータとは何かを学びます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1628277613843-a9c8ec7b0f20?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -158,7 +158,7 @@ export const units = [
         description: 'AIモデルの性能をどう測るか。精度・過学習の概念を学びます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -168,7 +168,7 @@ export const units = [
         description: '機械学習の仕組みを確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
         quiz: {
           questions: [
@@ -229,7 +229,7 @@ export const units = [
         description: '人工ニューロンの仕組みとニューラルネットワークの構造を理解します。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1617791160505-6f00504e3519?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -239,7 +239,7 @@ export const units = [
         description: '代表的なニューラルネットワークのアーキテクチャを学びます。',
         type: 'lecture',
         duration: 40,
-        bannerUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -249,7 +249,7 @@ export const units = [
         description: 'ニューラルネットワークの知識を確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
         quiz: {
           questions: [
@@ -305,7 +305,7 @@ export const units = [
         description: 'AIの偏見・差別問題を具体的な事例から学び、その原因と対策を考えます。',
         type: 'lecture',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1618005182212-4b9034ac9a76?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -315,7 +315,7 @@ export const units = [
         description: '顔認識技術・データ収集・監視社会について考えます。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -325,7 +325,7 @@ export const units = [
         description: 'どんな仕事がAIに代替されるか、これからの時代に必要なスキルを考えます。',
         type: 'lecture',
         duration: 30,
-        bannerUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -335,7 +335,7 @@ export const units = [
         description: 'AI倫理・社会への影響の理解を確認します。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
         quiz: {
           questions: [
@@ -406,7 +406,7 @@ export const units = [
         description: 'Claude.aiへの登録手順・プランの選び方・画面の見方と基本的な操作方法を丁寧に解説します。',
         type: 'activity',
         duration: 30,
-        bannerUrl: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -416,7 +416,7 @@ export const units = [
         description: 'Claudeの「プロジェクト」機能でカスタム指示・知識ベースを設定し、用途に特化した専用AIを作る方法を学びます。',
         type: 'activity',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -426,7 +426,7 @@ export const units = [
         description: 'Claudeのスキルズ（カスタムツール）を作成・設定し、繰り返し使えるワークフローを自動化する方法を実践します。',
         type: 'activity',
         duration: 35,
-        bannerUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1632516643720-e7f5d7d6ecc9?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
       },
       {
@@ -436,7 +436,7 @@ export const units = [
         description: 'Claude AIの基本操作・プロジェクト・スキルズの理解を確認するクイズです。',
         type: 'quiz',
         duration: 15,
-        bannerUrl: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80',
+        bannerUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
         slideUrl: null,
         quiz: {
           questions: [
