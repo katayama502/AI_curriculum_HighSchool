@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, CheckCircle2, Clock } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle2, Clock, BookOpen } from 'lucide-react'
 import { units, getLessonTypeLabel, getLessonTypeColor } from '../data/curriculum'
 import { useProgress } from '../hooks/useProgress'
 import QuizComponent from '../components/QuizComponent'
@@ -40,14 +40,14 @@ export default function LessonPage() {
     <div className={`mx-auto px-4 py-24 ${isQuiz ? 'max-w-2xl' : 'max-w-5xl'}`}>
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-slate-500 mb-6 flex-wrap">
+      <div className="flex items-center gap-2 text-xs text-slate-500 mb-8 flex-wrap">
         <Link to="/curriculum" className="hover:text-slate-300 transition-colors">カリキュラム</Link>
-        <span>/</span>
-        <Link to={`/unit/${unitId}`} className="hover:text-slate-300 transition-colors truncate">
-          {unit.title}
+        <span className="text-slate-700">/</span>
+        <Link to={`/unit/${unitId}`} className="hover:text-slate-300 transition-colors truncate max-w-[160px]">
+          {unit.icon} {unit.title}
         </Link>
-        <span>/</span>
-        <span className="text-slate-400 truncate">{lesson.title}</span>
+        <span className="text-slate-700">/</span>
+        <span className="text-slate-400 truncate max-w-[200px]">{lesson.title}</span>
       </div>
 
       {/* Lesson Header */}
@@ -60,6 +60,10 @@ export default function LessonPage() {
             <Clock className="w-3.5 h-3.5" />
             {lesson.duration}分
           </span>
+          <span className="flex items-center gap-1 text-xs text-slate-500">
+            <BookOpen className="w-3.5 h-3.5" />
+            {lessonIdx + 1} / {unit.lessons.length}
+          </span>
           {done && (
             <span className="flex items-center gap-1 text-xs text-emerald-400">
               <CheckCircle2 className="w-3.5 h-3.5" />
@@ -69,6 +73,14 @@ export default function LessonPage() {
         </div>
         <h1 className="text-2xl md:text-3xl font-black text-slate-100 mb-1">{lesson.title}</h1>
         <p className="text-slate-400 text-sm">{lesson.description}</p>
+      </div>
+
+      {/* Lesson Progress Bar */}
+      <div className="h-1 w-full bg-slate-800 rounded-full mb-8 overflow-hidden">
+        <div
+          className="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full transition-all duration-700"
+          style={{ width: `${Math.round(((lessonIdx + 1) / unit.lessons.length) * 100)}%` }}
+        />
       </div>
 
       {/* Main Content */}

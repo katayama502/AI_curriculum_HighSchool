@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Brain } from 'lucide-react'
+import { units } from '../data/curriculum'
+import { useProgress } from '../hooks/useProgress'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const { getTotalProgress } = useProgress()
+  const total = getTotalProgress(units)
+  const showProgress = total.done > 0
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -54,8 +59,21 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {showProgress && (
+              <div className="ml-2 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60">
+                <div className="w-20 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full transition-all duration-700"
+                    style={{ width: `${total.percent}%` }}
+                  />
+                </div>
+                <span className="text-xs text-slate-400 tabular-nums">{total.percent}%</span>
+              </div>
+            )}
+
             <Link to="/curriculum" className="ml-2 btn-primary text-sm py-2">
-              学習をはじめる
+              {showProgress ? '続きから学ぶ' : '学習をはじめる'}
             </Link>
           </div>
 
